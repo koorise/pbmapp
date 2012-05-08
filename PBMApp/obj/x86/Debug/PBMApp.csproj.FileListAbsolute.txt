@@ -1,0 +1,17 @@
+D:\PBMApp\PBMApp\bin\Debug\PBMApp.exe.config
+D:\PBMApp\PBMApp\bin\Debug\PBMApp.exe
+D:\PBMApp\PBMApp\bin\Debug\PBMApp.pdb
+D:\PBMApp\PBMApp\bin\Debug\SubSonic.Core.dll
+D:\PBMApp\PBMApp\bin\Debug\SubSonic.Core.pdb
+D:\PBMApp\PBMApp\bin\Debug\SubSonic.Core.xml
+D:\PBMApp\PBMApp\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.Form1.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.Properties.Resources.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\PBMApp\PBMApp\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.exe
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.pdb
+D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.dll
+D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.Linq.dll
+D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.pdb
+D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.Linq.pdb
