@@ -1,0 +1,62 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="E0E1469A-453D-43FF-9842-120C4D9675D7/f:Form1.cs" caret="532" fromTop="23" />
+      <File id="7E1BACC8-6785-4304-957E-5CE4B8BEAB41/f:App.config" caret="203" fromTop="4" />
+      <File id="E0E1469A-453D-43FF-9842-120C4D9675D7/f:Context.cs" caret="1973" fromTop="11" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="7E1BACC8-6785-4304-957E-5CE4B8BEAB41/f:App.config" caret="262" fromTop="4" />
+      <File id="E0E1469A-453D-43FF-9842-120C4D9675D7/f:Form1.cs" caret="223" fromTop="9" />
+      <File id="E0E1469A-453D-43FF-9842-120C4D9675D7/f:Form1.cs" caret="532" fromTop="23" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="using" priority="61" />
+      <Item value="SubSonic" priority="30" />
+      <Item value="PBM.DAL" priority="30" />
+      <Item value="foreach" priority="63" />
+      <Item value="var" priority="31" />
+      <Item value="from" priority="31" />
+      <Item value="Clerk`0" priority="63" />
+      <Item value="select" priority="31" />
+      <Item value="c" priority="95" />
+      <Item value="MessageBox`0" priority="31" />
+      <Item value="clerk" priority="31" />
+      <Item value="new" priority="31" />
+      <Item value="Clerk" priority="28" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@PBM.DAL.Clerk">
+      <Item value="All`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:PBM.DAL.Clerk">
+      <Item value="iNO" priority="53" />
+      <Item value="Save`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False" />
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>
