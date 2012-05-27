@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PBMApp
 {
-    public partial class Form1 : Form
+    public partial class frm_Setting_SystemFlag : Form
     {
-        public Form1()
+        public frm_Setting_SystemFlag()
         {
             InitializeComponent();
         }
