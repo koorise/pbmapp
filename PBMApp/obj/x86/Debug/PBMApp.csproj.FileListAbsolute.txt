@@ -55,3 +55,5 @@ E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_HeaderFooter.resources
 E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_payment.resources
 E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_HappyHour_ServiceTax.resources
 E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_ElectronicScale.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_Percentage.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_GST_ServiceTax.resources

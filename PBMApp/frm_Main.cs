@@ -148,6 +148,37 @@ namespace PBMApp
             frm.Show();
         }
 
+        private void percentageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_Percentage frm = new frm_Setting_Percentage();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+
+        }
+
+        private void gSTServiceTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_GST_ServiceTax frm = new frm_Setting_GST_ServiceTax();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void pCASHFCEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_PCASH_FCE frm = new frm_Setting_PCASH_FCE();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
 
     }
 }

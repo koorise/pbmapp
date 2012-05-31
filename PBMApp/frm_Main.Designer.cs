@@ -48,11 +48,14 @@
             this.cookingMessageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mallSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signatureMessageSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.happerHourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pLUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clerkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dPLUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cookInfomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.communicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendProgramInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receiveProgramInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,9 +69,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cookInfomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.happerHourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -159,6 +159,7 @@
             // 
             this.percentageToolStripMenuItem.Name = "percentageToolStripMenuItem";
             resources.ApplyResources(this.percentageToolStripMenuItem, "percentageToolStripMenuItem");
+            this.percentageToolStripMenuItem.Click += new System.EventHandler(this.percentageToolStripMenuItem_Click);
             // 
             // paymentToolStripMenuItem
             // 
@@ -170,11 +171,13 @@
             // 
             this.gSTServiceTaxToolStripMenuItem.Name = "gSTServiceTaxToolStripMenuItem";
             resources.ApplyResources(this.gSTServiceTaxToolStripMenuItem, "gSTServiceTaxToolStripMenuItem");
+            this.gSTServiceTaxToolStripMenuItem.Click += new System.EventHandler(this.gSTServiceTaxToolStripMenuItem_Click);
             // 
             // pCASHFCEToolStripMenuItem
             // 
             this.pCASHFCEToolStripMenuItem.Name = "pCASHFCEToolStripMenuItem";
             resources.ApplyResources(this.pCASHFCEToolStripMenuItem, "pCASHFCEToolStripMenuItem");
+            this.pCASHFCEToolStripMenuItem.Click += new System.EventHandler(this.pCASHFCEToolStripMenuItem_Click);
             // 
             // registerDescriptorToolStripMenuItem
             // 
@@ -200,6 +203,18 @@
             // 
             this.signatureMessageSettingToolStripMenuItem.Name = "signatureMessageSettingToolStripMenuItem";
             resources.ApplyResources(this.signatureMessageSettingToolStripMenuItem, "signatureMessageSettingToolStripMenuItem");
+            // 
+            // happerHourToolStripMenuItem
+            // 
+            this.happerHourToolStripMenuItem.Name = "happerHourToolStripMenuItem";
+            resources.ApplyResources(this.happerHourToolStripMenuItem, "happerHourToolStripMenuItem");
+            this.happerHourToolStripMenuItem.Click += new System.EventHandler(this.happerHourToolStripMenuItem_Click);
+            // 
+            // electronicScaleToolStripMenuItem
+            // 
+            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
+            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
+            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click);
             // 
             // dataToolStripMenuItem
             // 
@@ -235,6 +250,12 @@
             this.dPLUToolStripMenuItem.Name = "dPLUToolStripMenuItem";
             resources.ApplyResources(this.dPLUToolStripMenuItem, "dPLUToolStripMenuItem");
             this.dPLUToolStripMenuItem.Click += new System.EventHandler(this.dPLUToolStripMenuItem_Click);
+            // 
+            // cookInfomationToolStripMenuItem
+            // 
+            this.cookInfomationToolStripMenuItem.Name = "cookInfomationToolStripMenuItem";
+            resources.ApplyResources(this.cookInfomationToolStripMenuItem, "cookInfomationToolStripMenuItem");
+            this.cookInfomationToolStripMenuItem.Click += new System.EventHandler(this.cookInfomationToolStripMenuItem_Click);
             // 
             // communicationToolStripMenuItem
             // 
@@ -314,24 +335,6 @@
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
-            // 
-            // cookInfomationToolStripMenuItem
-            // 
-            this.cookInfomationToolStripMenuItem.Name = "cookInfomationToolStripMenuItem";
-            resources.ApplyResources(this.cookInfomationToolStripMenuItem, "cookInfomationToolStripMenuItem");
-            this.cookInfomationToolStripMenuItem.Click += new System.EventHandler(this.cookInfomationToolStripMenuItem_Click);
-            // 
-            // happerHourToolStripMenuItem
-            // 
-            this.happerHourToolStripMenuItem.Name = "happerHourToolStripMenuItem";
-            resources.ApplyResources(this.happerHourToolStripMenuItem, "happerHourToolStripMenuItem");
-            this.happerHourToolStripMenuItem.Click += new System.EventHandler(this.happerHourToolStripMenuItem_Click);
-            // 
-            // electronicScaleToolStripMenuItem
-            // 
-            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
-            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
-            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
