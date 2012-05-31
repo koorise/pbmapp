@@ -119,11 +119,23 @@
     <Compile Include="frm_Setting_ElectronicScale.Designer.cs">
       <DependentUpon>frm_Setting_ElectronicScale.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Setting_GST_ServiceTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_GST_ServiceTax.Designer.cs">
+      <DependentUpon>frm_Setting_GST_ServiceTax.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Setting_HeaderFooter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Setting_HeaderFooter.Designer.cs">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Setting_Percentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_Percentage.Designer.cs">
+      <DependentUpon>frm_Setting_Percentage.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Setting_port.cs">
       <SubType>Form</SubType>
@@ -170,8 +182,14 @@
     <EmbeddedResource Include="frm_Setting_ElectronicScale.resx">
       <DependentUpon>frm_Setting_ElectronicScale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_GST_ServiceTax.resx">
+      <DependentUpon>frm_Setting_GST_ServiceTax.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_HeaderFooter.resx">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_Percentage.resx">
+      <DependentUpon>frm_Setting_Percentage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_port.resx">
       <DependentUpon>frm_Setting_port.cs</DependentUpon>
