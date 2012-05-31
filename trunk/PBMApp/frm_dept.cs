@@ -15,5 +15,30 @@ namespace PBMApp
         {
             InitializeComponent();
         }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int seletedIndex = comboBox6.SelectedIndex;
+            switch (seletedIndex)
+            {
+                case 0:
+                    panel2.Enabled = true;
+                    panel3.Enabled = false;
+                    panel4.Enabled = false;
+                    break;
+                case 1:
+                    panel2.Enabled = false;
+                    panel3.Enabled = true;
+                    panel4.Enabled = false;
+                    break;
+                case 2:
+                    panel2.Enabled = false;
+                    panel3.Enabled = false;
+                    panel4.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
