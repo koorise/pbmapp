@@ -95,6 +95,59 @@ namespace PBMApp
             frm.Show();
         }
 
+        private void cookInfomationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_CookInfo frm = new frm_CookInfo();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+
+        }
+
+        private void headerFooterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_HeaderFooter frm = new frm_Setting_HeaderFooter();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_payment frm = new frm_payment();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+
+        }
+
+        private void happerHourToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_HappyHour_ServiceTax frm = new frm_HappyHour_ServiceTax();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+
+        }
+
+        private void electronicScaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_ElectronicScale frm = new frm_Setting_ElectronicScale();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
 
     }
 }

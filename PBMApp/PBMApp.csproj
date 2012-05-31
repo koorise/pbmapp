@@ -71,6 +71,12 @@
     <Compile Include="frm_Clerk.Designer.cs">
       <DependentUpon>frm_Clerk.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_CookInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CookInfo.Designer.cs">
+      <DependentUpon>frm_CookInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_dept.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,17 +89,41 @@
     <Compile Include="frm_DPLU.Designer.cs">
       <DependentUpon>frm_DPLU.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_HappyHour_ServiceTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HappyHour_ServiceTax.Designer.cs">
+      <DependentUpon>frm_HappyHour_ServiceTax.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_payment.Designer.cs">
+      <DependentUpon>frm_payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_PLU.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_PLU.Designer.cs">
       <DependentUpon>frm_PLU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Setting_ElectronicScale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_ElectronicScale.Designer.cs">
+      <DependentUpon>frm_Setting_ElectronicScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Setting_HeaderFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_HeaderFooter.Designer.cs">
+      <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Setting_port.cs">
       <SubType>Form</SubType>
@@ -113,11 +143,17 @@
     <EmbeddedResource Include="frm_Clerk.resx">
       <DependentUpon>frm_Clerk.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_CookInfo.resx">
+      <DependentUpon>frm_CookInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_dept.resx">
       <DependentUpon>frm_dept.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DPLU.resx">
       <DependentUpon>frm_DPLU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HappyHour_ServiceTax.resx">
+      <DependentUpon>frm_HappyHour_ServiceTax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
@@ -125,8 +161,17 @@
     <EmbeddedResource Include="frm_Main.zh-CN.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_payment.resx">
+      <DependentUpon>frm_payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_PLU.resx">
       <DependentUpon>frm_PLU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_ElectronicScale.resx">
+      <DependentUpon>frm_Setting_ElectronicScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_HeaderFooter.resx">
+      <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_port.resx">
       <DependentUpon>frm_Setting_port.cs</DependentUpon>

@@ -47,7 +47,6 @@
             this.portKPFtpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cookingMessageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mallSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.couponRefundSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signatureMessageSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pLUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +66,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cookInfomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.happerHourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -124,8 +126,9 @@
             this.portKPFtpToolStripMenuItem,
             this.cookingMessageToolStripMenuItem,
             this.mallSettingToolStripMenuItem,
-            this.couponRefundSettingToolStripMenuItem,
-            this.signatureMessageSettingToolStripMenuItem});
+            this.signatureMessageSettingToolStripMenuItem,
+            this.happerHourToolStripMenuItem,
+            this.electronicScaleToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             resources.ApplyResources(this.settingToolStripMenuItem, "settingToolStripMenuItem");
             // 
@@ -150,6 +153,7 @@
             // 
             this.headerFooterToolStripMenuItem.Name = "headerFooterToolStripMenuItem";
             resources.ApplyResources(this.headerFooterToolStripMenuItem, "headerFooterToolStripMenuItem");
+            this.headerFooterToolStripMenuItem.Click += new System.EventHandler(this.headerFooterToolStripMenuItem_Click);
             // 
             // percentageToolStripMenuItem
             // 
@@ -160,6 +164,7 @@
             // 
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
             resources.ApplyResources(this.paymentToolStripMenuItem, "paymentToolStripMenuItem");
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
             // 
             // gSTServiceTaxToolStripMenuItem
             // 
@@ -191,11 +196,6 @@
             this.mallSettingToolStripMenuItem.Name = "mallSettingToolStripMenuItem";
             resources.ApplyResources(this.mallSettingToolStripMenuItem, "mallSettingToolStripMenuItem");
             // 
-            // couponRefundSettingToolStripMenuItem
-            // 
-            this.couponRefundSettingToolStripMenuItem.Name = "couponRefundSettingToolStripMenuItem";
-            resources.ApplyResources(this.couponRefundSettingToolStripMenuItem, "couponRefundSettingToolStripMenuItem");
-            // 
             // signatureMessageSettingToolStripMenuItem
             // 
             this.signatureMessageSettingToolStripMenuItem.Name = "signatureMessageSettingToolStripMenuItem";
@@ -207,7 +207,8 @@
             this.pLUToolStripMenuItem,
             this.departmentToolStripMenuItem,
             this.clerkToolStripMenuItem,
-            this.dPLUToolStripMenuItem});
+            this.dPLUToolStripMenuItem,
+            this.cookInfomationToolStripMenuItem});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
             resources.ApplyResources(this.dataToolStripMenuItem, "dataToolStripMenuItem");
             // 
@@ -314,6 +315,24 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
+            // cookInfomationToolStripMenuItem
+            // 
+            this.cookInfomationToolStripMenuItem.Name = "cookInfomationToolStripMenuItem";
+            resources.ApplyResources(this.cookInfomationToolStripMenuItem, "cookInfomationToolStripMenuItem");
+            this.cookInfomationToolStripMenuItem.Click += new System.EventHandler(this.cookInfomationToolStripMenuItem_Click);
+            // 
+            // happerHourToolStripMenuItem
+            // 
+            this.happerHourToolStripMenuItem.Name = "happerHourToolStripMenuItem";
+            resources.ApplyResources(this.happerHourToolStripMenuItem, "happerHourToolStripMenuItem");
+            this.happerHourToolStripMenuItem.Click += new System.EventHandler(this.happerHourToolStripMenuItem_Click);
+            // 
+            // electronicScaleToolStripMenuItem
+            // 
+            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
+            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
+            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click);
+            // 
             // frm_Main
             // 
             resources.ApplyResources(this, "$this");
@@ -323,6 +342,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_Main";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -350,7 +370,6 @@
         private System.Windows.Forms.ToolStripMenuItem portKPFtpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cookingMessageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mallSettingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem couponRefundSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signatureMessageSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pLUToolStripMenuItem;
@@ -372,6 +391,9 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem cookInfomationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem happerHourToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem electronicScaleToolStripMenuItem;
 
     }
 }
