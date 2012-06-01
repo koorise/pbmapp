@@ -101,6 +101,12 @@
     <Compile Include="frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_menu_plu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_menu_plu.Designer.cs">
+      <DependentUpon>frm_menu_plu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +119,23 @@
     <Compile Include="frm_PLU.Designer.cs">
       <DependentUpon>frm_PLU.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_RegisterDescriptor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RegisterDescriptor.Designer.cs">
+      <DependentUpon>frm_RegisterDescriptor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Setting_ElectronicScale.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Setting_ElectronicScale.Designer.cs">
       <DependentUpon>frm_Setting_ElectronicScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Setting_FlashReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_FlashReport.Designer.cs">
+      <DependentUpon>frm_Setting_FlashReport.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Setting_GST_ServiceTax.cs">
       <SubType>Form</SubType>
@@ -130,6 +148,12 @@
     </Compile>
     <Compile Include="frm_Setting_HeaderFooter.Designer.cs">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Setting_PCASH_FCE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_PCASH_FCE.Designer.cs">
+      <DependentUpon>frm_Setting_PCASH_FCE.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Setting_Percentage.cs">
       <SubType>Form</SubType>
@@ -148,6 +172,18 @@
     </Compile>
     <Compile Include="frm_Setting_SystemFlag.Designer.cs">
       <DependentUpon>frm_Setting_SystemFlag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Setting_TableBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_TableBarcode.Designer.cs">
+      <DependentUpon>frm_Setting_TableBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TouchScreen_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TouchScreen_Payment.Designer.cs">
+      <DependentUpon>frm_TouchScreen_Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,20 +209,32 @@
     <EmbeddedResource Include="frm_Main.zh-CN.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_menu_plu.resx">
+      <DependentUpon>frm_menu_plu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_payment.resx">
       <DependentUpon>frm_payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_PLU.resx">
       <DependentUpon>frm_PLU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_RegisterDescriptor.resx">
+      <DependentUpon>frm_RegisterDescriptor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_ElectronicScale.resx">
       <DependentUpon>frm_Setting_ElectronicScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_FlashReport.resx">
+      <DependentUpon>frm_Setting_FlashReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_GST_ServiceTax.resx">
       <DependentUpon>frm_Setting_GST_ServiceTax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_HeaderFooter.resx">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_PCASH_FCE.resx">
+      <DependentUpon>frm_Setting_PCASH_FCE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_Percentage.resx">
       <DependentUpon>frm_Setting_Percentage.cs</DependentUpon>
@@ -196,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_SystemFlag.resx">
       <DependentUpon>frm_Setting_SystemFlag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_TableBarcode.resx">
+      <DependentUpon>frm_Setting_TableBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TouchScreen_Payment.resx">
+      <DependentUpon>frm_TouchScreen_Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

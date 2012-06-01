@@ -56,6 +56,7 @@
             this.clerkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dPLUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cookInfomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPLUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.communicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendProgramInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receiveProgramInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +70,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tableBarcodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,7 +130,8 @@
             this.mallSettingToolStripMenuItem,
             this.signatureMessageSettingToolStripMenuItem,
             this.happerHourToolStripMenuItem,
-            this.electronicScaleToolStripMenuItem});
+            this.electronicScaleToolStripMenuItem,
+            this.tableBarcodeToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             resources.ApplyResources(this.settingToolStripMenuItem, "settingToolStripMenuItem");
             // 
@@ -183,6 +186,7 @@
             // 
             this.registerDescriptorToolStripMenuItem.Name = "registerDescriptorToolStripMenuItem";
             resources.ApplyResources(this.registerDescriptorToolStripMenuItem, "registerDescriptorToolStripMenuItem");
+            this.registerDescriptorToolStripMenuItem.Click += new System.EventHandler(this.registerDescriptorToolStripMenuItem_Click);
             // 
             // portKPFtpToolStripMenuItem
             // 
@@ -223,7 +227,8 @@
             this.departmentToolStripMenuItem,
             this.clerkToolStripMenuItem,
             this.dPLUToolStripMenuItem,
-            this.cookInfomationToolStripMenuItem});
+            this.cookInfomationToolStripMenuItem,
+            this.menuPLUToolStripMenuItem});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
             resources.ApplyResources(this.dataToolStripMenuItem, "dataToolStripMenuItem");
             // 
@@ -256,6 +261,12 @@
             this.cookInfomationToolStripMenuItem.Name = "cookInfomationToolStripMenuItem";
             resources.ApplyResources(this.cookInfomationToolStripMenuItem, "cookInfomationToolStripMenuItem");
             this.cookInfomationToolStripMenuItem.Click += new System.EventHandler(this.cookInfomationToolStripMenuItem_Click);
+            // 
+            // menuPLUToolStripMenuItem
+            // 
+            this.menuPLUToolStripMenuItem.Name = "menuPLUToolStripMenuItem";
+            resources.ApplyResources(this.menuPLUToolStripMenuItem, "menuPLUToolStripMenuItem");
+            this.menuPLUToolStripMenuItem.Click += new System.EventHandler(this.menuPLUToolStripMenuItem_Click);
             // 
             // communicationToolStripMenuItem
             // 
@@ -336,6 +347,12 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
+            // tableBarcodeToolStripMenuItem
+            // 
+            this.tableBarcodeToolStripMenuItem.Name = "tableBarcodeToolStripMenuItem";
+            resources.ApplyResources(this.tableBarcodeToolStripMenuItem, "tableBarcodeToolStripMenuItem");
+            this.tableBarcodeToolStripMenuItem.Click += new System.EventHandler(this.tableBarcodeToolStripMenuItem_Click);
+            // 
             // frm_Main
             // 
             resources.ApplyResources(this, "$this");
@@ -397,6 +414,8 @@
         private System.Windows.Forms.ToolStripMenuItem cookInfomationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem happerHourToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem electronicScaleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuPLUToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableBarcodeToolStripMenuItem;
 
     }
 }
