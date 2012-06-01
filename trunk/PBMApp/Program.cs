@@ -15,7 +15,7 @@ namespace PBMApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Main());
+            Application.Run(new frm_TouchScreen_Payment());
         }
     }
 }

@@ -57,3 +57,9 @@ E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_HappyHour_ServiceTax.resources
 E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_ElectronicScale.resources
 E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_Percentage.resources
 E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_GST_ServiceTax.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PCASH_FCE.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_menu_plu.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_RegisterDescriptor.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_FlashReport.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_TableBarcode.resources
+E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_TouchScreen_Payment.resources

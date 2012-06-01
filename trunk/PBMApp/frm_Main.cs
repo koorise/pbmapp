@@ -179,6 +179,37 @@ namespace PBMApp
             frm.Show();
         }
 
+        private void menuPLUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_menu_plu frm = new frm_menu_plu();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+
+        }
+
+        private void registerDescriptorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_RegisterDescriptor frm = new frm_RegisterDescriptor();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void tableBarcodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_TableBarcode frm = new frm_Setting_TableBarcode();
+            frm.ControlBox = false;
+            frm.ControlBox = false;
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
 
     }
 }

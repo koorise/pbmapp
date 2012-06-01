@@ -239,6 +239,12 @@
   <data name="electronicScaleToolStripMenuItem.Text" xml:space="preserve">
     <value>Electronic Scale</value>
   </data>
+  <data name="tableBarcodeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="tableBarcodeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Table Barcode</value>
+  </data>
   <data name="settingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
   </data>
@@ -274,6 +280,12 @@
   </data>
   <data name="cookInfomationToolStripMenuItem.Text" xml:space="preserve">
     <value>Cook Infomation</value>
+  </data>
+  <data name="menuPLUToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="menuPLUToolStripMenuItem.Text" xml:space="preserve">
+    <value>Menu PLU</value>
   </data>
   <data name="dataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 20</value>
@@ -570,6 +582,12 @@
   <data name="&gt;&gt;cookInfomationToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;menuPLUToolStripMenuItem.Name" xml:space="preserve">
+    <value>menuPLUToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;menuPLUToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;communicationToolStripMenuItem.Name" xml:space="preserve">
     <value>communicationToolStripMenuItem</value>
   </data>
@@ -641,6 +659,12 @@
   </data>
   <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableBarcodeToolStripMenuItem.Name" xml:space="preserve">
+    <value>tableBarcodeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;tableBarcodeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frm_Main</value>
