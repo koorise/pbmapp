@@ -31,18 +31,20 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbInterrupt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckAll = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.chkLimitList = new System.Windows.Forms.CheckedListBox();
+            this.tbDesc = new System.Windows.Forms.TextBox();
+            this.tbSecretCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -68,8 +70,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(838, 554);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel1
             // 
@@ -83,13 +87,15 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.tbInterrupt);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.ckAll);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbDesc);
+            this.groupBox1.Controls.Add(this.tbSecretCode);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbNo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,6 +105,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Clerk Information";
+            // 
+            // tbInterrupt
+            // 
+            this.tbInterrupt.Location = new System.Drawing.Point(649, 39);
+            this.tbInterrupt.Name = "tbInterrupt";
+            this.tbInterrupt.Size = new System.Drawing.Size(100, 21);
+            this.tbInterrupt.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(563, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 12);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Interrupt No.";
             // 
             // panel4
             // 
@@ -128,6 +150,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -147,20 +170,20 @@
             this.button1.Text = "Send";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // ckAll
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(682, 247);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(108, 16);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "All Limitation";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.ckAll.AutoSize = true;
+            this.ckAll.Location = new System.Drawing.Point(682, 247);
+            this.ckAll.Name = "ckAll";
+            this.ckAll.Size = new System.Drawing.Size(108, 16);
+            this.ckAll.TabIndex = 7;
+            this.ckAll.Text = "All Limitation";
+            this.ckAll.UseVisualStyleBackColor = true;
+            this.ckAll.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkedListBox1);
+            this.groupBox2.Controls.Add(this.chkLimitList);
             this.groupBox2.Location = new System.Drawing.Point(46, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(747, 175);
@@ -168,11 +191,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Limitation";
             // 
-            // checkedListBox1
+            // chkLimitList
             // 
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.chkLimitList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkLimitList.FormattingEnabled = true;
+            this.chkLimitList.Items.AddRange(new object[] {
             "1-Void",
             "1-Percentage",
             "1-R.M",
@@ -186,25 +209,25 @@
             "1-Coupon",
             "Receipt on/off",
             "1-Ej"});
-            this.checkedListBox1.Location = new System.Drawing.Point(3, 17);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(741, 155);
-            this.checkedListBox1.TabIndex = 0;
+            this.chkLimitList.Location = new System.Drawing.Point(3, 17);
+            this.chkLimitList.MultiColumn = true;
+            this.chkLimitList.Name = "chkLimitList";
+            this.chkLimitList.Size = new System.Drawing.Size(741, 155);
+            this.chkLimitList.TabIndex = 0;
             // 
-            // textBox3
+            // tbDesc
             // 
-            this.textBox3.Location = new System.Drawing.Point(457, 39);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(331, 21);
-            this.textBox3.TabIndex = 5;
+            this.tbDesc.Location = new System.Drawing.Point(457, 39);
+            this.tbDesc.Name = "tbDesc";
+            this.tbDesc.Size = new System.Drawing.Size(100, 21);
+            this.tbDesc.TabIndex = 5;
             // 
-            // textBox2
+            // tbSecretCode
             // 
-            this.textBox2.Location = new System.Drawing.Point(262, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 4;
+            this.tbSecretCode.Location = new System.Drawing.Point(262, 39);
+            this.tbSecretCode.Name = "tbSecretCode";
+            this.tbSecretCode.Size = new System.Drawing.Size(100, 21);
+            this.tbSecretCode.TabIndex = 4;
             // 
             // label3
             // 
@@ -215,12 +238,12 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Description";
             // 
-            // textBox1
+            // tbNo
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 2;
+            this.tbNo.Location = new System.Drawing.Point(73, 39);
+            this.tbNo.Name = "tbNo";
+            this.tbNo.Size = new System.Drawing.Size(100, 21);
+            this.tbNo.TabIndex = 2;
             // 
             // label2
             // 
@@ -307,6 +330,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_Clerk";
             this.Text = "Clerk";
+            this.Load += new System.EventHandler(this.frm_Clerk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -326,13 +350,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckAll;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.CheckedListBox chkLimitList;
+        private System.Windows.Forms.TextBox tbDesc;
+        private System.Windows.Forms.TextBox tbSecretCode;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
@@ -346,5 +370,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbInterrupt;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -11,6 +11,8 @@
 // </summary>
 //-----------------------------------------------------------------------------
 
+using SubSonic.SqlGeneration.Schema;
+
 namespace PBM.DAL
 {
 	using System;
@@ -2076,546 +2078,6 @@ namespace PBM.DAL
 
 	#endregion 
 
-	#region WH_Clerk Class
-	   
-    /// <summary>
-    /// A class which represents the WH_Clerk table in the PBM Database.
-    /// </summary>
-    public partial class WH_Clerk: IActiveRecord
-    {    
-        #region Built-in testing
-        
-        static IList<WH_Clerk> TestItems;
-        static TestRepository<WH_Clerk> _testRepo;
-        
-        public void SetIsLoaded(bool isLoaded)
-        {
-            _isLoaded=isLoaded;
-        }
-        
-        static void SetTestRepo()
-        {
-            _testRepo  =  _testRepo ?? new TestRepository<WH_Clerk>(new PBM.DAL.PBMDB());
-        }
-        
-        public static void ResetTestRepo()
-        {
-            _testRepo = null;
-            SetTestRepo();
-        }
-        
-        public static void Setup(List<WH_Clerk> testlist)
-        {
-            SetTestRepo();
-            _testRepo._items = testlist;
-        }
-        
-        public static void Setup(WH_Clerk item) 
-        {
-            SetTestRepo();
-            _testRepo._items.Add(item);
-        }
-        
-        public static void Setup(int testItems) 
-        {
-            SetTestRepo();
-            for(int i=0;i<testItems;i++)
-            {
-                WH_Clerk item=new WH_Clerk();
-                _testRepo._items.Add(item);
-            }
-        }
-        
-        public bool TestMode = false;
-
-        #endregion
-
-        IRepository<WH_Clerk> _repo;
-        ITable tbl;
-        bool _isNew;
-        
-        public bool IsNew()
-        {
-            return _isNew;
-        }
-        
-        public void SetIsNew(bool isNew)
-        {
-            _isNew=isNew;
-        }
-        
-        bool _isLoaded;
-        public bool IsLoaded()
-        {
-            return _isLoaded;
-        }
-                
-        List<IColumn> _dirtyColumns;
-        public bool IsDirty()
-        {
-            return _dirtyColumns.Count>0;
-        }
-        
-        public List<IColumn> GetDirtyColumns ()
-        {
-            return _dirtyColumns;
-        }
-
-        PBM.DAL.PBMDB _db;
-        public WH_Clerk(string connectionString, string providerName) 
-        {
-
-            _db=new PBM.DAL.PBMDB(connectionString, providerName);
-            Init();            
-         }
-         
-        void Init()
-        {
-            TestMode=this._db.DataProvider.ConnectionString.Equals("test", StringComparison.InvariantCultureIgnoreCase);
-            _dirtyColumns=new List<IColumn>();
-            if(TestMode)
-            {
-                WH_Clerk.SetTestRepo();
-                _repo=_testRepo;
-            }
-            else
-            {
-                _repo = new SubSonicRepository<WH_Clerk>(_db);
-            }
-            
-            tbl=_repo.GetTable();
-            _isNew = true;
-            OnCreated();
-        }
-        
-        public WH_Clerk()
-        {
-             _db=new PBM.DAL.PBMDB();
-            Init();            
-        }        
-       
-        partial void OnCreated();            
-        partial void OnLoaded();        
-        partial void OnSaved();        
-        partial void OnChanged();
-        
-        public IList<IColumn> Columns
-        {
-            get
-            {
-                return tbl.Columns;
-            }
-        }
-
-        public WH_Clerk(Expression<Func<WH_Clerk, bool>> expression):this() 
-        {
-            _isLoaded=_repo.Load(this,expression);
-            if(_isLoaded)
-                OnLoaded();
-        }
-        
-        internal static IRepository<WH_Clerk> GetRepo(string connectionString, string providerName)
-        {
-            PBM.DAL.PBMDB db;
-            if(String.IsNullOrEmpty(connectionString))
-            {
-                db=new PBM.DAL.PBMDB();
-            }
-            else
-            {
-                db=new PBM.DAL.PBMDB(connectionString, providerName);
-            }
-            
-            IRepository<WH_Clerk> _repo;
-            
-            if(db.TestMode)
-            {
-                WH_Clerk.SetTestRepo();
-                _repo=_testRepo;
-            }
-            else
-            {
-                _repo = new SubSonicRepository<WH_Clerk>(db);
-            }
-            
-            return _repo;        
-        }       
-        
-        internal static IRepository<WH_Clerk> GetRepo()
-        {
-            return GetRepo("","");
-        }
-        
-        public static WH_Clerk SingleOrDefault(Expression<Func<WH_Clerk, bool>> expression)
-        {           
-            var qry=new SubSonic.Query.Select().From<WH_Clerk>();
-            qry.Constraints=expression.ParseConstraints().ToList();
-            var single=qry.ExecuteSingle<WH_Clerk>();
-            
-            if (single != null)
-                single.OnLoaded();
-                
-            return single;
-        }
-              
-        public static WH_Clerk SingleOrDefault(Expression<Func<WH_Clerk, bool>> expression,string connectionString, string providerName)
-        {            
-            var provider=ProviderFactory.GetProvider(connectionString,providerName);
-            var qry=new SubSonic.Query.Select(provider).From<WH_Clerk>();
-            qry.Constraints=expression.ParseConstraints().ToList();
-            var single=qry.ExecuteSingle<WH_Clerk>();
-            
-            if (single != null)
-                single.OnLoaded();
-                
-            return single;
-        }        
-        
-        public static bool Exists(Expression<Func<WH_Clerk, bool>> expression,string connectionString, string providerName)
-        {           
-            return All(connectionString,providerName).Any(expression);
-        }
-                
-        public static bool Exists(Expression<Func<WH_Clerk, bool>> expression) 
-        {
-           
-            return All().Any(expression);
-        }        
-
-        public static IList<WH_Clerk> Find(Expression<Func<WH_Clerk, bool>> expression)
-        {            
-            var qry=new SubSonic.Query.Select().From<WH_Clerk>();
-            qry.Constraints=expression.ParseConstraints().ToList();
-            
-            return qry.ToList<WH_Clerk>();
-        }
-        
-        public static IList<WH_Clerk> Find(Expression<Func<WH_Clerk, bool>> expression,string connectionString, string providerName) 
-        {
-            var provider=ProviderFactory.GetProvider(connectionString,providerName);
-            var qry=new SubSonic.Query.Select(provider).From<WH_Clerk>();
-            qry.Constraints=expression.ParseConstraints().ToList();
-            
-            return qry.ToList<WH_Clerk>();
-        }
-        
-        public static IQueryable<WH_Clerk> All(string connectionString, string providerName) 
-        {
-            return GetRepo(connectionString,providerName).GetAll();
-        }
-        
-        public static IQueryable<WH_Clerk> All() 
-        {
-            return GetRepo().GetAll();
-        }
-        
-        public static PagedList<WH_Clerk> GetPaged(string sortBy, int pageIndex, int pageSize,string connectionString, string providerName)
-        {
-            return GetRepo(connectionString,providerName).GetPaged(sortBy, pageIndex, pageSize);
-        }
-      
-        public static PagedList<WH_Clerk> GetPaged(string sortBy, int pageIndex, int pageSize) 
-        {
-            return GetRepo().GetPaged(sortBy, pageIndex, pageSize);
-        }
-
-        public static PagedList<WH_Clerk> GetPaged(int pageIndex, int pageSize,string connectionString, string providerName)
-        {
-            return GetRepo(connectionString,providerName).GetPaged(pageIndex, pageSize);            
-        }
-
-        public static PagedList<WH_Clerk> GetPaged(int pageIndex, int pageSize) 
-        {
-            return GetRepo().GetPaged(pageIndex, pageSize);            
-        }
-
-        public string KeyName()
-        {
-            return "ID";
-        }
-
-        public object KeyValue()
-        {
-            return this.ID;
-        }
-        
-        public void SetKeyValue(object value)
-        {
-            if (value != null)
-             {
-                var settable = value.ChangeTypeTo<long>();
-                this.GetType().GetProperty(this.KeyName()).SetValue(this, settable, null);
-            }
-        }
-        
-        public override string ToString()
-        {
-            return this.SecretCode.ToString();
-        }
-
-        public override bool Equals(object obj)
-        {
-            if(obj.GetType()==typeof(WH_Clerk))
-            {
-                WH_Clerk compare=(WH_Clerk)obj;
-                return compare.KeyValue()==this.KeyValue();
-            }
-            else
-            {
-                return base.Equals(obj);
-            }
-        }
-
-        public string DescriptorValue()
-        {
-            return this.SecretCode.ToString();
-        }
-
-        public string DescriptorColumn() 
-        {
-            return "SecretCode";
-        }
-        
-        public static string GetKeyColumn()
-        {
-            return "ID";
-        }  
-              
-        public static string GetDescriptorColumn()
-        {
-            return "SecretCode";
-        }
-        
-        #region ' Foreign Keys '
-        #endregion     
-
-        long _ID;
-        public long ID
-        {
-            get 
-            { 
-				return _ID; 
-            }
-            
-            set
-            {                
-                _ID=value;
-                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ID");
-                if(col!=null)
-                {
-                    if(!_dirtyColumns.Contains(col) && _isLoaded)
-                    {
-                        _dirtyColumns.Add(col);
-                    }
-                }
-                
-                OnChanged();
-            }
-        }
-        
-        long? _isNum;
-        public long? isNum
-        {
-            get 
-            { 
-				return _isNum; 
-            }
-            
-            set
-            {                
-                _isNum=value;
-                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="isNum");
-                if(col!=null)
-                {
-                    if(!_dirtyColumns.Contains(col) && _isLoaded)
-                    {
-                        _dirtyColumns.Add(col);
-                    }
-                }
-                
-                OnChanged();
-            }
-        }
-        
-        string _SecretCode;
-        public string SecretCode
-        {
-            get 
-            { 
-				return _SecretCode; 
-            }
-            
-            set
-            {                
-                _SecretCode=value;
-                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="SecretCode");
-                if(col!=null)
-                {
-                    if(!_dirtyColumns.Contains(col) && _isLoaded)
-                    {
-                        _dirtyColumns.Add(col);
-                    }
-                }
-                
-                OnChanged();
-            }
-        }
-        
-        string _Description;
-        public string Description
-        {
-            get 
-            { 
-				return _Description; 
-            }
-            
-            set
-            {                
-                _Description=value;
-                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Description");
-                if(col!=null)
-                {
-                    if(!_dirtyColumns.Contains(col) && _isLoaded)
-                    {
-                        _dirtyColumns.Add(col);
-                    }
-                }
-                
-                OnChanged();
-            }
-        }
-        
-        string _Limitaions;
-        public string Limitaions
-        {
-            get 
-            { 
-				return _Limitaions; 
-            }
-            
-            set
-            {                
-                _Limitaions=value;
-                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Limitaions");
-                if(col!=null)
-                {
-                    if(!_dirtyColumns.Contains(col) && _isLoaded)
-                    {
-                        _dirtyColumns.Add(col);
-                    }
-                }
-                
-                OnChanged();
-            }
-        }
-        
-        public DbCommand GetUpdateCommand() 
-        {
-            if(TestMode)
-                return _db.DataProvider.CreateCommand();
-            else
-                return this.ToUpdateQuery(_db.Provider).GetCommand().ToDbCommand();            
-        }
-        
-        public DbCommand GetInsertCommand()
-        { 
-            if(TestMode)
-                return _db.DataProvider.CreateCommand();
-            else
-                return this.ToInsertQuery(_db.Provider).GetCommand().ToDbCommand();
-        }
-        
-        public DbCommand GetDeleteCommand()
-        {
-            if(TestMode)
-                return _db.DataProvider.CreateCommand();
-            else
-                return this.ToDeleteQuery(_db.Provider).GetCommand().ToDbCommand();
-        }
-        
-        //persistence
-        public void Save()
-        {
-            Save("");
-        }
-        
-        public void Update(string userName)
-        {
-            _repo.Update(this);
-            OnSaved();
-       }
-        
-        public void Add(string userName)
-        {
-            this.SetKeyValue(_repo.Add(this));
-            OnSaved();
-        }
-        
-        public void Save(string userName) 
-        {
-            if (_isNew) 
-            {
-                Add(userName);                
-            }
-            else 
-            {
-                Update(userName);
-            }            
-        }
-
-        public void Delete()
-        {
-            _repo.Delete(KeyValue());
-						
-        }
-
-        public static void Delete(object key) 
-        {        
-            var repo = new SubSonicRepository<WH_Clerk>(new PBM.DAL.PBMDB());
-             
-            repo.Delete(key);            
-        }
-
-        public static void DeleteMany(Expression<Func<WH_Clerk, bool>> expression)
-        {
-            var repo = GetRepo();            
-  
-            repo.DeleteMany(expression);            
-        }
-        
-        public void Load(IDataReader rdr)
-        {
-            Load(rdr, true);
-        }
-        
-        public void Load(IDataReader rdr, bool closeReader)
-        {
-            if (rdr.Read())
-             {
-                try
-                {
-                    rdr.Load(this);
-                    _isNew = false;
-                    _isLoaded = true;
-                } 
-                catch 
-                {
-                    _isLoaded = false;
-                    throw;
-                }
-            }
-            else
-            {
-                _isLoaded = false;
-            }
-
-            if (closeReader)
-                rdr.Dispose();
-        }
-    }
-
-	#endregion 
-
 	#region WH_CookInformation Class
 	   
     /// <summary>
@@ -3585,6 +3047,569 @@ namespace PBM.DAL
         }
 
         public static void DeleteMany(Expression<Func<WH_Relation_PLU_Condiment, bool>> expression)
+        {
+            var repo = GetRepo();            
+  
+            repo.DeleteMany(expression);            
+        }
+        
+        public void Load(IDataReader rdr)
+        {
+            Load(rdr, true);
+        }
+        
+        public void Load(IDataReader rdr, bool closeReader)
+        {
+            if (rdr.Read())
+             {
+                try
+                {
+                    rdr.Load(this);
+                    _isNew = false;
+                    _isLoaded = true;
+                } 
+                catch 
+                {
+                    _isLoaded = false;
+                    throw;
+                }
+            }
+            else
+            {
+                _isLoaded = false;
+            }
+
+            if (closeReader)
+                rdr.Dispose();
+        }
+    }
+
+	#endregion 
+
+	#region WH_Clerk Class
+	   
+    /// <summary>
+    /// A class which represents the WH_Clerk table in the PBM Database.
+    /// </summary>
+    public partial class WH_Clerk: IActiveRecord
+    {    
+        #region Built-in testing
+        
+        static IList<WH_Clerk> TestItems;
+        static TestRepository<WH_Clerk> _testRepo;
+        
+        public void SetIsLoaded(bool isLoaded)
+        {
+            _isLoaded=isLoaded;
+        }
+        
+        static void SetTestRepo()
+        {
+            _testRepo  =  _testRepo ?? new TestRepository<WH_Clerk>(new PBM.DAL.PBMDB());
+        }
+        
+        public static void ResetTestRepo()
+        {
+            _testRepo = null;
+            SetTestRepo();
+        }
+        
+        public static void Setup(List<WH_Clerk> testlist)
+        {
+            SetTestRepo();
+            _testRepo._items = testlist;
+        }
+        
+        public static void Setup(WH_Clerk item) 
+        {
+            SetTestRepo();
+            _testRepo._items.Add(item);
+        }
+        
+        public static void Setup(int testItems) 
+        {
+            SetTestRepo();
+            for(int i=0;i<testItems;i++)
+            {
+                WH_Clerk item=new WH_Clerk();
+                _testRepo._items.Add(item);
+            }
+        }
+        
+        public bool TestMode = false;
+
+        #endregion
+
+        IRepository<WH_Clerk> _repo;
+        ITable tbl;
+        bool _isNew;
+        
+        public bool IsNew()
+        {
+            return _isNew;
+        }
+        
+        public void SetIsNew(bool isNew)
+        {
+            _isNew=isNew;
+        }
+        
+        bool _isLoaded;
+        public bool IsLoaded()
+        {
+            return _isLoaded;
+        }
+                
+        List<IColumn> _dirtyColumns;
+        public bool IsDirty()
+        {
+            return _dirtyColumns.Count>0;
+        }
+        
+        public List<IColumn> GetDirtyColumns ()
+        {
+            return _dirtyColumns;
+        }
+
+        PBM.DAL.PBMDB _db;
+        public WH_Clerk(string connectionString, string providerName) 
+        {
+
+            _db=new PBM.DAL.PBMDB(connectionString, providerName);
+            Init();            
+         }
+         
+        void Init()
+        {
+            TestMode=this._db.DataProvider.ConnectionString.Equals("test", StringComparison.InvariantCultureIgnoreCase);
+            _dirtyColumns=new List<IColumn>();
+            if(TestMode)
+            {
+                WH_Clerk.SetTestRepo();
+                _repo=_testRepo;
+            }
+            else
+            {
+                _repo = new SubSonicRepository<WH_Clerk>(_db);
+            }
+            
+            tbl=_repo.GetTable();
+            _isNew = true;
+            OnCreated();
+        }
+        
+        public WH_Clerk()
+        {
+             _db=new PBM.DAL.PBMDB();
+            Init();            
+        }        
+       
+        partial void OnCreated();            
+        partial void OnLoaded();        
+        partial void OnSaved();        
+        partial void OnChanged();
+        
+        public IList<IColumn> Columns
+        {
+            get
+            {
+                return tbl.Columns;
+            }
+        }
+
+        public WH_Clerk(Expression<Func<WH_Clerk, bool>> expression):this() 
+        {
+            _isLoaded=_repo.Load(this,expression);
+            if(_isLoaded)
+                OnLoaded();
+        }
+        
+        internal static IRepository<WH_Clerk> GetRepo(string connectionString, string providerName)
+        {
+            PBM.DAL.PBMDB db;
+            if(String.IsNullOrEmpty(connectionString))
+            {
+                db=new PBM.DAL.PBMDB();
+            }
+            else
+            {
+                db=new PBM.DAL.PBMDB(connectionString, providerName);
+            }
+            
+            IRepository<WH_Clerk> _repo;
+            
+            if(db.TestMode)
+            {
+                WH_Clerk.SetTestRepo();
+                _repo=_testRepo;
+            }
+            else
+            {
+                _repo = new SubSonicRepository<WH_Clerk>(db);
+            }
+            
+            return _repo;        
+        }       
+        
+        internal static IRepository<WH_Clerk> GetRepo()
+        {
+            return GetRepo("","");
+        }
+        
+        public static WH_Clerk SingleOrDefault(Expression<Func<WH_Clerk, bool>> expression)
+        {           
+            var qry=new SubSonic.Query.Select().From<WH_Clerk>();
+            qry.Constraints=expression.ParseConstraints().ToList();
+            var single=qry.ExecuteSingle<WH_Clerk>();
+            
+            if (single != null)
+                single.OnLoaded();
+                
+            return single;
+        }
+              
+        public static WH_Clerk SingleOrDefault(Expression<Func<WH_Clerk, bool>> expression,string connectionString, string providerName)
+        {            
+            var provider=ProviderFactory.GetProvider(connectionString,providerName);
+            var qry=new SubSonic.Query.Select(provider).From<WH_Clerk>();
+            qry.Constraints=expression.ParseConstraints().ToList();
+            var single=qry.ExecuteSingle<WH_Clerk>();
+            
+            if (single != null)
+                single.OnLoaded();
+                
+            return single;
+        }        
+        
+        public static bool Exists(Expression<Func<WH_Clerk, bool>> expression,string connectionString, string providerName)
+        {           
+            return All(connectionString,providerName).Any(expression);
+        }
+                
+        public static bool Exists(Expression<Func<WH_Clerk, bool>> expression) 
+        {
+           
+            return All().Any(expression);
+        }        
+
+        public static IList<WH_Clerk> Find(Expression<Func<WH_Clerk, bool>> expression)
+        {            
+            var qry=new SubSonic.Query.Select().From<WH_Clerk>();
+            qry.Constraints=expression.ParseConstraints().ToList();
+            
+            return qry.ToList<WH_Clerk>();
+        }
+        
+        public static IList<WH_Clerk> Find(Expression<Func<WH_Clerk, bool>> expression,string connectionString, string providerName) 
+        {
+            var provider=ProviderFactory.GetProvider(connectionString,providerName);
+            var qry=new SubSonic.Query.Select(provider).From<WH_Clerk>();
+            qry.Constraints=expression.ParseConstraints().ToList();
+            
+            return qry.ToList<WH_Clerk>();
+        }
+        
+        public static IQueryable<WH_Clerk> All(string connectionString, string providerName) 
+        {
+            return GetRepo(connectionString,providerName).GetAll();
+        }
+        
+        public static IQueryable<WH_Clerk> All() 
+        {
+            return GetRepo().GetAll();
+        }
+        
+        public static PagedList<WH_Clerk> GetPaged(string sortBy, int pageIndex, int pageSize,string connectionString, string providerName)
+        {
+            return GetRepo(connectionString,providerName).GetPaged(sortBy, pageIndex, pageSize);
+        }
+      
+        public static PagedList<WH_Clerk> GetPaged(string sortBy, int pageIndex, int pageSize) 
+        {
+            return GetRepo().GetPaged(sortBy, pageIndex, pageSize);
+        }
+
+        public static PagedList<WH_Clerk> GetPaged(int pageIndex, int pageSize,string connectionString, string providerName)
+        {
+            return GetRepo(connectionString,providerName).GetPaged(pageIndex, pageSize);            
+        }
+
+        public static PagedList<WH_Clerk> GetPaged(int pageIndex, int pageSize) 
+        {
+            return GetRepo().GetPaged(pageIndex, pageSize);            
+        }
+
+        public string KeyName()
+        {
+            return "ID";
+        }
+
+        public object KeyValue()
+        {
+            return this.ID;
+        }
+        
+        public void SetKeyValue(object value)
+        {
+            if (value != null)
+             {
+                var settable = value.ChangeTypeTo<long>();
+                this.GetType().GetProperty(this.KeyName()).SetValue(this, settable, null);
+            }
+        }
+        
+        public override string ToString()
+        {
+            return this.isNum.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if(obj.GetType()==typeof(WH_Clerk))
+            {
+                WH_Clerk compare=(WH_Clerk)obj;
+                return compare.KeyValue()==this.KeyValue();
+            }
+            else
+            {
+                return base.Equals(obj);
+            }
+        }
+
+        public string DescriptorValue()
+        {
+            return this.isNum.ToString();
+        }
+
+        public string DescriptorColumn() 
+        {
+            return "isNum";
+        }
+        
+        public static string GetKeyColumn()
+        {
+            return "ID";
+        }  
+              
+        public static string GetDescriptorColumn()
+        {
+            return "isNum";
+        }
+        
+        #region ' Foreign Keys '
+        #endregion     
+
+        long _ID; 
+        public long ID
+        {
+            get 
+            { 
+				return _ID; 
+            }
+            
+            set
+            {                
+                _ID=value;
+                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ID");
+                if(col!=null)
+                {
+                    if(!_dirtyColumns.Contains(col) && _isLoaded)
+                    {
+                        _dirtyColumns.Add(col);
+                    }
+                }
+                
+                OnChanged();
+            }
+        }
+        
+        string _isNum;
+        public string isNum
+        {
+            get 
+            { 
+				return _isNum; 
+            }
+            
+            set
+            {                
+                _isNum=value;
+                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="isNum");
+                if(col!=null)
+                {
+                    if(!_dirtyColumns.Contains(col) && _isLoaded)
+                    {
+                        _dirtyColumns.Add(col);
+                    }
+                }
+                
+                OnChanged();
+            }
+        }
+        
+        string _SecretCode;
+        public string SecretCode
+        {
+            get 
+            { 
+				return _SecretCode; 
+            }
+            
+            set
+            {                
+                _SecretCode=value;
+                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="SecretCode");
+                if(col!=null)
+                {
+                    if(!_dirtyColumns.Contains(col) && _isLoaded)
+                    {
+                        _dirtyColumns.Add(col);
+                    }
+                }
+                
+                OnChanged();
+            }
+        }
+        
+        string _Description;
+        public string Description
+        {
+            get 
+            { 
+				return _Description; 
+            }
+            
+            set
+            {                
+                _Description=value;
+                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Description");
+                if(col!=null)
+                {
+                    if(!_dirtyColumns.Contains(col) && _isLoaded)
+                    {
+                        _dirtyColumns.Add(col);
+                    }
+                }
+                
+                OnChanged();
+            }
+        }
+        
+        string _Limitaions;
+        public string Limitaions
+        {
+            get 
+            { 
+				return _Limitaions; 
+            }
+            
+            set
+            {                
+                _Limitaions=value;
+                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Limitaions");
+                if(col!=null)
+                {
+                    if(!_dirtyColumns.Contains(col) && _isLoaded)
+                    {
+                        _dirtyColumns.Add(col);
+                    }
+                }
+                
+                OnChanged();
+            }
+        }
+        
+        string _InterruptNo;
+        public string InterruptNo
+        {
+            get 
+            { 
+				return _InterruptNo; 
+            }
+            
+            set
+            {                
+                _InterruptNo=value;
+                var col=tbl.Columns.SingleOrDefault(x=>x.Name=="InterruptNo");
+                if(col!=null)
+                {
+                    if(!_dirtyColumns.Contains(col) && _isLoaded)
+                    {
+                        _dirtyColumns.Add(col);
+                    }
+                }
+                
+                OnChanged();
+            }
+        }
+        
+        public DbCommand GetUpdateCommand() 
+        {
+            if(TestMode)
+                return _db.DataProvider.CreateCommand();
+            else
+                return this.ToUpdateQuery(_db.Provider).GetCommand().ToDbCommand();            
+        }
+        
+        public DbCommand GetInsertCommand()
+        { 
+            if(TestMode)
+                return _db.DataProvider.CreateCommand();
+            else
+                return this.ToInsertQuery(_db.Provider).GetCommand().ToDbCommand();
+        }
+        
+        public DbCommand GetDeleteCommand()
+        {
+            if(TestMode)
+                return _db.DataProvider.CreateCommand();
+            else
+                return this.ToDeleteQuery(_db.Provider).GetCommand().ToDbCommand();
+        }
+        
+        //persistence
+        public void Save()
+        {
+            Save("");
+        }
+        
+        public void Update(string userName)
+        {
+            _repo.Update(this);
+            OnSaved();
+       } 
+        public void Add(string userName)
+        {
+            this.SetKeyValue(_repo.Add(this));
+            OnSaved();
+        }
+        
+        public void Save(string userName) 
+        {
+            if (_isNew) 
+            {
+                Add(userName);                
+            }
+            else 
+            {
+                Update(userName);
+            }            
+        }
+
+        public void Delete()
+        {
+            _repo.Delete(KeyValue());
+						
+        }
+
+        public static void Delete(object key) 
+        {        
+            var repo = new SubSonicRepository<WH_Clerk>(new PBM.DAL.PBMDB());
+             
+            repo.Delete(key);            
+        }
+
+        public static void DeleteMany(Expression<Func<WH_Clerk, bool>> expression)
         {
             var repo = GetRepo();            
   

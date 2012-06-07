@@ -138,9 +138,9 @@ namespace PBM.DAL
         public Query<WH_Relation_Cook_PLU> WH_Relation_Cook_PLUs{ get; set; }
         public Query<WH_PLU> WH_PLUS{ get; set; }
         public Query<WH_Department> WH_Departments{ get; set; }
-        public Query<WH_Clerk> WH_Clerks{ get; set; }
         public Query<WH_CookInformation> WH_CookInformations{ get; set; }
         public Query<WH_Relation_PLU_Condiment> WH_Relation_PLU_Condiments{ get; set; }
+        public Query<WH_Clerk> WH_Clerks{ get; set; }
 
         #region Aggregates and SubSonic Queries
         
@@ -247,9 +247,9 @@ namespace PBM.DAL
             this.WH_Relation_Cook_PLUs = new Query<WH_Relation_Cook_PLU>(this.provider);
             this.WH_PLUS = new Query<WH_PLU>(this.provider);
             this.WH_Departments = new Query<WH_Department>(this.provider);
-            this.WH_Clerks = new Query<WH_Clerk>(this.provider);
             this.WH_CookInformations = new Query<WH_CookInformation>(this.provider);
             this.WH_Relation_PLU_Condiments = new Query<WH_Relation_PLU_Condiment>(this.provider);
+            this.WH_Clerks = new Query<WH_Clerk>(this.provider);
 
             #endregion           
 
@@ -472,42 +472,6 @@ namespace PBM.DAL
             WH_Department_str_Vat_Tax_GST.IsForeignKey = false;
             WH_DepartmentSchema.Columns.Add(WH_Department_str_Vat_Tax_GST);
             DataProvider.Schema.Tables.Add(WH_DepartmentSchema);
-            // Table: WH_Clerk
-            // Primary Key: ID
-            ITable WH_ClerkSchema = new DatabaseTable("WH_Clerk", DataProvider);
-            WH_ClerkSchema.ClassName = "WH_Clerk";
-            			IColumn WH_Clerk_ID = new DatabaseColumn("ID",WH_ClerkSchema);
-            WH_Clerk_ID.IsPrimaryKey = true;
-            WH_Clerk_ID.DataType=DbType.Int64;
-            WH_Clerk_ID.IsNullable = false;
-            WH_Clerk_ID.AutoIncrement = true;
-            WH_Clerk_ID.IsForeignKey = false;
-            WH_ClerkSchema.Columns.Add(WH_Clerk_ID);
-			IColumn WH_Clerk_isNum = new DatabaseColumn("isNum",WH_ClerkSchema);
-            WH_Clerk_isNum.DataType=DbType.Int64;
-            WH_Clerk_isNum.IsNullable = true;
-            WH_Clerk_isNum.AutoIncrement = false;
-            WH_Clerk_isNum.IsForeignKey = false;
-            WH_ClerkSchema.Columns.Add(WH_Clerk_isNum);
-			IColumn WH_Clerk_SecretCode = new DatabaseColumn("SecretCode",WH_ClerkSchema);
-            WH_Clerk_SecretCode.DataType=DbType.AnsiString;
-            WH_Clerk_SecretCode.IsNullable = true;
-            WH_Clerk_SecretCode.AutoIncrement = false;
-            WH_Clerk_SecretCode.IsForeignKey = false;
-            WH_ClerkSchema.Columns.Add(WH_Clerk_SecretCode);
-			IColumn WH_Clerk_Description = new DatabaseColumn("Description",WH_ClerkSchema);
-            WH_Clerk_Description.DataType=DbType.AnsiString;
-            WH_Clerk_Description.IsNullable = true;
-            WH_Clerk_Description.AutoIncrement = false;
-            WH_Clerk_Description.IsForeignKey = false;
-            WH_ClerkSchema.Columns.Add(WH_Clerk_Description);
-			IColumn WH_Clerk_Limitaions = new DatabaseColumn("Limitaions",WH_ClerkSchema);
-            WH_Clerk_Limitaions.DataType=DbType.AnsiString;
-            WH_Clerk_Limitaions.IsNullable = true;
-            WH_Clerk_Limitaions.AutoIncrement = false;
-            WH_Clerk_Limitaions.IsForeignKey = false;
-            WH_ClerkSchema.Columns.Add(WH_Clerk_Limitaions);
-            DataProvider.Schema.Tables.Add(WH_ClerkSchema);
             // Table: WH_CookInformation
             // Primary Key: ID
             ITable WH_CookInformationSchema = new DatabaseTable("WH_CookInformation", DataProvider);
@@ -562,6 +526,48 @@ namespace PBM.DAL
             WH_Relation_PLU_Condiment_condimentPLUID.IsForeignKey = false;
             WH_Relation_PLU_CondimentSchema.Columns.Add(WH_Relation_PLU_Condiment_condimentPLUID);
             DataProvider.Schema.Tables.Add(WH_Relation_PLU_CondimentSchema);
+            // Table: WH_Clerk
+            // Primary Key: ID
+            ITable WH_ClerkSchema = new DatabaseTable("WH_Clerk", DataProvider);
+            WH_ClerkSchema.ClassName = "WH_Clerk";
+            			IColumn WH_Clerk_ID = new DatabaseColumn("ID",WH_ClerkSchema);
+            WH_Clerk_ID.IsPrimaryKey = true;
+            WH_Clerk_ID.DataType=DbType.Int64;
+            WH_Clerk_ID.IsNullable = false;
+            WH_Clerk_ID.AutoIncrement = true;
+            WH_Clerk_ID.IsForeignKey = false;
+            WH_ClerkSchema.Columns.Add(WH_Clerk_ID);
+			IColumn WH_Clerk_isNum = new DatabaseColumn("isNum",WH_ClerkSchema);
+            WH_Clerk_isNum.DataType=DbType.AnsiString;
+            WH_Clerk_isNum.IsNullable = true;
+            WH_Clerk_isNum.AutoIncrement = false;
+            WH_Clerk_isNum.IsForeignKey = false;
+            WH_ClerkSchema.Columns.Add(WH_Clerk_isNum);
+			IColumn WH_Clerk_SecretCode = new DatabaseColumn("SecretCode",WH_ClerkSchema);
+            WH_Clerk_SecretCode.DataType=DbType.AnsiString;
+            WH_Clerk_SecretCode.IsNullable = true;
+            WH_Clerk_SecretCode.AutoIncrement = false;
+            WH_Clerk_SecretCode.IsForeignKey = false;
+            WH_ClerkSchema.Columns.Add(WH_Clerk_SecretCode);
+			IColumn WH_Clerk_Description = new DatabaseColumn("Description",WH_ClerkSchema);
+            WH_Clerk_Description.DataType=DbType.AnsiString;
+            WH_Clerk_Description.IsNullable = true;
+            WH_Clerk_Description.AutoIncrement = false;
+            WH_Clerk_Description.IsForeignKey = false;
+            WH_ClerkSchema.Columns.Add(WH_Clerk_Description);
+			IColumn WH_Clerk_Limitaions = new DatabaseColumn("Limitaions",WH_ClerkSchema);
+            WH_Clerk_Limitaions.DataType=DbType.AnsiString;
+            WH_Clerk_Limitaions.IsNullable = true;
+            WH_Clerk_Limitaions.AutoIncrement = false;
+            WH_Clerk_Limitaions.IsForeignKey = false;
+            WH_ClerkSchema.Columns.Add(WH_Clerk_Limitaions);
+			IColumn WH_Clerk_InterruptNo = new DatabaseColumn("InterruptNo",WH_ClerkSchema);
+            WH_Clerk_InterruptNo.DataType=DbType.AnsiString;
+            WH_Clerk_InterruptNo.IsNullable = true;
+            WH_Clerk_InterruptNo.AutoIncrement = false;
+            WH_Clerk_InterruptNo.IsForeignKey = false;
+            WH_ClerkSchema.Columns.Add(WH_Clerk_InterruptNo);
+            DataProvider.Schema.Tables.Add(WH_ClerkSchema);
             }
             
             #endregion            
