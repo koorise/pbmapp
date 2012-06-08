@@ -6,8 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SubSonic;
-using PBM.DAL;
+
 namespace PBMApp
 {
     public partial class frm_PLU : Form
