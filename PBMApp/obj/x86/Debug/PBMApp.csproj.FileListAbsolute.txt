@@ -30,11 +30,8 @@ E:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.pdb
 E:\PBMApp\PBMApp\bin\Debug\PBMApp.exe
 E:\PBMApp\PBMApp\bin\Debug\PBMApp.pdb
 E:\PBMApp\PBMApp\bin\Debug\zh-CN\PBMApp.resources.dll
-E:\PBMApp\PBMApp\bin\Debug\SubSonic.Core.dll
 E:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.dll
 E:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.Linq.dll
-E:\PBMApp\PBMApp\bin\Debug\SubSonic.Core.pdb
-E:\PBMApp\PBMApp\bin\Debug\SubSonic.Core.xml
 E:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.pdb
 E:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.Linq.pdb
 E:\PBMApp\PBMApp\obj\x86\Debug\ResolveAssemblyReference.cache
