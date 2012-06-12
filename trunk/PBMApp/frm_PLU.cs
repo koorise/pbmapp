@@ -32,6 +32,7 @@ namespace PBMApp
         {
             int id = e.RowIndex;
             id = int.Parse(dataGridView1.Rows[id].Cells[0].Value.ToString());
+            tbID.Text = id.ToString();
             using (var m=new Entities())
             {
                 var ctx = m.WH_PLU.FirstOrDefault(x => x.ID == id);
@@ -49,6 +50,7 @@ namespace PBMApp
                 Combox_dept_No(int.Parse(ctx.Dept_No.ToString()));
                 Combox_PLU_Modifier(id);
                 Combox_Condiment_Selected(id);
+                Combox_Condiment_ALL();
 
 
             }
@@ -59,6 +61,7 @@ namespace PBMApp
         /// <param name="pluid"></param>
         private void Combox_Condiment_Selected(int pluid)
         {
+            listBox2_Condiment.Items.Clear();
             using (var m = new Entities())
             {
                 var q = from c in m.WH_Relation_PLU_Condiment
@@ -77,13 +80,17 @@ namespace PBMApp
                     listBox2_Condiment.Items.Add(cb);
                 }
             }
-            
+            tbModifierDesc.Text = "";
+            tbModifierPrice.Text = "";
+            tbModifierUnitQuantity.Text = "";
+
         }
         /// <summary>
         /// Condiment_ALL
         /// </summary>
         private void Combox_Condiment_ALL()
         {
+            listBox1_Condiment.Items.Clear();
             using (var m=new Entities())
             {
                 var q = from c in m.WH_PLU
@@ -106,6 +113,7 @@ namespace PBMApp
         /// <param name="PLUID"></param>
         private void Combox_PLU_Modifier(int PLUID)
         {
+            cbModifiers.Items.Clear();
             using (var m=new Entities())
             {
                 var q = from c in m.WH_PLU_Modifier
@@ -118,6 +126,7 @@ namespace PBMApp
                     cb.Text = i.ToString();
                     cb.Value = w.ID;
                     cbModifiers.Items.Add(cb);
+                    i++;
                 }
             }
         }
@@ -193,5 +202,80 @@ namespace PBMApp
         {
             BindData();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(tbID.Text);
+            using (var m = new Entities())
+            {
+                var ctx = m.WH_PLU.FirstOrDefault(x => x.ID == id);
+                ctx.Bar_Code = tbBarcode.Text.PadLeft(13,'0');
+                ctx.Description = tbDesc.Text;
+                ctx.Dept_No = int.Parse(((ComboBoxItem) cbDeptID.SelectedItem).Value.ToString());
+                ctx.Price1 = decimal.Parse(tbPrice1.Text);
+                ctx.Price2 = decimal.Parse(tbPrice2.Text);
+                ctx.Price3 = decimal.Parse(tbPrice3.Text);
+                if(rbPriceMat0.Checked)
+                {
+                    ctx.PriceMat = 0;
+                }
+                if(rbPriceMat1.Checked)
+                {
+                    ctx.PriceMat = 1;
+                }
+                if(rbMode0.Checked)
+                {
+                    ctx.isMode = 0;
+                }
+                if(rbPriceMat1.Checked)
+                {
+                    ctx.isMode = 1;
+                }
+                ctx.isCondiment = ckCondiment.Checked ? 1 : 0;
+                m.SaveChanges();
+            }
+            BindData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var m=new Entities())
+            {
+                WH_PLU_Modifier wp=new WH_PLU_Modifier();
+                wp.PLUID = int.Parse(tbID.Text);
+                wp.Modifier_Price = decimal.Parse(tbModifierPrice.Text);
+                wp.Modifier_desc = tbModifierDesc.Text;
+                wp.Modifier_Unit_Quantity = int.Parse(tbModifierUnitQuantity.Text);
+                m.AddToWH_PLU_Modifier(wp);
+                m.SaveChanges();
+            }
+            Combox_PLU_Modifier(int.Parse(tbID.Text));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                int id = int.Parse(((ComboBoxItem) cbModifiers.SelectedItem).Value.ToString());
+                WH_PLU_Modifier wp = m.WH_PLU_Modifier.FirstOrDefault(x => x.ID == id);
+                m.DeleteObject(wp);
+                m.SaveChanges();
+            }
+            Combox_PLU_Modifier(int.Parse(tbID.Text));
+        }
+
+        private void cbModifiers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                int id = int.Parse(((ComboBoxItem)cbModifiers.SelectedItem).Value.ToString());
+                WH_PLU_Modifier wp = m.WH_PLU_Modifier.FirstOrDefault(x => x.ID == id);
+                tbModifierDesc.Text = wp.Modifier_desc;
+                tbModifierPrice.Text = wp.Modifier_Price.ToString();
+                tbModifierUnitQuantity.Text = wp.Modifier_Unit_Quantity.ToString();
+                
+            }
+        }
+
     }
 }

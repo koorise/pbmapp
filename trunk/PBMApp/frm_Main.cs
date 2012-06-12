@@ -32,7 +32,7 @@ namespace PBMApp
             string newName = Tools.Config.GetAppConfig("newName");
             string newConString = string.Format(Tools.Config.GetAppConfig("newConString"), System.IO.Path.GetDirectoryName(openFileDialog1.FileName)+"\\"+System.IO.Path.GetFileName(openFileDialog1.FileName));
             string newProviderName = Tools.Config.GetAppConfig("newProviderName");
-            //Tools.Config.UpdateConnectionStringsConfig(newName, newConString, newProviderName);
+            Tools.Config.UpdateConnectionStringsConfig(newName, newConString, newProviderName);
 
         } 
 

@@ -76,6 +76,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -87,6 +90,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbID);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -231,11 +237,13 @@
             // 
             // cbModifiers
             // 
+            this.cbModifiers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbModifiers.FormattingEnabled = true;
             this.cbModifiers.Location = new System.Drawing.Point(99, 17);
             this.cbModifiers.Name = "cbModifiers";
             this.cbModifiers.Size = new System.Drawing.Size(42, 20);
             this.cbModifiers.TabIndex = 19;
+            this.cbModifiers.SelectedIndexChanged += new System.EventHandler(this.cbModifiers_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -523,6 +531,7 @@
             this.button1.TabIndex = 26;
             this.button1.Text = "DEL";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -532,6 +541,7 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "ADD";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -559,12 +569,39 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(378, 570);
+            this.button3.Location = new System.Drawing.Point(313, 570);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 36;
-            this.button3.Text = "button3";
+            this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(407, 570);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 37;
+            this.button4.Text = "ADD";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(215, 24);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(17, 12);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "ID";
+            // 
+            // tbID
+            // 
+            this.tbID.Location = new System.Drawing.Point(239, 20);
+            this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
+            this.tbID.Size = new System.Drawing.Size(100, 21);
+            this.tbID.TabIndex = 39;
             // 
             // frm_PLU
             // 
@@ -646,6 +683,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.Label label16;
 
     }
 }
