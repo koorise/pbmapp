@@ -152,200 +152,65 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="portSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+  <data name="systemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
   </data>
-  <data name="portSettingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Port Setting</value>
+  <data name="systemToolStripMenuItem.Text" xml:space="preserve">
+    <value>System</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 6</value>
+  <data name="taxSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
   </data>
-  <data name="systemFlagSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+  <data name="taxSettingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tax</value>
   </data>
-  <data name="systemFlagSettingToolStripMenuItem.Text" xml:space="preserve">
-    <value>System Flag Setting</value>
+  <data name="deptSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
   </data>
-  <data name="headerFooterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="headerFooterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Header and Footer Setting</value>
-  </data>
-  <data name="percentageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="percentageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Percentage Setting</value>
-  </data>
-  <data name="paymentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="paymentToolStripMenuItem.Text" xml:space="preserve">
-    <value>Payment/Refund/Coupon</value>
-  </data>
-  <data name="gSTServiceTaxToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="gSTServiceTaxToolStripMenuItem.Text" xml:space="preserve">
-    <value>GST/Service Tax Setting </value>
-  </data>
-  <data name="pCASHFCEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="pCASHFCEToolStripMenuItem.Text" xml:space="preserve">
-    <value>PCASH/FCE Setting</value>
-  </data>
-  <data name="registerDescriptorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="registerDescriptorToolStripMenuItem.Text" xml:space="preserve">
-    <value>Register Descriptor Setting</value>
-  </data>
-  <data name="portKPFtpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="portKPFtpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Port/KP/Ftp Setting</value>
-  </data>
-  <data name="cookingMessageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="cookingMessageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cooking Message Setting</value>
-  </data>
-  <data name="mallSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="mallSettingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mall Setting</value>
-  </data>
-  <data name="signatureMessageSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="signatureMessageSettingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Signature Message Setting</value>
-  </data>
-  <data name="happerHourToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="happerHourToolStripMenuItem.Text" xml:space="preserve">
-    <value>Happer Hour/Service tax</value>
-  </data>
-  <data name="electronicScaleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="electronicScaleToolStripMenuItem.Text" xml:space="preserve">
-    <value>Electronic Scale</value>
-  </data>
-  <data name="tableBarcodeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="tableBarcodeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Table Barcode</value>
-  </data>
-  <data name="settingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
-  </data>
-  <data name="settingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Setting</value>
-  </data>
-  <data name="pLUToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
-  <data name="pLUToolStripMenuItem.Text" xml:space="preserve">
-    <value>PLU</value>
-  </data>
-  <data name="departmentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
-  <data name="departmentToolStripMenuItem.Text" xml:space="preserve">
+  <data name="deptSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Department</value>
   </data>
-  <data name="clerkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+  <data name="menuSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 20</value>
   </data>
-  <data name="clerkToolStripMenuItem.Text" xml:space="preserve">
+  <data name="menuSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="cookingMessageSetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 20</value>
+  </data>
+  <data name="cookingMessageSetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cooking Message</value>
+  </data>
+  <data name="bundleSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="bundleSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bundle</value>
+  </data>
+  <data name="pLUSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="pLUSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>PLU</value>
+  </data>
+  <data name="clerkSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="clerkSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Clerk</value>
   </data>
-  <data name="dPLUToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+  <data name="receiptToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
   </data>
-  <data name="dPLUToolStripMenuItem.Text" xml:space="preserve">
-    <value>DPLU</value>
+  <data name="receiptToolStripMenuItem.Text" xml:space="preserve">
+    <value>Receipt</value>
   </data>
-  <data name="cookInfomationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+  <data name="optionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
   </data>
-  <data name="cookInfomationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cook Infomation</value>
-  </data>
-  <data name="menuPLUToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
-  <data name="menuPLUToolStripMenuItem.Text" xml:space="preserve">
-    <value>Menu PLU</value>
-  </data>
-  <data name="dataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 20</value>
-  </data>
-  <data name="dataToolStripMenuItem.Text" xml:space="preserve">
-    <value>Data</value>
-  </data>
-  <data name="sendProgramInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="sendProgramInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Send Program Information</value>
-  </data>
-  <data name="receiveProgramInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="receiveProgramInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Receive Program Information</value>
-  </data>
-  <data name="receiveReportInformationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="receiveReportInformationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Receive Report Information</value>
-  </data>
-  <data name="communicationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 20</value>
-  </data>
-  <data name="communicationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Communication</value>
-  </data>
-  <data name="queryDepartmentPLUToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="queryDepartmentPLUToolStripMenuItem.Text" xml:space="preserve">
-    <value>Query Department/PLU Report</value>
-  </data>
-  <data name="reportQueryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="reportQueryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Report Query</value>
-  </data>
-  <data name="dataImportInputOutputToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="dataImportInputOutputToolStripMenuItem.Text" xml:space="preserve">
-    <value>Data Import/Input/Output</value>
-  </data>
-  <data name="analyticsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="analyticsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Analytics</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 20</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
+  <data name="optionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Option</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -450,196 +315,64 @@
   <data name="&gt;&gt;ExitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;settingToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingToolStripMenuItem</value>
+  <data name="&gt;&gt;systemToolStripMenuItem.Name" xml:space="preserve">
+    <value>systemToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;settingToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;systemToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;portSettingToolStripMenuItem.Name" xml:space="preserve">
-    <value>portSettingToolStripMenuItem</value>
+  <data name="&gt;&gt;taxSettingToolStripMenuItem.Name" xml:space="preserve">
+    <value>taxSettingToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;portSettingToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;taxSettingToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
+  <data name="&gt;&gt;deptSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>deptSettingsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;systemFlagSettingToolStripMenuItem.Name" xml:space="preserve">
-    <value>systemFlagSettingToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;systemFlagSettingToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;deptSettingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;headerFooterToolStripMenuItem.Name" xml:space="preserve">
-    <value>headerFooterToolStripMenuItem</value>
+  <data name="&gt;&gt;menuSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>menuSettingsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;headerFooterToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuSettingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;percentageToolStripMenuItem.Name" xml:space="preserve">
-    <value>percentageToolStripMenuItem</value>
+  <data name="&gt;&gt;cookingMessageSetToolStripMenuItem.Name" xml:space="preserve">
+    <value>cookingMessageSetToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;percentageToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;cookingMessageSetToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;paymentToolStripMenuItem.Name" xml:space="preserve">
-    <value>paymentToolStripMenuItem</value>
+  <data name="&gt;&gt;bundleSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>bundleSettingsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;paymentToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;bundleSettingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gSTServiceTaxToolStripMenuItem.Name" xml:space="preserve">
-    <value>gSTServiceTaxToolStripMenuItem</value>
+  <data name="&gt;&gt;pLUSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>pLUSettingsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;gSTServiceTaxToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;pLUSettingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pCASHFCEToolStripMenuItem.Name" xml:space="preserve">
-    <value>pCASHFCEToolStripMenuItem</value>
+  <data name="&gt;&gt;clerkSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>clerkSettingsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;pCASHFCEToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;clerkSettingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;registerDescriptorToolStripMenuItem.Name" xml:space="preserve">
-    <value>registerDescriptorToolStripMenuItem</value>
+  <data name="&gt;&gt;receiptToolStripMenuItem.Name" xml:space="preserve">
+    <value>receiptToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;registerDescriptorToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;receiptToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;portKPFtpToolStripMenuItem.Name" xml:space="preserve">
-    <value>portKPFtpToolStripMenuItem</value>
+  <data name="&gt;&gt;optionToolStripMenuItem.Name" xml:space="preserve">
+    <value>optionToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;portKPFtpToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cookingMessageToolStripMenuItem.Name" xml:space="preserve">
-    <value>cookingMessageToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cookingMessageToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mallSettingToolStripMenuItem.Name" xml:space="preserve">
-    <value>mallSettingToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;mallSettingToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;signatureMessageSettingToolStripMenuItem.Name" xml:space="preserve">
-    <value>signatureMessageSettingToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;signatureMessageSettingToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;happerHourToolStripMenuItem.Name" xml:space="preserve">
-    <value>happerHourToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;happerHourToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Name" xml:space="preserve">
-    <value>electronicScaleToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataToolStripMenuItem.Name" xml:space="preserve">
-    <value>dataToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;dataToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pLUToolStripMenuItem.Name" xml:space="preserve">
-    <value>pLUToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pLUToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;departmentToolStripMenuItem.Name" xml:space="preserve">
-    <value>departmentToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;departmentToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clerkToolStripMenuItem.Name" xml:space="preserve">
-    <value>clerkToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;clerkToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dPLUToolStripMenuItem.Name" xml:space="preserve">
-    <value>dPLUToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;dPLUToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cookInfomationToolStripMenuItem.Name" xml:space="preserve">
-    <value>cookInfomationToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cookInfomationToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuPLUToolStripMenuItem.Name" xml:space="preserve">
-    <value>menuPLUToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;menuPLUToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;communicationToolStripMenuItem.Name" xml:space="preserve">
-    <value>communicationToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;communicationToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sendProgramInformationToolStripMenuItem.Name" xml:space="preserve">
-    <value>sendProgramInformationToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;sendProgramInformationToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;receiveProgramInformationToolStripMenuItem.Name" xml:space="preserve">
-    <value>receiveProgramInformationToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;receiveProgramInformationToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;receiveReportInformationToolStripMenuItem.Name" xml:space="preserve">
-    <value>receiveReportInformationToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;receiveReportInformationToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;analyticsToolStripMenuItem.Name" xml:space="preserve">
-    <value>analyticsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;analyticsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;queryDepartmentPLUToolStripMenuItem.Name" xml:space="preserve">
-    <value>queryDepartmentPLUToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;queryDepartmentPLUToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reportQueryToolStripMenuItem.Name" xml:space="preserve">
-    <value>reportQueryToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;reportQueryToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataImportInputOutputToolStripMenuItem.Name" xml:space="preserve">
-    <value>dataImportInputOutputToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;dataImportInputOutputToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
-    <value>helpToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;optionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
@@ -659,12 +392,6 @@
   </data>
   <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableBarcodeToolStripMenuItem.Name" xml:space="preserve">
-    <value>tableBarcodeToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;tableBarcodeToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frm_Main</value>

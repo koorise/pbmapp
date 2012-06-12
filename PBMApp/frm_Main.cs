@@ -29,52 +29,25 @@ namespace PBMApp
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            
-            
-        }
+            string newName = Tools.Config.GetAppConfig("newName");
+            string newConString = string.Format(Tools.Config.GetAppConfig("newConString"), System.IO.Path.GetDirectoryName(openFileDialog1.FileName)+"\\"+System.IO.Path.GetFileName(openFileDialog1.FileName));
+            string newProviderName = Tools.Config.GetAppConfig("newProviderName");
+            //Tools.Config.UpdateConnectionStringsConfig(newName, newConString, newProviderName);
 
-        private void pLUToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Dock=DockStyle.Fill;
+        } 
 
-            frm_PLU frm = new frm_PLU();
-
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void departmentToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deptSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_dept frm = new frm_dept();
             frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void portSettingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_port frm = new frm_Setting_port();
-            frm.ControlBox = false;
             frm.ControlBox = false;
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+
         }
 
-        private void systemFlagSettingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_SystemFlag frm = new frm_Setting_SystemFlag();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void clerkToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clerkSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Clerk frm = new frm_Clerk();
             frm.ControlBox = false;
@@ -85,9 +58,9 @@ namespace PBMApp
 
         }
 
-        private void dPLUToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pLUSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_DPLU frm = new frm_DPLU();
+            frm_PLU frm = new frm_PLU();
             frm.ControlBox = false;
             frm.ControlBox = false;
             frm.MdiParent = this;
@@ -95,7 +68,7 @@ namespace PBMApp
             frm.Show();
         }
 
-        private void cookInfomationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cookingMessageSetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_CookInfo frm = new frm_CookInfo();
             frm.ControlBox = false;
@@ -103,113 +76,6 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
-
-        }
-
-        private void headerFooterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_HeaderFooter frm = new frm_Setting_HeaderFooter();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_payment frm = new frm_payment();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-
-        }
-
-        private void happerHourToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_HappyHour_ServiceTax frm = new frm_HappyHour_ServiceTax();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-
-        }
-
-        private void electronicScaleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_ElectronicScale frm = new frm_Setting_ElectronicScale();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void percentageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_Percentage frm = new frm_Setting_Percentage();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-
-        }
-
-        private void gSTServiceTaxToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_GST_ServiceTax frm = new frm_Setting_GST_ServiceTax();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void pCASHFCEToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_PCASH_FCE frm = new frm_Setting_PCASH_FCE();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void menuPLUToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_menu_plu frm = new frm_menu_plu();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-
-        }
-
-        private void registerDescriptorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_RegisterDescriptor frm = new frm_RegisterDescriptor();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void tableBarcodeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_Setting_TableBarcode frm = new frm_Setting_TableBarcode();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-
+        } 
     }
 }

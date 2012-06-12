@@ -39,7 +39,7 @@ namespace PBMApp
 
         private   void button3_Click(object sender, EventArgs e)
         {
-             var m = new pbmEntities();
+            var m = new Entities();
             if(dataGridView1.SelectedRows.Count==0)
             {
                 WH_Clerk wc  = new WH_Clerk();
@@ -105,6 +105,7 @@ namespace PBMApp
             dt.Clear();
             dataGridView1.Columns.Clear();
             DataColumn dc0 = new DataColumn("ID", typeof(string));
+             
             dt.Columns.Add(dc0);
             DataColumn dc1 = new DataColumn("No.", typeof(string)); 
             dt.Columns.Add(dc1);
@@ -117,11 +118,8 @@ namespace PBMApp
             DataColumn dc5 = new DataColumn("Limitaions", typeof(string));
             dt.Columns.Add(dc5);
 
-            using (var md=new pbmEntities())
-            {
-                 
-            }
-            var m = new pbmEntities();
+
+            var m = new Entities();
             var q = from c in m.WH_Clerk
                     
                     select c;
@@ -138,7 +136,11 @@ namespace PBMApp
             }
 
             dataGridView1.DataSource = dt;
-            
+
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
 
         }
 
@@ -146,7 +148,15 @@ namespace PBMApp
         {
             int rowIndex = e.RowIndex;
             int id = int.Parse(dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());
-            var ctx = new pbmEntities();
+            if(id==50)
+            {
+                groupBox2.Enabled = false;
+            }
+            else
+            {
+                groupBox2.Enabled = true;
+            }
+            var ctx = new Entities();
             var clerk = ctx.WH_Clerk.First(x => x.ID == id);
             tbDesc.Text = clerk.Description;
             tbInterrupt.Text = clerk.InterruptNo;
@@ -168,6 +178,34 @@ namespace PBMApp
 
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbDesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    for (int i = 7; i <= 50; i++)
+        //    {
+        //        using (var m=new pbmEntities() )
+        //        {
+        //            WH_Clerk wh= new WH_Clerk();
+        //            wh.isNum = "Clerk" + i.ToString().PadLeft(3, '0');
+        //            wh.SecretCode = "000";
+        //            wh.Description="Clerk" + i.ToString().PadLeft(3, '0');
+        //            wh.Limitaions = "11111111111111111";
+        //            wh.InterruptNo = "12345";
+        //            m.AddToWH_Clerk(wh);
+        //            m.SaveChanges();
+        //        }
+        //    }
+        //}
 
         
     }
