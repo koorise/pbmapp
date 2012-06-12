@@ -116,6 +116,22 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
+        public ObjectSet<WH_PLU_Modifier> WH_PLU_Modifier
+        {
+            get
+            {
+                if ((_WH_PLU_Modifier == null))
+                {
+                    _WH_PLU_Modifier = base.CreateObjectSet<WH_PLU_Modifier>("WH_PLU_Modifier");
+                }
+                return _WH_PLU_Modifier;
+            }
+        }
+        private ObjectSet<WH_PLU_Modifier> _WH_PLU_Modifier;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
         public ObjectSet<WH_Relation_Cook_PLU> WH_Relation_Cook_PLU
         {
             get
@@ -160,22 +176,6 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_PLU> _WH_PLU;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_PLU_Modifier> WH_PLU_Modifier
-        {
-            get
-            {
-                if ((_WH_PLU_Modifier == null))
-                {
-                    _WH_PLU_Modifier = base.CreateObjectSet<WH_PLU_Modifier>("WH_PLU_Modifier");
-                }
-                return _WH_PLU_Modifier;
-            }
-        }
-        private ObjectSet<WH_PLU_Modifier> _WH_PLU_Modifier;
 
         #endregion
         #region AddTo 方法
@@ -205,6 +205,14 @@ namespace PBMApp.Model
         }
     
         /// <summary>
+        /// 用于向 WH_PLU_Modifier EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_PLU_Modifier(WH_PLU_Modifier wH_PLU_Modifier)
+        {
+            base.AddObject("WH_PLU_Modifier", wH_PLU_Modifier);
+        }
+    
+        /// <summary>
         /// 用于向 WH_Relation_Cook_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
         public void AddToWH_Relation_Cook_PLU(WH_Relation_Cook_PLU wH_Relation_Cook_PLU)
@@ -227,14 +235,6 @@ namespace PBMApp.Model
         {
             base.AddObject("WH_PLU", wH_PLU);
         }
-    
-        /// <summary>
-        /// 用于向 WH_PLU_Modifier EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_PLU_Modifier(WH_PLU_Modifier wH_PLU_Modifier)
-        {
-            base.AddObject("WH_PLU_Modifier", wH_PLU_Modifier);
-        }
 
         #endregion
     }
@@ -247,7 +247,7 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Entities", Name="WH_Clerk")]
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Clerk")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class WH_Clerk : EntityObject
@@ -422,7 +422,7 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Entities", Name="WH_CookInformation")]
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_CookInformation")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class WH_CookInformation : EntityObject
@@ -549,7 +549,7 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Entities", Name="WH_Department")]
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Department")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class WH_Department : EntityObject
@@ -916,7 +916,7 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Entities", Name="WH_PLU")]
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_PLU")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class WH_PLU : EntityObject
@@ -1017,7 +1017,7 @@ namespace PBMApp.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Dept_No
+        public Nullable<global::System.Int64> Dept_No
         {
             get
             {
@@ -1027,13 +1027,13 @@ namespace PBMApp.Model
             {
                 OnDept_NoChanging(value);
                 ReportPropertyChanging("Dept_No");
-                _Dept_No = StructuralObject.SetValidValue(value, true);
+                _Dept_No = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Dept_No");
                 OnDept_NoChanged();
             }
         }
-        private global::System.String _Dept_No;
-        partial void OnDept_NoChanging(global::System.String value);
+        private Nullable<global::System.Int64> _Dept_No;
+        partial void OnDept_NoChanging(Nullable<global::System.Int64> value);
         partial void OnDept_NoChanged();
     
         /// <summary>
@@ -1355,7 +1355,7 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Entities", Name="WH_PLU_Modifier")]
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_PLU_Modifier")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class WH_PLU_Modifier : EntityObject
@@ -1506,7 +1506,7 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Entities", Name="WH_Relation_Cook_PLU")]
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Relation_Cook_PLU")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class WH_Relation_Cook_PLU : EntityObject
@@ -1609,7 +1609,7 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Entities", Name="WH_Relation_PLU_Condiment")]
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Relation_PLU_Condiment")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class WH_Relation_PLU_Condiment : EntityObject
