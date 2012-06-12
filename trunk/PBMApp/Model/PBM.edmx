@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Entities.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="EntitiesStoreContainer">
+          <EntitySet Name="WH_Clerk" EntityType="Entities.Store.WH_Clerk" store:Type="Tables" />
+          <EntitySet Name="WH_CookInformation" EntityType="Entities.Store.WH_CookInformation" store:Type="Tables" />
+          <EntitySet Name="WH_Department" EntityType="Entities.Store.WH_Department" store:Type="Tables" />
+          <EntitySet Name="WH_PLU" EntityType="Entities.Store.WH_PLU" store:Type="Tables" />
+          <EntitySet Name="WH_PLU_Modifier" EntityType="Entities.Store.WH_PLU_Modifier" store:Type="Tables" />
+          <EntitySet Name="WH_Relation_Cook_PLU" EntityType="Entities.Store.WH_Relation_Cook_PLU" store:Type="Tables" />
+          <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="Entities.Store.WH_Relation_PLU_Condiment" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="WH_Clerk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="isNum" Type="nvarchar" />
+          <Property Name="SecretCode" Type="nvarchar" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="Limitaions" Type="nvarchar" />
+          <Property Name="InterruptNo" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WH_CookInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Num" Type="integer" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="price" Type="decimal" Scale="4" />
+        </EntityType>
+        <EntityType Name="WH_Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="High_Digit_LockOut" Type="integer" />
+          <Property Name="isDirectSale" Type="integer" />
+          <Property Name="isAge" Type="integer" />
+          <Property Name="isPrice" Type="integer" />
+          <Property Name="DepartmentGroup" Type="integer" />
+          <Property Name="KP" Type="integer" />
+          <Property Name="isMode" Type="integer" />
+          <Property Name="isPriceFormat" Type="integer" />
+          <Property Name="KP_receipt" Type="integer" />
+          <Property Name="isType" Type="integer" />
+          <Property Name="isVat_Tax_GST" Type="integer" />
+          <Property Name="str_Vat_Tax_GST" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WH_PLU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Bar_Code" Type="nvarchar" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="Dept_No" Type="nvarchar" />
+          <Property Name="Price1" Type="decimal" Scale="4" />
+          <Property Name="Price2" Type="decimal" Scale="4" />
+          <Property Name="Price3" Type="decimal" Scale="4" />
+          <Property Name="PriceMat" Type="integer" />
+          <Property Name="isMode" Type="integer" />
+          <Property Name="Inventory" Type="integer" />
+          <Property Name="Inventory_safty" Type="integer" />
+          <Property Name="menu_flag" Type="integer" />
+          <Property Name="isCondiment" Type="integer" />
+          <Property Name="Modifier" Type="integer" />
+          <Property Name="Modifier_description" Type="nvarchar" />
+          <Property Name="Modifier_Unity_Quantity" Type="nvarchar" />
+          <Property Name="Modifier_Price" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_PLU_Modifier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PLUID" Type="integer" />
+          <Property Name="Modifier_desc" Type="nvarchar" />
+          <Property Name="Modifier_Unit_Quantity" Type="integer" />
+          <Property Name="Modifier_Price" Type="decimal" Scale="4" />
+        </EntityType>
+        <EntityType Name="WH_Relation_Cook_PLU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CookID" Type="integer" />
+          <Property Name="PLUID" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Relation_PLU_Condiment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PLUID" Type="integer" />
+          <Property Name="condimentPLUID" Type="integer" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Entities" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="WH_Clerk" EntityType="Entities.WH_Clerk" />
+          <EntitySet Name="WH_CookInformation" EntityType="Entities.WH_CookInformation" />
+          <EntitySet Name="WH_Department" EntityType="Entities.WH_Department" />
+          <EntitySet Name="WH_Relation_Cook_PLU" EntityType="Entities.WH_Relation_Cook_PLU" />
+          <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="Entities.WH_Relation_PLU_Condiment" />
+          <EntitySet Name="WH_PLU" EntityType="Entities.WH_PLU" />
+          <EntitySet Name="WH_PLU_Modifier" EntityType="Entities.WH_PLU_Modifier" />
+        </EntityContainer>
+        <EntityType Name="WH_Clerk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isNum" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Name="SecretCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Name="Limitaions" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Name="InterruptNo" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WH_CookInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Num" Type="Int64" />
+          <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="WH_Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Name="High_Digit_LockOut" Type="Int64" />
+          <Property Name="isDirectSale" Type="Int64" />
+          <Property Name="isAge" Type="Int64" />
+          <Property Name="isPrice" Type="Int64" />
+          <Property Name="DepartmentGroup" Type="Int64" />
+          <Property Name="KP" Type="Int64" />
+          <Property Name="isMode" Type="Int64" />
+          <Property Name="isPriceFormat" Type="Int64" />
+          <Property Name="KP_receipt" Type="Int64" />
+          <Property Name="isType" Type="Int64" />
+          <Property Name="isVat_Tax_GST" Type="Int64" />
+          <Property Name="str_Vat_Tax_GST" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WH_Relation_Cook_PLU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CookID" Type="Int64" />
+          <Property Name="PLUID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="WH_Relation_PLU_Condiment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PLUID" Type="Int64" />
+          <Property Name="condimentPLUID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="WH_PLU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Bar_Code" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dept_No" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price1" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Price2" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Price3" Precision="18" Scale="4" />
+          <Property Type="Int64" Name="PriceMat" />
+          <Property Type="Int64" Name="isMode" />
+          <Property Type="Int64" Name="Inventory" />
+          <Property Type="Int64" Name="Inventory_safty" />
+          <Property Type="Int64" Name="menu_flag" />
+          <Property Type="Int64" Name="isCondiment" />
+          <Property Type="Int64" Name="Modifier" />
+          <Property Type="String" Name="Modifier_description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Modifier_Unity_Quantity" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Modifier_Price" />
+        </EntityType>
+        <EntityType Name="WH_PLU_Modifier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="PLUID" />
+          <Property Type="String" Name="Modifier_desc" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Modifier_Unit_Quantity" />
+          <Property Type="Decimal" Name="Modifier_Price" Precision="18" Scale="4" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EntitiesStoreContainer" CdmEntityContainer="Entities">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PBM">
+        <EntityTypeShape EntityType="Entities.WH_Clerk" Width="1.5" PointX="0.75" PointY="0.75" Height="1.959453125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.WH_CookInformation" Width="1.5" PointX="2.75" PointY="0.75" Height="1.6222135416666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.WH_Department" Width="1.5" PointX="0.75" PointY="3.75" Height="3.3084114583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.WH_Relation_Cook_PLU" Width="1.5" PointX="2.75" PointY="3.75" Height="1.4535937499999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.WH_Relation_PLU_Condiment" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4535937499999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entities.WH_PLU" Width="2.5" PointX="5.625" PointY="3.75" Height="3.8142708333333317" />
+        <EntityTypeShape EntityType="Entities.WH_PLU_Modifier" Width="1.5" PointX="7.375" PointY="0.75" Height="1.7908333333333317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

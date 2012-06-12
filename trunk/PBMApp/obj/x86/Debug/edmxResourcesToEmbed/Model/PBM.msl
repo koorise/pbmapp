@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EntitiesStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="WH_PLU_Modifier">
+      <EntityTypeMapping TypeName="Entities.WH_PLU_Modifier">
+        <MappingFragment StoreEntitySet="WH_PLU_Modifier" />
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

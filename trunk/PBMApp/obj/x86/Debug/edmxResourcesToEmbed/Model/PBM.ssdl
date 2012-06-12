@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Entities.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EntitiesStoreContainer">
+    <EntitySet Name="WH_Clerk" EntityType="Entities.Store.WH_Clerk" store:Type="Tables" />
+    <EntitySet Name="WH_CookInformation" EntityType="Entities.Store.WH_CookInformation" store:Type="Tables" />
+    <EntitySet Name="WH_Department" EntityType="Entities.Store.WH_Department" store:Type="Tables" />
+    <EntitySet Name="WH_PLU" EntityType="Entities.Store.WH_PLU" store:Type="Tables" />
+    <EntitySet Name="WH_PLU_Modifier" EntityType="Entities.Store.WH_PLU_Modifier" store:Type="Tables" />
+    <EntitySet Name="WH_Relation_Cook_PLU" EntityType="Entities.Store.WH_Relation_Cook_PLU" store:Type="Tables" />
+    <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="Entities.Store.WH_Relation_PLU_Condiment" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="WH_Clerk">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="isNum" Type="nvarchar" />
+    <Property Name="SecretCode" Type="nvarchar" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Limitaions" Type="nvarchar" />
+    <Property Name="InterruptNo" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_CookInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Num" Type="integer" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="price" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="High_Digit_LockOut" Type="integer" />
+    <Property Name="isDirectSale" Type="integer" />
+    <Property Name="isAge" Type="integer" />
+    <Property Name="isPrice" Type="integer" />
+    <Property Name="DepartmentGroup" Type="integer" />
+    <Property Name="KP" Type="integer" />
+    <Property Name="isMode" Type="integer" />
+    <Property Name="isPriceFormat" Type="integer" />
+    <Property Name="KP_receipt" Type="integer" />
+    <Property Name="isType" Type="integer" />
+    <Property Name="isVat_Tax_GST" Type="integer" />
+    <Property Name="str_Vat_Tax_GST" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Bar_Code" Type="nvarchar" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Dept_No" Type="nvarchar" />
+    <Property Name="Price1" Type="decimal" Scale="4" />
+    <Property Name="Price2" Type="decimal" Scale="4" />
+    <Property Name="Price3" Type="decimal" Scale="4" />
+    <Property Name="PriceMat" Type="integer" />
+    <Property Name="isMode" Type="integer" />
+    <Property Name="Inventory" Type="integer" />
+    <Property Name="Inventory_safty" Type="integer" />
+    <Property Name="menu_flag" Type="integer" />
+    <Property Name="isCondiment" Type="integer" />
+    <Property Name="Modifier" Type="integer" />
+    <Property Name="Modifier_description" Type="nvarchar" />
+    <Property Name="Modifier_Unity_Quantity" Type="nvarchar" />
+    <Property Name="Modifier_Price" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_PLU_Modifier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PLUID" Type="integer" />
+    <Property Name="Modifier_desc" Type="nvarchar" />
+    <Property Name="Modifier_Unit_Quantity" Type="integer" />
+    <Property Name="Modifier_Price" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Relation_Cook_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CookID" Type="integer" />
+    <Property Name="PLUID" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Relation_PLU_Condiment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PLUID" Type="integer" />
+    <Property Name="condimentPLUID" Type="integer" />
+  </EntityType>
+</Schema>
