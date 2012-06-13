@@ -28,28 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_PLU));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.listBox2_Condiment = new System.Windows.Forms.ListBox();
-            this.listBox1_Condiment = new System.Windows.Forms.ListBox();
-            this.ckCondiment = new System.Windows.Forms.CheckBox();
-            this.tbModifierPrice = new System.Windows.Forms.TextBox();
-            this.tbModifierUnitQuantity = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tbModifierDesc = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbModifiers = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.listBox2_Cook_Selected = new System.Windows.Forms.ListBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listbox1_Cook_ALL = new System.Windows.Forms.ListBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbMode1 = new System.Windows.Forms.RadioButton();
             this.rbMode0 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbPriceMat1 = new System.Windows.Forms.RadioButton();
             this.rbPriceMat0 = new System.Windows.Forms.RadioButton();
+            this.ckCondiment = new System.Windows.Forms.CheckBox();
             this.tbPrice3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPrice2 = new System.Windows.Forms.TextBox();
@@ -63,7 +61,18 @@
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tbModifierPrice = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbModifierUnitQuantity = new System.Windows.Forms.TextBox();
+            this.cbModifiers = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbModifierDesc = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.cbInventoryChange = new System.Windows.Forms.ComboBox();
             this.ckIsInventoryActive = new System.Windows.Forms.CheckBox();
             this.tbInventoryStock = new System.Windows.Forms.TextBox();
@@ -71,28 +80,43 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tbInventory = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.listBox2_Condiment = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.listBox1_Condiment = new System.Windows.Forms.ListBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.tbID = new System.Windows.Forms.TextBox();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.tbID);
             this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -116,143 +140,112 @@
             this.groupBox1.Location = new System.Drawing.Point(424, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(502, 616);
+            this.groupBox1.Size = new System.Drawing.Size(502, 760);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PLU Information";
             // 
-            // label14
+            // groupBox7
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(234, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 12);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "Selected Condiment";
+            this.groupBox7.Controls.Add(this.label17);
+            this.groupBox7.Controls.Add(this.listBox2_Cook_Selected);
+            this.groupBox7.Controls.Add(this.label18);
+            this.groupBox7.Controls.Add(this.button4);
+            this.groupBox7.Controls.Add(this.listbox1_Cook_ALL);
+            this.groupBox7.Controls.Add(this.button5);
+            this.groupBox7.Location = new System.Drawing.Point(18, 570);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(466, 146);
+            this.groupBox7.TabIndex = 36;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Cooking Message Setting";
             // 
-            // label13
+            // label17
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(57, 25);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 12);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "All Condiment";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(234, 25);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 12);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Selected(Max 6)";
             // 
-            // button12
+            // listBox2_Cook_Selected
             // 
-            this.button12.Location = new System.Drawing.Point(183, 94);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(29, 23);
-            this.button12.TabIndex = 30;
-            this.button12.Text = ">>";
-            this.button12.UseVisualStyleBackColor = true;
+            this.listBox2_Cook_Selected.FormattingEnabled = true;
+            this.listBox2_Cook_Selected.ItemHeight = 12;
+            this.listBox2_Cook_Selected.Location = new System.Drawing.Point(222, 43);
+            this.listBox2_Cook_Selected.Name = "listBox2_Cook_Selected";
+            this.listBox2_Cook_Selected.ScrollAlwaysVisible = true;
+            this.listBox2_Cook_Selected.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBox2_Cook_Selected.Size = new System.Drawing.Size(150, 88);
+            this.listBox2_Cook_Selected.TabIndex = 28;
             // 
-            // button11
+            // label18
             // 
-            this.button11.Location = new System.Drawing.Point(183, 56);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(29, 23);
-            this.button11.TabIndex = 29;
-            this.button11.Text = "<<";
-            this.button11.UseVisualStyleBackColor = true;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(57, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(23, 12);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "ALL";
             // 
-            // listBox2_Condiment
+            // button4
             // 
-            this.listBox2_Condiment.FormattingEnabled = true;
-            this.listBox2_Condiment.ItemHeight = 12;
-            this.listBox2_Condiment.Location = new System.Drawing.Point(222, 43);
-            this.listBox2_Condiment.Name = "listBox2_Condiment";
-            this.listBox2_Condiment.ScrollAlwaysVisible = true;
-            this.listBox2_Condiment.Size = new System.Drawing.Size(150, 88);
-            this.listBox2_Condiment.TabIndex = 28;
+            this.button4.Location = new System.Drawing.Point(183, 94);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(29, 23);
+            this.button4.TabIndex = 30;
+            this.button4.Text = ">>";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // listBox1_Condiment
+            // listbox1_Cook_ALL
             // 
-            this.listBox1_Condiment.FormattingEnabled = true;
-            this.listBox1_Condiment.ItemHeight = 12;
-            this.listBox1_Condiment.Location = new System.Drawing.Point(27, 43);
-            this.listBox1_Condiment.Name = "listBox1_Condiment";
-            this.listBox1_Condiment.ScrollAlwaysVisible = true;
-            this.listBox1_Condiment.Size = new System.Drawing.Size(150, 88);
-            this.listBox1_Condiment.TabIndex = 27;
+            this.listbox1_Cook_ALL.FormattingEnabled = true;
+            this.listbox1_Cook_ALL.ItemHeight = 12;
+            this.listbox1_Cook_ALL.Location = new System.Drawing.Point(27, 43);
+            this.listbox1_Cook_ALL.Name = "listbox1_Cook_ALL";
+            this.listbox1_Cook_ALL.ScrollAlwaysVisible = true;
+            this.listbox1_Cook_ALL.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listbox1_Cook_ALL.Size = new System.Drawing.Size(150, 88);
+            this.listbox1_Cook_ALL.TabIndex = 27;
             // 
-            // ckCondiment
+            // button5
             // 
-            this.ckCondiment.AutoSize = true;
-            this.ckCondiment.Location = new System.Drawing.Point(87, 189);
-            this.ckCondiment.Name = "ckCondiment";
-            this.ckCondiment.Size = new System.Drawing.Size(78, 16);
-            this.ckCondiment.TabIndex = 26;
-            this.ckCondiment.Text = "Condiment";
-            this.ckCondiment.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(183, 56);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(29, 23);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "<<";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // tbModifierPrice
+            // tbID
             // 
-            this.tbModifierPrice.Location = new System.Drawing.Point(99, 89);
-            this.tbModifierPrice.Name = "tbModifierPrice";
-            this.tbModifierPrice.Size = new System.Drawing.Size(100, 21);
-            this.tbModifierPrice.TabIndex = 25;
+            this.tbID.Location = new System.Drawing.Point(239, 20);
+            this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
+            this.tbID.Size = new System.Drawing.Size(100, 21);
+            this.tbID.TabIndex = 39;
             // 
-            // tbModifierUnitQuantity
+            // label16
             // 
-            this.tbModifierUnitQuantity.Location = new System.Drawing.Point(99, 64);
-            this.tbModifierUnitQuantity.Name = "tbModifierUnitQuantity";
-            this.tbModifierUnitQuantity.Size = new System.Drawing.Size(100, 21);
-            this.tbModifierUnitQuantity.TabIndex = 24;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(215, 24);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(17, 12);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "ID";
             // 
-            // label12
+            // button3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(55, 93);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 12);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Price";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 69);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 12);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Unit Quantity";
-            // 
-            // tbModifierDesc
-            // 
-            this.tbModifierDesc.Location = new System.Drawing.Point(99, 40);
-            this.tbModifierDesc.Name = "tbModifierDesc";
-            this.tbModifierDesc.Size = new System.Drawing.Size(100, 21);
-            this.tbModifierDesc.TabIndex = 21;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 12);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Description";
-            // 
-            // cbModifiers
-            // 
-            this.cbModifiers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbModifiers.FormattingEnabled = true;
-            this.cbModifiers.Location = new System.Drawing.Point(99, 17);
-            this.cbModifiers.Name = "cbModifiers";
-            this.cbModifiers.Size = new System.Drawing.Size(42, 20);
-            this.cbModifiers.TabIndex = 19;
-            this.cbModifiers.SelectedIndexChanged += new System.EventHandler(this.cbModifiers_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(37, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Modifier";
+            this.button3.Location = new System.Drawing.Point(415, 724);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "Save";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox3
             // 
@@ -320,12 +313,23 @@
             this.rbPriceMat0.Text = "0-Open";
             this.rbPriceMat0.UseVisualStyleBackColor = true;
             // 
+            // ckCondiment
+            // 
+            this.ckCondiment.AutoSize = true;
+            this.ckCondiment.Location = new System.Drawing.Point(87, 189);
+            this.ckCondiment.Name = "ckCondiment";
+            this.ckCondiment.Size = new System.Drawing.Size(78, 16);
+            this.ckCondiment.TabIndex = 26;
+            this.ckCondiment.Text = "Condiment";
+            this.ckCondiment.UseVisualStyleBackColor = true;
+            // 
             // tbPrice3
             // 
             this.tbPrice3.Location = new System.Drawing.Point(87, 159);
             this.tbPrice3.Name = "tbPrice3";
             this.tbPrice3.Size = new System.Drawing.Size(100, 21);
             this.tbPrice3.TabIndex = 11;
+            this.tbPrice3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice3_KeyPress);
             // 
             // label6
             // 
@@ -342,6 +346,7 @@
             this.tbPrice2.Name = "tbPrice2";
             this.tbPrice2.Size = new System.Drawing.Size(100, 21);
             this.tbPrice2.TabIndex = 9;
+            this.tbPrice2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice2_KeyPress);
             // 
             // label5
             // 
@@ -358,6 +363,7 @@
             this.tbPrice1.Name = "tbPrice1";
             this.tbPrice1.Size = new System.Drawing.Size(100, 21);
             this.tbPrice1.TabIndex = 7;
+            this.tbPrice1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice1_KeyPress);
             // 
             // label4
             // 
@@ -437,6 +443,95 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Modifier";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(56, 116);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 24);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "ADD";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 116);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(62, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "DEL";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tbModifierPrice
+            // 
+            this.tbModifierPrice.Location = new System.Drawing.Point(99, 89);
+            this.tbModifierPrice.Name = "tbModifierPrice";
+            this.tbModifierPrice.Size = new System.Drawing.Size(100, 21);
+            this.tbModifierPrice.TabIndex = 25;
+            this.tbModifierPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierPrice_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(37, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Modifier";
+            // 
+            // tbModifierUnitQuantity
+            // 
+            this.tbModifierUnitQuantity.Location = new System.Drawing.Point(99, 64);
+            this.tbModifierUnitQuantity.Name = "tbModifierUnitQuantity";
+            this.tbModifierUnitQuantity.Size = new System.Drawing.Size(100, 21);
+            this.tbModifierUnitQuantity.TabIndex = 24;
+            this.tbModifierUnitQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierUnitQuantity_KeyPress);
+            // 
+            // cbModifiers
+            // 
+            this.cbModifiers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbModifiers.FormattingEnabled = true;
+            this.cbModifiers.Location = new System.Drawing.Point(99, 17);
+            this.cbModifiers.Name = "cbModifiers";
+            this.cbModifiers.Size = new System.Drawing.Size(42, 20);
+            this.cbModifiers.TabIndex = 19;
+            this.cbModifiers.SelectedIndexChanged += new System.EventHandler(this.cbModifiers_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(55, 93);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 12);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Price";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 12);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Description";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 12);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Unit Quantity";
+            // 
+            // tbModifierDesc
+            // 
+            this.tbModifierDesc.Location = new System.Drawing.Point(99, 40);
+            this.tbModifierDesc.Name = "tbModifierDesc";
+            this.tbModifierDesc.Size = new System.Drawing.Size(100, 21);
+            this.tbModifierDesc.TabIndex = 21;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label15);
@@ -452,6 +547,15 @@
             this.groupBox5.TabIndex = 34;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Inventroy";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1, 74);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(107, 12);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Inventory Changes";
             // 
             // cbInventoryChange
             // 
@@ -482,6 +586,7 @@
             this.tbInventoryStock.Name = "tbInventoryStock";
             this.tbInventoryStock.Size = new System.Drawing.Size(100, 21);
             this.tbInventoryStock.TabIndex = 19;
+            this.tbInventoryStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventoryStock_KeyPress);
             // 
             // label7
             // 
@@ -507,6 +612,7 @@
             this.tbInventory.Name = "tbInventory";
             this.tbInventory.Size = new System.Drawing.Size(100, 21);
             this.tbInventory.TabIndex = 17;
+            this.tbInventory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventory_KeyPress);
             // 
             // groupBox6
             // 
@@ -523,30 +629,71 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Condiment";
             // 
-            // button1
+            // label14
             // 
-            this.button1.Location = new System.Drawing.Point(139, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "DEL";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(234, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(113, 12);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Selected Condiment";
             // 
-            // button2
+            // listBox2_Condiment
             // 
-            this.button2.Location = new System.Drawing.Point(56, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 24);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.listBox2_Condiment.FormattingEnabled = true;
+            this.listBox2_Condiment.ItemHeight = 12;
+            this.listBox2_Condiment.Location = new System.Drawing.Point(222, 43);
+            this.listBox2_Condiment.Name = "listBox2_Condiment";
+            this.listBox2_Condiment.ScrollAlwaysVisible = true;
+            this.listBox2_Condiment.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBox2_Condiment.Size = new System.Drawing.Size(150, 88);
+            this.listBox2_Condiment.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(57, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 12);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "All Condiment";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(183, 94);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(29, 23);
+            this.button12.TabIndex = 30;
+            this.button12.Text = ">>";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // listBox1_Condiment
+            // 
+            this.listBox1_Condiment.FormattingEnabled = true;
+            this.listBox1_Condiment.ItemHeight = 12;
+            this.listBox1_Condiment.Location = new System.Drawing.Point(27, 43);
+            this.listBox1_Condiment.Name = "listBox1_Condiment";
+            this.listBox1_Condiment.ScrollAlwaysVisible = true;
+            this.listBox1_Condiment.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBox1_Condiment.Size = new System.Drawing.Size(150, 88);
+            this.listBox1_Condiment.TabIndex = 27;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(183, 56);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(29, 23);
+            this.button11.TabIndex = 29;
+            this.button11.Text = "<<";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
@@ -554,61 +701,142 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 616);
+            this.dataGridView1.Size = new System.Drawing.Size(424, 760);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // label15
+            // bindingNavigator1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1, 74);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(107, 12);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Inventory Changes";
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.toolStripButton1,
+            this.toolStripSeparator1,
+            this.toolStripButton2});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 735);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(424, 25);
+            this.bindingNavigator1.TabIndex = 28;
+            this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // button3
+            // bindingNavigatorMoveFirstItem
             // 
-            this.button3.Location = new System.Drawing.Point(313, 570);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "移到第一条记录";
+            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigatorMoveFirstItem_Click);
             // 
-            // button4
+            // bindingNavigatorMovePreviousItem
             // 
-            this.button4.Location = new System.Drawing.Point(407, 570);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 37;
-            this.button4.Text = "ADD";
-            this.button4.UseVisualStyleBackColor = true;
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "移到上一条记录";
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
             // 
-            // label16
+            // bindingNavigatorSeparator
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(215, 24);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(17, 12);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "ID";
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // tbID
+            // bindingNavigatorPositionItem
             // 
-            this.tbID.Location = new System.Drawing.Point(239, 20);
-            this.tbID.Name = "tbID";
-            this.tbID.ReadOnly = true;
-            this.tbID.Size = new System.Drawing.Size(100, 21);
-            this.tbID.TabIndex = 39;
+            this.bindingNavigatorPositionItem.AccessibleName = "位置";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "当前位置";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "/ {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "总项数";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "移到下一条记录";
+            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "移到最后一条记录";
+            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(27, 22);
+            this.toolStripButton1.Text = "ADD";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(27, 22);
+            this.toolStripButton2.Text = "DEL";
             // 
             // frm_PLU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(926, 616);
+            this.ClientSize = new System.Drawing.Size(926, 760);
+            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -618,6 +846,8 @@
             this.Load += new System.EventHandler(this.frm_PLU_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -629,7 +859,11 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -683,9 +917,28 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ListBox listBox2_Cook_Selected;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListBox listbox1_Cook_ALL;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
 
     }
 }

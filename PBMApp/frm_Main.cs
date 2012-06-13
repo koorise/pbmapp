@@ -38,44 +38,123 @@ namespace PBMApp
 
         private void deptSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_dept frm = new frm_dept();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            //frm_dept frm = new frm_dept();
+            //frm.ControlBox = false;
+            //frm.ControlBox = false;
+            //frm.MdiParent = this;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+            int index = HaveOpened(this, "frm_dept");
+            if (index == -1)
+            {
+                frm_dept frm = new frm_dept();
+                frm.MdiParent = this;
+                frm.ControlBox = false;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+            else
+            {
+                this.MdiChildren[index].ControlBox = false;
+                this.MdiChildren[index].WindowState = FormWindowState.Maximized;
+                this.MdiChildren[index].Show();
+            }
 
         }
 
         private void clerkSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_Clerk frm = new frm_Clerk();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-
+            //frm_Clerk frm = new frm_Clerk();
+            //frm.ControlBox = false;
+            //frm.ControlBox = false;
+            //frm.MdiParent = this;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show(); 
+            int index = HaveOpened(this, "frm_Clerk");
+            if (index == -1)
+            {
+                frm_Clerk frm = new frm_Clerk();
+                frm.MdiParent = this;
+                frm.ControlBox = false;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+            else
+            {
+                this.MdiChildren[index].ControlBox = false;
+                this.MdiChildren[index].WindowState = FormWindowState.Maximized;
+                this.MdiChildren[index].Show();
+            }
         }
 
         private void pLUSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_PLU frm = new frm_PLU();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            //frm_PLU frm = new frm_PLU();
+            //frm.ControlBox = false;
+            //frm.ControlBox = false;
+            //frm.MdiParent = this;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+            int index = HaveOpened(this, "frm_PLU");
+            if (index == -1)
+            {
+                frm_PLU frm = new frm_PLU();
+                frm.MdiParent = this;
+                frm.ControlBox = false;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+            else
+            {
+                this.MdiChildren[index].ControlBox = false;
+                this.MdiChildren[index].WindowState = FormWindowState.Maximized;
+                this.MdiChildren[index].Show();
+            }
         }
 
         private void cookingMessageSetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_CookInfo frm = new frm_CookInfo();
-            frm.ControlBox = false;
-            frm.ControlBox = false;
-            frm.MdiParent = this;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        } 
+            //frm_CookInfo frm = new frm_CookInfo();
+            //frm.ControlBox = false;
+            //frm.ControlBox = false;
+            //frm.MdiParent = this;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+            int index = HaveOpened(this, "frm_CookInfo");
+            if (index == -1)
+            {
+                frm_CookInfo frm = new frm_CookInfo();
+                frm.MdiParent = this;
+                frm.ControlBox = false;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+            else
+            {
+                this.MdiChildren[index].ControlBox = false;
+                this.MdiChildren[index].WindowState=FormWindowState.Maximized;
+                this.MdiChildren[index].Show();
+            }
+        }
+        /// <summary>
+        /// 功能名称:查看MDI子窗体是否已经被打开
+        /// 输入参数:MdiFather,Form,需要判断的父窗体对象
+        ///          MdiChild,string,需要判断的子窗体控件名
+        /// 返回结果:-1为没有被打开,正数为子窗体集的数组下标
+        /// </summary>
+        public static int HaveOpened(Form frmMdiFather, string strMdiChild)
+        {
+            int bReturn = -1;
+            for (int i = 0; i < frmMdiFather.MdiChildren.Length; i++)
+            {
+                if (frmMdiFather.MdiChildren[i].Name == strMdiChild)
+                {
+                    frmMdiFather.MdiChildren[i].BringToFront();
+                    bReturn = i;
+                    break;
+                }
+            }
+            return bReturn;
+        }
     }
 }

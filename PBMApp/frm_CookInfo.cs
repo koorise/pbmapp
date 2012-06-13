@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using PBMApp.Model;
 
@@ -16,7 +17,7 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-
+        BindingSource bs = new BindingSource();
         private void frm_CookInfo_Load(object sender, EventArgs e)
         {
             BindData();
@@ -51,19 +52,23 @@ namespace PBMApp
                 dr[2] = c.price;
                 dt.Rows.Add(dr);
             }
-
-            dataGridView1.DataSource = dt;
-
+            bs.DataSource = dt;
+            dataGridView1.DataSource = bs;
+            
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
-
+            this.bindingNavigator1.BindingSource = bs;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i = e.RowIndex;
+            int  i= e.RowIndex;
+            if (i == -1)
+            {
+                return;
+            }
             int id = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
             using (var m=new Entities())
             {
@@ -92,5 +97,72 @@ namespace PBMApp
             }
             BindData();
         }
+
+        private void tbPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Convert.ToInt32(e.KeyChar) == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                if (Result.Success)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+
+            BindDetail();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            using (var m = new Entities())
+            {
+                var ctx = m.WH_CookInformation.FirstOrDefault(x => x.ID == id);
+                m.DeleteObject(ctx);
+                m.SaveChanges();
+            }
+            BindData();
+        }
+        private void BindDetail()
+        {
+            int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            using (var m = new Entities())
+            {
+                var ctx = m.WH_CookInformation.FirstOrDefault(x => x.ID == id);
+                tbDesc.Text = ctx.Description;
+                tbNo.Text = ctx.ID.ToString();
+                tbPrice.Text = ctx.price.ToString();
+
+            }
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            BindDetail();
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            BindDetail();
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            BindDetail();
+        }
+        
     }
 }

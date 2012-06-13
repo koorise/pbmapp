@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
@@ -17,20 +18,15 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-             
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-             
-        }
-
+        BindingSource bs = new BindingSource();
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             int id = e.RowIndex;
+            if(id==-1)
+            {
+                return;
+            }
             id = int.Parse(dataGridView1.Rows[id].Cells[0].Value.ToString());
             tbID.Text = id.ToString();
             using (var m=new Entities())
@@ -51,8 +47,54 @@ namespace PBMApp
                 Combox_PLU_Modifier(id);
                 Combox_Condiment_Selected(id);
                 Combox_Condiment_ALL();
+                ListBox_Cooking_ALL();
+                ListBox_Cooking_Selected(id);
 
 
+            }
+        }
+        /// <summary>
+        /// 已选口味信息
+        /// </summary>
+        /// <param name="pluid"></param>
+        private void ListBox_Cooking_Selected(int pluid)
+        {
+            listBox2_Cook_Selected.Items.Clear();
+            using (var m=new Entities())
+            {
+                var q = from c in m.WH_Relation_Cook_PLU
+                        from b in m.WH_CookInformation
+                        where c.PLUID == pluid && c.CookID==b.ID
+                        select new
+                                   {
+                                       c.CookID,b.Description
+                                   };
+                foreach (var w in q)
+                {
+                    ComboBoxItem cb = new ComboBoxItem();
+                    cb.Text = w.Description;
+                    cb.Value = w.CookID;
+                    listBox2_Cook_Selected.Items.Add(cb);
+                }
+            }
+        }
+        /// <summary>
+        /// Cooking MSG all
+        /// </summary>
+        private void ListBox_Cooking_ALL()
+        {
+            listbox1_Cook_ALL.Items.Clear();
+            using (var m=new Entities())
+            {
+                var q = from c in m.WH_CookInformation
+                        select c;
+                foreach (var w in q)
+                {
+                    ComboBoxItem cb = new ComboBoxItem();
+                    cb.Text = w.Description;
+                    cb.Value = w.ID;
+                    listbox1_Cook_ALL.Items.Add(cb);
+                }
             }
         }
         /// <summary>
@@ -155,6 +197,9 @@ namespace PBMApp
                 }
             }
         }
+        /// <summary>
+        /// 数据绑定
+        /// </summary>
         private void BindData()
         {
             DataTable dt = new DataTable("dt");
@@ -189,7 +234,11 @@ namespace PBMApp
                 dt.Rows.Add(dr);
             }
 
-            dataGridView1.DataSource = dt;
+
+            bs.DataSource = dt;
+            dataGridView1.DataSource = bs;
+            bindingNavigator1.BindingSource = bs;
+             
 
             for (int i = 0; i < dt.Columns.Count; i++)
             {
@@ -234,6 +283,39 @@ namespace PBMApp
                 ctx.isCondiment = ckCondiment.Checked ? 1 : 0;
                 m.SaveChanges();
             }
+            using (var m=new Entities())
+            {
+                var q = m.WH_Relation_PLU_Condiment.Count(x => x.PLUID == id);
+                for (int i = 0; i < int.Parse(q.ToString()); i++)
+                {
+                    WH_Relation_PLU_Condiment wp = m.WH_Relation_PLU_Condiment.FirstOrDefault(x => x.PLUID == id);
+                    m.DeleteObject(wp);
+                    m.SaveChanges();
+                }
+            }
+            using (var m = new Entities())
+            {
+                foreach (ComboBoxItem cb in listBox2_Condiment.Items)
+                {
+                    WH_Relation_PLU_Condiment wp=new WH_Relation_PLU_Condiment();
+                    wp.PLUID = id;
+                    wp.condimentPLUID = int.Parse(cb.Value.ToString());
+                    m.AddToWH_Relation_PLU_Condiment(wp);
+                    m.SaveChanges();
+                }
+            }
+            using (var m = new Entities())
+            {
+                foreach (ComboBoxItem cb in listBox2_Cook_Selected.Items)
+                {
+                    WH_Relation_Cook_PLU wp = new WH_Relation_Cook_PLU();
+                    wp.PLUID = id;
+                    wp.CookID = int.Parse(cb.Value.ToString());
+                    m.AddToWH_Relation_Cook_PLU(wp);
+                    m.SaveChanges();
+                }
+            }
+          
             BindData();
         }
 
@@ -277,5 +359,276 @@ namespace PBMApp
             }
         }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            foreach (ComboBoxItem cb in listBox1_Condiment.SelectedItems)
+            {
+                listBox2_Condiment.Items.Add(cb);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            List<int> ints1= new List<int>();
+            foreach (ComboBoxItem cb in listBox2_Condiment.SelectedItems)
+            {
+                ints1.Add(int.Parse(cb.Value.ToString()));
+            }
+            List<int> ints=new List<int>();
+            for (int i = 0; i < listBox2_Condiment.Items.Count; i++)
+            {
+                ComboBoxItem cb = (ComboBoxItem) listBox2_Condiment.Items[i];
+                if(ints1.Contains(int.Parse(cb.Value.ToString())))
+                {
+                    ints.Add(i);
+                }
+            }
+            int t = 0;
+            foreach (int i in ints)
+            {
+                int m = i - t;
+                listBox2_Condiment.Items.RemoveAt(m);
+                t++;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            foreach (ComboBoxItem cb in listbox1_Cook_ALL.SelectedItems)
+            {
+                if(listBox2_Cook_Selected.Items.Count<6)
+                {
+                    listBox2_Cook_Selected.Items.Add(cb); 
+                }
+                
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List<int> ints1 = new List<int>();
+            foreach (ComboBoxItem cb in listBox2_Cook_Selected.SelectedItems)
+            {
+                ints1.Add(int.Parse(cb.Value.ToString()));
+            }
+            List<int> ints = new List<int>();
+            for (int i = 0; i < listBox2_Cook_Selected.Items.Count; i++)
+            {
+                ComboBoxItem cb = (ComboBoxItem)listBox2_Cook_Selected.Items[i];
+                if (ints1.Contains(int.Parse(cb.Value.ToString())))
+                {
+                    ints.Add(i);
+                }
+            }
+            int t = 0;
+            foreach (int i in ints)
+            {
+                int m = i - t;
+                listBox2_Cook_Selected.Items.RemoveAt(m);
+                t++;
+            }
+        }
+
+        private void tbPrice1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             if ((Convert.ToInt32(e.KeyChar) == 8))
+              {
+                  e.Handled = false;
+              }
+              else
+              {
+                  Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                 Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                 if (Result.Success)
+                 {
+                    e.Handled = false;
+                 }
+                 else
+                 {
+                     e.Handled = true;
+                 }
+             }
+        }
+
+        private void tbPrice2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Convert.ToInt32(e.KeyChar) == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                if (Result.Success)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void tbPrice3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Convert.ToInt32(e.KeyChar) == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                if (Result.Success)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void tbInventory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Convert.ToInt32(e.KeyChar) == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                if (Result.Success)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void tbInventoryStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Convert.ToInt32(e.KeyChar) == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                if (Result.Success)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void tbModifierUnitQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Convert.ToInt32(e.KeyChar) == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                if (Result.Success)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void tbModifierPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Convert.ToInt32(e.KeyChar) == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
+                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
+                if (Result.Success)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+        private void BindDetail()
+        {
+            int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            tbID.Text = id.ToString();
+            using (var m = new Entities())
+            {
+                var ctx = m.WH_PLU.FirstOrDefault(x => x.ID == id);
+                tbBarcode.Text = ctx.Bar_Code;
+                tbDesc.Text = ctx.Description;
+                tbPrice1.Text = ctx.Price1.ToString();
+                tbPrice2.Text = ctx.Price2.ToString();
+                tbPrice3.Text = ctx.Price3.ToString();
+                rbPriceMat0.Checked = int.Parse(ctx.PriceMat.ToString()) == 0;
+                rbPriceMat1.Checked = int.Parse(ctx.PriceMat.ToString()) == 1;
+                rbMode0.Checked = int.Parse(ctx.isMode.ToString()) == 0;
+                rbMode1.Checked = int.Parse(ctx.isMode.ToString()) == 1;
+                ckCondiment.Checked = int.Parse(ctx.isCondiment.ToString()) == 1;
+
+                Combox_dept_No(int.Parse(ctx.Dept_No.ToString()));
+                Combox_PLU_Modifier(id);
+                Combox_Condiment_Selected(id);
+                Combox_Condiment_ALL();
+                ListBox_Cooking_ALL();
+                ListBox_Cooking_Selected(id);
+
+
+            }
+        }
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            BindDetail();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            BindDetail();
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            BindDetail();
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            BindDetail();
+        }
+
+        
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
