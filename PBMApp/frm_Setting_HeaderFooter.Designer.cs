@@ -519,7 +519,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 12);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Line5";
+            this.label6.Text = "Line1";
             // 
             // label7
             // 
@@ -528,7 +528,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 12);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Line4";
+            this.label7.Text = "Line2";
             // 
             // label8
             // 
@@ -546,7 +546,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 12);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Line2";
+            this.label9.Text = "Line4";
             // 
             // label10
             // 
@@ -555,7 +555,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 12);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Line1";
+            this.label10.Text = "Line5";
             // 
             // label11
             // 
@@ -597,6 +597,7 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Setting_HeaderFooter
             // 
@@ -613,6 +614,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_Setting_HeaderFooter";
             this.Text = "Setting Header Footer";
+            this.Load += new System.EventHandler(this.frm_Setting_HeaderFooter_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

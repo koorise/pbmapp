@@ -15,5 +15,10 @@ namespace PBMApp
         {
             InitializeComponent();
         }
+
+        private void frm_Setting_ElectronicScale_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

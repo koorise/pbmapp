@@ -45,6 +45,9 @@
             this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.headerFooterSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentRefundCouponToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +96,10 @@
             // 
             // systemToolStripMenuItem
             // 
+            this.systemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.headerFooterSettingToolStripMenuItem,
+            this.supplierSettingToolStripMenuItem,
+            this.paymentRefundCouponToolStripMenuItem});
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             resources.ApplyResources(this.systemToolStripMenuItem, "systemToolStripMenuItem");
             // 
@@ -153,6 +160,24 @@
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // headerFooterSettingToolStripMenuItem
+            // 
+            this.headerFooterSettingToolStripMenuItem.Name = "headerFooterSettingToolStripMenuItem";
+            resources.ApplyResources(this.headerFooterSettingToolStripMenuItem, "headerFooterSettingToolStripMenuItem");
+            this.headerFooterSettingToolStripMenuItem.Click += new System.EventHandler(this.headerFooterSettingToolStripMenuItem_Click);
+            // 
+            // supplierSettingToolStripMenuItem
+            // 
+            this.supplierSettingToolStripMenuItem.Name = "supplierSettingToolStripMenuItem";
+            resources.ApplyResources(this.supplierSettingToolStripMenuItem, "supplierSettingToolStripMenuItem");
+            this.supplierSettingToolStripMenuItem.Click += new System.EventHandler(this.supplierSettingToolStripMenuItem_Click);
+            // 
+            // paymentRefundCouponToolStripMenuItem
+            // 
+            this.paymentRefundCouponToolStripMenuItem.Name = "paymentRefundCouponToolStripMenuItem";
+            resources.ApplyResources(this.paymentRefundCouponToolStripMenuItem, "paymentRefundCouponToolStripMenuItem");
+            this.paymentRefundCouponToolStripMenuItem.Click += new System.EventHandler(this.paymentRefundCouponToolStripMenuItem_Click);
+            // 
             // frm_Main
             // 
             resources.ApplyResources(this, "$this");
@@ -187,6 +212,9 @@
         private System.Windows.Forms.ToolStripMenuItem clerkSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem receiptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem headerFooterSettingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierSettingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentRefundCouponToolStripMenuItem;
 
     }
 }

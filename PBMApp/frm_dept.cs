@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using PBMApp.Model;
+using PBMApp.Tools;
 
 namespace PBMApp
 {
@@ -109,6 +110,10 @@ namespace PBMApp
                 cbGroup.SelectedIndex = int.Parse(ctx.DepartmentGroup.ToString());
                 cbKP.SelectedIndex = int.Parse(ctx.KP.ToString())-1;
                 cbMode.SelectedIndex = int.Parse(ctx.isMode.ToString());
+
+                Combox_KP1(int.Parse(ctx.KP.ToString()));
+                Combox_KP2(int.Parse(ctx.KP2.ToString()));
+
                 int isPriceFormat = int.Parse(ctx.isPriceFormat.ToString());
                 if (isPriceFormat == 0)
                 {
@@ -142,6 +147,9 @@ namespace PBMApp
                     rbKP0.Checked = false;
                     rbKP1.Checked = true;
                 }
+                cbKP.SelectedIndex = int.Parse(ctx.KP.ToString());
+                cbKP2.SelectedIndex = int.Parse(ctx.KP2.ToString());
+                chkFS.Checked = int.Parse(ctx.FS_Tenderable.ToString()) == 1;
                 cbisVat.SelectedIndex = int.Parse(ctx.isVat_Tax_GST.ToString());
                 string str_vat_tax_gst = ctx.str_Vat_Tax_GST.ToString();
                 char[] chars = str_vat_tax_gst.ToCharArray();
@@ -248,6 +256,68 @@ namespace PBMApp
             }
              
         }
+        /// <summary>
+        /// KP2
+        /// </summary>
+        /// <param name="selected"></param>
+        private void Combox_KP2(int selected)
+        {
+            cbKP2.Items.Clear();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_KP
+                        orderby c.ID ascending
+                        select c;
+                ComboBoxItem cbNone=new ComboBoxItem();
+                cbNone.Text = "None";
+                cbNone.Value = "0";
+                cbKP2.Items.Add(cbNone);
+
+                foreach (var w in q)
+                {
+                    Tools.ComboBoxItem cb = new ComboBoxItem();
+                    cb.Text = "KP" + w.ID;
+                    cb.Value = w.ID;
+                    cbKP2.Items.Add(cb);
+                }
+                ComboBoxItem cbRP = new ComboBoxItem();
+                cbRP.Text = "RP";
+                cbRP.Value = "14";
+                cbKP2.Items.Add(cbRP);
+
+                cbKP2.SelectedIndex = selected;
+            }
+        }
+        /// <summary>
+        /// KP1
+        /// </summary>
+        /// <param name="selected"></param>
+        private void Combox_KP1(int selected)
+        {
+            cbKP.Items.Clear();
+            using (var m=new Entities())
+            {
+                var q = from c in m.WH_Sys_KP
+                        orderby c.ID ascending
+                        select c;
+                ComboBoxItem cbNone = new ComboBoxItem();
+                cbNone.Text = "None";
+                cbNone.Value = "0";
+                cbKP.Items.Add(cbNone);
+                foreach (var w in q)
+                {
+                    Tools.ComboBoxItem cb = new ComboBoxItem();
+                    cb.Text = "KP" + w.ID;
+                    cb.Value = w.ID;
+                    cbKP.Items.Add(cb);
+                }
+                ComboBoxItem cbRP = new ComboBoxItem();
+                cbRP.Text = "RP";
+                cbRP.Value = "14";
+                cbKP.Items.Add(cbRP);
+                cbKP.SelectedIndex = selected;
+            }
+        }
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -267,6 +337,10 @@ namespace PBMApp
                 wd.KP_receipt = rbKP0.Checked ? 0 : 1;
                 wd.isType = rbType0.Checked ? 0 : 1;
                 wd.isVat_Tax_GST = cbisVat.SelectedIndex;
+                wd.FS_Tenderable = int.Parse(chkFS.Checked.ToString());
+                wd.KP = int.Parse(cbKP.SelectedIndex.ToString());
+                wd.KP2 = int.Parse(cbKP2.SelectedIndex.ToString());
+
                 switch (cbisVat.SelectedIndex)
                 {
                     case 0:
@@ -375,6 +449,10 @@ namespace PBMApp
                 cbGroup.SelectedIndex = int.Parse(ctx.DepartmentGroup.ToString());
                 cbKP.SelectedIndex = int.Parse(ctx.KP.ToString()) - 1;
                 cbMode.SelectedIndex = int.Parse(ctx.isMode.ToString());
+
+                Combox_KP1(int.Parse(ctx.KP.ToString()));
+                Combox_KP2(int.Parse(ctx.KP2.ToString()));
+
                 int isPriceFormat = int.Parse(ctx.isPriceFormat.ToString());
                 if (isPriceFormat == 0)
                 {
