@@ -42,7 +42,8 @@ namespace PBMApp
                 rbMode0.Checked = int.Parse(ctx.isMode.ToString()) == 0;
                 rbMode1.Checked = int.Parse(ctx.isMode.ToString()) == 1;
                 ckCondiment.Checked = int.Parse(ctx.isCondiment.ToString()) == 1;
-                
+                chkFS.Checked = int.Parse(ctx.FS_Tenderable.ToString()) == 1;
+                chkES.Checked = int.Parse(ctx.ExemptServTax.ToString()) == 1;
                 Combox_dept_No(int.Parse(ctx.Dept_No.ToString()));
                 Combox_PLU_Modifier(id);
                 Combox_Condiment_Selected(id);
@@ -264,6 +265,8 @@ namespace PBMApp
                 ctx.Price1 = decimal.Parse(tbPrice1.Text);
                 ctx.Price2 = decimal.Parse(tbPrice2.Text);
                 ctx.Price3 = decimal.Parse(tbPrice3.Text);
+                ctx.FS_Tenderable = chkFS.Checked ? 1 : 0;
+                ctx.ExemptServTax = chkES.Checked ? 1 : 0;
                 if(rbPriceMat0.Checked)
                 {
                     ctx.PriceMat = 0;
@@ -281,20 +284,14 @@ namespace PBMApp
                     ctx.isMode = 1;
                 }
                 ctx.isCondiment = ckCondiment.Checked ? 1 : 0;
-                m.SaveChanges();
-            }
-            using (var m=new Entities())
-            {
+             
                 var q = m.WH_Relation_PLU_Condiment.Count(x => x.PLUID == id);
                 for (int i = 0; i < int.Parse(q.ToString()); i++)
                 {
                     WH_Relation_PLU_Condiment wp = m.WH_Relation_PLU_Condiment.FirstOrDefault(x => x.PLUID == id);
                     m.DeleteObject(wp);
-                    m.SaveChanges();
                 }
-            }
-            using (var m = new Entities())
-            {
+            
                 foreach (ComboBoxItem cb in listBox2_Condiment.Items)
                 {
                     WH_Relation_PLU_Condiment wp=new WH_Relation_PLU_Condiment();
@@ -303,17 +300,15 @@ namespace PBMApp
                     m.AddToWH_Relation_PLU_Condiment(wp);
                     m.SaveChanges();
                 }
-            }
-            using (var m = new Entities())
-            {
+
                 foreach (ComboBoxItem cb in listBox2_Cook_Selected.Items)
                 {
                     WH_Relation_Cook_PLU wp = new WH_Relation_Cook_PLU();
                     wp.PLUID = id;
                     wp.CookID = int.Parse(cb.Value.ToString());
                     m.AddToWH_Relation_Cook_PLU(wp);
-                    m.SaveChanges();
                 }
+                m.SaveChanges();
             }
           
             BindData();
@@ -575,6 +570,7 @@ namespace PBMApp
                 }
             }
         }
+
         private void BindDetail()
         {
             int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
@@ -592,7 +588,8 @@ namespace PBMApp
                 rbMode0.Checked = int.Parse(ctx.isMode.ToString()) == 0;
                 rbMode1.Checked = int.Parse(ctx.isMode.ToString()) == 1;
                 ckCondiment.Checked = int.Parse(ctx.isCondiment.ToString()) == 1;
-
+                chkFS.Checked = int.Parse(ctx.FS_Tenderable.ToString()) == 1;
+                chkES.Checked = int.Parse(ctx.ExemptServTax.ToString()) == 1;
                 Combox_dept_No(int.Parse(ctx.Dept_No.ToString()));
                 Combox_PLU_Modifier(id);
                 Combox_Condiment_Selected(id);
@@ -603,6 +600,7 @@ namespace PBMApp
 
             }
         }
+
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
             BindDetail();
