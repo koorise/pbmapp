@@ -42,6 +42,13 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
             frm.Show();
 
         }
@@ -52,6 +59,13 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
             frm.Show();
         }
 
@@ -61,6 +75,13 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
             frm.Show();
         }
 
@@ -71,6 +92,13 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
             frm.Show();
         }
         /// <summary>
@@ -100,6 +128,13 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
             frm.Show();
         }
 
@@ -109,6 +144,13 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
             frm.Show();
         }
 
@@ -118,8 +160,63 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
             frm.Show();
 
+        }
+
+        private void pCASHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_PCASH_FCE frm = new frm_Setting_PCASH_FCE();
+            frm.MdiParent = this;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void taxSettingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Tax frm = new frm_Tax();
+            frm.MdiParent = this;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void menuSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_menu_plu frm = new frm_menu_plu();
+            frm.MdiParent = this;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
         }
     }
 }

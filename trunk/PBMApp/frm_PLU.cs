@@ -37,6 +37,7 @@ namespace PBMApp
                 tbPrice1.Text = ctx.Price1.ToString();
                 tbPrice2.Text = ctx.Price2.ToString();
                 tbPrice3.Text = ctx.Price3.ToString();
+                chkMenu.Checked = int.Parse(ctx.isMenu.ToString()) == 1;
                 rbPriceMat0.Checked = int.Parse(ctx.PriceMat.ToString()) == 0;
                 rbPriceMat1.Checked = int.Parse(ctx.PriceMat.ToString()) == 1;
                 rbMode0.Checked = int.Parse(ctx.isMode.ToString()) == 0;
@@ -267,6 +268,7 @@ namespace PBMApp
                 ctx.Price3 = decimal.Parse(tbPrice3.Text);
                 ctx.FS_Tenderable = chkFS.Checked ? 1 : 0;
                 ctx.ExemptServTax = chkES.Checked ? 1 : 0;
+                ctx.isMenu = chkMenu.Checked ? 1 : 0;
                 if(rbPriceMat0.Checked)
                 {
                     ctx.PriceMat = 0;

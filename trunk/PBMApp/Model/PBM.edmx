@@ -9,6 +9,9 @@
           <EntitySet Name="WH_Clerk" EntityType="pbmModel.Store.WH_Clerk" store:Type="Tables" />
           <EntitySet Name="WH_CookInformation" EntityType="pbmModel.Store.WH_CookInformation" store:Type="Tables" />
           <EntitySet Name="WH_Department" EntityType="pbmModel.Store.WH_Department" store:Type="Tables" />
+          <EntitySet Name="WH_Menu" EntityType="pbmModel.Store.WH_Menu" store:Type="Tables" />
+          <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.Store.WH_Menu_Details" store:Type="Tables" />
+          <EntitySet Name="WH_Menu_List" EntityType="pbmModel.Store.WH_Menu_List" store:Type="Tables" />
           <EntitySet Name="WH_PLU" EntityType="pbmModel.Store.WH_PLU" store:Type="Tables" />
           <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.Store.WH_PLU_Modifier" store:Type="Tables" />
           <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.Store.WH_Relation_Cook_PLU" store:Type="Tables" />
@@ -23,6 +26,9 @@
           <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Refund" EntityType="pbmModel.Store.WH_Sys_Refund" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.Store.WH_Sys_Supplier" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.Store.WH_Sys_Symbols" store:Type="Tables" />
+          <EntitySet Name="WH_Tax" EntityType="pbmModel.Store.WH_Tax" store:Type="Tables" />
+          <EntitySet Name="WH_Tax_Table" EntityType="pbmModel.Store.WH_Tax_Table" store:Type="Tables" />
         </EntityContainer>
         <EntityType Name="WH_Clerk">
           <Key>
@@ -65,6 +71,37 @@
           <Property Name="str_Vat_Tax_GST" Type="nvarchar" />
           <Property Name="FS_Tenderable" Type="integer" />
         </EntityType>
+        <EntityType Name="WH_Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="isMode" Type="integer" />
+          <Property Name="Price" Type="decimal" Scale="4" />
+          <Property Name="isTax" Type="integer" />
+          <Property Name="isCount" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Menu_Details">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MenuID" Type="integer" />
+          <Property Name="MenuListID" Type="integer" />
+          <Property Name="PLUID" Type="integer" />
+          <Property Name="isFlag" Type="integer" />
+          <Property Name="KeyPosition" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Menu_List">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MenuID" Type="integer" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="isFlag" Type="integer" />
+        </EntityType>
         <EntityType Name="WH_PLU">
           <Key>
             <PropertyRef Name="ID" />
@@ -80,7 +117,7 @@
           <Property Name="isMode" Type="integer" />
           <Property Name="Inventory" Type="integer" />
           <Property Name="Inventory_safty" Type="integer" />
-          <Property Name="menu_flag" Type="integer" />
+          <Property Name="isMenu" Type="integer" />
           <Property Name="isCondiment" Type="integer" />
           <Property Name="Modifier" Type="integer" />
           <Property Name="Modifier_description" Type="nvarchar" />
@@ -216,6 +253,34 @@
           <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="nvarchar" />
         </EntityType>
+        <EntityType Name="WH_Sys_Symbols">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WH_Tax">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TaxTypeID" Type="integer" />
+          <Property Name="TaxTypeStr" Type="nvarchar" />
+          <Property Name="Rate" Type="decimal" Scale="4" />
+          <Property Name="Limit" Type="decimal" Scale="4" />
+        </EntityType>
+        <EntityType Name="WH_Tax_Table">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TaxID" Type="integer" />
+          <Property Name="TaxA" Type="decimal" Scale="4" />
+          <Property Name="TaxB" Type="decimal" Scale="4" />
+          <Property Name="TaxRate" Type="decimal" Scale="4" />
+          <Property Name="isFlag" Type="integer" />
+        </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -234,10 +299,16 @@
           <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
           <EntitySet Name="WH_Department" EntityType="pbmModel.WH_Department" />
           <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.WH_Sys_KP" />
-          <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
           <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.WH_Sys_PCASH" />
           <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.WH_Sys_PCASH_linkpayment" />
           <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
+          <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.WH_Sys_Symbols" />
+          <EntitySet Name="WH_Tax" EntityType="pbmModel.WH_Tax" />
+          <EntitySet Name="WH_Tax_Table" EntityType="pbmModel.WH_Tax_Table" />
+          <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
+          <EntitySet Name="WH_Menu" EntityType="pbmModel.WH_Menu" />
+          <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.WH_Menu_Details" />
+          <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
         </EntityContainer>
         <EntityType Name="WH_Clerk">
           <Key>
@@ -378,30 +449,6 @@
           <Property Type="String" Name="IP_Addr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Type="Int64" Name="Port" />
         </EntityType>
-        <EntityType Name="WH_PLU">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Bar_Code" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="Dept_No" />
-          <Property Type="Decimal" Name="Price1" Precision="18" Scale="4" />
-          <Property Type="Decimal" Name="Price2" Precision="18" Scale="4" />
-          <Property Type="Decimal" Name="Price3" Precision="18" Scale="4" />
-          <Property Type="Int64" Name="PriceMat" />
-          <Property Type="Int64" Name="isMode" />
-          <Property Type="Int64" Name="Inventory" />
-          <Property Type="Int64" Name="Inventory_safty" />
-          <Property Type="Int64" Name="menu_flag" />
-          <Property Type="Int64" Name="isCondiment" />
-          <Property Type="Int64" Name="Modifier" />
-          <Property Type="String" Name="Modifier_description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Modifier_Unity_Quantity" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="Modifier_Price" />
-          <Property Type="Int64" Name="FS_Tenderable" />
-          <Property Type="Int64" Name="ExemptServTax" />
-        </EntityType>
         <EntityType Name="WH_Sys_PCASH">
           <Key>
             <PropertyRef Name="ID" />
@@ -430,6 +477,89 @@
           <Property Type="Int64" Name="SymbolID" />
           <Property Type="String" Name="SymbolStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WH_Sys_Symbols">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WH_Tax">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="TaxTypeID" />
+          <Property Type="String" Name="TaxTypeStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Rate" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Limit" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="WH_Tax_Table">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="TaxID" />
+          <Property Type="Decimal" Name="TaxA" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="TaxB" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="TaxRate" Precision="18" Scale="4" />
+          <Property Type="Int64" Name="isFlag" />
+        </EntityType>
+        <EntityType Name="WH_PLU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Bar_Code" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Dept_No" />
+          <Property Type="Decimal" Name="Price1" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Price2" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Price3" Precision="18" Scale="4" />
+          <Property Type="Int64" Name="PriceMat" />
+          <Property Type="Int64" Name="isMode" />
+          <Property Type="Int64" Name="Inventory" />
+          <Property Type="Int64" Name="Inventory_safty" />
+          <Property Type="Int64" Name="isMenu" />
+          <Property Type="Int64" Name="isCondiment" />
+          <Property Type="Int64" Name="Modifier" />
+          <Property Type="String" Name="Modifier_description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Modifier_Unity_Quantity" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Modifier_Price" />
+          <Property Type="Int64" Name="FS_Tenderable" />
+          <Property Type="Int64" Name="ExemptServTax" />
+        </EntityType>
+        <EntityType Name="WH_Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="isMode" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="4" />
+          <Property Type="Int64" Name="isTax" />
+          <Property Type="Int64" Name="isCount" />
+        </EntityType>
+        <EntityType Name="WH_Menu_Details">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="MenuID" />
+          <Property Type="Int64" Name="MenuListID" />
+          <Property Type="Int64" Name="PLUID" />
+          <Property Type="Int64" Name="isFlag" />
+          <Property Type="Int64" Name="KeyPosition" />
+        </EntityType>
+        <EntityType Name="WH_Menu_List">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="MenuID" />
+          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="isFlag" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -569,31 +699,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WH_PLU">
-            <EntityTypeMapping TypeName="pbmModel.WH_PLU">
-              <MappingFragment StoreEntitySet="WH_PLU">
-                <ScalarProperty Name="ExemptServTax" ColumnName="ExemptServTax" />
-                <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
-                <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
-                <ScalarProperty Name="Modifier_Unity_Quantity" ColumnName="Modifier_Unity_Quantity" />
-                <ScalarProperty Name="Modifier_description" ColumnName="Modifier_description" />
-                <ScalarProperty Name="Modifier" ColumnName="Modifier" />
-                <ScalarProperty Name="isCondiment" ColumnName="isCondiment" />
-                <ScalarProperty Name="menu_flag" ColumnName="menu_flag" />
-                <ScalarProperty Name="Inventory_safty" ColumnName="Inventory_safty" />
-                <ScalarProperty Name="Inventory" ColumnName="Inventory" />
-                <ScalarProperty Name="isMode" ColumnName="isMode" />
-                <ScalarProperty Name="PriceMat" ColumnName="PriceMat" />
-                <ScalarProperty Name="Price3" ColumnName="Price3" />
-                <ScalarProperty Name="Price2" ColumnName="Price2" />
-                <ScalarProperty Name="Price1" ColumnName="Price1" />
-                <ScalarProperty Name="Dept_No" ColumnName="Dept_No" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="WH_Sys_PCASH">
             <EntityTypeMapping TypeName="pbmModel.WH_Sys_PCASH">
               <MappingFragment StoreEntitySet="WH_Sys_PCASH">
@@ -622,6 +727,96 @@
                 <ScalarProperty Name="Decimals" ColumnName="Decimals" />
                 <ScalarProperty Name="FC" ColumnName="FC" />
                 <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_Symbols">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_Symbols">
+              <MappingFragment StoreEntitySet="WH_Sys_Symbols">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Tax">
+            <EntityTypeMapping TypeName="pbmModel.WH_Tax">
+              <MappingFragment StoreEntitySet="WH_Tax">
+                <ScalarProperty Name="Limit" ColumnName="Limit" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="TaxTypeStr" ColumnName="TaxTypeStr" />
+                <ScalarProperty Name="TaxTypeID" ColumnName="TaxTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Tax_Table">
+            <EntityTypeMapping TypeName="pbmModel.WH_Tax_Table">
+              <MappingFragment StoreEntitySet="WH_Tax_Table">
+                <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="TaxB" ColumnName="TaxB" />
+                <ScalarProperty Name="TaxA" ColumnName="TaxA" />
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_PLU">
+            <EntityTypeMapping TypeName="pbmModel.WH_PLU">
+              <MappingFragment StoreEntitySet="WH_PLU">
+                <ScalarProperty Name="ExemptServTax" ColumnName="ExemptServTax" />
+                <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
+                <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
+                <ScalarProperty Name="Modifier_Unity_Quantity" ColumnName="Modifier_Unity_Quantity" />
+                <ScalarProperty Name="Modifier_description" ColumnName="Modifier_description" />
+                <ScalarProperty Name="Modifier" ColumnName="Modifier" />
+                <ScalarProperty Name="isCondiment" ColumnName="isCondiment" />
+                <ScalarProperty Name="isMenu" ColumnName="isMenu" />
+                <ScalarProperty Name="Inventory_safty" ColumnName="Inventory_safty" />
+                <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+                <ScalarProperty Name="isMode" ColumnName="isMode" />
+                <ScalarProperty Name="PriceMat" ColumnName="PriceMat" />
+                <ScalarProperty Name="Price3" ColumnName="Price3" />
+                <ScalarProperty Name="Price2" ColumnName="Price2" />
+                <ScalarProperty Name="Price1" ColumnName="Price1" />
+                <ScalarProperty Name="Dept_No" ColumnName="Dept_No" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Menu">
+            <EntityTypeMapping TypeName="pbmModel.WH_Menu">
+              <MappingFragment StoreEntitySet="WH_Menu">
+                <ScalarProperty Name="isCount" ColumnName="isCount" />
+                <ScalarProperty Name="isTax" ColumnName="isTax" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="isMode" ColumnName="isMode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Menu_Details">
+            <EntityTypeMapping TypeName="pbmModel.WH_Menu_Details">
+              <MappingFragment StoreEntitySet="WH_Menu_Details">
+                <ScalarProperty Name="KeyPosition" ColumnName="KeyPosition" />
+                <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+                <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+                <ScalarProperty Name="MenuListID" ColumnName="MenuListID" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Menu_List">
+            <EntityTypeMapping TypeName="pbmModel.WH_Menu_List">
+              <MappingFragment StoreEntitySet="WH_Menu_List">
+                <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -660,10 +855,16 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_CouponInformation" Width="1.5" PointX="3.375" PointY="9.75" Height="1.4535937500000031" />
         <EntityTypeShape EntityType="pbmModel.WH_Department" Width="1.5" PointX="0.875" PointY="4" Height="3.6456510416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_KP" Width="1.5" PointX="9.375" PointY="4.75" Height="2.2966927083333388" />
-        <EntityTypeShape EntityType="pbmModel.WH_PLU" Width="1.5" PointX="3.25" PointY="5.25" Height="4.1515104166666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PCASH" Width="1.5" PointX="5.375" PointY="9.75" Height="1.7908333333333388" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PCASH_linkpayment" Width="1.5" PointX="7.375" PointY="9.75" Height="1.2849739583333388" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_FCE" Width="1.5" PointX="9.375" PointY="8.75" Height="2.1280729166666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_Symbols" Width="1.5" PointX="11.375" PointY="0.75" Height="1.2849739583333388" />
+        <EntityTypeShape EntityType="pbmModel.WH_Tax" Width="1.5" PointX="11.375" PointY="3.75" Height="1.7908333333333388" />
+        <EntityTypeShape EntityType="pbmModel.WH_Tax_Table" Width="1.5" PointX="11.375" PointY="6.75" Height="1.9594531250000031" />
+        <EntityTypeShape EntityType="pbmModel.WH_PLU" Width="1.5" PointX="2.75" PointY="3.875" Height="4.1515104166666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Menu" Width="1.5" PointX="11.75" PointY="9.75" Height="1.9594531250000031" />
+        <EntityTypeShape EntityType="pbmModel.WH_Menu_Details" Width="1.5" PointX="0.75" PointY="12.75" Height="1.9594531250000067" />
+        <EntityTypeShape EntityType="pbmModel.WH_Menu_List" Width="1.5" PointX="2.75" PointY="12.75" Height="1.6222135416666674" />
       </Diagram>
     </Diagrams>
   </Designer>

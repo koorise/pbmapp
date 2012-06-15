@@ -390,31 +390,6 @@ namespace PBMApp
             BindData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (var m=new Entities())
-            {
-                for (int i = 1; i < 201; i++)
-                {
-                    WH_Department w=new WH_Department();
-                    w.Description = "DEPT" + i.ToString().PadLeft(3, '0');
-                    w.High_Digit_LockOut = 7;
-                    w.isAge = 0;
-                    w.isPrice = 0;
-                    w.DepartmentGroup = 0;
-                    w.KP = 0;
-                    w.isMode = 0;
-                    w.isPrice = 0;
-                    w.KP_receipt = 0;
-                    w.isVat_Tax_GST = 0;
-                    w.str_Vat_Tax_GST = "0";
-                    m.AddToWH_Department(w);
-                    m.SaveChanges();
-                }
-                
-            }
-        }
-
         private void tbisPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Convert.ToInt32(e.KeyChar) == 8))
@@ -435,6 +410,7 @@ namespace PBMApp
                 }
             }
         }
+
         private void BindDetail()
         {
             int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
@@ -592,6 +568,7 @@ namespace PBMApp
             }
              
         }
+        
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
             BindDetail();

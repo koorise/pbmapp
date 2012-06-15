@@ -179,6 +179,12 @@
     <Compile Include="frm_Setting_TableBarcode.Designer.cs">
       <DependentUpon>frm_Setting_TableBarcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Tax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Tax.Designer.cs">
+      <DependentUpon>frm_Tax.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_TouchScreen_Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_TableBarcode.resx">
       <DependentUpon>frm_Setting_TableBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Tax.resx">
+      <DependentUpon>frm_Tax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_TouchScreen_Payment.resx">
       <DependentUpon>frm_TouchScreen_Payment.cs</DependentUpon>
