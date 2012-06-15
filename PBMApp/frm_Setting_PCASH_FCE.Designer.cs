@@ -29,6 +29,26 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.textBoxb10 = new System.Windows.Forms.TextBox();
+            this.textBoxa10 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.textBoxb9 = new System.Windows.Forms.TextBox();
+            this.textBoxa9 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.textBoxb8 = new System.Windows.Forms.TextBox();
+            this.textBoxa8 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.textBoxb7 = new System.Windows.Forms.TextBox();
+            this.textBoxa7 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.textBoxb6 = new System.Windows.Forms.TextBox();
+            this.textBoxa6 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,49 +104,29 @@
             this.textBoxd1 = new System.Windows.Forms.TextBox();
             this.textBoxc1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
-            this.textBoxb10 = new System.Windows.Forms.TextBox();
-            this.textBoxa10 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
-            this.textBoxb9 = new System.Windows.Forms.TextBox();
-            this.textBoxa9 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
-            this.textBoxb8 = new System.Windows.Forms.TextBox();
-            this.textBoxa8 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.comboBox17 = new System.Windows.Forms.ComboBox();
-            this.textBoxb7 = new System.Windows.Forms.TextBox();
-            this.textBoxa7 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
-            this.textBoxb6 = new System.Windows.Forms.TextBox();
-            this.textBoxa6 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox14);
+            this.groupBox1.Controls.Add(this.comboBox10);
             this.groupBox1.Controls.Add(this.textBoxb10);
             this.groupBox1.Controls.Add(this.textBoxa10);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.comboBox15);
+            this.groupBox1.Controls.Add(this.comboBox9);
             this.groupBox1.Controls.Add(this.textBoxb9);
             this.groupBox1.Controls.Add(this.textBoxa9);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.comboBox16);
+            this.groupBox1.Controls.Add(this.comboBox8);
             this.groupBox1.Controls.Add(this.textBoxb8);
             this.groupBox1.Controls.Add(this.textBoxa8);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.comboBox17);
+            this.groupBox1.Controls.Add(this.comboBox7);
             this.groupBox1.Controls.Add(this.textBoxb7);
             this.groupBox1.Controls.Add(this.textBoxa7);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.comboBox18);
+            this.groupBox1.Controls.Add(this.comboBox6);
             this.groupBox1.Controls.Add(this.textBoxb6);
             this.groupBox1.Controls.Add(this.textBoxa6);
             this.groupBox1.Controls.Add(this.label22);
@@ -161,6 +161,166 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PCASH";
             // 
+            // comboBox10
+            // 
+            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Location = new System.Drawing.Point(270, 282);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(121, 20);
+            this.comboBox10.TabIndex = 43;
+            // 
+            // textBoxb10
+            // 
+            this.textBoxb10.Location = new System.Drawing.Point(164, 282);
+            this.textBoxb10.Name = "textBoxb10";
+            this.textBoxb10.Size = new System.Drawing.Size(100, 21);
+            this.textBoxb10.TabIndex = 42;
+            // 
+            // textBoxa10
+            // 
+            this.textBoxa10.Location = new System.Drawing.Point(57, 282);
+            this.textBoxa10.Name = "textBoxa10";
+            this.textBoxa10.Size = new System.Drawing.Size(100, 21);
+            this.textBoxa10.TabIndex = 41;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(5, 286);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(47, 12);
+            this.label18.TabIndex = 40;
+            this.label18.Text = "PCASH10";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(270, 255);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(121, 20);
+            this.comboBox9.TabIndex = 39;
+            // 
+            // textBoxb9
+            // 
+            this.textBoxb9.Location = new System.Drawing.Point(164, 255);
+            this.textBoxb9.Name = "textBoxb9";
+            this.textBoxb9.Size = new System.Drawing.Size(100, 21);
+            this.textBoxb9.TabIndex = 38;
+            // 
+            // textBoxa9
+            // 
+            this.textBoxa9.Location = new System.Drawing.Point(57, 255);
+            this.textBoxa9.Name = "textBoxa9";
+            this.textBoxa9.Size = new System.Drawing.Size(100, 21);
+            this.textBoxa9.TabIndex = 37;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 259);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 12);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "PCASH9";
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(270, 228);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(121, 20);
+            this.comboBox8.TabIndex = 35;
+            // 
+            // textBoxb8
+            // 
+            this.textBoxb8.Location = new System.Drawing.Point(164, 228);
+            this.textBoxb8.Name = "textBoxb8";
+            this.textBoxb8.Size = new System.Drawing.Size(100, 21);
+            this.textBoxb8.TabIndex = 34;
+            // 
+            // textBoxa8
+            // 
+            this.textBoxa8.Location = new System.Drawing.Point(57, 228);
+            this.textBoxa8.Name = "textBoxa8";
+            this.textBoxa8.Size = new System.Drawing.Size(100, 21);
+            this.textBoxa8.TabIndex = 33;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(9, 232);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 12);
+            this.label20.TabIndex = 32;
+            this.label20.Text = "PCASH8";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(270, 201);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(121, 20);
+            this.comboBox7.TabIndex = 31;
+            // 
+            // textBoxb7
+            // 
+            this.textBoxb7.Location = new System.Drawing.Point(164, 201);
+            this.textBoxb7.Name = "textBoxb7";
+            this.textBoxb7.Size = new System.Drawing.Size(100, 21);
+            this.textBoxb7.TabIndex = 30;
+            // 
+            // textBoxa7
+            // 
+            this.textBoxa7.Location = new System.Drawing.Point(57, 201);
+            this.textBoxa7.Name = "textBoxa7";
+            this.textBoxa7.Size = new System.Drawing.Size(100, 21);
+            this.textBoxa7.TabIndex = 29;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 205);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 12);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "PCASH7";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(270, 174);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 20);
+            this.comboBox6.TabIndex = 27;
+            // 
+            // textBoxb6
+            // 
+            this.textBoxb6.Location = new System.Drawing.Point(164, 174);
+            this.textBoxb6.Name = "textBoxb6";
+            this.textBoxb6.Size = new System.Drawing.Size(100, 21);
+            this.textBoxb6.TabIndex = 26;
+            // 
+            // textBoxa6
+            // 
+            this.textBoxa6.Location = new System.Drawing.Point(57, 174);
+            this.textBoxa6.Name = "textBoxa6";
+            this.textBoxa6.Size = new System.Drawing.Size(100, 21);
+            this.textBoxa6.TabIndex = 25;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(9, 178);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 12);
+            this.label22.TabIndex = 24;
+            this.label22.Text = "PCASH6";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(333, 311);
@@ -169,6 +329,7 @@
             this.button2.TabIndex = 23;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -404,6 +565,7 @@
             this.button1.TabIndex = 29;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxe4
             // 
@@ -414,6 +576,7 @@
             // 
             // comboBoxb4
             // 
+            this.comboBoxb4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxb4.FormattingEnabled = true;
             this.comboBoxb4.Location = new System.Drawing.Point(234, 119);
             this.comboBoxb4.Name = "comboBoxb4";
@@ -422,6 +585,7 @@
             // 
             // comboBoxa4
             // 
+            this.comboBoxa4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxa4.FormattingEnabled = true;
             this.comboBoxa4.Items.AddRange(new object[] {
             "0",
@@ -465,6 +629,7 @@
             // 
             // comboBoxb3
             // 
+            this.comboBoxb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxb3.FormattingEnabled = true;
             this.comboBoxb3.Location = new System.Drawing.Point(234, 92);
             this.comboBoxb3.Name = "comboBoxb3";
@@ -473,6 +638,7 @@
             // 
             // comboBoxa3
             // 
+            this.comboBoxa3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxa3.FormattingEnabled = true;
             this.comboBoxa3.Items.AddRange(new object[] {
             "0",
@@ -516,6 +682,7 @@
             // 
             // comboBoxb2
             // 
+            this.comboBoxb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxb2.FormattingEnabled = true;
             this.comboBoxb2.Location = new System.Drawing.Point(234, 65);
             this.comboBoxb2.Name = "comboBoxb2";
@@ -524,6 +691,7 @@
             // 
             // comboBoxa2
             // 
+            this.comboBoxa2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxa2.FormattingEnabled = true;
             this.comboBoxa2.Items.AddRange(new object[] {
             "0",
@@ -612,6 +780,7 @@
             // 
             // comboBoxb1
             // 
+            this.comboBoxb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxb1.FormattingEnabled = true;
             this.comboBoxb1.Location = new System.Drawing.Point(234, 39);
             this.comboBoxb1.Name = "comboBoxb1";
@@ -620,6 +789,7 @@
             // 
             // comboBoxa1
             // 
+            this.comboBoxa1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxa1.FormattingEnabled = true;
             this.comboBoxa1.Items.AddRange(new object[] {
             "0",
@@ -653,166 +823,6 @@
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 0;
             this.label9.Text = "FCE1";
-            // 
-            // comboBox14
-            // 
-            this.comboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(270, 282);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(121, 20);
-            this.comboBox14.TabIndex = 43;
-            // 
-            // textBoxb10
-            // 
-            this.textBoxb10.Location = new System.Drawing.Point(164, 282);
-            this.textBoxb10.Name = "textBoxb10";
-            this.textBoxb10.Size = new System.Drawing.Size(100, 21);
-            this.textBoxb10.TabIndex = 42;
-            // 
-            // textBoxa10
-            // 
-            this.textBoxa10.Location = new System.Drawing.Point(57, 282);
-            this.textBoxa10.Name = "textBoxa10";
-            this.textBoxa10.Size = new System.Drawing.Size(100, 21);
-            this.textBoxa10.TabIndex = 41;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(5, 286);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(47, 12);
-            this.label18.TabIndex = 40;
-            this.label18.Text = "PCASH10";
-            // 
-            // comboBox15
-            // 
-            this.comboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(270, 255);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(121, 20);
-            this.comboBox15.TabIndex = 39;
-            // 
-            // textBoxb9
-            // 
-            this.textBoxb9.Location = new System.Drawing.Point(164, 255);
-            this.textBoxb9.Name = "textBoxb9";
-            this.textBoxb9.Size = new System.Drawing.Size(100, 21);
-            this.textBoxb9.TabIndex = 38;
-            // 
-            // textBoxa9
-            // 
-            this.textBoxa9.Location = new System.Drawing.Point(57, 255);
-            this.textBoxa9.Name = "textBoxa9";
-            this.textBoxa9.Size = new System.Drawing.Size(100, 21);
-            this.textBoxa9.TabIndex = 37;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 259);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 12);
-            this.label19.TabIndex = 36;
-            this.label19.Text = "PCASH9";
-            // 
-            // comboBox16
-            // 
-            this.comboBox16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(270, 228);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(121, 20);
-            this.comboBox16.TabIndex = 35;
-            // 
-            // textBoxb8
-            // 
-            this.textBoxb8.Location = new System.Drawing.Point(164, 228);
-            this.textBoxb8.Name = "textBoxb8";
-            this.textBoxb8.Size = new System.Drawing.Size(100, 21);
-            this.textBoxb8.TabIndex = 34;
-            // 
-            // textBoxa8
-            // 
-            this.textBoxa8.Location = new System.Drawing.Point(57, 228);
-            this.textBoxa8.Name = "textBoxa8";
-            this.textBoxa8.Size = new System.Drawing.Size(100, 21);
-            this.textBoxa8.TabIndex = 33;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(9, 232);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 12);
-            this.label20.TabIndex = 32;
-            this.label20.Text = "PCASH8";
-            // 
-            // comboBox17
-            // 
-            this.comboBox17.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Location = new System.Drawing.Point(270, 201);
-            this.comboBox17.Name = "comboBox17";
-            this.comboBox17.Size = new System.Drawing.Size(121, 20);
-            this.comboBox17.TabIndex = 31;
-            // 
-            // textBoxb7
-            // 
-            this.textBoxb7.Location = new System.Drawing.Point(164, 201);
-            this.textBoxb7.Name = "textBoxb7";
-            this.textBoxb7.Size = new System.Drawing.Size(100, 21);
-            this.textBoxb7.TabIndex = 30;
-            // 
-            // textBoxa7
-            // 
-            this.textBoxa7.Location = new System.Drawing.Point(57, 201);
-            this.textBoxa7.Name = "textBoxa7";
-            this.textBoxa7.Size = new System.Drawing.Size(100, 21);
-            this.textBoxa7.TabIndex = 29;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(9, 205);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 12);
-            this.label21.TabIndex = 28;
-            this.label21.Text = "PCASH7";
-            // 
-            // comboBox18
-            // 
-            this.comboBox18.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(270, 174);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(121, 20);
-            this.comboBox18.TabIndex = 27;
-            // 
-            // textBoxb6
-            // 
-            this.textBoxb6.Location = new System.Drawing.Point(164, 174);
-            this.textBoxb6.Name = "textBoxb6";
-            this.textBoxb6.Size = new System.Drawing.Size(100, 21);
-            this.textBoxb6.TabIndex = 26;
-            // 
-            // textBoxa6
-            // 
-            this.textBoxa6.Location = new System.Drawing.Point(57, 174);
-            this.textBoxa6.Name = "textBoxa6";
-            this.textBoxa6.Size = new System.Drawing.Size(100, 21);
-            this.textBoxa6.TabIndex = 25;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(9, 178);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 12);
-            this.label22.TabIndex = 24;
-            this.label22.Text = "PCASH6";
             // 
             // frm_Setting_PCASH_FCE
             // 
@@ -890,23 +900,23 @@
         private System.Windows.Forms.TextBox textBoxd1;
         private System.Windows.Forms.TextBox textBoxc1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox14;
+        private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.TextBox textBoxb10;
         private System.Windows.Forms.TextBox textBoxa10;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.TextBox textBoxb9;
         private System.Windows.Forms.TextBox textBoxa9;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox16;
+        private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.TextBox textBoxb8;
         private System.Windows.Forms.TextBox textBoxa8;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBox17;
+        private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.TextBox textBoxb7;
         private System.Windows.Forms.TextBox textBoxa7;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.TextBox textBoxb6;
         private System.Windows.Forms.TextBox textBoxa6;
         private System.Windows.Forms.Label label22;

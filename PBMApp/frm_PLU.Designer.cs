@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_PLU));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkES = new System.Windows.Forms.CheckBox();
+            this.chkFS = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.listBox2_Cook_Selected = new System.Windows.Forms.ListBox();
@@ -100,8 +102,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.chkFS = new System.Windows.Forms.CheckBox();
-            this.chkES = new System.Windows.Forms.CheckBox();
+            this.chkMenu = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkMenu);
             this.groupBox1.Controls.Add(this.chkES);
             this.groupBox1.Controls.Add(this.chkFS);
             this.groupBox1.Controls.Add(this.groupBox7);
@@ -148,6 +150,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PLU Information";
+            // 
+            // chkES
+            // 
+            this.chkES.AutoSize = true;
+            this.chkES.Location = new System.Drawing.Point(217, 164);
+            this.chkES.Name = "chkES";
+            this.chkES.Size = new System.Drawing.Size(108, 16);
+            this.chkES.TabIndex = 41;
+            this.chkES.Text = "Exempt ServTax";
+            this.chkES.UseVisualStyleBackColor = true;
+            // 
+            // chkFS
+            // 
+            this.chkFS.AutoSize = true;
+            this.chkFS.Location = new System.Drawing.Point(217, 136);
+            this.chkFS.Name = "chkFS";
+            this.chkFS.Size = new System.Drawing.Size(102, 16);
+            this.chkFS.TabIndex = 40;
+            this.chkFS.Text = "FS Tenderable";
+            this.chkFS.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -834,25 +856,15 @@
             this.toolStripButton2.Size = new System.Drawing.Size(27, 22);
             this.toolStripButton2.Text = "DEL";
             // 
-            // chkFS
+            // chkMenu
             // 
-            this.chkFS.AutoSize = true;
-            this.chkFS.Location = new System.Drawing.Point(217, 136);
-            this.chkFS.Name = "chkFS";
-            this.chkFS.Size = new System.Drawing.Size(102, 16);
-            this.chkFS.TabIndex = 40;
-            this.chkFS.Text = "FS Tenderable";
-            this.chkFS.UseVisualStyleBackColor = true;
-            // 
-            // chkES
-            // 
-            this.chkES.AutoSize = true;
-            this.chkES.Location = new System.Drawing.Point(217, 164);
-            this.chkES.Name = "chkES";
-            this.chkES.Size = new System.Drawing.Size(108, 16);
-            this.chkES.TabIndex = 41;
-            this.chkES.Text = "Exempt ServTax";
-            this.chkES.UseVisualStyleBackColor = true;
+            this.chkMenu.AutoSize = true;
+            this.chkMenu.Location = new System.Drawing.Point(217, 108);
+            this.chkMenu.Name = "chkMenu";
+            this.chkMenu.Size = new System.Drawing.Size(48, 16);
+            this.chkMenu.TabIndex = 42;
+            this.chkMenu.Text = "Menu";
+            this.chkMenu.UseVisualStyleBackColor = true;
             // 
             // frm_PLU
             // 
@@ -965,6 +977,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.CheckBox chkES;
         private System.Windows.Forms.CheckBox chkFS;
+        private System.Windows.Forms.CheckBox chkMenu;
 
     }
 }
