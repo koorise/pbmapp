@@ -218,5 +218,26 @@ namespace PBMApp
             }
             frm.Show();
         }
+
+        private void bundleSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_bundle frm = new frm_bundle();
+            frm.MdiParent = this;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void bundleSettingsToolStripMenuItem_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

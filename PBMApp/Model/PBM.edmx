@@ -6,6 +6,9 @@
     <edmx:StorageModels>
     <Schema Namespace="pbmModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="pbmModelStoreContainer">
+          <EntitySet Name="WH_Bundle" EntityType="pbmModel.Store.WH_Bundle" store:Type="Tables" />
+          <EntitySet Name="WH_Bundle_FreeOrDiscount" EntityType="pbmModel.Store.WH_Bundle_FreeOrDiscount" store:Type="Tables" />
+          <EntitySet Name="WH_Bundle_member" EntityType="pbmModel.Store.WH_Bundle_member" store:Type="Tables" />
           <EntitySet Name="WH_Clerk" EntityType="pbmModel.Store.WH_Clerk" store:Type="Tables" />
           <EntitySet Name="WH_CookInformation" EntityType="pbmModel.Store.WH_CookInformation" store:Type="Tables" />
           <EntitySet Name="WH_Department" EntityType="pbmModel.Store.WH_Department" store:Type="Tables" />
@@ -30,6 +33,36 @@
           <EntitySet Name="WH_Tax" EntityType="pbmModel.Store.WH_Tax" store:Type="Tables" />
           <EntitySet Name="WH_Tax_Table" EntityType="pbmModel.Store.WH_Tax_Table" store:Type="Tables" />
         </EntityContainer>
+        <EntityType Name="WH_Bundle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="TypeID" Type="integer" />
+          <Property Name="isAmtOrQnt" Type="integer" />
+          <Property Name="Limit" Type="decimal" Scale="4" />
+          <Property Name="Discount" Type="decimal" Scale="4" />
+        </EntityType>
+        <EntityType Name="WH_Bundle_FreeOrDiscount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BundleID" Type="integer" />
+          <Property Name="PLUID" Type="integer" />
+          <Property Name="KeyPosition" Type="integer" />
+          <Property Name="isFreeOrDiscount" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Bundle_member">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BundleID" Type="integer" />
+          <Property Name="PLUID" Type="integer" />
+          <Property Name="KeyPosition" Type="integer" />
+        </EntityType>
         <EntityType Name="WH_Clerk">
           <Key>
             <PropertyRef Name="ID" />
@@ -309,6 +342,9 @@
           <EntitySet Name="WH_Menu" EntityType="pbmModel.WH_Menu" />
           <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.WH_Menu_Details" />
           <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
+          <EntitySet Name="WH_Bundle_member" EntityType="pbmModel.WH_Bundle_member" />
+          <EntitySet Name="WH_Bundle" EntityType="pbmModel.WH_Bundle" />
+          <EntitySet Name="WH_Bundle_FreeOrDiscount" EntityType="pbmModel.WH_Bundle_FreeOrDiscount" />
         </EntityContainer>
         <EntityType Name="WH_Clerk">
           <Key>
@@ -560,6 +596,36 @@
           <Property Type="Int64" Name="MenuID" />
           <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Type="Int64" Name="isFlag" />
+        </EntityType>
+        <EntityType Name="WH_Bundle_member">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="BundleID" />
+          <Property Type="Int64" Name="PLUID" />
+          <Property Type="Int64" Name="KeyPosition" />
+        </EntityType>
+        <EntityType Name="WH_Bundle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="TypeID" />
+          <Property Type="Int64" Name="isAmtOrQnt" />
+          <Property Type="Decimal" Name="Limit" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Discount" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="WH_Bundle_FreeOrDiscount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="BundleID" />
+          <Property Type="Int64" Name="PLUID" />
+          <Property Type="Int64" Name="KeyPosition" />
+          <Property Type="Int64" Name="isFreeOrDiscount" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -821,6 +887,39 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Bundle_member">
+            <EntityTypeMapping TypeName="pbmModel.WH_Bundle_member">
+              <MappingFragment StoreEntitySet="WH_Bundle_member">
+                <ScalarProperty Name="KeyPosition" ColumnName="KeyPosition" />
+                <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+                <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Bundle">
+            <EntityTypeMapping TypeName="pbmModel.WH_Bundle">
+              <MappingFragment StoreEntitySet="WH_Bundle">
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Limit" ColumnName="Limit" />
+                <ScalarProperty Name="isAmtOrQnt" ColumnName="isAmtOrQnt" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Bundle_FreeOrDiscount">
+            <EntityTypeMapping TypeName="pbmModel.WH_Bundle_FreeOrDiscount">
+              <MappingFragment StoreEntitySet="WH_Bundle_FreeOrDiscount">
+                <ScalarProperty Name="isFreeOrDiscount" ColumnName="isFreeOrDiscount" />
+                <ScalarProperty Name="KeyPosition" ColumnName="KeyPosition" />
+                <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+                <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -865,6 +964,9 @@
         <EntityTypeShape EntityType="pbmModel.WH_Menu" Width="1.5" PointX="11.75" PointY="9.75" Height="1.9594531250000031" />
         <EntityTypeShape EntityType="pbmModel.WH_Menu_Details" Width="1.5" PointX="0.75" PointY="12.75" Height="1.9594531250000067" />
         <EntityTypeShape EntityType="pbmModel.WH_Menu_List" Width="1.5" PointX="2.75" PointY="12.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Bundle_member" Width="1.5" PointX="7.375" PointY="12.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Bundle" Width="1.5" PointX="5.5" PointY="12.625" Height="1.9594531250000102" />
+        <EntityTypeShape EntityType="pbmModel.WH_Bundle_FreeOrDiscount" Width="1.5" PointX="9.375" PointY="12.75" Height="1.7908333333333246" />
       </Diagram>
     </Diagrams>
   </Designer>
