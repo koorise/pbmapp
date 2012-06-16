@@ -157,6 +157,8 @@
             // 
             this.bundleSettingsToolStripMenuItem.Name = "bundleSettingsToolStripMenuItem";
             resources.ApplyResources(this.bundleSettingsToolStripMenuItem, "bundleSettingsToolStripMenuItem");
+            this.bundleSettingsToolStripMenuItem.Click += new System.EventHandler(this.bundleSettingsToolStripMenuItem_Click);
+            this.bundleSettingsToolStripMenuItem.DoubleClick += new System.EventHandler(this.bundleSettingsToolStripMenuItem_DoubleClick);
             // 
             // pLUSettingsToolStripMenuItem
             // 
