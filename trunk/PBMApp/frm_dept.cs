@@ -46,6 +46,27 @@ namespace PBMApp
 
         private void frm_dept_Load(object sender, EventArgs e)
         {
+            ComboBoxItem cb = new ComboBoxItem();
+            cb.Text = "None";
+            cb.Value = "0";
+            cbKP.Items.Add(cb);
+            cbKP2.Items.Add(cb);
+
+            for (int i = 1; i < 14; i++)
+            {
+                ComboBoxItem c = new ComboBoxItem();
+                c.Text = "KP" + i;
+                c.Value = i;
+                cbKP.Items.Add(c);
+                cbKP2.Items.Add(c);
+            }
+            ComboBoxItem cc = new ComboBoxItem();
+            cc.Text = "RP";
+            cc.Value = "14";
+            cbKP.Items.Add(cc);
+            cbKP2.Items.Add(cc);
+
+            cbHDLO.SelectedIndex = 0;
             BindData();
         }
         private void BindData()
@@ -262,31 +283,30 @@ namespace PBMApp
         /// <param name="selected"></param>
         private void Combox_KP2(int selected)
         {
-            cbKP2.Items.Clear();
-            using (var m = new Entities())
-            {
-                var q = from c in m.WH_Sys_KP
-                        orderby c.ID ascending
-                        select c;
-                ComboBoxItem cbNone=new ComboBoxItem();
-                cbNone.Text = "None";
-                cbNone.Value = "0";
-                cbKP2.Items.Add(cbNone);
+            //cbKP2.Items.Clear();
+            //using (var m = new Entities())
+            //{
+            //    var q = from c in m.WH_Sys_KP
+            //            orderby c.ID ascending
+            //            select c;
+            //    ComboBoxItem cbNone=new ComboBoxItem();
+            //    cbNone.Text = "None";
+            //    cbNone.Value = "0";
+            //    cbKP2.Items.Add(cbNone);
 
-                foreach (var w in q)
-                {
-                    Tools.ComboBoxItem cb = new ComboBoxItem();
-                    cb.Text = "KP" + w.ID;
-                    cb.Value = w.ID;
-                    cbKP2.Items.Add(cb);
-                }
-                ComboBoxItem cbRP = new ComboBoxItem();
-                cbRP.Text = "RP";
-                cbRP.Value = "14";
-                cbKP2.Items.Add(cbRP);
-
-                cbKP2.SelectedIndex = selected;
-            }
+            //    foreach (var w in q)
+            //    {
+            //        Tools.ComboBoxItem cb = new ComboBoxItem();
+            //        cb.Text = "KP" + w.ID;
+            //        cb.Value = w.ID;
+            //        cbKP2.Items.Add(cb);
+            //    }
+            //    ComboBoxItem cbRP = new ComboBoxItem();
+            //    cbRP.Text = "RP";
+            //    cbRP.Value = "14";
+            //    cbKP2.Items.Add(cbRP);
+            //}
+            cbKP2.SelectedIndex = selected;
         }
         /// <summary>
         /// KP1
@@ -294,29 +314,29 @@ namespace PBMApp
         /// <param name="selected"></param>
         private void Combox_KP1(int selected)
         {
-            cbKP.Items.Clear();
-            using (var m=new Entities())
-            {
-                var q = from c in m.WH_Sys_KP
-                        orderby c.ID ascending
-                        select c;
-                ComboBoxItem cbNone = new ComboBoxItem();
-                cbNone.Text = "None";
-                cbNone.Value = "0";
-                cbKP.Items.Add(cbNone);
-                foreach (var w in q)
-                {
-                    Tools.ComboBoxItem cb = new ComboBoxItem();
-                    cb.Text = "KP" + w.ID;
-                    cb.Value = w.ID;
-                    cbKP.Items.Add(cb);
-                }
-                ComboBoxItem cbRP = new ComboBoxItem();
-                cbRP.Text = "RP";
-                cbRP.Value = "14";
-                cbKP.Items.Add(cbRP);
-                cbKP.SelectedIndex = selected;
-            }
+            //cbKP.Items.Clear();
+            //using (var m=new Entities())
+            //{
+            //    var q = from c in m.WH_Sys_KP
+            //            orderby c.ID ascending
+            //            select c;
+            //    ComboBoxItem cbNone = new ComboBoxItem();
+            //    cbNone.Text = "None";
+            //    cbNone.Value = "0";
+            //    cbKP.Items.Add(cbNone);
+            //    foreach (var w in q)
+            //    {
+            //        Tools.ComboBoxItem cb = new ComboBoxItem();
+            //        cb.Text = "KP" + w.ID;
+            //        cb.Value = w.ID;
+            //        cbKP.Items.Add(cb);
+            //    }
+            //    ComboBoxItem cbRP = new ComboBoxItem();
+            //    cbRP.Text = "RP";
+            //    cbRP.Value = "14";
+            //    cbKP.Items.Add(cbRP);
+            //} 
+            cbKP.SelectedIndex = selected;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -327,7 +347,7 @@ namespace PBMApp
                 WH_Department wd = m.WH_Department.FirstOrDefault(x => x.ID == id);
 
                 wd.Description = tbDesc.Text;
-                wd.High_Digit_LockOut = cbHDLO.SelectedIndex;
+                wd.High_Digit_LockOut = cbHDLO.SelectedIndex+1;
                 wd.isAge = cbisAge.SelectedIndex;
                 wd.isPrice = int.Parse(tbisPrice.Text);
                 wd.DepartmentGroup = cbGroup.SelectedIndex;
@@ -337,7 +357,7 @@ namespace PBMApp
                 wd.KP_receipt = rbKP0.Checked ? 0 : 1;
                 wd.isType = rbType0.Checked ? 0 : 1;
                 wd.isVat_Tax_GST = cbisVat.SelectedIndex;
-                wd.FS_Tenderable = int.Parse(chkFS.Checked.ToString());
+                wd.FS_Tenderable = chkFS.Checked ? 1 : 0;
                 wd.KP = int.Parse(cbKP.SelectedIndex.ToString());
                 wd.KP2 = int.Parse(cbKP2.SelectedIndex.ToString());
 
@@ -388,6 +408,7 @@ namespace PBMApp
 
             }
             BindData();
+            MessageBox.Show("Success!", "alert");
         }
 
         private void tbisPrice_KeyPress(object sender, KeyPressEventArgs e)

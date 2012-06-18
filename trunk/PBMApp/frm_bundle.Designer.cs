@@ -30,6 +30,7 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -95,7 +96,6 @@
             this.C_cbBundleList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.G5.SuspendLayout();
@@ -111,7 +111,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 708);
+            this.groupBox2.Size = new System.Drawing.Size(760, 726);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bundle Detail";
@@ -148,10 +148,20 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(3, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(706, 688);
+            this.groupBox1.Size = new System.Drawing.Size(720, 706);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bundle";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(323, 49);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 29;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button12
             // 
@@ -481,6 +491,7 @@
             // 
             // C_D_cbAmtQnt
             // 
+            this.C_D_cbAmtQnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.C_D_cbAmtQnt.FormattingEnabled = true;
             this.C_D_cbAmtQnt.Items.AddRange(new object[] {
             "Amount",
@@ -543,6 +554,7 @@
             // 
             // C_C_cbAmtQnt
             // 
+            this.C_C_cbAmtQnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.C_C_cbAmtQnt.FormattingEnabled = true;
             this.C_C_cbAmtQnt.Items.AddRange(new object[] {
             "Amount",
@@ -715,6 +727,7 @@
             // 
             // C_A_cbAmtQnt
             // 
+            this.C_A_cbAmtQnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.C_A_cbAmtQnt.FormattingEnabled = true;
             this.C_A_cbAmtQnt.Items.AddRange(new object[] {
             "Amount",
@@ -759,21 +772,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Description";
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(323, 45);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 29;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // frm_bundle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 708);
+            this.ClientSize = new System.Drawing.Size(760, 726);
             this.Controls.Add(this.groupBox2);
             this.Name = "frm_bundle";
             this.Text = "Bundle";

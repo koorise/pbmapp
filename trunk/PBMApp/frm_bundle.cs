@@ -98,18 +98,8 @@ namespace PBMApp
 #endregion
 
                 #region 促销信息初始化
-                var q = from c in m.WH_Bundle
-                        orderby c.ID ascending
-                        select c;
-                foreach (var w in q)
-                {
-                    //促销列表添加
-                    ComboBoxItem cb=new ComboBoxItem();
-                    cb.Text = w.Description;
-                    cb.Value = w.ID;
-                    C_cbBundleList.Items.Add(cb);  
-                    
-                }
+
+                MenuBind(0);
                 #endregion
 
                 #region 按钮初始化
@@ -137,6 +127,26 @@ namespace PBMApp
             G5.Enabled = false;
         }
 
+        private void MenuBind(int index)
+        {
+            C_cbBundleList.Items.Clear();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Bundle
+                        orderby c.ID ascending
+                        select c;
+                foreach (var w in q)
+                {
+                    //促销列表添加
+                    ComboBoxItem cb = new ComboBoxItem();
+                    cb.Text = w.Description;
+                    cb.Value = w.ID;
+                    C_cbBundleList.Items.Add(cb);
+                }
+            }
+            C_cbBundleList.SelectedIndex = index;
+        }
+
         private void C_cbBundleList_SelectedIndexChanged(object sender, EventArgs e)
         {
             using (var m = new Entities())
@@ -145,6 +155,7 @@ namespace PBMApp
                 C_cbType.SelectedIndex = int.Parse(q.TypeID.ToString()) - 1;
                 C_tbDesc.Text = q.Description;
             }
+            Bind_CSelectPLU1();
         }
 
         private void C_cbType_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,25 +211,35 @@ namespace PBMApp
                     default:
                         break;
                 }
-
-               
+                q.TypeID = C_cbType.SelectedIndex + 1;
+                m.SaveChanges();
             }
 
         }
 
         private void C_AllPLU2_DoubleClick(object sender, EventArgs e)
-        {
-            
+        { 
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
-                WH_Bundle_FreeOrDiscount b = new WH_Bundle_FreeOrDiscount();
-                b.BundleID = BundleID;
-                b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU2.SelectedItem).Value.ToString());
-                b.KeyPosition = 0;
-                b.isFreeOrDiscount = 1;
-                m.AddToWH_Bundle_FreeOrDiscount(b);
-                m.SaveChanges();
+                int result = (from c in m.WH_Bundle_FreeOrDiscount
+                              where c.BundleID == BundleID && c.isFreeOrDiscount ==1
+                              select c).Count();
+                if (result < 3)
+                {
+
+                    WH_Bundle_FreeOrDiscount b = new WH_Bundle_FreeOrDiscount();
+                    b.BundleID = BundleID;
+                    b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU2.SelectedItem).Value.ToString());
+                    b.KeyPosition = 0;
+                    b.isFreeOrDiscount = 1;
+                    m.AddToWH_Bundle_FreeOrDiscount(b);
+                    m.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Less than 3 plu allowed", "alert");
+                }
             }
             Bind_CSelectPLU2();
         }
@@ -246,6 +267,7 @@ namespace PBMApp
         /// </summary>
         private void Bind_CSelectPLU2()
         {
+            C_SelectPLU2.Items.Clear();
             for (int i = 1; i < 4; i++)
             {
                 Button btn = this.G4.Controls["b" + i] as Button;
@@ -271,10 +293,10 @@ namespace PBMApp
                     ComboBoxItem cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.PLUID;
-                    C_SelectPLU3.Items.Add(cb);
+                    C_SelectPLU2.Items.Add(cb);
                     if (w.KeyPosition != 0)
                     {
-                        Button btn = this.G5.Controls["b" + w.KeyPosition] as Button;
+                        Button btn = this.G4.Controls["b" + w.KeyPosition] as Button;
                         btn.Text = w.Description.ToString();
                     }
                 }
@@ -287,19 +309,30 @@ namespace PBMApp
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
-                WH_Bundle_FreeOrDiscount b = new WH_Bundle_FreeOrDiscount();
-                b.BundleID = BundleID;
-                b.PLUID = int.Parse(((ComboBoxItem)C_AllPLU3.SelectedItem).Value.ToString());
-                b.KeyPosition = 0;
-                b.isFreeOrDiscount = 0;
-                m.AddToWH_Bundle_FreeOrDiscount(b);
-                m.SaveChanges();
+                int reuslt = (from c in m.WH_Bundle_FreeOrDiscount
+                              where c.BundleID == BundleID && c.isFreeOrDiscount == 0
+                              select c).Count();
+                if (reuslt < 3)
+                {
+                    WH_Bundle_FreeOrDiscount b = new WH_Bundle_FreeOrDiscount();
+                    b.BundleID = BundleID;
+                    b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU3.SelectedItem).Value.ToString());
+                    b.KeyPosition = 0;
+                    b.isFreeOrDiscount = 0;
+                    m.AddToWH_Bundle_FreeOrDiscount(b);
+                    m.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Less than 3 plu allowed", "alert");
+                }
             }
             Bind_CSelectPLU3();
         }
 
         private void C_SelectPLU3_DoubleClick(object sender, EventArgs e)
         {
+            C_SelectPLU3.Items.Clear();
             using (var m = new Entities())
             {
                 int BundleID = C_cbBundleList.SelectedIndex + 1;
@@ -378,18 +411,29 @@ namespace PBMApp
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
-                WH_Bundle_member b = new WH_Bundle_member();
-                b.BundleID = BundleID;
-                b.PLUID = int.Parse(((ComboBoxItem)C_AllPLU1.SelectedItem).Value.ToString());
-                b.KeyPosition = 0;
-                m.AddToWH_Bundle_member(b);
-                m.SaveChanges();
+                int result = (from c in m.WH_Bundle_member
+                              where c.BundleID == BundleID
+                              select c).Count();
+                if (result <= 12)
+                {
+                    WH_Bundle_member b = new WH_Bundle_member();
+                    b.BundleID = BundleID;
+                    b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU1.SelectedItem).Value.ToString());
+                    b.KeyPosition = 0;
+                    m.AddToWH_Bundle_member(b);
+                    m.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Less than 12 plu allowed", "alert");
+                }
             }
             Bind_CSelectPLU1();
         }
 
         private void Bind_CSelectPLU1()
         {
+            C_SelectPLU1.Items.Clear();
             for (int i = 1; i < 13; i++)
             {
                 Button btn = this.groupBox1.Controls["button" + i] as Button;
@@ -417,7 +461,7 @@ namespace PBMApp
                     C_SelectPLU1.Items.Add(cb);
                     if (w.KeyPosition != 0)
                     {
-                        Button btn = this.G5.Controls["button" + w.KeyPosition] as Button;
+                        Button btn = this.groupBox1.Controls["button" + w.KeyPosition] as Button;
                         btn.Text = w.Description.ToString();
                     }
                 }
@@ -433,9 +477,42 @@ namespace PBMApp
             {
                 var q = m.WH_Bundle.FirstOrDefault(x => x.ID == BundleID);
                 q.Description = C_tbDesc.Text;
-                q.TypeID = C_cbType.SelectedIndex+1;
+                q.TypeID = C_cbType.SelectedIndex + 1;
+                switch (C_cbType.SelectedIndex)
+                {
+                    case 0:
+                        q.isAmtOrQnt = C_A_cbAmtQnt.SelectedIndex;
+                        q.Limit = decimal.Parse(C_A_tbLimit.Text);
+                        q.Discount = decimal.Parse(C_A_tbDiscount.Text);
+                        break;
+                    case 1:
+                        q.Discount = decimal.Parse(C_B_tbFree.Text);
+                        q.Limit = decimal.Parse(C_B_tbLimit.Text);
+                        break;
+                    case 2:
+                        q.Limit = decimal.Parse(C_C_Limit.Text);
+                        q.isAmtOrQnt = C_C_cbAmtQnt.SelectedIndex;
+                        q.Discount = int.Parse(C_C_tbDiscount.Text);
+                        break;
+                    case 3:
+                        //D 达到促销数量或者金额，可以从三个免费商品中任选一个
+                        q.isAmtOrQnt = C_D_cbAmtQnt.SelectedIndex;
+                        q.Limit = decimal.Parse(C_D_tbLimit.Text);
+                        Bind_CSelectPLU2();
+                        break;
+                    case 4:
+                        //E 达到促销数量，买制定的三个商品可以打折
+                        q.Discount = decimal.Parse(C_E_tbDiscount.Text);
+                        q.Limit = decimal.Parse(C_E_tbLimit.Text);
+                        Bind_CSelectPLU3();
+                        break;
+                    default:
+                        break;
+                }
                 m.SaveChanges();
             }
+            MenuBind(BundleID-1);
+            MessageBox.Show("success!", "alert");
         }
          
     }
