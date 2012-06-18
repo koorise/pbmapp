@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_dept));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkFS = new System.Windows.Forms.CheckBox();
+            this.cbKP2 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.chkGST = new System.Windows.Forms.CheckedListBox();
@@ -83,9 +86,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.cbKP2 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.chkFS = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -136,6 +136,34 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Department Information Setting";
+            // 
+            // chkFS
+            // 
+            this.chkFS.AutoSize = true;
+            this.chkFS.Location = new System.Drawing.Point(146, 273);
+            this.chkFS.Name = "chkFS";
+            this.chkFS.Size = new System.Drawing.Size(102, 16);
+            this.chkFS.TabIndex = 28;
+            this.chkFS.Text = "FS Tenderable";
+            this.chkFS.UseVisualStyleBackColor = true;
+            // 
+            // cbKP2
+            // 
+            this.cbKP2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKP2.FormattingEnabled = true;
+            this.cbKP2.Location = new System.Drawing.Point(146, 195);
+            this.cbKP2.Name = "cbKP2";
+            this.cbKP2.Size = new System.Drawing.Size(82, 20);
+            this.cbKP2.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(116, 198);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(23, 12);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "KP2";
             // 
             // button7
             // 
@@ -468,7 +496,7 @@
             "7"});
             this.cbHDLO.Location = new System.Drawing.Point(146, 114);
             this.cbHDLO.Name = "cbHDLO";
-            this.cbHDLO.Size = new System.Drawing.Size(30, 20);
+            this.cbHDLO.Size = new System.Drawing.Size(82, 20);
             this.cbHDLO.TabIndex = 11;
             // 
             // label9
@@ -701,34 +729,6 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // cbKP2
-            // 
-            this.cbKP2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKP2.FormattingEnabled = true;
-            this.cbKP2.Location = new System.Drawing.Point(146, 195);
-            this.cbKP2.Name = "cbKP2";
-            this.cbKP2.Size = new System.Drawing.Size(82, 20);
-            this.cbKP2.TabIndex = 27;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(116, 198);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(23, 12);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "KP2";
-            // 
-            // chkFS
-            // 
-            this.chkFS.AutoSize = true;
-            this.chkFS.Location = new System.Drawing.Point(146, 273);
-            this.chkFS.Name = "chkFS";
-            this.chkFS.Size = new System.Drawing.Size(102, 16);
-            this.chkFS.TabIndex = 28;
-            this.chkFS.Text = "FS Tenderable";
-            this.chkFS.UseVisualStyleBackColor = true;
             // 
             // frm_dept
             // 
