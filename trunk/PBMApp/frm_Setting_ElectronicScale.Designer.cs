@@ -30,9 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -132,6 +129,21 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbDept1 = new System.Windows.Forms.ComboBox();
+            this.cbDept2 = new System.Windows.Forms.ComboBox();
+            this.cbDept3 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbDept4 = new System.Windows.Forms.ComboBox();
+            this.cbDept5 = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cbUnit = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbTareType = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cbTare = new System.Windows.Forms.ComboBox();
+            this.tbTare = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -165,54 +177,45 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.tbTare);
+            this.groupBox1.Controls.Add(this.cbTare);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.cbTareType);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.cbUnit);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.cbDept5);
+            this.groupBox1.Controls.Add(this.cbDept4);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.cbDept3);
+            this.groupBox1.Controls.Add(this.cbDept2);
+            this.groupBox1.Controls.Add(this.cbDept1);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(49, 27);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(237, 136);
+            this.groupBox1.Size = new System.Drawing.Size(499, 188);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Electronic Scale ";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(146, 102);
+            this.button2.Location = new System.Drawing.Point(413, 159);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(121, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(121, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(121, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 77);
+            this.label3.Location = new System.Drawing.Point(8, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 12);
             this.label3.TabIndex = 2;
@@ -221,7 +224,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 49);
+            this.label2.Location = new System.Drawing.Point(7, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 12);
             this.label2.TabIndex = 1;
@@ -252,7 +255,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(49, 169);
+            this.groupBox2.Location = new System.Drawing.Point(12, 206);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(499, 674);
             this.groupBox2.TabIndex = 1;
@@ -292,6 +295,7 @@
             // 
             // comboBox9
             // 
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(81, 4);
             this.comboBox9.Name = "comboBox9";
@@ -386,6 +390,7 @@
             // 
             // comboBox8
             // 
+            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(81, 4);
             this.comboBox8.Name = "comboBox8";
@@ -480,6 +485,7 @@
             // 
             // comboBox7
             // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(81, 4);
             this.comboBox7.Name = "comboBox7";
@@ -574,6 +580,7 @@
             // 
             // comboBox6
             // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(81, 4);
             this.comboBox6.Name = "comboBox6";
@@ -668,6 +675,7 @@
             // 
             // comboBox5
             // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(81, 4);
             this.comboBox5.Name = "comboBox5";
@@ -762,6 +770,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(81, 4);
             this.comboBox4.Name = "comboBox4";
@@ -856,6 +865,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(81, 4);
             this.comboBox3.Name = "comboBox3";
@@ -950,6 +960,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(81, 4);
             this.comboBox2.Name = "comboBox2";
@@ -1044,6 +1055,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(81, 4);
             this.comboBox1.Name = "comboBox1";
@@ -1150,12 +1162,154 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "ID";
             // 
+            // cbDept1
+            // 
+            this.cbDept1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDept1.FormattingEnabled = true;
+            this.cbDept1.Location = new System.Drawing.Point(119, 17);
+            this.cbDept1.Name = "cbDept1";
+            this.cbDept1.Size = new System.Drawing.Size(96, 20);
+            this.cbDept1.TabIndex = 7;
+            // 
+            // cbDept2
+            // 
+            this.cbDept2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDept2.FormattingEnabled = true;
+            this.cbDept2.Location = new System.Drawing.Point(119, 44);
+            this.cbDept2.Name = "cbDept2";
+            this.cbDept2.Size = new System.Drawing.Size(96, 20);
+            this.cbDept2.TabIndex = 8;
+            // 
+            // cbDept3
+            // 
+            this.cbDept3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDept3.FormattingEnabled = true;
+            this.cbDept3.Location = new System.Drawing.Point(119, 71);
+            this.cbDept3.Name = "cbDept3";
+            this.cbDept3.Size = new System.Drawing.Size(96, 20);
+            this.cbDept3.TabIndex = 9;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 102);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(107, 12);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Scale Department4";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(8, 129);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(107, 12);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Scale Department5";
+            // 
+            // cbDept4
+            // 
+            this.cbDept4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDept4.FormattingEnabled = true;
+            this.cbDept4.Location = new System.Drawing.Point(119, 98);
+            this.cbDept4.Name = "cbDept4";
+            this.cbDept4.Size = new System.Drawing.Size(96, 20);
+            this.cbDept4.TabIndex = 12;
+            // 
+            // cbDept5
+            // 
+            this.cbDept5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDept5.FormattingEnabled = true;
+            this.cbDept5.Location = new System.Drawing.Point(119, 125);
+            this.cbDept5.Name = "cbDept5";
+            this.cbDept5.Size = new System.Drawing.Size(96, 20);
+            this.cbDept5.TabIndex = 13;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(282, 21);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(29, 12);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Unit";
+            // 
+            // cbUnit
+            // 
+            this.cbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnit.FormattingEnabled = true;
+            this.cbUnit.Items.AddRange(new object[] {
+            "lb",
+            "oz"});
+            this.cbUnit.Location = new System.Drawing.Point(317, 17);
+            this.cbUnit.Name = "cbUnit";
+            this.cbUnit.Size = new System.Drawing.Size(90, 20);
+            this.cbUnit.TabIndex = 14;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(252, 48);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 12);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Tare Type";
+            // 
+            // cbTareType
+            // 
+            this.cbTareType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTareType.FormattingEnabled = true;
+            this.cbTareType.Items.AddRange(new object[] {
+            "automatic",
+            "manual"});
+            this.cbTareType.Location = new System.Drawing.Point(317, 44);
+            this.cbTareType.Name = "cbTareType";
+            this.cbTareType.Size = new System.Drawing.Size(91, 20);
+            this.cbTareType.TabIndex = 16;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(282, 75);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(29, 12);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "tare";
+            // 
+            // cbTare
+            // 
+            this.cbTare.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTare.FormattingEnabled = true;
+            this.cbTare.Items.AddRange(new object[] {
+            "automatic",
+            "manual"});
+            this.cbTare.Location = new System.Drawing.Point(317, 71);
+            this.cbTare.Name = "cbTare";
+            this.cbTare.Size = new System.Drawing.Size(91, 20);
+            this.cbTare.TabIndex = 18;
+            // 
+            // tbTare
+            // 
+            this.tbTare.Location = new System.Drawing.Point(317, 98);
+            this.tbTare.Name = "tbTare";
+            this.tbTare.Size = new System.Drawing.Size(91, 21);
+            this.tbTare.TabIndex = 19;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(317, 122);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Tare Save";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // frm_Setting_ElectronicScale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(610, 813);
+            this.ClientSize = new System.Drawing.Size(677, 813);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_Setting_ElectronicScale";
@@ -1226,9 +1380,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1329,5 +1480,20 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox tbTare;
+        private System.Windows.Forms.ComboBox cbTare;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cbTareType;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cbUnit;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cbDept5;
+        private System.Windows.Forms.ComboBox cbDept4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbDept3;
+        private System.Windows.Forms.ComboBox cbDept2;
+        private System.Windows.Forms.ComboBox cbDept1;
     }
 }
