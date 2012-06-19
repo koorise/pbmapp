@@ -369,6 +369,7 @@
             this.cbIsMode.Name = "cbIsMode";
             this.cbIsMode.Size = new System.Drawing.Size(121, 20);
             this.cbIsMode.TabIndex = 2;
+            this.cbIsMode.SelectedIndexChanged += new System.EventHandler(this.cbIsMode_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -405,6 +406,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;

@@ -42,6 +42,7 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+             
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -75,6 +76,7 @@ namespace PBMApp
             frm.MdiParent = this;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+            frm.AutoScroll = true;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
