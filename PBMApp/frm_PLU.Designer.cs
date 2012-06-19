@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_PLU));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkMenu = new System.Windows.Forms.CheckBox();
             this.chkES = new System.Windows.Forms.CheckBox();
             this.chkFS = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -102,7 +103,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.chkMenu = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -146,10 +146,20 @@
             this.groupBox1.Location = new System.Drawing.Point(424, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(502, 760);
+            this.groupBox1.Size = new System.Drawing.Size(502, 745);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PLU Information";
+            // 
+            // chkMenu
+            // 
+            this.chkMenu.AutoSize = true;
+            this.chkMenu.Location = new System.Drawing.Point(217, 108);
+            this.chkMenu.Name = "chkMenu";
+            this.chkMenu.Size = new System.Drawing.Size(48, 16);
+            this.chkMenu.TabIndex = 42;
+            this.chkMenu.Text = "Menu";
+            this.chkMenu.UseVisualStyleBackColor = true;
             // 
             // chkES
             // 
@@ -727,7 +737,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 760);
+            this.dataGridView1.Size = new System.Drawing.Size(424, 745);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -750,7 +760,7 @@
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripButton2});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 735);
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 720);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -856,22 +866,12 @@
             this.toolStripButton2.Size = new System.Drawing.Size(27, 22);
             this.toolStripButton2.Text = "DEL";
             // 
-            // chkMenu
-            // 
-            this.chkMenu.AutoSize = true;
-            this.chkMenu.Location = new System.Drawing.Point(217, 108);
-            this.chkMenu.Name = "chkMenu";
-            this.chkMenu.Size = new System.Drawing.Size(48, 16);
-            this.chkMenu.TabIndex = 42;
-            this.chkMenu.Text = "Menu";
-            this.chkMenu.UseVisualStyleBackColor = true;
-            // 
             // frm_PLU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(926, 760);
+            this.ClientSize = new System.Drawing.Size(926, 745);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);

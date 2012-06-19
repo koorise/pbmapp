@@ -164,9 +164,21 @@ namespace PBMApp
                 {
                     int pluid = int.Parse(dvr.Cells[0].Value.ToString());
                     int MenuListID = int.Parse(((ComboBoxItem)comboBox3.SelectedItem).Value.ToString());
+                    int MenuID = comboBox1.SelectedIndex + 1;
+                    var q = from c in m.WH_Menu_Details
+                            where c.MenuID == MenuID && c.MenuListID == MenuListID
+                            orderby c.isFlag descending 
+                            select c.isFlag;
+                    int isFlag = 1;
+                    if(q.FirstOrDefault()!=null)
+                    {
+                        isFlag = int.Parse(q.FirstOrDefault().Value.ToString()) + 1;
+                    }
+                   
                     WH_Menu_Details w = new WH_Menu_Details();
-                    w.MenuID = comboBox1.SelectedIndex + 1;
+                    w.MenuID = MenuID;
                     w.MenuListID = MenuListID;
+                    w.isFlag = isFlag;
                     w.PLUID = pluid;
                     w.KeyPosition = 0;
                     m.AddToWH_Menu_Details(w);
@@ -313,6 +325,49 @@ namespace PBMApp
                 comboBox3.SelectedIndex = index;
                 textBox3.Text = "";
             }
+        }
+
+        private void cbIsMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int MenuID = comboBox1.SelectedIndex + 1;
+            using (var m = new Entities())
+            {
+                var q = (from c in m.WH_Menu
+                         where c.ID == MenuID
+                         select c).FirstOrDefault();
+                tbDesc.Text = q.Description;
+                cbIsMode.SelectedIndex = int.Parse(q.isMode.ToString());
+                if (cbIsMode.SelectedIndex == 1)
+                {
+                    panel1.Enabled = false;
+                }
+                else
+                {
+                    panel1.Enabled = true;
+                }
+                tbPrice.Text = q.Price.ToString();
+                cbVat.SelectedIndex = int.Parse(q.isTax.ToString());
+                var p = from c in m.WH_Menu_List
+                        where c.MenuID == MenuID
+                        orderby c.isFlag ascending
+                        select c;
+                comboBox3.Items.Clear();
+                foreach (var w in p)
+                {
+                    ComboBoxItem cb = new ComboBoxItem();
+                    cb.Text = w.Description;
+                    cb.Value = w.ID;
+                    comboBox3.Items.Add(cb);
+                }
+                comboBox3.SelectedIndex = 0;
+
+                Dgv2_DataBind();
+
+            }
+
+            dataGridView1.Enabled = true;
+            dataGridView2.Enabled = true;
+            groupBox4.Enabled = true;
         }
     }
 }
