@@ -16,7 +16,7 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-
+        Point  p = new Point(0,0);
         private void openDataBaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,8 +40,9 @@ namespace PBMApp
         {
             frm_dept frm = new frm_dept();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
              
             foreach (Form f in this.MdiChildren)
             {
@@ -58,8 +59,9 @@ namespace PBMApp
         {
             frm_Clerk frm = new frm_Clerk();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -74,8 +76,9 @@ namespace PBMApp
         {
             frm_PLU frm = new frm_PLU();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             frm.AutoScroll = true;
             foreach (Form f in this.MdiChildren)
             {
@@ -92,8 +95,9 @@ namespace PBMApp
              
             frm_CookInfo frm = new frm_CookInfo();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -128,8 +132,9 @@ namespace PBMApp
         {
             frm_Setting_HeaderFooter frm = new frm_Setting_HeaderFooter();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -144,8 +149,9 @@ namespace PBMApp
         {
             frm_Setting_Supplier frm = new frm_Setting_Supplier();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -160,8 +166,9 @@ namespace PBMApp
         {
             frm_payment frm = new frm_payment();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -177,8 +184,9 @@ namespace PBMApp
         {
             frm_Setting_PCASH_FCE frm = new frm_Setting_PCASH_FCE();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -193,8 +201,9 @@ namespace PBMApp
         {
             frm_Tax frm = new frm_Tax();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -209,8 +218,9 @@ namespace PBMApp
         {
             frm_menu_plu frm = new frm_menu_plu();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
@@ -223,10 +233,12 @@ namespace PBMApp
 
         private void bundleSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             frm_bundle frm = new frm_bundle();
             frm.MdiParent = this;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
             foreach (Form f in this.MdiChildren)
             {
                 if (f != frm)
