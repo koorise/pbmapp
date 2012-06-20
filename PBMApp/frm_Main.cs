@@ -270,5 +270,22 @@ namespace PBMApp
             }
             frm.Show();
         }
+
+        private void happyHourServiceTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_HappyHour_ServiceTax frm = new frm_HappyHour_ServiceTax();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
     }
 }

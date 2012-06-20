@@ -20,12 +20,14 @@
     <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Setting" store:Type="Tables" />
     <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Tare" store:Type="Tables" />
     <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.Store.WH_Sys_FCE" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.Store.WH_Sys_happyHour_ServiceTax_Hours" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
     <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
-    <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Refund" EntityType="pbmModel.Store.WH_Sys_Refund" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.Store.WH_Sys_ServiceTax" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.Store.WH_Sys_Supplier" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.Store.WH_Sys_Symbols" store:Type="Tables" />
     <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.Store.WH_Sys_WeightingPLU" store:Type="Tables" />
@@ -234,6 +236,18 @@
     <Property Name="SymbolStr" Type="nvarchar" />
     <Property Name="Description" Type="nvarchar" />
   </EntityType>
+  <EntityType Name="WH_Sys_happyHour_ServiceTax_Hours">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="timeA" Type="nvarchar" />
+    <Property Name="timeB" Type="nvarchar" />
+    <Property Name="timeC" Type="nvarchar" />
+    <Property Name="timeD" Type="nvarchar" />
+    <Property Name="Weeks" Type="nvarchar" />
+    <Property Name="isHappyOrTax" Type="integer" />
+  </EntityType>
   <EntityType Name="WH_Sys_Header_Footer">
     <Key>
       <PropertyRef Name="ID" />
@@ -259,6 +273,21 @@
     <Property Name="IP_Addr" Type="nvarchar" />
     <Property Name="Port" Type="integer" />
   </EntityType>
+  <EntityType Name="WH_Sys_Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="DescriptionBlod" Type="nvarchar" />
+    <Property Name="ChargeReturn" Type="integer" />
+    <Property Name="ChargeReturn_Str" Type="nvarchar" />
+    <Property Name="DuplicateNo" Type="integer" />
+    <Property Name="isTips" Type="integer" />
+    <Property Name="TypeID" Type="integer" />
+    <Property Name="TypeStr" Type="nvarchar" />
+    <Property Name="isFlag" Type="integer" />
+  </EntityType>
   <EntityType Name="WH_Sys_PCASH">
     <Key>
       <PropertyRef Name="ID" />
@@ -276,21 +305,6 @@
     <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="title" Type="nvarchar" />
   </EntityType>
-  <EntityType Name="WH_Sys_Payment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="nvarchar" />
-    <Property Name="DescriptionBlod" Type="nvarchar" />
-    <Property Name="ChargeReturn" Type="integer" />
-    <Property Name="ChargeReturn_Str" Type="nvarchar" />
-    <Property Name="DuplicateNo" Type="integer" />
-    <Property Name="isTips" Type="integer" />
-    <Property Name="TypeID" Type="integer" />
-    <Property Name="TypeStr" Type="nvarchar" />
-    <Property Name="isFlag" Type="integer" />
-  </EntityType>
   <EntityType Name="WH_Sys_Refund">
     <Key>
       <PropertyRef Name="ID" />
@@ -300,6 +314,15 @@
     <Property Name="Price" Type="decimal" Scale="4" />
     <Property Name="HALO" Type="decimal" Scale="4" />
     <Property Name="isFlag" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ServiceTax">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" />
+    <Property Name="Type" Type="integer" />
+    <Property Name="RateAmount" Type="decimal" Scale="4" />
   </EntityType>
   <EntityType Name="WH_Sys_Supplier">
     <Key>

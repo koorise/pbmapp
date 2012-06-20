@@ -25,12 +25,14 @@
           <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Setting" store:Type="Tables" />
           <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Tare" store:Type="Tables" />
           <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.Store.WH_Sys_FCE" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.Store.WH_Sys_happyHour_ServiceTax_Hours" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
           <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
           <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
           <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
-          <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Refund" EntityType="pbmModel.Store.WH_Sys_Refund" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.Store.WH_Sys_ServiceTax" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.Store.WH_Sys_Supplier" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.Store.WH_Sys_Symbols" store:Type="Tables" />
           <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.Store.WH_Sys_WeightingPLU" store:Type="Tables" />
@@ -239,6 +241,18 @@
           <Property Name="SymbolStr" Type="nvarchar" />
           <Property Name="Description" Type="nvarchar" />
         </EntityType>
+        <EntityType Name="WH_Sys_happyHour_ServiceTax_Hours">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="timeA" Type="nvarchar" />
+          <Property Name="timeB" Type="nvarchar" />
+          <Property Name="timeC" Type="nvarchar" />
+          <Property Name="timeD" Type="nvarchar" />
+          <Property Name="Weeks" Type="nvarchar" />
+          <Property Name="isHappyOrTax" Type="integer" />
+        </EntityType>
         <EntityType Name="WH_Sys_Header_Footer">
           <Key>
             <PropertyRef Name="ID" />
@@ -264,6 +278,21 @@
           <Property Name="IP_Addr" Type="nvarchar" />
           <Property Name="Port" Type="integer" />
         </EntityType>
+        <EntityType Name="WH_Sys_Payment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="DescriptionBlod" Type="nvarchar" />
+          <Property Name="ChargeReturn" Type="integer" />
+          <Property Name="ChargeReturn_Str" Type="nvarchar" />
+          <Property Name="DuplicateNo" Type="integer" />
+          <Property Name="isTips" Type="integer" />
+          <Property Name="TypeID" Type="integer" />
+          <Property Name="TypeStr" Type="nvarchar" />
+          <Property Name="isFlag" Type="integer" />
+        </EntityType>
         <EntityType Name="WH_Sys_PCASH">
           <Key>
             <PropertyRef Name="ID" />
@@ -281,21 +310,6 @@
           <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="title" Type="nvarchar" />
         </EntityType>
-        <EntityType Name="WH_Sys_Payment">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="nvarchar" />
-          <Property Name="DescriptionBlod" Type="nvarchar" />
-          <Property Name="ChargeReturn" Type="integer" />
-          <Property Name="ChargeReturn_Str" Type="nvarchar" />
-          <Property Name="DuplicateNo" Type="integer" />
-          <Property Name="isTips" Type="integer" />
-          <Property Name="TypeID" Type="integer" />
-          <Property Name="TypeStr" Type="nvarchar" />
-          <Property Name="isFlag" Type="integer" />
-        </EntityType>
         <EntityType Name="WH_Sys_Refund">
           <Key>
             <PropertyRef Name="ID" />
@@ -305,6 +319,15 @@
           <Property Name="Price" Type="decimal" Scale="4" />
           <Property Name="HALO" Type="decimal" Scale="4" />
           <Property Name="isFlag" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Sys_ServiceTax">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" />
+          <Property Name="Type" Type="integer" />
+          <Property Name="RateAmount" Type="decimal" Scale="4" />
         </EntityType>
         <EntityType Name="WH_Sys_Supplier">
           <Key>
@@ -387,6 +410,8 @@
           <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.WH_Sys_ElectronicScale_Setting" />
           <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.WH_Sys_ElectronicScale_Tare" />
           <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.WH_Sys_WeightingPLU" />
+          <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" />
+          <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.WH_Sys_ServiceTax" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -703,6 +728,27 @@
           <Property Type="Int64" Name="WAID" />
           <Property Type="Int64" Name="Dots" />
         </EntityType>
+        <EntityType Name="WH_Sys_happyHour_ServiceTax_Hours">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="timeA" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="timeB" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="timeC" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="timeD" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Weeks" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="isHappyOrTax" />
+        </EntityType>
+        <EntityType Name="WH_Sys_ServiceTax">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Type" />
+          <Property Type="Decimal" Name="RateAmount" Precision="18" Scale="4" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -950,6 +996,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_happyHour_ServiceTax_Hours">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_happyHour_ServiceTax_Hours">
+              <MappingFragment StoreEntitySet="WH_Sys_happyHour_ServiceTax_Hours">
+                <ScalarProperty Name="isHappyOrTax" ColumnName="isHappyOrTax" />
+                <ScalarProperty Name="Weeks" ColumnName="Weeks" />
+                <ScalarProperty Name="timeD" ColumnName="timeD" />
+                <ScalarProperty Name="timeC" ColumnName="timeC" />
+                <ScalarProperty Name="timeB" ColumnName="timeB" />
+                <ScalarProperty Name="timeA" ColumnName="timeA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_ServiceTax">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_ServiceTax">
+              <MappingFragment StoreEntitySet="WH_Sys_ServiceTax">
+                <ScalarProperty Name="RateAmount" ColumnName="RateAmount" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1001,6 +1070,8 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_ElectronicScale_Setting" Width="1.5" PointX="9.375" PointY="13.75" Height="1.4535937500000102" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_ElectronicScale_Tare" Width="1.5" PointX="11.375" PointY="13.75" Height="1.4535937500000102" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_WeightingPLU" Width="1.5" PointX="13.375" PointY="12.75" Height="1.9594531250000102" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" Width="1.5" PointX="15.75" PointY="0.75" Height="2.1280729166666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_ServiceTax" Width="1.5" PointX="0.75" PointY="15.75" Height="1.6222135416666674" />
       </Diagram>
     </Diagrams>
   </Designer>
