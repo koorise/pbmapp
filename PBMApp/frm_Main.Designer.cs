@@ -49,6 +49,7 @@
             this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +102,8 @@
             this.headerFooterSettingToolStripMenuItem,
             this.supplierSettingToolStripMenuItem,
             this.paymentRefundCouponToolStripMenuItem,
-            this.pCASHToolStripMenuItem});
+            this.pCASHToolStripMenuItem,
+            this.electronicScaleToolStripMenuItem});
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             resources.ApplyResources(this.systemToolStripMenuItem, "systemToolStripMenuItem");
             // 
@@ -190,6 +192,12 @@
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // electronicScaleToolStripMenuItem
+            // 
+            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
+            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
+            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click);
+            // 
             // frm_Main
             // 
             resources.ApplyResources(this, "$this");
@@ -228,6 +236,7 @@
         private System.Windows.Forms.ToolStripMenuItem supplierSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentRefundCouponToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pCASHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem electronicScaleToolStripMenuItem;
 
     }
 }

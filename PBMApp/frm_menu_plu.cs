@@ -18,37 +18,8 @@ namespace PBMApp
             InitializeComponent();
         }
         
-
-        private void btn_Click(object s,EventArgs e)
-        {
-            if(dataGridView2.SelectedRows.Count==0)
-            {
-                MessageBox.Show("Please Select one Menu PLU", "alert");
-            }
-            else
-            {
-                Button b = (Button)s;
-                int key = int.Parse(b.Name.ToString().Replace("b", ""));
-                using (var m = new Entities())
-                {
-                    int MenuDetailsID = int.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString());
-                    var q = m.WH_Menu_Details.FirstOrDefault(x => x.ID == MenuDetailsID);
-                    q.KeyPosition = key;
-                    m.SaveChanges();
-                    
-                }
-            }
-            Dgv2_DataBind();
-        }
-
         private void frm_menu_plu_Load(object sender, EventArgs e)
-        {
-            for (int i = 1; i < 19; i++)
-            {
-                Button btn = this.groupBox4.Controls["b" + i] as Button;
-                btn.Click += new EventHandler(btn_Click);
-            }
-
+        { 
             using (var m = new Entities())
             {
                 var q = from c in m.WH_Menu
@@ -107,7 +78,7 @@ namespace PBMApp
                 {
                     panel1.Enabled = false;
                 }
-                groupBox4.Enabled = false;
+               
 
             }
         }
@@ -152,7 +123,6 @@ namespace PBMApp
             
             dataGridView1.Enabled = true;
             dataGridView2.Enabled = true;
-            groupBox4.Enabled = true;
 
         }
 
@@ -170,6 +140,12 @@ namespace PBMApp
                             orderby c.isFlag descending 
                             select c.isFlag;
                     int isFlag = 1;
+                    if(q.Count()>=18)
+                    {
+                        MessageBox.Show("Less than 18 PLUs setting", "alert");
+                        
+                        return;
+                    }
                     if(q.FirstOrDefault()!=null)
                     {
                         isFlag = int.Parse(q.FirstOrDefault().Value.ToString()) + 1;
@@ -247,9 +223,7 @@ namespace PBMApp
             DataColumn dt22 = new DataColumn("Bar Code", typeof(string));
             dtt.Columns.Add(dt22);
             DataColumn dt33 = new DataColumn("Description", typeof(string));
-            dtt.Columns.Add(dt33);
-            DataColumn dt44 = new DataColumn("Key Setting", typeof(string));
-            dtt.Columns.Add(dt44); 
+            dtt.Columns.Add(dt33); 
 
             using (var m = new Entities())
             {
@@ -267,28 +241,15 @@ namespace PBMApp
                             f.Bar_Code,
                             f.Description,
                             c.KeyPosition
-                        };
-                for (int i = 1; i < 19; i++)
-                {
-                    Button btn = this.groupBox4.Controls["b" + i] as Button;
-                    btn.Text = "";
-                }
+                        }; 
                 foreach (var w in r)
                 {
                     DataRow dr = dtt.NewRow();
                     dr[0] = w.ID;
                     dr[1] = w.isFlag;
                     dr[2] = w.Bar_Code;
-                    dr[3] = w.Description;
-                    dr[4] = w.KeyPosition;
-                    dtt.Rows.Add(dr);
-                    
-                    if(w.KeyPosition!=0)
-                    {
-                        Button btn = this.groupBox4.Controls["b" + w.KeyPosition] as Button;
-                        btn.Text = w.isFlag.ToString();
-
-                    }
+                    dr[3] = w.Description; 
+                    dtt.Rows.Add(dr); 
                 }
             }
             dataGridView2.DataSource = dtt;
@@ -367,7 +328,6 @@ namespace PBMApp
 
             dataGridView1.Enabled = true;
             dataGridView2.Enabled = true;
-            groupBox4.Enabled = true;
         }
     }
 }

@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pbmModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="WH_Bundle">
+      <EntityTypeMapping TypeName="pbmModel.WH_Bundle">
+        <MappingFragment StoreEntitySet="WH_Bundle">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="isAmtOrQnt" ColumnName="isAmtOrQnt" />
+          <ScalarProperty Name="Limit" ColumnName="Limit" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Bundle_FreeOrDiscount">
+      <EntityTypeMapping TypeName="pbmModel.WH_Bundle_FreeOrDiscount">
+        <MappingFragment StoreEntitySet="WH_Bundle_FreeOrDiscount">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+          <ScalarProperty Name="KeyPosition" ColumnName="KeyPosition" />
+          <ScalarProperty Name="isFreeOrDiscount" ColumnName="isFreeOrDiscount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Bundle_member">
+      <EntityTypeMapping TypeName="pbmModel.WH_Bundle_member">
+        <MappingFragment StoreEntitySet="WH_Bundle_member">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+          <ScalarProperty Name="KeyPosition" ColumnName="KeyPosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Clerk">
+      <EntityTypeMapping TypeName="pbmModel.WH_Clerk">
+        <MappingFragment StoreEntitySet="WH_Clerk">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="isNum" ColumnName="isNum" />
+          <ScalarProperty Name="SecretCode" ColumnName="SecretCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Limitaions" ColumnName="Limitaions" />
+          <ScalarProperty Name="InterruptNo" ColumnName="InterruptNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_CookInformation">
+      <EntityTypeMapping TypeName="pbmModel.WH_CookInformation">
+        <MappingFragment StoreEntitySet="WH_CookInformation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Department">
+      <EntityTypeMapping TypeName="pbmModel.WH_Department">
+        <MappingFragment StoreEntitySet="WH_Department">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="High_Digit_LockOut" ColumnName="High_Digit_LockOut" />
+          <ScalarProperty Name="isDirectSale" ColumnName="isDirectSale" />
+          <ScalarProperty Name="isAge" ColumnName="isAge" />
+          <ScalarProperty Name="isPrice" ColumnName="isPrice" />
+          <ScalarProperty Name="DepartmentGroup" ColumnName="DepartmentGroup" />
+          <ScalarProperty Name="KP" ColumnName="KP" />
+          <ScalarProperty Name="KP2" ColumnName="KP2" />
+          <ScalarProperty Name="isMode" ColumnName="isMode" />
+          <ScalarProperty Name="isPriceFormat" ColumnName="isPriceFormat" />
+          <ScalarProperty Name="KP_receipt" ColumnName="KP_receipt" />
+          <ScalarProperty Name="isType" ColumnName="isType" />
+          <ScalarProperty Name="isVat_Tax_GST" ColumnName="isVat_Tax_GST" />
+          <ScalarProperty Name="str_Vat_Tax_GST" ColumnName="str_Vat_Tax_GST" />
+          <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Menu">
+      <EntityTypeMapping TypeName="pbmModel.WH_Menu">
+        <MappingFragment StoreEntitySet="WH_Menu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="isMode" ColumnName="isMode" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="isTax" ColumnName="isTax" />
+          <ScalarProperty Name="isCount" ColumnName="isCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Menu_Details">
+      <EntityTypeMapping TypeName="pbmModel.WH_Menu_Details">
+        <MappingFragment StoreEntitySet="WH_Menu_Details">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="MenuListID" ColumnName="MenuListID" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+          <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+          <ScalarProperty Name="KeyPosition" ColumnName="KeyPosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Menu_List">
+      <EntityTypeMapping TypeName="pbmModel.WH_Menu_List">
+        <MappingFragment StoreEntitySet="WH_Menu_List">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_PLU">
+      <EntityTypeMapping TypeName="pbmModel.WH_PLU">
+        <MappingFragment StoreEntitySet="WH_PLU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Dept_No" ColumnName="Dept_No" />
+          <ScalarProperty Name="Price1" ColumnName="Price1" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="Price3" ColumnName="Price3" />
+          <ScalarProperty Name="PriceMat" ColumnName="PriceMat" />
+          <ScalarProperty Name="isMode" ColumnName="isMode" />
+          <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+          <ScalarProperty Name="Inventory_safty" ColumnName="Inventory_safty" />
+          <ScalarProperty Name="isMenu" ColumnName="isMenu" />
+          <ScalarProperty Name="isCondiment" ColumnName="isCondiment" />
+          <ScalarProperty Name="Modifier" ColumnName="Modifier" />
+          <ScalarProperty Name="Modifier_description" ColumnName="Modifier_description" />
+          <ScalarProperty Name="Modifier_Unity_Quantity" ColumnName="Modifier_Unity_Quantity" />
+          <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
+          <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
+          <ScalarProperty Name="ExemptServTax" ColumnName="ExemptServTax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_PLU_Modifier">
+      <EntityTypeMapping TypeName="pbmModel.WH_PLU_Modifier">
+        <MappingFragment StoreEntitySet="WH_PLU_Modifier">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+          <ScalarProperty Name="Modifier_desc" ColumnName="Modifier_desc" />
+          <ScalarProperty Name="Modifier_Unit_Quantity" ColumnName="Modifier_Unit_Quantity" />
+          <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Relation_Cook_PLU">
+      <EntityTypeMapping TypeName="pbmModel.WH_Relation_Cook_PLU">
+        <MappingFragment StoreEntitySet="WH_Relation_Cook_PLU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CookID" ColumnName="CookID" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Relation_PLU_Condiment">
+      <EntityTypeMapping TypeName="pbmModel.WH_Relation_PLU_Condiment">
+        <MappingFragment StoreEntitySet="WH_Relation_PLU_Condiment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+          <ScalarProperty Name="condimentPLUID" ColumnName="condimentPLUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_BundleSaving_ReceiptNumber">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_BundleSaving_ReceiptNumber">
+        <MappingFragment StoreEntitySet="WH_Sys_BundleSaving_ReceiptNumber">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_CouponInformation">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_CouponInformation">
+        <MappingFragment StoreEntitySet="WH_Sys_CouponInformation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="HALO" ColumnName="HALO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_FCE">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_FCE">
+        <MappingFragment StoreEntitySet="WH_Sys_FCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Local" ColumnName="Local" />
+          <ScalarProperty Name="FC" ColumnName="FC" />
+          <ScalarProperty Name="Decimals" ColumnName="Decimals" />
+          <ScalarProperty Name="SymbolID" ColumnName="SymbolID" />
+          <ScalarProperty Name="SymbolStr" ColumnName="SymbolStr" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_Header_Footer">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_Header_Footer">
+        <MappingFragment StoreEntitySet="WH_Sys_Header_Footer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="DoubleWidth" ColumnName="DoubleWidth" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="isHeader" ColumnName="isHeader" />
+          <ScalarProperty Name="isHeaderStr" ColumnName="isHeaderStr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_KP">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_KP">
+        <MappingFragment StoreEntitySet="WH_Sys_KP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeIndex" ColumnName="TypeIndex" />
+          <ScalarProperty Name="TypeStr" ColumnName="TypeStr" />
+          <ScalarProperty Name="HeadFeed" ColumnName="HeadFeed" />
+          <ScalarProperty Name="FootFeed" ColumnName="FootFeed" />
+          <ScalarProperty Name="isCutPaper" ColumnName="isCutPaper" />
+          <ScalarProperty Name="IP_Addr" ColumnName="IP_Addr" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_PCASH">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_PCASH">
+        <MappingFragment StoreEntitySet="WH_Sys_PCASH">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="LinkPaymentID" ColumnName="LinkPaymentID" />
+          <ScalarProperty Name="LinkPaymentStr" ColumnName="LinkPaymentStr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_PCASH_linkpayment">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_PCASH_linkpayment">
+        <MappingFragment StoreEntitySet="WH_Sys_PCASH_linkpayment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_Payment">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_Payment">
+        <MappingFragment StoreEntitySet="WH_Sys_Payment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionBlod" ColumnName="DescriptionBlod" />
+          <ScalarProperty Name="ChargeReturn" ColumnName="ChargeReturn" />
+          <ScalarProperty Name="ChargeReturn_Str" ColumnName="ChargeReturn_Str" />
+          <ScalarProperty Name="DuplicateNo" ColumnName="DuplicateNo" />
+          <ScalarProperty Name="isTips" ColumnName="isTips" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="TypeStr" ColumnName="TypeStr" />
+          <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_Refund">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_Refund">
+        <MappingFragment StoreEntitySet="WH_Sys_Refund">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="HALO" ColumnName="HALO" />
+          <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_Supplier">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_Supplier">
+        <MappingFragment StoreEntitySet="WH_Sys_Supplier">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_Symbols">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_Symbols">
+        <MappingFragment StoreEntitySet="WH_Sys_Symbols">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Tax">
+      <EntityTypeMapping TypeName="pbmModel.WH_Tax">
+        <MappingFragment StoreEntitySet="WH_Tax">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TaxTypeID" ColumnName="TaxTypeID" />
+          <ScalarProperty Name="TaxTypeStr" ColumnName="TaxTypeStr" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Limit" ColumnName="Limit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Tax_Table">
+      <EntityTypeMapping TypeName="pbmModel.WH_Tax_Table">
+        <MappingFragment StoreEntitySet="WH_Tax_Table">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+          <ScalarProperty Name="TaxA" ColumnName="TaxA" />
+          <ScalarProperty Name="TaxB" ColumnName="TaxB" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_ElectronicScale">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_ElectronicScale">
+        <MappingFragment StoreEntitySet="WH_Sys_ElectronicScale">
+          <ScalarProperty Name="ScaleDeptID" ColumnName="ScaleDeptID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_ElectronicScale_Setting">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_ElectronicScale_Setting">
+        <MappingFragment StoreEntitySet="WH_Sys_ElectronicScale_Setting">
+          <ScalarProperty Name="TareType" ColumnName="TareType" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_ElectronicScale_Tare">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_ElectronicScale_Tare">
+        <MappingFragment StoreEntitySet="WH_Sys_ElectronicScale_Tare">
+          <ScalarProperty Name="tare" ColumnName="tare" />
+          <ScalarProperty Name="awID" ColumnName="awID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_WeightingPLU">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_WeightingPLU">
+        <MappingFragment StoreEntitySet="WH_Sys_WeightingPLU">
+          <ScalarProperty Name="Dots" ColumnName="Dots" />
+          <ScalarProperty Name="WAID" ColumnName="WAID" />
+          <ScalarProperty Name="BarCodeLength" ColumnName="BarCodeLength" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="WID" ColumnName="WID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

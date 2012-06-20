@@ -68,6 +68,54 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
+        public ObjectSet<WH_Bundle> WH_Bundle
+        {
+            get
+            {
+                if ((_WH_Bundle == null))
+                {
+                    _WH_Bundle = base.CreateObjectSet<WH_Bundle>("WH_Bundle");
+                }
+                return _WH_Bundle;
+            }
+        }
+        private ObjectSet<WH_Bundle> _WH_Bundle;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Bundle_FreeOrDiscount> WH_Bundle_FreeOrDiscount
+        {
+            get
+            {
+                if ((_WH_Bundle_FreeOrDiscount == null))
+                {
+                    _WH_Bundle_FreeOrDiscount = base.CreateObjectSet<WH_Bundle_FreeOrDiscount>("WH_Bundle_FreeOrDiscount");
+                }
+                return _WH_Bundle_FreeOrDiscount;
+            }
+        }
+        private ObjectSet<WH_Bundle_FreeOrDiscount> _WH_Bundle_FreeOrDiscount;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Bundle_member> WH_Bundle_member
+        {
+            get
+            {
+                if ((_WH_Bundle_member == null))
+                {
+                    _WH_Bundle_member = base.CreateObjectSet<WH_Bundle_member>("WH_Bundle_member");
+                }
+                return _WH_Bundle_member;
+            }
+        }
+        private ObjectSet<WH_Bundle_member> _WH_Bundle_member;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
         public ObjectSet<WH_Clerk> WH_Clerk
         {
             get
@@ -100,150 +148,6 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_PLU_Modifier> WH_PLU_Modifier
-        {
-            get
-            {
-                if ((_WH_PLU_Modifier == null))
-                {
-                    _WH_PLU_Modifier = base.CreateObjectSet<WH_PLU_Modifier>("WH_PLU_Modifier");
-                }
-                return _WH_PLU_Modifier;
-            }
-        }
-        private ObjectSet<WH_PLU_Modifier> _WH_PLU_Modifier;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Relation_Cook_PLU> WH_Relation_Cook_PLU
-        {
-            get
-            {
-                if ((_WH_Relation_Cook_PLU == null))
-                {
-                    _WH_Relation_Cook_PLU = base.CreateObjectSet<WH_Relation_Cook_PLU>("WH_Relation_Cook_PLU");
-                }
-                return _WH_Relation_Cook_PLU;
-            }
-        }
-        private ObjectSet<WH_Relation_Cook_PLU> _WH_Relation_Cook_PLU;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Relation_PLU_Condiment> WH_Relation_PLU_Condiment
-        {
-            get
-            {
-                if ((_WH_Relation_PLU_Condiment == null))
-                {
-                    _WH_Relation_PLU_Condiment = base.CreateObjectSet<WH_Relation_PLU_Condiment>("WH_Relation_PLU_Condiment");
-                }
-                return _WH_Relation_PLU_Condiment;
-            }
-        }
-        private ObjectSet<WH_Relation_PLU_Condiment> _WH_Relation_PLU_Condiment;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_Header_Footer> WH_Sys_Header_Footer
-        {
-            get
-            {
-                if ((_WH_Sys_Header_Footer == null))
-                {
-                    _WH_Sys_Header_Footer = base.CreateObjectSet<WH_Sys_Header_Footer>("WH_Sys_Header_Footer");
-                }
-                return _WH_Sys_Header_Footer;
-            }
-        }
-        private ObjectSet<WH_Sys_Header_Footer> _WH_Sys_Header_Footer;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_BundleSaving_ReceiptNumber> WH_Sys_BundleSaving_ReceiptNumber
-        {
-            get
-            {
-                if ((_WH_Sys_BundleSaving_ReceiptNumber == null))
-                {
-                    _WH_Sys_BundleSaving_ReceiptNumber = base.CreateObjectSet<WH_Sys_BundleSaving_ReceiptNumber>("WH_Sys_BundleSaving_ReceiptNumber");
-                }
-                return _WH_Sys_BundleSaving_ReceiptNumber;
-            }
-        }
-        private ObjectSet<WH_Sys_BundleSaving_ReceiptNumber> _WH_Sys_BundleSaving_ReceiptNumber;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_Supplier> WH_Sys_Supplier
-        {
-            get
-            {
-                if ((_WH_Sys_Supplier == null))
-                {
-                    _WH_Sys_Supplier = base.CreateObjectSet<WH_Sys_Supplier>("WH_Sys_Supplier");
-                }
-                return _WH_Sys_Supplier;
-            }
-        }
-        private ObjectSet<WH_Sys_Supplier> _WH_Sys_Supplier;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_Payment> WH_Sys_Payment
-        {
-            get
-            {
-                if ((_WH_Sys_Payment == null))
-                {
-                    _WH_Sys_Payment = base.CreateObjectSet<WH_Sys_Payment>("WH_Sys_Payment");
-                }
-                return _WH_Sys_Payment;
-            }
-        }
-        private ObjectSet<WH_Sys_Payment> _WH_Sys_Payment;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_Refund> WH_Sys_Refund
-        {
-            get
-            {
-                if ((_WH_Sys_Refund == null))
-                {
-                    _WH_Sys_Refund = base.CreateObjectSet<WH_Sys_Refund>("WH_Sys_Refund");
-                }
-                return _WH_Sys_Refund;
-            }
-        }
-        private ObjectSet<WH_Sys_Refund> _WH_Sys_Refund;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_CouponInformation> WH_Sys_CouponInformation
-        {
-            get
-            {
-                if ((_WH_Sys_CouponInformation == null))
-                {
-                    _WH_Sys_CouponInformation = base.CreateObjectSet<WH_Sys_CouponInformation>("WH_Sys_CouponInformation");
-                }
-                return _WH_Sys_CouponInformation;
-            }
-        }
-        private ObjectSet<WH_Sys_CouponInformation> _WH_Sys_CouponInformation;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<WH_Department> WH_Department
         {
             get
@@ -256,134 +160,6 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Department> _WH_Department;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_KP> WH_Sys_KP
-        {
-            get
-            {
-                if ((_WH_Sys_KP == null))
-                {
-                    _WH_Sys_KP = base.CreateObjectSet<WH_Sys_KP>("WH_Sys_KP");
-                }
-                return _WH_Sys_KP;
-            }
-        }
-        private ObjectSet<WH_Sys_KP> _WH_Sys_KP;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_PCASH> WH_Sys_PCASH
-        {
-            get
-            {
-                if ((_WH_Sys_PCASH == null))
-                {
-                    _WH_Sys_PCASH = base.CreateObjectSet<WH_Sys_PCASH>("WH_Sys_PCASH");
-                }
-                return _WH_Sys_PCASH;
-            }
-        }
-        private ObjectSet<WH_Sys_PCASH> _WH_Sys_PCASH;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_PCASH_linkpayment> WH_Sys_PCASH_linkpayment
-        {
-            get
-            {
-                if ((_WH_Sys_PCASH_linkpayment == null))
-                {
-                    _WH_Sys_PCASH_linkpayment = base.CreateObjectSet<WH_Sys_PCASH_linkpayment>("WH_Sys_PCASH_linkpayment");
-                }
-                return _WH_Sys_PCASH_linkpayment;
-            }
-        }
-        private ObjectSet<WH_Sys_PCASH_linkpayment> _WH_Sys_PCASH_linkpayment;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_FCE> WH_Sys_FCE
-        {
-            get
-            {
-                if ((_WH_Sys_FCE == null))
-                {
-                    _WH_Sys_FCE = base.CreateObjectSet<WH_Sys_FCE>("WH_Sys_FCE");
-                }
-                return _WH_Sys_FCE;
-            }
-        }
-        private ObjectSet<WH_Sys_FCE> _WH_Sys_FCE;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Sys_Symbols> WH_Sys_Symbols
-        {
-            get
-            {
-                if ((_WH_Sys_Symbols == null))
-                {
-                    _WH_Sys_Symbols = base.CreateObjectSet<WH_Sys_Symbols>("WH_Sys_Symbols");
-                }
-                return _WH_Sys_Symbols;
-            }
-        }
-        private ObjectSet<WH_Sys_Symbols> _WH_Sys_Symbols;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Tax> WH_Tax
-        {
-            get
-            {
-                if ((_WH_Tax == null))
-                {
-                    _WH_Tax = base.CreateObjectSet<WH_Tax>("WH_Tax");
-                }
-                return _WH_Tax;
-            }
-        }
-        private ObjectSet<WH_Tax> _WH_Tax;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_Tax_Table> WH_Tax_Table
-        {
-            get
-            {
-                if ((_WH_Tax_Table == null))
-                {
-                    _WH_Tax_Table = base.CreateObjectSet<WH_Tax_Table>("WH_Tax_Table");
-                }
-                return _WH_Tax_Table;
-            }
-        }
-        private ObjectSet<WH_Tax_Table> _WH_Tax_Table;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<WH_PLU> WH_PLU
-        {
-            get
-            {
-                if ((_WH_PLU == null))
-                {
-                    _WH_PLU = base.CreateObjectSet<WH_PLU>("WH_PLU");
-                }
-                return _WH_PLU;
-            }
-        }
-        private ObjectSet<WH_PLU> _WH_PLU;
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -436,53 +212,365 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Bundle_member> WH_Bundle_member
+        public ObjectSet<WH_PLU> WH_PLU
         {
             get
             {
-                if ((_WH_Bundle_member == null))
+                if ((_WH_PLU == null))
                 {
-                    _WH_Bundle_member = base.CreateObjectSet<WH_Bundle_member>("WH_Bundle_member");
+                    _WH_PLU = base.CreateObjectSet<WH_PLU>("WH_PLU");
                 }
-                return _WH_Bundle_member;
+                return _WH_PLU;
             }
         }
-        private ObjectSet<WH_Bundle_member> _WH_Bundle_member;
+        private ObjectSet<WH_PLU> _WH_PLU;
     
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Bundle> WH_Bundle
+        public ObjectSet<WH_PLU_Modifier> WH_PLU_Modifier
         {
             get
             {
-                if ((_WH_Bundle == null))
+                if ((_WH_PLU_Modifier == null))
                 {
-                    _WH_Bundle = base.CreateObjectSet<WH_Bundle>("WH_Bundle");
+                    _WH_PLU_Modifier = base.CreateObjectSet<WH_PLU_Modifier>("WH_PLU_Modifier");
                 }
-                return _WH_Bundle;
+                return _WH_PLU_Modifier;
             }
         }
-        private ObjectSet<WH_Bundle> _WH_Bundle;
+        private ObjectSet<WH_PLU_Modifier> _WH_PLU_Modifier;
     
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Bundle_FreeOrDiscount> WH_Bundle_FreeOrDiscount
+        public ObjectSet<WH_Relation_Cook_PLU> WH_Relation_Cook_PLU
         {
             get
             {
-                if ((_WH_Bundle_FreeOrDiscount == null))
+                if ((_WH_Relation_Cook_PLU == null))
                 {
-                    _WH_Bundle_FreeOrDiscount = base.CreateObjectSet<WH_Bundle_FreeOrDiscount>("WH_Bundle_FreeOrDiscount");
+                    _WH_Relation_Cook_PLU = base.CreateObjectSet<WH_Relation_Cook_PLU>("WH_Relation_Cook_PLU");
                 }
-                return _WH_Bundle_FreeOrDiscount;
+                return _WH_Relation_Cook_PLU;
             }
         }
-        private ObjectSet<WH_Bundle_FreeOrDiscount> _WH_Bundle_FreeOrDiscount;
+        private ObjectSet<WH_Relation_Cook_PLU> _WH_Relation_Cook_PLU;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Relation_PLU_Condiment> WH_Relation_PLU_Condiment
+        {
+            get
+            {
+                if ((_WH_Relation_PLU_Condiment == null))
+                {
+                    _WH_Relation_PLU_Condiment = base.CreateObjectSet<WH_Relation_PLU_Condiment>("WH_Relation_PLU_Condiment");
+                }
+                return _WH_Relation_PLU_Condiment;
+            }
+        }
+        private ObjectSet<WH_Relation_PLU_Condiment> _WH_Relation_PLU_Condiment;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_BundleSaving_ReceiptNumber> WH_Sys_BundleSaving_ReceiptNumber
+        {
+            get
+            {
+                if ((_WH_Sys_BundleSaving_ReceiptNumber == null))
+                {
+                    _WH_Sys_BundleSaving_ReceiptNumber = base.CreateObjectSet<WH_Sys_BundleSaving_ReceiptNumber>("WH_Sys_BundleSaving_ReceiptNumber");
+                }
+                return _WH_Sys_BundleSaving_ReceiptNumber;
+            }
+        }
+        private ObjectSet<WH_Sys_BundleSaving_ReceiptNumber> _WH_Sys_BundleSaving_ReceiptNumber;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_CouponInformation> WH_Sys_CouponInformation
+        {
+            get
+            {
+                if ((_WH_Sys_CouponInformation == null))
+                {
+                    _WH_Sys_CouponInformation = base.CreateObjectSet<WH_Sys_CouponInformation>("WH_Sys_CouponInformation");
+                }
+                return _WH_Sys_CouponInformation;
+            }
+        }
+        private ObjectSet<WH_Sys_CouponInformation> _WH_Sys_CouponInformation;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_FCE> WH_Sys_FCE
+        {
+            get
+            {
+                if ((_WH_Sys_FCE == null))
+                {
+                    _WH_Sys_FCE = base.CreateObjectSet<WH_Sys_FCE>("WH_Sys_FCE");
+                }
+                return _WH_Sys_FCE;
+            }
+        }
+        private ObjectSet<WH_Sys_FCE> _WH_Sys_FCE;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_Header_Footer> WH_Sys_Header_Footer
+        {
+            get
+            {
+                if ((_WH_Sys_Header_Footer == null))
+                {
+                    _WH_Sys_Header_Footer = base.CreateObjectSet<WH_Sys_Header_Footer>("WH_Sys_Header_Footer");
+                }
+                return _WH_Sys_Header_Footer;
+            }
+        }
+        private ObjectSet<WH_Sys_Header_Footer> _WH_Sys_Header_Footer;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_KP> WH_Sys_KP
+        {
+            get
+            {
+                if ((_WH_Sys_KP == null))
+                {
+                    _WH_Sys_KP = base.CreateObjectSet<WH_Sys_KP>("WH_Sys_KP");
+                }
+                return _WH_Sys_KP;
+            }
+        }
+        private ObjectSet<WH_Sys_KP> _WH_Sys_KP;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_PCASH> WH_Sys_PCASH
+        {
+            get
+            {
+                if ((_WH_Sys_PCASH == null))
+                {
+                    _WH_Sys_PCASH = base.CreateObjectSet<WH_Sys_PCASH>("WH_Sys_PCASH");
+                }
+                return _WH_Sys_PCASH;
+            }
+        }
+        private ObjectSet<WH_Sys_PCASH> _WH_Sys_PCASH;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_PCASH_linkpayment> WH_Sys_PCASH_linkpayment
+        {
+            get
+            {
+                if ((_WH_Sys_PCASH_linkpayment == null))
+                {
+                    _WH_Sys_PCASH_linkpayment = base.CreateObjectSet<WH_Sys_PCASH_linkpayment>("WH_Sys_PCASH_linkpayment");
+                }
+                return _WH_Sys_PCASH_linkpayment;
+            }
+        }
+        private ObjectSet<WH_Sys_PCASH_linkpayment> _WH_Sys_PCASH_linkpayment;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_Payment> WH_Sys_Payment
+        {
+            get
+            {
+                if ((_WH_Sys_Payment == null))
+                {
+                    _WH_Sys_Payment = base.CreateObjectSet<WH_Sys_Payment>("WH_Sys_Payment");
+                }
+                return _WH_Sys_Payment;
+            }
+        }
+        private ObjectSet<WH_Sys_Payment> _WH_Sys_Payment;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_Refund> WH_Sys_Refund
+        {
+            get
+            {
+                if ((_WH_Sys_Refund == null))
+                {
+                    _WH_Sys_Refund = base.CreateObjectSet<WH_Sys_Refund>("WH_Sys_Refund");
+                }
+                return _WH_Sys_Refund;
+            }
+        }
+        private ObjectSet<WH_Sys_Refund> _WH_Sys_Refund;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_Supplier> WH_Sys_Supplier
+        {
+            get
+            {
+                if ((_WH_Sys_Supplier == null))
+                {
+                    _WH_Sys_Supplier = base.CreateObjectSet<WH_Sys_Supplier>("WH_Sys_Supplier");
+                }
+                return _WH_Sys_Supplier;
+            }
+        }
+        private ObjectSet<WH_Sys_Supplier> _WH_Sys_Supplier;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_Symbols> WH_Sys_Symbols
+        {
+            get
+            {
+                if ((_WH_Sys_Symbols == null))
+                {
+                    _WH_Sys_Symbols = base.CreateObjectSet<WH_Sys_Symbols>("WH_Sys_Symbols");
+                }
+                return _WH_Sys_Symbols;
+            }
+        }
+        private ObjectSet<WH_Sys_Symbols> _WH_Sys_Symbols;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Tax> WH_Tax
+        {
+            get
+            {
+                if ((_WH_Tax == null))
+                {
+                    _WH_Tax = base.CreateObjectSet<WH_Tax>("WH_Tax");
+                }
+                return _WH_Tax;
+            }
+        }
+        private ObjectSet<WH_Tax> _WH_Tax;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Tax_Table> WH_Tax_Table
+        {
+            get
+            {
+                if ((_WH_Tax_Table == null))
+                {
+                    _WH_Tax_Table = base.CreateObjectSet<WH_Tax_Table>("WH_Tax_Table");
+                }
+                return _WH_Tax_Table;
+            }
+        }
+        private ObjectSet<WH_Tax_Table> _WH_Tax_Table;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_ElectronicScale> WH_Sys_ElectronicScale
+        {
+            get
+            {
+                if ((_WH_Sys_ElectronicScale == null))
+                {
+                    _WH_Sys_ElectronicScale = base.CreateObjectSet<WH_Sys_ElectronicScale>("WH_Sys_ElectronicScale");
+                }
+                return _WH_Sys_ElectronicScale;
+            }
+        }
+        private ObjectSet<WH_Sys_ElectronicScale> _WH_Sys_ElectronicScale;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_ElectronicScale_Setting> WH_Sys_ElectronicScale_Setting
+        {
+            get
+            {
+                if ((_WH_Sys_ElectronicScale_Setting == null))
+                {
+                    _WH_Sys_ElectronicScale_Setting = base.CreateObjectSet<WH_Sys_ElectronicScale_Setting>("WH_Sys_ElectronicScale_Setting");
+                }
+                return _WH_Sys_ElectronicScale_Setting;
+            }
+        }
+        private ObjectSet<WH_Sys_ElectronicScale_Setting> _WH_Sys_ElectronicScale_Setting;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_ElectronicScale_Tare> WH_Sys_ElectronicScale_Tare
+        {
+            get
+            {
+                if ((_WH_Sys_ElectronicScale_Tare == null))
+                {
+                    _WH_Sys_ElectronicScale_Tare = base.CreateObjectSet<WH_Sys_ElectronicScale_Tare>("WH_Sys_ElectronicScale_Tare");
+                }
+                return _WH_Sys_ElectronicScale_Tare;
+            }
+        }
+        private ObjectSet<WH_Sys_ElectronicScale_Tare> _WH_Sys_ElectronicScale_Tare;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_WeightingPLU> WH_Sys_WeightingPLU
+        {
+            get
+            {
+                if ((_WH_Sys_WeightingPLU == null))
+                {
+                    _WH_Sys_WeightingPLU = base.CreateObjectSet<WH_Sys_WeightingPLU>("WH_Sys_WeightingPLU");
+                }
+                return _WH_Sys_WeightingPLU;
+            }
+        }
+        private ObjectSet<WH_Sys_WeightingPLU> _WH_Sys_WeightingPLU;
 
         #endregion
         #region AddTo 方法
+    
+        /// <summary>
+        /// 用于向 WH_Bundle EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Bundle(WH_Bundle wH_Bundle)
+        {
+            base.AddObject("WH_Bundle", wH_Bundle);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Bundle_FreeOrDiscount EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Bundle_FreeOrDiscount(WH_Bundle_FreeOrDiscount wH_Bundle_FreeOrDiscount)
+        {
+            base.AddObject("WH_Bundle_FreeOrDiscount", wH_Bundle_FreeOrDiscount);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Bundle_member EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Bundle_member(WH_Bundle_member wH_Bundle_member)
+        {
+            base.AddObject("WH_Bundle_member", wH_Bundle_member);
+        }
     
         /// <summary>
         /// 用于向 WH_Clerk EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
@@ -501,147 +589,11 @@ namespace PBMApp.Model
         }
     
         /// <summary>
-        /// 用于向 WH_PLU_Modifier EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_PLU_Modifier(WH_PLU_Modifier wH_PLU_Modifier)
-        {
-            base.AddObject("WH_PLU_Modifier", wH_PLU_Modifier);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Relation_Cook_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Relation_Cook_PLU(WH_Relation_Cook_PLU wH_Relation_Cook_PLU)
-        {
-            base.AddObject("WH_Relation_Cook_PLU", wH_Relation_Cook_PLU);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Relation_PLU_Condiment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Relation_PLU_Condiment(WH_Relation_PLU_Condiment wH_Relation_PLU_Condiment)
-        {
-            base.AddObject("WH_Relation_PLU_Condiment", wH_Relation_PLU_Condiment);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_Header_Footer EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_Header_Footer(WH_Sys_Header_Footer wH_Sys_Header_Footer)
-        {
-            base.AddObject("WH_Sys_Header_Footer", wH_Sys_Header_Footer);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_BundleSaving_ReceiptNumber EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_BundleSaving_ReceiptNumber(WH_Sys_BundleSaving_ReceiptNumber wH_Sys_BundleSaving_ReceiptNumber)
-        {
-            base.AddObject("WH_Sys_BundleSaving_ReceiptNumber", wH_Sys_BundleSaving_ReceiptNumber);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_Supplier EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_Supplier(WH_Sys_Supplier wH_Sys_Supplier)
-        {
-            base.AddObject("WH_Sys_Supplier", wH_Sys_Supplier);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_Payment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_Payment(WH_Sys_Payment wH_Sys_Payment)
-        {
-            base.AddObject("WH_Sys_Payment", wH_Sys_Payment);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_Refund EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_Refund(WH_Sys_Refund wH_Sys_Refund)
-        {
-            base.AddObject("WH_Sys_Refund", wH_Sys_Refund);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_CouponInformation EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_CouponInformation(WH_Sys_CouponInformation wH_Sys_CouponInformation)
-        {
-            base.AddObject("WH_Sys_CouponInformation", wH_Sys_CouponInformation);
-        }
-    
-        /// <summary>
         /// 用于向 WH_Department EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
         public void AddToWH_Department(WH_Department wH_Department)
         {
             base.AddObject("WH_Department", wH_Department);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_KP EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_KP(WH_Sys_KP wH_Sys_KP)
-        {
-            base.AddObject("WH_Sys_KP", wH_Sys_KP);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_PCASH EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_PCASH(WH_Sys_PCASH wH_Sys_PCASH)
-        {
-            base.AddObject("WH_Sys_PCASH", wH_Sys_PCASH);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_PCASH_linkpayment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_PCASH_linkpayment(WH_Sys_PCASH_linkpayment wH_Sys_PCASH_linkpayment)
-        {
-            base.AddObject("WH_Sys_PCASH_linkpayment", wH_Sys_PCASH_linkpayment);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_FCE EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_FCE(WH_Sys_FCE wH_Sys_FCE)
-        {
-            base.AddObject("WH_Sys_FCE", wH_Sys_FCE);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_Symbols EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_Symbols(WH_Sys_Symbols wH_Sys_Symbols)
-        {
-            base.AddObject("WH_Sys_Symbols", wH_Sys_Symbols);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Tax EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Tax(WH_Tax wH_Tax)
-        {
-            base.AddObject("WH_Tax", wH_Tax);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Tax_Table EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Tax_Table(WH_Tax_Table wH_Tax_Table)
-        {
-            base.AddObject("WH_Tax_Table", wH_Tax_Table);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_PLU(WH_PLU wH_PLU)
-        {
-            base.AddObject("WH_PLU", wH_PLU);
         }
     
         /// <summary>
@@ -669,27 +621,171 @@ namespace PBMApp.Model
         }
     
         /// <summary>
-        /// 用于向 WH_Bundle_member EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// 用于向 WH_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
-        public void AddToWH_Bundle_member(WH_Bundle_member wH_Bundle_member)
+        public void AddToWH_PLU(WH_PLU wH_PLU)
         {
-            base.AddObject("WH_Bundle_member", wH_Bundle_member);
+            base.AddObject("WH_PLU", wH_PLU);
         }
     
         /// <summary>
-        /// 用于向 WH_Bundle EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// 用于向 WH_PLU_Modifier EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
-        public void AddToWH_Bundle(WH_Bundle wH_Bundle)
+        public void AddToWH_PLU_Modifier(WH_PLU_Modifier wH_PLU_Modifier)
         {
-            base.AddObject("WH_Bundle", wH_Bundle);
+            base.AddObject("WH_PLU_Modifier", wH_PLU_Modifier);
         }
     
         /// <summary>
-        /// 用于向 WH_Bundle_FreeOrDiscount EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// 用于向 WH_Relation_Cook_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
-        public void AddToWH_Bundle_FreeOrDiscount(WH_Bundle_FreeOrDiscount wH_Bundle_FreeOrDiscount)
+        public void AddToWH_Relation_Cook_PLU(WH_Relation_Cook_PLU wH_Relation_Cook_PLU)
         {
-            base.AddObject("WH_Bundle_FreeOrDiscount", wH_Bundle_FreeOrDiscount);
+            base.AddObject("WH_Relation_Cook_PLU", wH_Relation_Cook_PLU);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Relation_PLU_Condiment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Relation_PLU_Condiment(WH_Relation_PLU_Condiment wH_Relation_PLU_Condiment)
+        {
+            base.AddObject("WH_Relation_PLU_Condiment", wH_Relation_PLU_Condiment);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_BundleSaving_ReceiptNumber EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_BundleSaving_ReceiptNumber(WH_Sys_BundleSaving_ReceiptNumber wH_Sys_BundleSaving_ReceiptNumber)
+        {
+            base.AddObject("WH_Sys_BundleSaving_ReceiptNumber", wH_Sys_BundleSaving_ReceiptNumber);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_CouponInformation EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_CouponInformation(WH_Sys_CouponInformation wH_Sys_CouponInformation)
+        {
+            base.AddObject("WH_Sys_CouponInformation", wH_Sys_CouponInformation);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_FCE EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_FCE(WH_Sys_FCE wH_Sys_FCE)
+        {
+            base.AddObject("WH_Sys_FCE", wH_Sys_FCE);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_Header_Footer EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_Header_Footer(WH_Sys_Header_Footer wH_Sys_Header_Footer)
+        {
+            base.AddObject("WH_Sys_Header_Footer", wH_Sys_Header_Footer);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_KP EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_KP(WH_Sys_KP wH_Sys_KP)
+        {
+            base.AddObject("WH_Sys_KP", wH_Sys_KP);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_PCASH EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_PCASH(WH_Sys_PCASH wH_Sys_PCASH)
+        {
+            base.AddObject("WH_Sys_PCASH", wH_Sys_PCASH);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_PCASH_linkpayment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_PCASH_linkpayment(WH_Sys_PCASH_linkpayment wH_Sys_PCASH_linkpayment)
+        {
+            base.AddObject("WH_Sys_PCASH_linkpayment", wH_Sys_PCASH_linkpayment);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_Payment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_Payment(WH_Sys_Payment wH_Sys_Payment)
+        {
+            base.AddObject("WH_Sys_Payment", wH_Sys_Payment);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_Refund EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_Refund(WH_Sys_Refund wH_Sys_Refund)
+        {
+            base.AddObject("WH_Sys_Refund", wH_Sys_Refund);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_Supplier EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_Supplier(WH_Sys_Supplier wH_Sys_Supplier)
+        {
+            base.AddObject("WH_Sys_Supplier", wH_Sys_Supplier);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_Symbols EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_Symbols(WH_Sys_Symbols wH_Sys_Symbols)
+        {
+            base.AddObject("WH_Sys_Symbols", wH_Sys_Symbols);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Tax EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Tax(WH_Tax wH_Tax)
+        {
+            base.AddObject("WH_Tax", wH_Tax);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Tax_Table EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Tax_Table(WH_Tax_Table wH_Tax_Table)
+        {
+            base.AddObject("WH_Tax_Table", wH_Tax_Table);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_ElectronicScale EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_ElectronicScale(WH_Sys_ElectronicScale wH_Sys_ElectronicScale)
+        {
+            base.AddObject("WH_Sys_ElectronicScale", wH_Sys_ElectronicScale);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_ElectronicScale_Setting EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_ElectronicScale_Setting(WH_Sys_ElectronicScale_Setting wH_Sys_ElectronicScale_Setting)
+        {
+            base.AddObject("WH_Sys_ElectronicScale_Setting", wH_Sys_ElectronicScale_Setting);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_ElectronicScale_Tare EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_ElectronicScale_Tare(WH_Sys_ElectronicScale_Tare wH_Sys_ElectronicScale_Tare)
+        {
+            base.AddObject("WH_Sys_ElectronicScale_Tare", wH_Sys_ElectronicScale_Tare);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_WeightingPLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_WeightingPLU(WH_Sys_WeightingPLU wH_Sys_WeightingPLU)
+        {
+            base.AddObject("WH_Sys_WeightingPLU", wH_Sys_WeightingPLU);
         }
 
         #endregion
@@ -3376,6 +3472,291 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_ElectronicScale")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_ElectronicScale : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_ElectronicScale 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_ElectronicScale CreateWH_Sys_ElectronicScale(global::System.Int64 id)
+        {
+            WH_Sys_ElectronicScale wH_Sys_ElectronicScale = new WH_Sys_ElectronicScale();
+            wH_Sys_ElectronicScale.ID = id;
+            return wH_Sys_ElectronicScale;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> ScaleDeptID
+        {
+            get
+            {
+                return _ScaleDeptID;
+            }
+            set
+            {
+                OnScaleDeptIDChanging(value);
+                ReportPropertyChanging("ScaleDeptID");
+                _ScaleDeptID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ScaleDeptID");
+                OnScaleDeptIDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _ScaleDeptID;
+        partial void OnScaleDeptIDChanging(Nullable<global::System.Int64> value);
+        partial void OnScaleDeptIDChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_ElectronicScale_Setting")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_ElectronicScale_Setting : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_ElectronicScale_Setting 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_ElectronicScale_Setting CreateWH_Sys_ElectronicScale_Setting(global::System.Int64 id)
+        {
+            WH_Sys_ElectronicScale_Setting wH_Sys_ElectronicScale_Setting = new WH_Sys_ElectronicScale_Setting();
+            wH_Sys_ElectronicScale_Setting.ID = id;
+            return wH_Sys_ElectronicScale_Setting;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> Unit
+        {
+            get
+            {
+                return _Unit;
+            }
+            set
+            {
+                OnUnitChanging(value);
+                ReportPropertyChanging("Unit");
+                _Unit = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Unit");
+                OnUnitChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _Unit;
+        partial void OnUnitChanging(Nullable<global::System.Int64> value);
+        partial void OnUnitChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> TareType
+        {
+            get
+            {
+                return _TareType;
+            }
+            set
+            {
+                OnTareTypeChanging(value);
+                ReportPropertyChanging("TareType");
+                _TareType = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TareType");
+                OnTareTypeChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _TareType;
+        partial void OnTareTypeChanging(Nullable<global::System.Int64> value);
+        partial void OnTareTypeChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_ElectronicScale_Tare")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_ElectronicScale_Tare : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_ElectronicScale_Tare 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_ElectronicScale_Tare CreateWH_Sys_ElectronicScale_Tare(global::System.Int64 id)
+        {
+            WH_Sys_ElectronicScale_Tare wH_Sys_ElectronicScale_Tare = new WH_Sys_ElectronicScale_Tare();
+            wH_Sys_ElectronicScale_Tare.ID = id;
+            return wH_Sys_ElectronicScale_Tare;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> awID
+        {
+            get
+            {
+                return _awID;
+            }
+            set
+            {
+                OnawIDChanging(value);
+                ReportPropertyChanging("awID");
+                _awID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("awID");
+                OnawIDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _awID;
+        partial void OnawIDChanging(Nullable<global::System.Int64> value);
+        partial void OnawIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> tare
+        {
+            get
+            {
+                return _tare;
+            }
+            set
+            {
+                OntareChanging(value);
+                ReportPropertyChanging("tare");
+                _tare = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tare");
+                OntareChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _tare;
+        partial void OntareChanging(Nullable<global::System.Decimal> value);
+        partial void OntareChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_FCE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -4799,6 +5180,181 @@ namespace PBMApp.Model
         private global::System.String _title;
         partial void OntitleChanging(global::System.String value);
         partial void OntitleChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_WeightingPLU")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_WeightingPLU : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_WeightingPLU 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_WeightingPLU CreateWH_Sys_WeightingPLU(global::System.Int64 id)
+        {
+            WH_Sys_WeightingPLU wH_Sys_WeightingPLU = new WH_Sys_WeightingPLU();
+            wH_Sys_WeightingPLU.ID = id;
+            return wH_Sys_WeightingPLU;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String WID
+        {
+            get
+            {
+                return _WID;
+            }
+            set
+            {
+                OnWIDChanging(value);
+                ReportPropertyChanging("WID");
+                _WID = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("WID");
+                OnWIDChanged();
+            }
+        }
+        private global::System.String _WID;
+        partial void OnWIDChanging(global::System.String value);
+        partial void OnWIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> TypeID
+        {
+            get
+            {
+                return _TypeID;
+            }
+            set
+            {
+                OnTypeIDChanging(value);
+                ReportPropertyChanging("TypeID");
+                _TypeID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TypeID");
+                OnTypeIDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _TypeID;
+        partial void OnTypeIDChanging(Nullable<global::System.Int64> value);
+        partial void OnTypeIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> BarCodeLength
+        {
+            get
+            {
+                return _BarCodeLength;
+            }
+            set
+            {
+                OnBarCodeLengthChanging(value);
+                ReportPropertyChanging("BarCodeLength");
+                _BarCodeLength = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BarCodeLength");
+                OnBarCodeLengthChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _BarCodeLength;
+        partial void OnBarCodeLengthChanging(Nullable<global::System.Int64> value);
+        partial void OnBarCodeLengthChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> WAID
+        {
+            get
+            {
+                return _WAID;
+            }
+            set
+            {
+                OnWAIDChanging(value);
+                ReportPropertyChanging("WAID");
+                _WAID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("WAID");
+                OnWAIDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _WAID;
+        partial void OnWAIDChanging(Nullable<global::System.Int64> value);
+        partial void OnWAIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> Dots
+        {
+            get
+            {
+                return _Dots;
+            }
+            set
+            {
+                OnDotsChanging(value);
+                ReportPropertyChanging("Dots");
+                _Dots = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Dots");
+                OnDotsChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _Dots;
+        partial void OnDotsChanging(Nullable<global::System.Int64> value);
+        partial void OnDotsChanged();
 
         #endregion
     
