@@ -87,10 +87,22 @@ namespace PBMApp
         {
             using (var m = new Entities())
             {
-                int id = int.Parse(textBox1.Text);
-                var ctx = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == id);
-                ctx.Description = textBox2.Text;
-                m.SaveChanges();
+                if(textBox1.Text!="")
+                {
+                    int id;
+                    int.TryParse(textBox1.Text, out id);
+                    var ctx = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == id);
+                    ctx.Description = textBox2.Text;
+                    m.SaveChanges();
+                }
+                else
+                {
+                    WH_Sys_Supplier sp = new WH_Sys_Supplier();
+                    sp.Description = textBox2.Text;
+                    m.AddToWH_Sys_Supplier(sp);
+                    m.SaveChanges();
+                }
+               
             }
             BindData();
         }
@@ -138,6 +150,11 @@ namespace PBMApp
                 textBox1.Text = ctx.ID.ToString();
                 textBox2.Text = ctx.Description.ToString();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
 
     }

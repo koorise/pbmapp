@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pbmModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="pbmModelStoreContainer">
+    <EntitySet Name="WH_Bundle" EntityType="pbmModel.Store.WH_Bundle" store:Type="Tables" />
+    <EntitySet Name="WH_Bundle_FreeOrDiscount" EntityType="pbmModel.Store.WH_Bundle_FreeOrDiscount" store:Type="Tables" />
+    <EntitySet Name="WH_Bundle_member" EntityType="pbmModel.Store.WH_Bundle_member" store:Type="Tables" />
+    <EntitySet Name="WH_Clerk" EntityType="pbmModel.Store.WH_Clerk" store:Type="Tables" />
+    <EntitySet Name="WH_CookInformation" EntityType="pbmModel.Store.WH_CookInformation" store:Type="Tables" />
+    <EntitySet Name="WH_Department" EntityType="pbmModel.Store.WH_Department" store:Type="Tables" />
+    <EntitySet Name="WH_Menu" EntityType="pbmModel.Store.WH_Menu" store:Type="Tables" />
+    <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.Store.WH_Menu_Details" store:Type="Tables" />
+    <EntitySet Name="WH_Menu_List" EntityType="pbmModel.Store.WH_Menu_List" store:Type="Tables" />
+    <EntitySet Name="WH_PLU" EntityType="pbmModel.Store.WH_PLU" store:Type="Tables" />
+    <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.Store.WH_PLU_Modifier" store:Type="Tables" />
+    <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.Store.WH_Relation_Cook_PLU" store:Type="Tables" />
+    <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.Store.WH_Relation_PLU_Condiment" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.Store.WH_Sys_BundleSaving_ReceiptNumber" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.Store.WH_Sys_CouponInformation" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_ElectronicScale" EntityType="pbmModel.Store.WH_Sys_ElectronicScale" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Setting" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Tare" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.Store.WH_Sys_FCE" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Refund" EntityType="pbmModel.Store.WH_Sys_Refund" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.Store.WH_Sys_Supplier" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.Store.WH_Sys_Symbols" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.Store.WH_Sys_WeightingPLU" store:Type="Tables" />
+    <EntitySet Name="WH_Tax" EntityType="pbmModel.Store.WH_Tax" store:Type="Tables" />
+    <EntitySet Name="WH_Tax_Table" EntityType="pbmModel.Store.WH_Tax_Table" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="WH_Bundle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="TypeID" Type="integer" />
+    <Property Name="isAmtOrQnt" Type="integer" />
+    <Property Name="Limit" Type="decimal" Scale="4" />
+    <Property Name="Discount" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Bundle_FreeOrDiscount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BundleID" Type="integer" />
+    <Property Name="PLUID" Type="integer" />
+    <Property Name="KeyPosition" Type="integer" />
+    <Property Name="isFreeOrDiscount" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Bundle_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BundleID" Type="integer" />
+    <Property Name="PLUID" Type="integer" />
+    <Property Name="KeyPosition" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Clerk">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="isNum" Type="nvarchar" />
+    <Property Name="SecretCode" Type="nvarchar" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Limitaions" Type="nvarchar" />
+    <Property Name="InterruptNo" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_CookInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Num" Type="integer" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="price" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="High_Digit_LockOut" Type="integer" />
+    <Property Name="isDirectSale" Type="integer" />
+    <Property Name="isAge" Type="integer" />
+    <Property Name="isPrice" Type="integer" />
+    <Property Name="DepartmentGroup" Type="integer" />
+    <Property Name="KP" Type="integer" />
+    <Property Name="KP2" Type="integer" />
+    <Property Name="isMode" Type="integer" />
+    <Property Name="isPriceFormat" Type="integer" />
+    <Property Name="KP_receipt" Type="integer" />
+    <Property Name="isType" Type="integer" />
+    <Property Name="isVat_Tax_GST" Type="integer" />
+    <Property Name="str_Vat_Tax_GST" Type="nvarchar" />
+    <Property Name="FS_Tenderable" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="isMode" Type="integer" />
+    <Property Name="Price" Type="decimal" Scale="4" />
+    <Property Name="isTax" Type="integer" />
+    <Property Name="isCount" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Menu_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MenuID" Type="integer" />
+    <Property Name="MenuListID" Type="integer" />
+    <Property Name="PLUID" Type="integer" />
+    <Property Name="isFlag" Type="integer" />
+    <Property Name="KeyPosition" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Menu_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MenuID" Type="integer" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="isFlag" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Bar_Code" Type="nvarchar" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Dept_No" Type="integer" />
+    <Property Name="Price1" Type="decimal" Scale="4" />
+    <Property Name="Price2" Type="decimal" Scale="4" />
+    <Property Name="Price3" Type="decimal" Scale="4" />
+    <Property Name="PriceMat" Type="integer" />
+    <Property Name="isMode" Type="integer" />
+    <Property Name="Inventory" Type="integer" />
+    <Property Name="Inventory_safty" Type="integer" />
+    <Property Name="isMenu" Type="integer" />
+    <Property Name="isCondiment" Type="integer" />
+    <Property Name="Modifier" Type="integer" />
+    <Property Name="Modifier_description" Type="nvarchar" />
+    <Property Name="Modifier_Unity_Quantity" Type="nvarchar" />
+    <Property Name="Modifier_Price" Type="integer" />
+    <Property Name="FS_Tenderable" Type="integer" />
+    <Property Name="ExemptServTax" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_PLU_Modifier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PLUID" Type="integer" />
+    <Property Name="Modifier_desc" Type="nvarchar" />
+    <Property Name="Modifier_Unit_Quantity" Type="integer" />
+    <Property Name="Modifier_Price" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Relation_Cook_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CookID" Type="integer" />
+    <Property Name="PLUID" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Relation_PLU_Condiment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PLUID" Type="integer" />
+    <Property Name="condimentPLUID" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_BundleSaving_ReceiptNumber">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_CouponInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="decimal" Scale="4" />
+    <Property Name="HALO" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ElectronicScale">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ScaleDeptID" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ElectronicScale_Setting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Unit" Type="integer" />
+    <Property Name="TareType" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ElectronicScale_Tare">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="awID" Type="integer" />
+    <Property Name="tare" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Sys_FCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Local" Type="decimal" Scale="4" />
+    <Property Name="FC" Type="integer" />
+    <Property Name="Decimals" Type="integer" />
+    <Property Name="SymbolID" Type="integer" />
+    <Property Name="SymbolStr" Type="nvarchar" />
+    <Property Name="Description" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Header_Footer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" />
+    <Property Name="DoubleWidth" Type="integer" />
+    <Property Name="PositionID" Type="integer" />
+    <Property Name="flag" Type="integer" />
+    <Property Name="isHeader" Type="integer" />
+    <Property Name="isHeaderStr" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_KP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeIndex" Type="integer" />
+    <Property Name="TypeStr" Type="nvarchar" />
+    <Property Name="HeadFeed" Type="integer" />
+    <Property Name="FootFeed" Type="integer" />
+    <Property Name="isCutPaper" Type="integer" />
+    <Property Name="IP_Addr" Type="nvarchar" />
+    <Property Name="Port" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PCASH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Rate" Type="decimal" Scale="4" />
+    <Property Name="description" Type="nvarchar" />
+    <Property Name="LinkPaymentID" Type="integer" />
+    <Property Name="LinkPaymentStr" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PCASH_linkpayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="DescriptionBlod" Type="nvarchar" />
+    <Property Name="ChargeReturn" Type="integer" />
+    <Property Name="ChargeReturn_Str" Type="nvarchar" />
+    <Property Name="DuplicateNo" Type="integer" />
+    <Property Name="isTips" Type="integer" />
+    <Property Name="TypeID" Type="integer" />
+    <Property Name="TypeStr" Type="nvarchar" />
+    <Property Name="isFlag" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Refund">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Price" Type="decimal" Scale="4" />
+    <Property Name="HALO" Type="decimal" Scale="4" />
+    <Property Name="isFlag" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Supplier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Symbols">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_WeightingPLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WID" Type="nvarchar" />
+    <Property Name="TypeID" Type="integer" />
+    <Property Name="BarCodeLength" Type="integer" />
+    <Property Name="WAID" Type="integer" />
+    <Property Name="Dots" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Tax">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TaxTypeID" Type="integer" />
+    <Property Name="TaxTypeStr" Type="nvarchar" />
+    <Property Name="Rate" Type="decimal" Scale="4" />
+    <Property Name="Limit" Type="decimal" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Tax_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TaxID" Type="integer" />
+    <Property Name="TaxA" Type="decimal" Scale="4" />
+    <Property Name="TaxB" Type="decimal" Scale="4" />
+    <Property Name="TaxRate" Type="decimal" Scale="4" />
+    <Property Name="isFlag" Type="integer" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pbmModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="WH_Bundle" EntityType="pbmModel.WH_Bundle" />
+    <EntitySet Name="WH_Bundle_FreeOrDiscount" EntityType="pbmModel.WH_Bundle_FreeOrDiscount" />
+    <EntitySet Name="WH_Bundle_member" EntityType="pbmModel.WH_Bundle_member" />
+    <EntitySet Name="WH_Clerk" EntityType="pbmModel.WH_Clerk" />
+    <EntitySet Name="WH_CookInformation" EntityType="pbmModel.WH_CookInformation" />
+    <EntitySet Name="WH_Department" EntityType="pbmModel.WH_Department" />
+    <EntitySet Name="WH_Menu" EntityType="pbmModel.WH_Menu" />
+    <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.WH_Menu_Details" />
+    <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
+    <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
+    <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.WH_PLU_Modifier" />
+    <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
+    <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
+    <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
+    <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
+    <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
+    <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.WH_Sys_Header_Footer" />
+    <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.WH_Sys_KP" />
+    <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.WH_Sys_PCASH" />
+    <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.WH_Sys_PCASH_linkpayment" />
+    <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.WH_Sys_Payment" />
+    <EntitySet Name="WH_Sys_Refund" EntityType="pbmModel.WH_Sys_Refund" />
+    <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.WH_Sys_Supplier" />
+    <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.WH_Sys_Symbols" />
+    <EntitySet Name="WH_Tax" EntityType="pbmModel.WH_Tax" />
+    <EntitySet Name="WH_Tax_Table" EntityType="pbmModel.WH_Tax_Table" />
+    <EntitySet Name="WH_Sys_ElectronicScale" EntityType="pbmModel.WH_Sys_ElectronicScale" />
+    <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.WH_Sys_ElectronicScale_Setting" />
+    <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.WH_Sys_ElectronicScale_Tare" />
+    <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.WH_Sys_WeightingPLU" />
+  </EntityContainer>
+  <EntityType Name="WH_Bundle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="TypeID" Type="Int64" />
+    <Property Name="isAmtOrQnt" Type="Int64" />
+    <Property Name="Limit" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Bundle_FreeOrDiscount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BundleID" Type="Int64" />
+    <Property Name="PLUID" Type="Int64" />
+    <Property Name="KeyPosition" Type="Int64" />
+    <Property Name="isFreeOrDiscount" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Bundle_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BundleID" Type="Int64" />
+    <Property Name="PLUID" Type="Int64" />
+    <Property Name="KeyPosition" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Clerk">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="isNum" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="SecretCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Limitaions" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="InterruptNo" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_CookInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Num" Type="Int64" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="High_Digit_LockOut" Type="Int64" />
+    <Property Name="isDirectSale" Type="Int64" />
+    <Property Name="isAge" Type="Int64" />
+    <Property Name="isPrice" Type="Int64" />
+    <Property Name="DepartmentGroup" Type="Int64" />
+    <Property Name="KP" Type="Int64" />
+    <Property Name="KP2" Type="Int64" />
+    <Property Name="isMode" Type="Int64" />
+    <Property Name="isPriceFormat" Type="Int64" />
+    <Property Name="KP_receipt" Type="Int64" />
+    <Property Name="isType" Type="Int64" />
+    <Property Name="isVat_Tax_GST" Type="Int64" />
+    <Property Name="str_Vat_Tax_GST" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="FS_Tenderable" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="isMode" Type="Int64" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="isTax" Type="Int64" />
+    <Property Name="isCount" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Menu_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuID" Type="Int64" />
+    <Property Name="MenuListID" Type="Int64" />
+    <Property Name="PLUID" Type="Int64" />
+    <Property Name="isFlag" Type="Int64" />
+    <Property Name="KeyPosition" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Menu_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuID" Type="Int64" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="isFlag" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bar_Code" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Dept_No" Type="Int64" />
+    <Property Name="Price1" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Price2" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Price3" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PriceMat" Type="Int64" />
+    <Property Name="isMode" Type="Int64" />
+    <Property Name="Inventory" Type="Int64" />
+    <Property Name="Inventory_safty" Type="Int64" />
+    <Property Name="isMenu" Type="Int64" />
+    <Property Name="isCondiment" Type="Int64" />
+    <Property Name="Modifier" Type="Int64" />
+    <Property Name="Modifier_description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Modifier_Unity_Quantity" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Modifier_Price" Type="Int64" />
+    <Property Name="FS_Tenderable" Type="Int64" />
+    <Property Name="ExemptServTax" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_PLU_Modifier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLUID" Type="Int64" />
+    <Property Name="Modifier_desc" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Modifier_Unit_Quantity" Type="Int64" />
+    <Property Name="Modifier_Price" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Relation_Cook_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CookID" Type="Int64" />
+    <Property Name="PLUID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Relation_PLU_Condiment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLUID" Type="Int64" />
+    <Property Name="condimentPLUID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Sys_BundleSaving_ReceiptNumber">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_Sys_CouponInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="HALO" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Sys_FCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Local" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="FC" Type="Int64" />
+    <Property Name="Decimals" Type="Int64" />
+    <Property Name="SymbolID" Type="Int64" />
+    <Property Name="SymbolStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Header_Footer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="DoubleWidth" Type="Int64" />
+    <Property Name="PositionID" Type="Int64" />
+    <Property Name="flag" Type="Int64" />
+    <Property Name="isHeader" Type="Int64" />
+    <Property Name="isHeaderStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_Sys_KP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeIndex" Type="Int64" />
+    <Property Name="TypeStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="HeadFeed" Type="Int64" />
+    <Property Name="FootFeed" Type="Int64" />
+    <Property Name="isCutPaper" Type="Int64" />
+    <Property Name="IP_Addr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Port" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PCASH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="LinkPaymentID" Type="Int64" />
+    <Property Name="LinkPaymentStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PCASH_linkpayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="DescriptionBlod" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="ChargeReturn" Type="Int64" />
+    <Property Name="ChargeReturn_Str" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="DuplicateNo" Type="Int64" />
+    <Property Name="isTips" Type="Int64" />
+    <Property Name="TypeID" Type="Int64" />
+    <Property Name="TypeStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="isFlag" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Refund">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="HALO" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="isFlag" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Supplier">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Symbols">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WH_Tax">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaxTypeID" Type="Int64" />
+    <Property Name="TaxTypeStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="Rate" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Limit" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Tax_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaxID" Type="Int64" />
+    <Property Name="TaxA" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TaxB" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TaxRate" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="isFlag" Type="Int64" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ElectronicScale">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ScaleDeptID" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ElectronicScale_Setting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="Unit" />
+    <Property Type="Int64" Name="TareType" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ElectronicScale_Tare">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="awID" />
+    <Property Type="Decimal" Name="tare" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Sys_WeightingPLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="WID" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="TypeID" />
+    <Property Type="Int64" Name="BarCodeLength" />
+    <Property Type="Int64" Name="WAID" />
+    <Property Type="Int64" Name="Dots" />
+  </EntityType>
+</Schema>
