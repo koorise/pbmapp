@@ -31,6 +31,8 @@
     <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.WH_Sys_ElectronicScale_Setting" />
     <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.WH_Sys_ElectronicScale_Tare" />
     <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.WH_Sys_WeightingPLU" />
+    <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" />
+    <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.WH_Sys_ServiceTax" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -346,5 +348,26 @@
     <Property Type="Int64" Name="BarCodeLength" />
     <Property Type="Int64" Name="WAID" />
     <Property Type="Int64" Name="Dots" />
+  </EntityType>
+  <EntityType Name="WH_Sys_happyHour_ServiceTax_Hours">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="timeA" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="timeB" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="timeC" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="timeD" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Weeks" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="isHappyOrTax" />
+  </EntityType>
+  <EntityType Name="WH_Sys_ServiceTax">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Type" />
+    <Property Type="Decimal" Name="RateAmount" Precision="18" Scale="4" />
   </EntityType>
 </Schema>

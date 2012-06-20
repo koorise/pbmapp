@@ -39,6 +39,7 @@
             this.supplierSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentRefundCouponToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pCASHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deptSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,7 @@
             this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.happyHourServiceTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +104,8 @@
             this.supplierSettingToolStripMenuItem,
             this.paymentRefundCouponToolStripMenuItem,
             this.pCASHToolStripMenuItem,
-            this.electronicScaleToolStripMenuItem});
+            this.electronicScaleToolStripMenuItem,
+            this.happyHourServiceTaxToolStripMenuItem});
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             resources.ApplyResources(this.systemToolStripMenuItem, "systemToolStripMenuItem");
             // 
@@ -130,6 +132,12 @@
             this.pCASHToolStripMenuItem.Name = "pCASHToolStripMenuItem";
             resources.ApplyResources(this.pCASHToolStripMenuItem, "pCASHToolStripMenuItem");
             this.pCASHToolStripMenuItem.Click += new System.EventHandler(this.pCASHToolStripMenuItem_Click);
+            // 
+            // electronicScaleToolStripMenuItem
+            // 
+            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
+            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
+            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click);
             // 
             // taxSettingToolStripMenuItem
             // 
@@ -192,11 +200,11 @@
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // electronicScaleToolStripMenuItem
+            // happyHourServiceTaxToolStripMenuItem
             // 
-            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
-            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
-            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click);
+            this.happyHourServiceTaxToolStripMenuItem.Name = "happyHourServiceTaxToolStripMenuItem";
+            resources.ApplyResources(this.happyHourServiceTaxToolStripMenuItem, "happyHourServiceTaxToolStripMenuItem");
+            this.happyHourServiceTaxToolStripMenuItem.Click += new System.EventHandler(this.happyHourServiceTaxToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
@@ -237,6 +245,7 @@
         private System.Windows.Forms.ToolStripMenuItem paymentRefundCouponToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pCASHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem electronicScaleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem happyHourServiceTaxToolStripMenuItem;
 
     }
 }

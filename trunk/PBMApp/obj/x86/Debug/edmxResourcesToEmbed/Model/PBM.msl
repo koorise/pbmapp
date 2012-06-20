@@ -346,5 +346,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_happyHour_ServiceTax_Hours">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_happyHour_ServiceTax_Hours">
+        <MappingFragment StoreEntitySet="WH_Sys_happyHour_ServiceTax_Hours">
+          <ScalarProperty Name="isHappyOrTax" ColumnName="isHappyOrTax" />
+          <ScalarProperty Name="Weeks" ColumnName="Weeks" />
+          <ScalarProperty Name="timeD" ColumnName="timeD" />
+          <ScalarProperty Name="timeC" ColumnName="timeC" />
+          <ScalarProperty Name="timeB" ColumnName="timeB" />
+          <ScalarProperty Name="timeA" ColumnName="timeA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_ServiceTax">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_ServiceTax">
+        <MappingFragment StoreEntitySet="WH_Sys_ServiceTax">
+          <ScalarProperty Name="RateAmount" ColumnName="RateAmount" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
