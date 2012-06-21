@@ -56,6 +56,7 @@ namespace PBMApp
                 Bind_Combobox(dogs);
             }
         }
+
         private void Bind_Combobox(List<Dog> dog)
         {
             for (int i = 1; i < 5; i++)
