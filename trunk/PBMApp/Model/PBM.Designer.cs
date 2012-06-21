@@ -624,6 +624,54 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Sys_Port> _WH_Sys_Port;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_Ftp> WH_Sys_Ftp
+        {
+            get
+            {
+                if ((_WH_Sys_Ftp == null))
+                {
+                    _WH_Sys_Ftp = base.CreateObjectSet<WH_Sys_Ftp>("WH_Sys_Ftp");
+                }
+                return _WH_Sys_Ftp;
+            }
+        }
+        private ObjectSet<WH_Sys_Ftp> _WH_Sys_Ftp;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_mailer> WH_Sys_mailer
+        {
+            get
+            {
+                if ((_WH_Sys_mailer == null))
+                {
+                    _WH_Sys_mailer = base.CreateObjectSet<WH_Sys_mailer>("WH_Sys_mailer");
+                }
+                return _WH_Sys_mailer;
+            }
+        }
+        private ObjectSet<WH_Sys_mailer> _WH_Sys_mailer;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_TableBarcode> WH_Sys_TableBarcode
+        {
+            get
+            {
+                if ((_WH_Sys_TableBarcode == null))
+                {
+                    _WH_Sys_TableBarcode = base.CreateObjectSet<WH_Sys_TableBarcode>("WH_Sys_TableBarcode");
+                }
+                return _WH_Sys_TableBarcode;
+            }
+        }
+        private ObjectSet<WH_Sys_TableBarcode> _WH_Sys_TableBarcode;
 
         #endregion
         #region AddTo 方法
@@ -906,6 +954,30 @@ namespace PBMApp.Model
         public void AddToWH_Sys_Port(WH_Sys_Port wH_Sys_Port)
         {
             base.AddObject("WH_Sys_Port", wH_Sys_Port);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_Ftp EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_Ftp(WH_Sys_Ftp wH_Sys_Ftp)
+        {
+            base.AddObject("WH_Sys_Ftp", wH_Sys_Ftp);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_mailer EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_mailer(WH_Sys_mailer wH_Sys_mailer)
+        {
+            base.AddObject("WH_Sys_mailer", wH_Sys_mailer);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_TableBarcode EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_TableBarcode(WH_Sys_TableBarcode wH_Sys_TableBarcode)
+        {
+            base.AddObject("WH_Sys_TableBarcode", wH_Sys_TableBarcode);
         }
 
         #endregion
@@ -4179,6 +4251,133 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_Ftp")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_Ftp : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_Ftp 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_Ftp CreateWH_Sys_Ftp(global::System.Int64 id)
+        {
+            WH_Sys_Ftp wH_Sys_Ftp = new WH_Sys_Ftp();
+            wH_Sys_Ftp.ID = id;
+            return wH_Sys_Ftp;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String IP
+        {
+            get
+            {
+                return _IP;
+            }
+            set
+            {
+                OnIPChanging(value);
+                ReportPropertyChanging("IP");
+                _IP = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("IP");
+                OnIPChanged();
+            }
+        }
+        private global::System.String _IP;
+        partial void OnIPChanging(global::System.String value);
+        partial void OnIPChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+            set
+            {
+                OnUserNameChanging(value);
+                ReportPropertyChanging("UserName");
+                _UserName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("UserName");
+                OnUserNameChanged();
+            }
+        }
+        private global::System.String _UserName;
+        partial void OnUserNameChanging(global::System.String value);
+        partial void OnUserNameChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String PassWord
+        {
+            get
+            {
+                return _PassWord;
+            }
+            set
+            {
+                OnPassWordChanging(value);
+                ReportPropertyChanging("PassWord");
+                _PassWord = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PassWord");
+                OnPassWordChanged();
+            }
+        }
+        private global::System.String _PassWord;
+        partial void OnPassWordChanging(global::System.String value);
+        partial void OnPassWordChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_happyHour_ServiceTax_Hours")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -4792,6 +4991,133 @@ namespace PBMApp.Model
         private Nullable<global::System.Int64> _Port;
         partial void OnPortChanging(Nullable<global::System.Int64> value);
         partial void OnPortChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_mailer")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_mailer : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_mailer 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_mailer CreateWH_Sys_mailer(global::System.Int64 id)
+        {
+            WH_Sys_mailer wH_Sys_mailer = new WH_Sys_mailer();
+            wH_Sys_mailer.ID = id;
+            return wH_Sys_mailer;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MailerName
+        {
+            get
+            {
+                return _MailerName;
+            }
+            set
+            {
+                OnMailerNameChanging(value);
+                ReportPropertyChanging("MailerName");
+                _MailerName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MailerName");
+                OnMailerNameChanged();
+            }
+        }
+        private global::System.String _MailerName;
+        partial void OnMailerNameChanging(global::System.String value);
+        partial void OnMailerNameChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MailerCode
+        {
+            get
+            {
+                return _MailerCode;
+            }
+            set
+            {
+                OnMailerCodeChanging(value);
+                ReportPropertyChanging("MailerCode");
+                _MailerCode = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MailerCode");
+                OnMailerCodeChanged();
+            }
+        }
+        private global::System.String _MailerCode;
+        partial void OnMailerCodeChanging(global::System.String value);
+        partial void OnMailerCodeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TenantCode
+        {
+            get
+            {
+                return _TenantCode;
+            }
+            set
+            {
+                OnTenantCodeChanging(value);
+                ReportPropertyChanging("TenantCode");
+                _TenantCode = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TenantCode");
+                OnTenantCodeChanged();
+            }
+        }
+        private global::System.String _TenantCode;
+        partial void OnTenantCodeChanging(global::System.String value);
+        partial void OnTenantCodeChanged();
 
         #endregion
     
@@ -5983,6 +6309,373 @@ namespace PBMApp.Model
         private global::System.String _title;
         partial void OntitleChanging(global::System.String value);
         partial void OntitleChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_TableBarcode")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_TableBarcode : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_TableBarcode 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_TableBarcode CreateWH_Sys_TableBarcode(global::System.Int64 id)
+        {
+            WH_Sys_TableBarcode wH_Sys_TableBarcode = new WH_Sys_TableBarcode();
+            wH_Sys_TableBarcode.ID = id;
+            return wH_Sys_TableBarcode;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> OperateType_index
+        {
+            get
+            {
+                return _OperateType_index;
+            }
+            set
+            {
+                OnOperateType_indexChanging(value);
+                ReportPropertyChanging("OperateType_index");
+                _OperateType_index = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OperateType_index");
+                OnOperateType_indexChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _OperateType_index;
+        partial void OnOperateType_indexChanging(Nullable<global::System.Int64> value);
+        partial void OnOperateType_indexChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String OperateType
+        {
+            get
+            {
+                return _OperateType;
+            }
+            set
+            {
+                OnOperateTypeChanging(value);
+                ReportPropertyChanging("OperateType");
+                _OperateType = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("OperateType");
+                OnOperateTypeChanged();
+            }
+        }
+        private global::System.String _OperateType;
+        partial void OnOperateTypeChanging(global::System.String value);
+        partial void OnOperateTypeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> Position_index
+        {
+            get
+            {
+                return _Position_index;
+            }
+            set
+            {
+                OnPosition_indexChanging(value);
+                ReportPropertyChanging("Position_index");
+                _Position_index = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Position_index");
+                OnPosition_indexChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _Position_index;
+        partial void OnPosition_indexChanging(Nullable<global::System.Int64> value);
+        partial void OnPosition_indexChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Position
+        {
+            get
+            {
+                return _Position;
+            }
+            set
+            {
+                OnPositionChanging(value);
+                ReportPropertyChanging("Position");
+                _Position = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Position");
+                OnPositionChanged();
+            }
+        }
+        private global::System.String _Position;
+        partial void OnPositionChanging(global::System.String value);
+        partial void OnPositionChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> widths
+        {
+            get
+            {
+                return _widths;
+            }
+            set
+            {
+                OnwidthsChanging(value);
+                ReportPropertyChanging("widths");
+                _widths = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("widths");
+                OnwidthsChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _widths;
+        partial void OnwidthsChanging(Nullable<global::System.Int64> value);
+        partial void OnwidthsChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> heights
+        {
+            get
+            {
+                return _heights;
+            }
+            set
+            {
+                OnheightsChanging(value);
+                ReportPropertyChanging("heights");
+                _heights = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("heights");
+                OnheightsChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _heights;
+        partial void OnheightsChanging(Nullable<global::System.Int64> value);
+        partial void OnheightsChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> HRI_index
+        {
+            get
+            {
+                return _HRI_index;
+            }
+            set
+            {
+                OnHRI_indexChanging(value);
+                ReportPropertyChanging("HRI_index");
+                _HRI_index = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HRI_index");
+                OnHRI_indexChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _HRI_index;
+        partial void OnHRI_indexChanging(Nullable<global::System.Int64> value);
+        partial void OnHRI_indexChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String HRI
+        {
+            get
+            {
+                return _HRI;
+            }
+            set
+            {
+                OnHRIChanging(value);
+                ReportPropertyChanging("HRI");
+                _HRI = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("HRI");
+                OnHRIChanged();
+            }
+        }
+        private global::System.String _HRI;
+        partial void OnHRIChanging(global::System.String value);
+        partial void OnHRIChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> Fonts_index
+        {
+            get
+            {
+                return _Fonts_index;
+            }
+            set
+            {
+                OnFonts_indexChanging(value);
+                ReportPropertyChanging("Fonts_index");
+                _Fonts_index = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Fonts_index");
+                OnFonts_indexChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _Fonts_index;
+        partial void OnFonts_indexChanging(Nullable<global::System.Int64> value);
+        partial void OnFonts_indexChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Fonts
+        {
+            get
+            {
+                return _Fonts;
+            }
+            set
+            {
+                OnFontsChanging(value);
+                ReportPropertyChanging("Fonts");
+                _Fonts = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Fonts");
+                OnFontsChanged();
+            }
+        }
+        private global::System.String _Fonts;
+        partial void OnFontsChanging(global::System.String value);
+        partial void OnFontsChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> PrintList
+        {
+            get
+            {
+                return _PrintList;
+            }
+            set
+            {
+                OnPrintListChanging(value);
+                ReportPropertyChanging("PrintList");
+                _PrintList = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PrintList");
+                OnPrintListChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _PrintList;
+        partial void OnPrintListChanging(Nullable<global::System.Int64> value);
+        partial void OnPrintListChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> suspendTable
+        {
+            get
+            {
+                return _suspendTable;
+            }
+            set
+            {
+                OnsuspendTableChanging(value);
+                ReportPropertyChanging("suspendTable");
+                _suspendTable = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("suspendTable");
+                OnsuspendTableChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _suspendTable;
+        partial void OnsuspendTableChanging(Nullable<global::System.Int64> value);
+        partial void OnsuspendTableChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> TransferTable
+        {
+            get
+            {
+                return _TransferTable;
+            }
+            set
+            {
+                OnTransferTableChanging(value);
+                ReportPropertyChanging("TransferTable");
+                _TransferTable = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TransferTable");
+                OnTransferTableChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _TransferTable;
+        partial void OnTransferTableChanging(Nullable<global::System.Int64> value);
+        partial void OnTransferTableChanged();
 
         #endregion
     
