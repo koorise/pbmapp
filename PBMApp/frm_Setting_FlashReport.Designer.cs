@@ -38,17 +38,13 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.comboBox1.Location = new System.Drawing.Point(103, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -120,6 +116,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Setting_FlashReport
             // 
@@ -134,6 +131,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "frm_Setting_FlashReport";
             this.Text = "Flash Report";
+            this.Load += new System.EventHandler(this.frm_Setting_FlashReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

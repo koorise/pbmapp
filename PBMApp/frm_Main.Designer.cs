@@ -39,7 +39,6 @@
             this.supplierSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentRefundCouponToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pCASHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deptSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +48,16 @@
             this.clerkSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableBarcodeMailerftpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.happyHourServiceTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageFourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageThreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageTwoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.flashReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,9 +110,7 @@
             this.headerFooterSettingToolStripMenuItem,
             this.supplierSettingToolStripMenuItem,
             this.paymentRefundCouponToolStripMenuItem,
-            this.pCASHToolStripMenuItem,
-            this.electronicScaleToolStripMenuItem,
-            this.happyHourServiceTaxToolStripMenuItem});
+            this.pCASHToolStripMenuItem});
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             resources.ApplyResources(this.systemToolStripMenuItem, "systemToolStripMenuItem");
             // 
@@ -132,12 +137,6 @@
             this.pCASHToolStripMenuItem.Name = "pCASHToolStripMenuItem";
             resources.ApplyResources(this.pCASHToolStripMenuItem, "pCASHToolStripMenuItem");
             this.pCASHToolStripMenuItem.Click += new System.EventHandler(this.pCASHToolStripMenuItem_Click);
-            // 
-            // electronicScaleToolStripMenuItem
-            // 
-            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
-            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
-            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click);
             // 
             // taxSettingToolStripMenuItem
             // 
@@ -168,7 +167,6 @@
             this.bundleSettingsToolStripMenuItem.Name = "bundleSettingsToolStripMenuItem";
             resources.ApplyResources(this.bundleSettingsToolStripMenuItem, "bundleSettingsToolStripMenuItem");
             this.bundleSettingsToolStripMenuItem.Click += new System.EventHandler(this.bundleSettingsToolStripMenuItem_Click);
-            this.bundleSettingsToolStripMenuItem.DoubleClick += new System.EventHandler(this.bundleSettingsToolStripMenuItem_DoubleClick);
             // 
             // pLUSettingsToolStripMenuItem
             // 
@@ -189,8 +187,66 @@
             // 
             // optionToolStripMenuItem
             // 
+            this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pagesToolStripMenuItem,
+            this.flashReportToolStripMenuItem});
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
             resources.ApplyResources(this.optionToolStripMenuItem, "optionToolStripMenuItem");
+            // 
+            // pagesToolStripMenuItem
+            // 
+            this.pagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tableBarcodeMailerftpToolStripMenuItem,
+            this.electronicScaleToolStripMenuItem,
+            this.happyHourServiceTaxToolStripMenuItem,
+            this.pageFourToolStripMenuItem,
+            this.pageThreeToolStripMenuItem,
+            this.pageTwoToolStripMenuItem,
+            this.pageOneToolStripMenuItem});
+            this.pagesToolStripMenuItem.Name = "pagesToolStripMenuItem";
+            resources.ApplyResources(this.pagesToolStripMenuItem, "pagesToolStripMenuItem");
+            // 
+            // tableBarcodeMailerftpToolStripMenuItem
+            // 
+            this.tableBarcodeMailerftpToolStripMenuItem.Name = "tableBarcodeMailerftpToolStripMenuItem";
+            resources.ApplyResources(this.tableBarcodeMailerftpToolStripMenuItem, "tableBarcodeMailerftpToolStripMenuItem");
+            this.tableBarcodeMailerftpToolStripMenuItem.Click += new System.EventHandler(this.tableBarcodeMailerftpToolStripMenuItem_Click_1);
+            // 
+            // electronicScaleToolStripMenuItem
+            // 
+            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
+            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
+            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click_1);
+            // 
+            // happyHourServiceTaxToolStripMenuItem
+            // 
+            this.happyHourServiceTaxToolStripMenuItem.Name = "happyHourServiceTaxToolStripMenuItem";
+            resources.ApplyResources(this.happyHourServiceTaxToolStripMenuItem, "happyHourServiceTaxToolStripMenuItem");
+            this.happyHourServiceTaxToolStripMenuItem.Click += new System.EventHandler(this.happyHourServiceTaxToolStripMenuItem_Click_1);
+            // 
+            // pageFourToolStripMenuItem
+            // 
+            this.pageFourToolStripMenuItem.Name = "pageFourToolStripMenuItem";
+            resources.ApplyResources(this.pageFourToolStripMenuItem, "pageFourToolStripMenuItem");
+            this.pageFourToolStripMenuItem.Click += new System.EventHandler(this.pageFourToolStripMenuItem_Click_1);
+            // 
+            // pageThreeToolStripMenuItem
+            // 
+            this.pageThreeToolStripMenuItem.Name = "pageThreeToolStripMenuItem";
+            resources.ApplyResources(this.pageThreeToolStripMenuItem, "pageThreeToolStripMenuItem");
+            this.pageThreeToolStripMenuItem.Click += new System.EventHandler(this.pageThreeToolStripMenuItem_Click_1);
+            // 
+            // pageTwoToolStripMenuItem
+            // 
+            this.pageTwoToolStripMenuItem.Name = "pageTwoToolStripMenuItem";
+            resources.ApplyResources(this.pageTwoToolStripMenuItem, "pageTwoToolStripMenuItem");
+            this.pageTwoToolStripMenuItem.Click += new System.EventHandler(this.pageTwoToolStripMenuItem_Click_1);
+            // 
+            // pageOneToolStripMenuItem
+            // 
+            this.pageOneToolStripMenuItem.Name = "pageOneToolStripMenuItem";
+            resources.ApplyResources(this.pageOneToolStripMenuItem, "pageOneToolStripMenuItem");
+            this.pageOneToolStripMenuItem.Click += new System.EventHandler(this.pageOneToolStripMenuItem_Click_1);
             // 
             // openFileDialog1
             // 
@@ -200,11 +256,11 @@
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // happyHourServiceTaxToolStripMenuItem
+            // flashReportToolStripMenuItem
             // 
-            this.happyHourServiceTaxToolStripMenuItem.Name = "happyHourServiceTaxToolStripMenuItem";
-            resources.ApplyResources(this.happyHourServiceTaxToolStripMenuItem, "happyHourServiceTaxToolStripMenuItem");
-            this.happyHourServiceTaxToolStripMenuItem.Click += new System.EventHandler(this.happyHourServiceTaxToolStripMenuItem_Click);
+            this.flashReportToolStripMenuItem.Name = "flashReportToolStripMenuItem";
+            resources.ApplyResources(this.flashReportToolStripMenuItem, "flashReportToolStripMenuItem");
+            this.flashReportToolStripMenuItem.Click += new System.EventHandler(this.flashReportToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
@@ -244,8 +300,15 @@
         private System.Windows.Forms.ToolStripMenuItem supplierSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentRefundCouponToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pCASHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableBarcodeMailerftpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem electronicScaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem happyHourServiceTaxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pageFourToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pageThreeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pageTwoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pageOneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem flashReportToolStripMenuItem;
 
     }
 }

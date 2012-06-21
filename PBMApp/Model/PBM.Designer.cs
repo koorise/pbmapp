@@ -576,6 +576,22 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Sys_ServiceTax> _WH_Sys_ServiceTax;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_FlashReport> WH_Sys_FlashReport
+        {
+            get
+            {
+                if ((_WH_Sys_FlashReport == null))
+                {
+                    _WH_Sys_FlashReport = base.CreateObjectSet<WH_Sys_FlashReport>("WH_Sys_FlashReport");
+                }
+                return _WH_Sys_FlashReport;
+            }
+        }
+        private ObjectSet<WH_Sys_FlashReport> _WH_Sys_FlashReport;
 
         #endregion
         #region AddTo 方法
@@ -834,6 +850,14 @@ namespace PBMApp.Model
         public void AddToWH_Sys_ServiceTax(WH_Sys_ServiceTax wH_Sys_ServiceTax)
         {
             base.AddObject("WH_Sys_ServiceTax", wH_Sys_ServiceTax);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_FlashReport EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_FlashReport(WH_Sys_FlashReport wH_Sys_FlashReport)
+        {
+            base.AddObject("WH_Sys_FlashReport", wH_Sys_FlashReport);
         }
 
         #endregion
@@ -3996,6 +4020,109 @@ namespace PBMApp.Model
         private global::System.String _Description;
         partial void OnDescriptionChanging(global::System.String value);
         partial void OnDescriptionChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_FlashReport")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_FlashReport : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_FlashReport 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_FlashReport CreateWH_Sys_FlashReport(global::System.Int64 id)
+        {
+            WH_Sys_FlashReport wH_Sys_FlashReport = new WH_Sys_FlashReport();
+            wH_Sys_FlashReport.ID = id;
+            return wH_Sys_FlashReport;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Authority
+        {
+            get
+            {
+                return _Authority;
+            }
+            set
+            {
+                OnAuthorityChanging(value);
+                ReportPropertyChanging("Authority");
+                _Authority = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Authority");
+                OnAuthorityChanged();
+            }
+        }
+        private global::System.String _Authority;
+        partial void OnAuthorityChanging(global::System.String value);
+        partial void OnAuthorityChanged();
 
         #endregion
     

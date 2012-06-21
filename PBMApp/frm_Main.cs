@@ -248,13 +248,25 @@ namespace PBMApp
             }
             frm.Show();
         }
-
-        private void bundleSettingsToolStripMenuItem_DoubleClick(object sender, EventArgs e)
+        
+        private void tableBarcodeMailerftpToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+            frm_Setting_PageSeven frm = new frm_Setting_PageSeven();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
         }
 
-        private void electronicScaleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void electronicScaleToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frm_Setting_ElectronicScale frm = new frm_Setting_ElectronicScale();
             frm.MdiParent = this;
@@ -271,9 +283,94 @@ namespace PBMApp
             frm.Show();
         }
 
-        private void happyHourServiceTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        private void happyHourServiceTaxToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frm_HappyHour_ServiceTax frm = new frm_HappyHour_ServiceTax();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void pageFourToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_Setting_PageFour frm = new frm_Setting_PageFour();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void pageThreeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_Setting_PageThree frm = new frm_Setting_PageThree();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void pageTwoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_Setting_PageTwo frm = new frm_Setting_PageTwo();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void pageOneToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_Setting_PageOne frm = new frm_Setting_PageOne();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
+
+        private void flashReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_FlashReport frm = new frm_Setting_FlashReport();
             frm.MdiParent = this;
             frm.Location = p;
             //frm.ControlBox = false;

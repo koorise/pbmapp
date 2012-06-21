@@ -20,6 +20,7 @@
     <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Setting" store:Type="Tables" />
     <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Tare" store:Type="Tables" />
     <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.Store.WH_Sys_FCE" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.Store.WH_Sys_FlashReport" store:Type="Tables" />
     <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.Store.WH_Sys_happyHour_ServiceTax_Hours" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
     <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
@@ -235,6 +236,14 @@
     <Property Name="SymbolID" Type="integer" />
     <Property Name="SymbolStr" Type="nvarchar" />
     <Property Name="Description" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_FlashReport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" />
+    <Property Name="Authority" Type="nvarchar" />
   </EntityType>
   <EntityType Name="WH_Sys_happyHour_ServiceTax_Hours">
     <Key>

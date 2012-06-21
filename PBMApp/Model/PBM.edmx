@@ -25,6 +25,7 @@
           <EntitySet Name="WH_Sys_ElectronicScale_Setting" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Setting" store:Type="Tables" />
           <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Tare" store:Type="Tables" />
           <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.Store.WH_Sys_FCE" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.Store.WH_Sys_FlashReport" store:Type="Tables" />
           <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.Store.WH_Sys_happyHour_ServiceTax_Hours" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
           <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
@@ -241,6 +242,14 @@
           <Property Name="SymbolStr" Type="nvarchar" />
           <Property Name="Description" Type="nvarchar" />
         </EntityType>
+        <EntityType Name="WH_Sys_FlashReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="Authority" Type="nvarchar" />
+        </EntityType>
         <EntityType Name="WH_Sys_happyHour_ServiceTax_Hours">
           <Key>
             <PropertyRef Name="ID" />
@@ -412,6 +421,7 @@
           <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.WH_Sys_WeightingPLU" />
           <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" />
           <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.WH_Sys_ServiceTax" />
+          <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.WH_Sys_FlashReport" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -749,6 +759,14 @@
           <Property Type="Int64" Name="Type" />
           <Property Type="Decimal" Name="RateAmount" Precision="18" Scale="4" />
         </EntityType>
+        <EntityType Name="WH_Sys_FlashReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1019,6 +1037,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_FlashReport">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_FlashReport">
+              <MappingFragment StoreEntitySet="WH_Sys_FlashReport">
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1072,6 +1099,7 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_WeightingPLU" Width="1.5" PointX="13.375" PointY="12.75" Height="1.9594531250000102" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" Width="1.5" PointX="15.75" PointY="0.75" Height="2.1280729166666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_ServiceTax" Width="1.5" PointX="0.75" PointY="15.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_FlashReport" Width="1.5" PointX="15.375" PointY="3.75" Height="1.4535937500000102" />
       </Diagram>
     </Diagrams>
   </Designer>

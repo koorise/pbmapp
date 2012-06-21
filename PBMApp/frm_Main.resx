@@ -121,72 +121,15 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="OpenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+O</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 22</value>
-  </data>
-  <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 6</value>
-  </data>
-  <data name="ExitToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Q</value>
-  </data>
-  <data name="ExitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 22</value>
-  </data>
-  <data name="ExitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
   <data name="fileToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+F</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
-  </data>
-  <data name="headerFooterSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="headerFooterSettingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Header Footer Setting</value>
-  </data>
-  <data name="supplierSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="supplierSettingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Supplier Setting</value>
-  </data>
-  <data name="paymentRefundCouponToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="paymentRefundCouponToolStripMenuItem.Text" xml:space="preserve">
-    <value>Payment / Refund / Coupon</value>
-  </data>
-  <data name="pCASHToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="pCASHToolStripMenuItem.Text" xml:space="preserve">
-    <value>PCASH / FCE </value>
-  </data>
-  <data name="electronicScaleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="electronicScaleToolStripMenuItem.Text" xml:space="preserve">
-    <value>Electronic Scale</value>
-  </data>
-  <data name="happyHourServiceTaxToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="happyHourServiceTaxToolStripMenuItem.Text" xml:space="preserve">
-    <value>Happy Hour / Service Tax</value>
   </data>
   <data name="systemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
@@ -242,6 +185,60 @@
   <data name="receiptToolStripMenuItem.Text" xml:space="preserve">
     <value>Receipt</value>
   </data>
+  <data name="tableBarcodeMailerftpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="tableBarcodeMailerftpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Table Barcode / Mailer / ftp</value>
+  </data>
+  <data name="electronicScaleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="electronicScaleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Electronic Scale</value>
+  </data>
+  <data name="happyHourServiceTaxToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="happyHourServiceTaxToolStripMenuItem.Text" xml:space="preserve">
+    <value>Happy Hour / Service Tax</value>
+  </data>
+  <data name="pageFourToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="pageFourToolStripMenuItem.Text" xml:space="preserve">
+    <value>Page Four</value>
+  </data>
+  <data name="pageThreeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="pageThreeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Page Three</value>
+  </data>
+  <data name="pageTwoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="pageTwoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Page Two</value>
+  </data>
+  <data name="pageOneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="pageOneToolStripMenuItem.Text" xml:space="preserve">
+    <value>Page One</value>
+  </data>
+  <data name="pagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="pagesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="flashReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="flashReportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Flash Report</value>
+  </data>
   <data name="optionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
   </data>
@@ -272,6 +269,51 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="OpenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+O</value>
+  </data>
+  <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 6</value>
+  </data>
+  <data name="ExitToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Q</value>
+  </data>
+  <data name="ExitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="ExitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="headerFooterSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="headerFooterSettingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Header Footer Setting</value>
+  </data>
+  <data name="supplierSettingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="supplierSettingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Supplier Setting</value>
+  </data>
+  <data name="paymentRefundCouponToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="paymentRefundCouponToolStripMenuItem.Text" xml:space="preserve">
+    <value>Payment / Refund / Coupon</value>
+  </data>
+  <data name="pCASHToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="pCASHToolStripMenuItem.Text" xml:space="preserve">
+    <value>PCASH / FCE </value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>137, 17</value>
@@ -348,12 +390,6 @@
   <data name="&gt;&gt;pCASHToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Name" xml:space="preserve">
-    <value>electronicScaleToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;taxSettingToolStripMenuItem.Name" xml:space="preserve">
     <value>taxSettingToolStripMenuItem</value>
   </data>
@@ -408,16 +444,64 @@
   <data name="&gt;&gt;optionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;pagesToolStripMenuItem.Name" xml:space="preserve">
+    <value>pagesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pagesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableBarcodeMailerftpToolStripMenuItem.Name" xml:space="preserve">
+    <value>tableBarcodeMailerftpToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;tableBarcodeMailerftpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Name" xml:space="preserve">
+    <value>electronicScaleToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;happyHourServiceTaxToolStripMenuItem.Name" xml:space="preserve">
+    <value>happyHourServiceTaxToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;happyHourServiceTaxToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pageFourToolStripMenuItem.Name" xml:space="preserve">
+    <value>pageFourToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pageFourToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pageThreeToolStripMenuItem.Name" xml:space="preserve">
+    <value>pageThreeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pageThreeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pageTwoToolStripMenuItem.Name" xml:space="preserve">
+    <value>pageTwoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pageTwoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pageOneToolStripMenuItem.Name" xml:space="preserve">
+    <value>pageOneToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pageOneToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
     <value>openFileDialog1</value>
   </data>
   <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;happyHourServiceTaxToolStripMenuItem.Name" xml:space="preserve">
-    <value>happyHourServiceTaxToolStripMenuItem</value>
+  <data name="&gt;&gt;flashReportToolStripMenuItem.Name" xml:space="preserve">
+    <value>flashReportToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;happyHourServiceTaxToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;flashReportToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
