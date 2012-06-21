@@ -36,6 +36,9 @@
     <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.WH_Sys_FlashReport" />
     <EntitySet Name="WH_Sys_RP" EntityType="pbmModel.WH_Sys_RP" />
     <EntitySet Name="WH_Sys_Port" EntityType="pbmModel.WH_Sys_Port" />
+    <EntitySet Name="WH_Sys_Ftp" EntityType="pbmModel.WH_Sys_Ftp" />
+    <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.WH_Sys_mailer" />
+    <EntitySet Name="WH_Sys_TableBarcode" EntityType="pbmModel.WH_Sys_TableBarcode" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -398,5 +401,42 @@
     <Property Type="Int64" Name="PortIndex" />
     <Property Type="String" Name="BaudRate" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Type="Int64" Name="BaudIndex" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Ftp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="IP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserName" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PassWord" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WH_Sys_mailer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MailerName" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MailerCode" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TenantCode" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WH_Sys_TableBarcode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="OperateType_index" />
+    <Property Type="String" Name="OperateType" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Position_index" />
+    <Property Type="String" Name="Position" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="widths" />
+    <Property Type="Int64" Name="heights" />
+    <Property Type="Int64" Name="HRI_index" />
+    <Property Type="String" Name="HRI" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Fonts_index" />
+    <Property Type="String" Name="Fonts" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="PrintList" />
+    <Property Type="Int64" Name="suspendTable" />
+    <Property Type="Int64" Name="TransferTable" />
   </EntityType>
 </Schema>

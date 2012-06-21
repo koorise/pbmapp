@@ -21,9 +21,11 @@
     <EntitySet Name="WH_Sys_ElectronicScale_Tare" EntityType="pbmModel.Store.WH_Sys_ElectronicScale_Tare" store:Type="Tables" />
     <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.Store.WH_Sys_FCE" store:Type="Tables" />
     <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.Store.WH_Sys_FlashReport" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Ftp" EntityType="pbmModel.Store.WH_Sys_Ftp" store:Type="Tables" />
     <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.Store.WH_Sys_happyHour_ServiceTax_Hours" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
     <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.Store.WH_Sys_mailer" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
@@ -33,6 +35,7 @@
     <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.Store.WH_Sys_ServiceTax" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.Store.WH_Sys_Supplier" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.Store.WH_Sys_Symbols" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_TableBarcode" EntityType="pbmModel.Store.WH_Sys_TableBarcode" store:Type="Tables" />
     <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.Store.WH_Sys_WeightingPLU" store:Type="Tables" />
     <EntitySet Name="WH_Tax" EntityType="pbmModel.Store.WH_Tax" store:Type="Tables" />
     <EntitySet Name="WH_Tax_Table" EntityType="pbmModel.Store.WH_Tax_Table" store:Type="Tables" />
@@ -247,6 +250,15 @@
     <Property Name="Description" Type="nvarchar" />
     <Property Name="Authority" Type="nvarchar" />
   </EntityType>
+  <EntityType Name="WH_Sys_Ftp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IP" Type="nvarchar" />
+    <Property Name="UserName" Type="nvarchar" />
+    <Property Name="PassWord" Type="nvarchar" />
+  </EntityType>
   <EntityType Name="WH_Sys_happyHour_ServiceTax_Hours">
     <Key>
       <PropertyRef Name="ID" />
@@ -283,6 +295,15 @@
     <Property Name="isCutPaper" Type="integer" />
     <Property Name="IP_Addr" Type="nvarchar" />
     <Property Name="Port" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_mailer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MailerName" Type="nvarchar" />
+    <Property Name="MailerCode" Type="nvarchar" />
+    <Property Name="TenantCode" Type="nvarchar" />
   </EntityType>
   <EntityType Name="WH_Sys_Payment">
     <Key>
@@ -366,6 +387,25 @@
     </Key>
     <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="title" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_TableBarcode">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OperateType_index" Type="integer" />
+    <Property Name="OperateType" Type="nvarchar" />
+    <Property Name="Position_index" Type="integer" />
+    <Property Name="Position" Type="nvarchar" />
+    <Property Name="widths" Type="integer" />
+    <Property Name="heights" Type="integer" />
+    <Property Name="HRI_index" Type="integer" />
+    <Property Name="HRI" Type="nvarchar" />
+    <Property Name="Fonts_index" Type="integer" />
+    <Property Name="Fonts" Type="nvarchar" />
+    <Property Name="PrintList" Type="integer" />
+    <Property Name="suspendTable" Type="integer" />
+    <Property Name="TransferTable" Type="integer" />
   </EntityType>
   <EntityType Name="WH_Sys_WeightingPLU">
     <Key>

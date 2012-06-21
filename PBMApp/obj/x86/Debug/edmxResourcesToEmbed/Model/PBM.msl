@@ -398,5 +398,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_Ftp">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_Ftp">
+        <MappingFragment StoreEntitySet="WH_Sys_Ftp">
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_mailer">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_mailer">
+        <MappingFragment StoreEntitySet="WH_Sys_mailer">
+          <ScalarProperty Name="TenantCode" ColumnName="TenantCode" />
+          <ScalarProperty Name="MailerCode" ColumnName="MailerCode" />
+          <ScalarProperty Name="MailerName" ColumnName="MailerName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_TableBarcode">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_TableBarcode">
+        <MappingFragment StoreEntitySet="WH_Sys_TableBarcode">
+          <ScalarProperty Name="TransferTable" ColumnName="TransferTable" />
+          <ScalarProperty Name="suspendTable" ColumnName="suspendTable" />
+          <ScalarProperty Name="PrintList" ColumnName="PrintList" />
+          <ScalarProperty Name="Fonts" ColumnName="Fonts" />
+          <ScalarProperty Name="Fonts_index" ColumnName="Fonts_index" />
+          <ScalarProperty Name="HRI" ColumnName="HRI" />
+          <ScalarProperty Name="HRI_index" ColumnName="HRI_index" />
+          <ScalarProperty Name="heights" ColumnName="heights" />
+          <ScalarProperty Name="widths" ColumnName="widths" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Position_index" ColumnName="Position_index" />
+          <ScalarProperty Name="OperateType" ColumnName="OperateType" />
+          <ScalarProperty Name="OperateType_index" ColumnName="OperateType_index" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

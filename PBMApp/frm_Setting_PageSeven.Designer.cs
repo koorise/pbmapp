@@ -372,6 +372,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Setting_PageSeven
             // 
@@ -383,7 +384,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_Setting_PageSeven";
-            this.Text = "frm_Setting_PageSeven";
+            this.Text = "Table Barcode / Mailer / ftp";
+            this.Load += new System.EventHandler(this.frm_Setting_PageSeven_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
