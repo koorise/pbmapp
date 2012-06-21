@@ -39,3 +39,8 @@ D:\PBMApp\PBMApp\bin\Debug\System.Data.Entity.dll
 D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.dll
 D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.Linq.dll
 D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.xml
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageFour.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageOne.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageSeven.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageThree.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageTwo.resources

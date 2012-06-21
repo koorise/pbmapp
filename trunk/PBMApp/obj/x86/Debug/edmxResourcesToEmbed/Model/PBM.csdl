@@ -33,6 +33,7 @@
     <EntitySet Name="WH_Sys_WeightingPLU" EntityType="pbmModel.WH_Sys_WeightingPLU" />
     <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" />
     <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.WH_Sys_ServiceTax" />
+    <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.WH_Sys_FlashReport" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -369,5 +370,13 @@
     <Property Type="String" Name="Name" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Type="Int64" Name="Type" />
     <Property Type="Decimal" Name="RateAmount" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="WH_Sys_FlashReport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

@@ -169,6 +169,12 @@
     <Compile Include="frm_Setting_PageOne.Designer.cs">
       <DependentUpon>frm_Setting_PageOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Setting_PageSeven.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_PageSeven.Designer.cs">
+      <DependentUpon>frm_Setting_PageSeven.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Setting_PageThree.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_PageOne.resx">
       <DependentUpon>frm_Setting_PageOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_PageSeven.resx">
+      <DependentUpon>frm_Setting_PageSeven.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_PageThree.resx">
       <DependentUpon>frm_Setting_PageThree.cs</DependentUpon>
