@@ -27,7 +27,9 @@
     <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_Port" EntityType="pbmModel.Store.WH_Sys_Port" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Refund" EntityType="pbmModel.Store.WH_Sys_Refund" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_RP" EntityType="pbmModel.Store.WH_Sys_RP" store:Type="Tables" />
     <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.Store.WH_Sys_ServiceTax" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.Store.WH_Sys_Supplier" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.Store.WH_Sys_Symbols" store:Type="Tables" />
@@ -314,6 +316,16 @@
     <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="title" Type="nvarchar" />
   </EntityType>
+  <EntityType Name="WH_Sys_Port">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Port" Type="nvarchar" />
+    <Property Name="PortIndex" Type="integer" />
+    <Property Name="BaudRate" Type="nvarchar" />
+    <Property Name="BaudIndex" Type="integer" />
+  </EntityType>
   <EntityType Name="WH_Sys_Refund">
     <Key>
       <PropertyRef Name="ID" />
@@ -323,6 +335,14 @@
     <Property Name="Price" Type="decimal" Scale="4" />
     <Property Name="HALO" Type="decimal" Scale="4" />
     <Property Name="isFlag" Type="integer" />
+  </EntityType>
+  <EntityType Name="WH_Sys_RP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceIndex" Type="integer" />
+    <Property Name="Device" Type="nvarchar" />
   </EntityType>
   <EntityType Name="WH_Sys_ServiceTax">
     <Key>

@@ -32,7 +32,9 @@
           <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
           <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
           <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_Port" EntityType="pbmModel.Store.WH_Sys_Port" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Refund" EntityType="pbmModel.Store.WH_Sys_Refund" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_RP" EntityType="pbmModel.Store.WH_Sys_RP" store:Type="Tables" />
           <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.Store.WH_Sys_ServiceTax" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Supplier" EntityType="pbmModel.Store.WH_Sys_Supplier" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Symbols" EntityType="pbmModel.Store.WH_Sys_Symbols" store:Type="Tables" />
@@ -319,6 +321,16 @@
           <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="title" Type="nvarchar" />
         </EntityType>
+        <EntityType Name="WH_Sys_Port">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Port" Type="nvarchar" />
+          <Property Name="PortIndex" Type="integer" />
+          <Property Name="BaudRate" Type="nvarchar" />
+          <Property Name="BaudIndex" Type="integer" />
+        </EntityType>
         <EntityType Name="WH_Sys_Refund">
           <Key>
             <PropertyRef Name="ID" />
@@ -328,6 +340,14 @@
           <Property Name="Price" Type="decimal" Scale="4" />
           <Property Name="HALO" Type="decimal" Scale="4" />
           <Property Name="isFlag" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Sys_RP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceIndex" Type="integer" />
+          <Property Name="Device" Type="nvarchar" />
         </EntityType>
         <EntityType Name="WH_Sys_ServiceTax">
           <Key>
@@ -422,6 +442,8 @@
           <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" />
           <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.WH_Sys_ServiceTax" />
           <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.WH_Sys_FlashReport" />
+          <EntitySet Name="WH_Sys_RP" EntityType="pbmModel.WH_Sys_RP" />
+          <EntitySet Name="WH_Sys_Port" EntityType="pbmModel.WH_Sys_Port" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -767,6 +789,24 @@
           <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="WH_Sys_RP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="DeviceIndex" />
+          <Property Type="String" Name="Device" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WH_Sys_Port">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Port" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PortIndex" />
+          <Property Type="String" Name="BaudRate" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="BaudIndex" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1046,6 +1086,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_RP">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_RP">
+              <MappingFragment StoreEntitySet="WH_Sys_RP">
+                <ScalarProperty Name="Device" ColumnName="Device" />
+                <ScalarProperty Name="DeviceIndex" ColumnName="DeviceIndex" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_Port">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_Port">
+              <MappingFragment StoreEntitySet="WH_Sys_Port">
+                <ScalarProperty Name="BaudIndex" ColumnName="BaudIndex" />
+                <ScalarProperty Name="BaudRate" ColumnName="BaudRate" />
+                <ScalarProperty Name="PortIndex" ColumnName="PortIndex" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1100,6 +1160,8 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" Width="1.5" PointX="15.75" PointY="0.75" Height="2.1280729166666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_ServiceTax" Width="1.5" PointX="0.75" PointY="15.75" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_FlashReport" Width="1.5" PointX="15.375" PointY="3.75" Height="1.4535937500000102" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_RP" Width="1.5" PointX="5.375" PointY="15.75" Height="1.4535937500000102" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_Port" Width="1.5" PointX="15.375" PointY="6.75" Height="1.7908333333333246" />
       </Diagram>
     </Diagrams>
   </Designer>

@@ -378,5 +378,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_RP">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_RP">
+        <MappingFragment StoreEntitySet="WH_Sys_RP">
+          <ScalarProperty Name="Device" ColumnName="Device" />
+          <ScalarProperty Name="DeviceIndex" ColumnName="DeviceIndex" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_Port">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_Port">
+        <MappingFragment StoreEntitySet="WH_Sys_Port">
+          <ScalarProperty Name="BaudIndex" ColumnName="BaudIndex" />
+          <ScalarProperty Name="BaudRate" ColumnName="BaudRate" />
+          <ScalarProperty Name="PortIndex" ColumnName="PortIndex" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
