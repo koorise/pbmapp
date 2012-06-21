@@ -34,6 +34,8 @@
     <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.WH_Sys_happyHour_ServiceTax_Hours" />
     <EntitySet Name="WH_Sys_ServiceTax" EntityType="pbmModel.WH_Sys_ServiceTax" />
     <EntitySet Name="WH_Sys_FlashReport" EntityType="pbmModel.WH_Sys_FlashReport" />
+    <EntitySet Name="WH_Sys_RP" EntityType="pbmModel.WH_Sys_RP" />
+    <EntitySet Name="WH_Sys_Port" EntityType="pbmModel.WH_Sys_Port" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -378,5 +380,23 @@
     <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WH_Sys_RP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DeviceIndex" />
+    <Property Type="String" Name="Device" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WH_Sys_Port">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Port" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="PortIndex" />
+    <Property Type="String" Name="BaudRate" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="BaudIndex" />
   </EntityType>
 </Schema>

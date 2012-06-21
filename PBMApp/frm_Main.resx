@@ -239,6 +239,12 @@
   <data name="flashReportToolStripMenuItem.Text" xml:space="preserve">
     <value>Flash Report</value>
   </data>
+  <data name="kPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="kPToolStripMenuItem.Text" xml:space="preserve">
+    <value>KP</value>
+  </data>
   <data name="optionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
   </data>
@@ -502,6 +508,12 @@
     <value>flashReportToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;flashReportToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kPToolStripMenuItem.Name" xml:space="preserve">
+    <value>kPToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;kPToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

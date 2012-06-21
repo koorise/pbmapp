@@ -58,6 +58,7 @@
             this.pageOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.flashReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,7 +190,8 @@
             // 
             this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pagesToolStripMenuItem,
-            this.flashReportToolStripMenuItem});
+            this.flashReportToolStripMenuItem,
+            this.kPToolStripMenuItem});
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
             resources.ApplyResources(this.optionToolStripMenuItem, "optionToolStripMenuItem");
             // 
@@ -262,6 +264,12 @@
             resources.ApplyResources(this.flashReportToolStripMenuItem, "flashReportToolStripMenuItem");
             this.flashReportToolStripMenuItem.Click += new System.EventHandler(this.flashReportToolStripMenuItem_Click);
             // 
+            // kPToolStripMenuItem
+            // 
+            this.kPToolStripMenuItem.Name = "kPToolStripMenuItem";
+            resources.ApplyResources(this.kPToolStripMenuItem, "kPToolStripMenuItem");
+            this.kPToolStripMenuItem.Click += new System.EventHandler(this.kPToolStripMenuItem_Click);
+            // 
             // frm_Main
             // 
             resources.ApplyResources(this, "$this");
@@ -309,6 +317,7 @@
         private System.Windows.Forms.ToolStripMenuItem pageTwoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pageOneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flashReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kPToolStripMenuItem;
 
     }
 }

@@ -44,3 +44,4 @@ D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageOne.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageSeven.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageThree.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageTwo.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_Port_KP.resources

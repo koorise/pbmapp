@@ -205,6 +205,12 @@
     <Compile Include="frm_Setting_port.Designer.cs">
       <DependentUpon>frm_Setting_port.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Setting_Port_KP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_Port_KP.Designer.cs">
+      <DependentUpon>frm_Setting_Port_KP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Setting_Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_port.resx">
       <DependentUpon>frm_Setting_port.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_Port_KP.resx">
+      <DependentUpon>frm_Setting_Port_KP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_Supplier.resx">
       <DependentUpon>frm_Setting_Supplier.cs</DependentUpon>

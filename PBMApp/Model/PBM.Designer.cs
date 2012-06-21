@@ -592,6 +592,38 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Sys_FlashReport> _WH_Sys_FlashReport;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_RP> WH_Sys_RP
+        {
+            get
+            {
+                if ((_WH_Sys_RP == null))
+                {
+                    _WH_Sys_RP = base.CreateObjectSet<WH_Sys_RP>("WH_Sys_RP");
+                }
+                return _WH_Sys_RP;
+            }
+        }
+        private ObjectSet<WH_Sys_RP> _WH_Sys_RP;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_Port> WH_Sys_Port
+        {
+            get
+            {
+                if ((_WH_Sys_Port == null))
+                {
+                    _WH_Sys_Port = base.CreateObjectSet<WH_Sys_Port>("WH_Sys_Port");
+                }
+                return _WH_Sys_Port;
+            }
+        }
+        private ObjectSet<WH_Sys_Port> _WH_Sys_Port;
 
         #endregion
         #region AddTo 方法
@@ -858,6 +890,22 @@ namespace PBMApp.Model
         public void AddToWH_Sys_FlashReport(WH_Sys_FlashReport wH_Sys_FlashReport)
         {
             base.AddObject("WH_Sys_FlashReport", wH_Sys_FlashReport);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_RP EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_RP(WH_Sys_RP wH_Sys_RP)
+        {
+            base.AddObject("WH_Sys_RP", wH_Sys_RP);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_Port EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_Port(WH_Sys_Port wH_Sys_Port)
+        {
+            base.AddObject("WH_Sys_Port", wH_Sys_Port);
         }
 
         #endregion
@@ -5253,6 +5301,157 @@ namespace PBMApp.Model
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_Port")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_Port : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_Port 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_Port CreateWH_Sys_Port(global::System.Int64 id)
+        {
+            WH_Sys_Port wH_Sys_Port = new WH_Sys_Port();
+            wH_Sys_Port.ID = id;
+            return wH_Sys_Port;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Port
+        {
+            get
+            {
+                return _Port;
+            }
+            set
+            {
+                OnPortChanging(value);
+                ReportPropertyChanging("Port");
+                _Port = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Port");
+                OnPortChanged();
+            }
+        }
+        private global::System.String _Port;
+        partial void OnPortChanging(global::System.String value);
+        partial void OnPortChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> PortIndex
+        {
+            get
+            {
+                return _PortIndex;
+            }
+            set
+            {
+                OnPortIndexChanging(value);
+                ReportPropertyChanging("PortIndex");
+                _PortIndex = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PortIndex");
+                OnPortIndexChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _PortIndex;
+        partial void OnPortIndexChanging(Nullable<global::System.Int64> value);
+        partial void OnPortIndexChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String BaudRate
+        {
+            get
+            {
+                return _BaudRate;
+            }
+            set
+            {
+                OnBaudRateChanging(value);
+                ReportPropertyChanging("BaudRate");
+                _BaudRate = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("BaudRate");
+                OnBaudRateChanged();
+            }
+        }
+        private global::System.String _BaudRate;
+        partial void OnBaudRateChanging(global::System.String value);
+        partial void OnBaudRateChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> BaudIndex
+        {
+            get
+            {
+                return _BaudIndex;
+            }
+            set
+            {
+                OnBaudIndexChanging(value);
+                ReportPropertyChanging("BaudIndex");
+                _BaudIndex = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BaudIndex");
+                OnBaudIndexChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _BaudIndex;
+        partial void OnBaudIndexChanging(Nullable<global::System.Int64> value);
+        partial void OnBaudIndexChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_Refund")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -5396,6 +5595,109 @@ namespace PBMApp.Model
         private Nullable<global::System.Int64> _isFlag;
         partial void OnisFlagChanging(Nullable<global::System.Int64> value);
         partial void OnisFlagChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_RP")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_RP : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_RP 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_RP CreateWH_Sys_RP(global::System.Int64 id)
+        {
+            WH_Sys_RP wH_Sys_RP = new WH_Sys_RP();
+            wH_Sys_RP.ID = id;
+            return wH_Sys_RP;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> DeviceIndex
+        {
+            get
+            {
+                return _DeviceIndex;
+            }
+            set
+            {
+                OnDeviceIndexChanging(value);
+                ReportPropertyChanging("DeviceIndex");
+                _DeviceIndex = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DeviceIndex");
+                OnDeviceIndexChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _DeviceIndex;
+        partial void OnDeviceIndexChanging(Nullable<global::System.Int64> value);
+        partial void OnDeviceIndexChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Device
+        {
+            get
+            {
+                return _Device;
+            }
+            set
+            {
+                OnDeviceChanging(value);
+                ReportPropertyChanging("Device");
+                _Device = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Device");
+                OnDeviceChanged();
+            }
+        }
+        private global::System.String _Device;
+        partial void OnDeviceChanging(global::System.String value);
+        partial void OnDeviceChanged();
 
         #endregion
     
