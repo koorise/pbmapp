@@ -263,12 +263,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(586, 387);
+            this.button1.Location = new System.Drawing.Point(346, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Setting_PageThree
             // 
@@ -295,6 +296,7 @@
             this.Controls.Add(this.checkedListBox1);
             this.Name = "frm_Setting_PageThree";
             this.Text = "frm_Setting_PageThree";
+            this.Load += new System.EventHandler(this.frm_Setting_PageThree_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

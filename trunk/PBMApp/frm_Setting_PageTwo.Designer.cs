@@ -171,6 +171,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Setting_PageTwo
             // 
@@ -189,6 +190,7 @@
             this.Controls.Add(this.checkedListBox1);
             this.Name = "frm_Setting_PageTwo";
             this.Text = "frm_Setting_PageTwo";
+            this.Load += new System.EventHandler(this.frm_Setting_PageTwo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

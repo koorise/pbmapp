@@ -69,6 +69,8 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -407,12 +409,31 @@
             this.button1.TabIndex = 40;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(116, 298);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 12);
+            this.label21.TabIndex = 41;
+            this.label21.Text = "VAT NO";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(164, 293);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(121, 21);
+            this.textBox17.TabIndex = 42;
             // 
             // frm_Setting_PageFour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 330);
+            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox16);
             this.Controls.Add(this.textBox15);
@@ -456,6 +477,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_Setting_PageFour";
             this.Text = "frm_Setting_PageFour";
+            this.Load += new System.EventHandler(this.frm_Setting_PageFour_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,5 +526,7 @@
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox17;
     }
 }

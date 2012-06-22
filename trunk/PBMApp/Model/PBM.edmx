@@ -31,6 +31,10 @@
           <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
           <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
           <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.Store.WH_Sys_mailer" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.Store.WH_Sys_PageFour" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_PageOne" EntityType="pbmModel.Store.WH_Sys_PageOne" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_PageTree" EntityType="pbmModel.Store.WH_Sys_PageTree" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.Store.WH_Sys_PageTwo" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
           <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
           <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
@@ -310,6 +314,82 @@
           <Property Name="MailerCode" Type="nvarchar" />
           <Property Name="TenantCode" Type="nvarchar" />
         </EntityType>
+        <EntityType Name="WH_Sys_PageFour">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportExportDevice" Type="nvarchar" />
+          <Property Name="ReportExportDevice_index" Type="integer" />
+          <Property Name="ClerkPassCodeDigits" Type="nvarchar" />
+          <Property Name="ClerkPassCodeDigits_index" Type="integer" />
+          <Property Name="OtherRoundingFactor" Type="nvarchar" />
+          <Property Name="OtherRoundingFactor_index" Type="integer" />
+          <Property Name="TaxSystem" Type="nvarchar" />
+          <Property Name="TaxSystem_index" Type="integer" />
+          <Property Name="AgeOne" Type="integer" />
+          <Property Name="AgeTwo" Type="integer" />
+          <Property Name="MachinNumPreset" Type="nvarchar" />
+          <Property Name="ReceiptNumPreset" Type="nvarchar" />
+          <Property Name="DailyZCounterPreset" Type="integer" />
+          <Property Name="PTDZCounterPreset" Type="integer" />
+          <Property Name="DuplicateReceiptCounter" Type="nvarchar" />
+          <Property Name="LineFeedCount" Type="nvarchar" />
+          <Property Name="PaymentInfoDisplayTime" Type="integer" />
+          <Property Name="ChangeInfoDisplayTime" Type="integer" />
+          <Property Name="TableColorChangeTime" Type="integer" />
+          <Property Name="TakeOutPrintTickets" Type="integer" />
+          <Property Name="MaxTipsAmount" Type="integer" />
+          <Property Name="TrainingModePassCode" Type="integer" />
+          <Property Name="HALO" Type="decimal" Scale="4" />
+          <Property Name="TotalInDrawerLimit" Type="decimal" Scale="4" />
+          <Property Name="VATNum" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Sys_PageOne">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Authority" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WH_Sys_PageTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Authority" Type="nvarchar" />
+          <Property Name="FootStampRule" Type="nvarchar" />
+          <Property Name="FootStampRule_index" Type="integer" />
+          <Property Name="GiftVoucherChange" Type="nvarchar" />
+          <Property Name="GiftVoucherChange_index" Type="integer" />
+          <Property Name="VATRateForTakeAway" Type="nvarchar" />
+          <Property Name="VATRateForTakeAway_index" Type="integer" />
+          <Property Name="VATRateForInHouse" Type="nvarchar" />
+          <Property Name="VATRateForInHouse_index" Type="integer" />
+          <Property Name="VATRateForOutHouse" Type="nvarchar" />
+          <Property Name="VATRateForOutHouse_index" Type="integer" />
+          <Property Name="PLUPriceForTakeAway" Type="nvarchar" />
+          <Property Name="PLUPriceForTakeAway_index" Type="integer" />
+          <Property Name="KPPrintSetting" Type="nvarchar" />
+          <Property Name="KPPrintSetting_index" Type="integer" />
+          <Property Name="CompReport" Type="nvarchar" />
+          <Property Name="CompReport_index" Type="integer" />
+        </EntityType>
+        <EntityType Name="WH_Sys_PageTwo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Authority" Type="nvarchar" />
+          <Property Name="PositionOfReceipt_index" Type="integer" />
+          <Property Name="PositionOfReceipt" Type="nvarchar" />
+          <Property Name="PositionOfLogo_index" Type="integer" />
+          <Property Name="PositionOfLogo" Type="nvarchar" />
+          <Property Name="PrintItemsWhenCloseTable_index" Type="integer" />
+          <Property Name="PrintItemsWhenCloseTable" Type="nvarchar" />
+          <Property Name="ItemDesc_RP_index" Type="integer" />
+          <Property Name="ItemDesc_RP" Type="nvarchar" />
+        </EntityType>
         <EntityType Name="WH_Sys_Payment">
           <Key>
             <PropertyRef Name="ID" />
@@ -487,6 +567,10 @@
           <EntitySet Name="WH_Sys_Ftp" EntityType="pbmModel.WH_Sys_Ftp" />
           <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.WH_Sys_mailer" />
           <EntitySet Name="WH_Sys_TableBarcode" EntityType="pbmModel.WH_Sys_TableBarcode" />
+          <EntitySet Name="WH_Sys_PageOne" EntityType="pbmModel.WH_Sys_PageOne" />
+          <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
+          <EntitySet Name="WH_Sys_PageTree" EntityType="pbmModel.WH_Sys_PageTree" />
+          <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.WH_Sys_PageFour" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -887,6 +971,82 @@
           <Property Type="Int64" Name="suspendTable" />
           <Property Type="Int64" Name="TransferTable" />
         </EntityType>
+        <EntityType Name="WH_Sys_PageOne">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WH_Sys_PageTwo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PositionOfReceipt_index" />
+          <Property Type="String" Name="PositionOfReceipt" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PositionOfLogo_index" />
+          <Property Type="String" Name="PositionOfLogo" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PrintItemsWhenCloseTable_index" />
+          <Property Type="String" Name="PrintItemsWhenCloseTable" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ItemDesc_RP_index" />
+          <Property Type="String" Name="ItemDesc_RP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WH_Sys_PageTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FootStampRule" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="FootStampRule_index" />
+          <Property Type="String" Name="GiftVoucherChange" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="GiftVoucherChange_index" />
+          <Property Type="String" Name="VATRateForTakeAway" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="VATRateForTakeAway_index" />
+          <Property Type="String" Name="VATRateForInHouse" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="VATRateForInHouse_index" />
+          <Property Type="String" Name="VATRateForOutHouse" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="VATRateForOutHouse_index" />
+          <Property Type="String" Name="PLUPriceForTakeAway" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PLUPriceForTakeAway_index" />
+          <Property Type="String" Name="KPPrintSetting" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="KPPrintSetting_index" />
+          <Property Type="String" Name="CompReport" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CompReport_index" />
+        </EntityType>
+        <EntityType Name="WH_Sys_PageFour">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ReportExportDevice" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ReportExportDevice_index" />
+          <Property Type="String" Name="ClerkPassCodeDigits" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ClerkPassCodeDigits_index" />
+          <Property Type="String" Name="OtherRoundingFactor" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="OtherRoundingFactor_index" />
+          <Property Type="String" Name="TaxSystem" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="TaxSystem_index" />
+          <Property Type="Int64" Name="AgeOne" />
+          <Property Type="Int64" Name="AgeTwo" />
+          <Property Type="String" Name="MachinNumPreset" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReceiptNumPreset" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="DailyZCounterPreset" />
+          <Property Type="Int64" Name="PTDZCounterPreset" />
+          <Property Type="String" Name="DuplicateReceiptCounter" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LineFeedCount" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PaymentInfoDisplayTime" />
+          <Property Type="Int64" Name="ChangeInfoDisplayTime" />
+          <Property Type="Int64" Name="TableColorChangeTime" />
+          <Property Type="Int64" Name="TakeOutPrintTickets" />
+          <Property Type="Int64" Name="MaxTipsAmount" />
+          <Property Type="Int64" Name="TrainingModePassCode" />
+          <Property Type="Decimal" Name="HALO" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="TotalInDrawerLimit" Precision="18" Scale="4" />
+          <Property Type="Int64" Name="VATNum" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1226,6 +1386,86 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_PageOne">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageOne">
+              <MappingFragment StoreEntitySet="WH_Sys_PageOne">
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_PageTwo">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTwo">
+              <MappingFragment StoreEntitySet="WH_Sys_PageTwo">
+                <ScalarProperty Name="ItemDesc_RP" ColumnName="ItemDesc_RP" />
+                <ScalarProperty Name="ItemDesc_RP_index" ColumnName="ItemDesc_RP_index" />
+                <ScalarProperty Name="PrintItemsWhenCloseTable" ColumnName="PrintItemsWhenCloseTable" />
+                <ScalarProperty Name="PrintItemsWhenCloseTable_index" ColumnName="PrintItemsWhenCloseTable_index" />
+                <ScalarProperty Name="PositionOfLogo" ColumnName="PositionOfLogo" />
+                <ScalarProperty Name="PositionOfLogo_index" ColumnName="PositionOfLogo_index" />
+                <ScalarProperty Name="PositionOfReceipt" ColumnName="PositionOfReceipt" />
+                <ScalarProperty Name="PositionOfReceipt_index" ColumnName="PositionOfReceipt_index" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_PageTree">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTree">
+              <MappingFragment StoreEntitySet="WH_Sys_PageTree">
+                <ScalarProperty Name="CompReport_index" ColumnName="CompReport_index" />
+                <ScalarProperty Name="CompReport" ColumnName="CompReport" />
+                <ScalarProperty Name="KPPrintSetting_index" ColumnName="KPPrintSetting_index" />
+                <ScalarProperty Name="KPPrintSetting" ColumnName="KPPrintSetting" />
+                <ScalarProperty Name="PLUPriceForTakeAway_index" ColumnName="PLUPriceForTakeAway_index" />
+                <ScalarProperty Name="PLUPriceForTakeAway" ColumnName="PLUPriceForTakeAway" />
+                <ScalarProperty Name="VATRateForOutHouse_index" ColumnName="VATRateForOutHouse_index" />
+                <ScalarProperty Name="VATRateForOutHouse" ColumnName="VATRateForOutHouse" />
+                <ScalarProperty Name="VATRateForInHouse_index" ColumnName="VATRateForInHouse_index" />
+                <ScalarProperty Name="VATRateForInHouse" ColumnName="VATRateForInHouse" />
+                <ScalarProperty Name="VATRateForTakeAway_index" ColumnName="VATRateForTakeAway_index" />
+                <ScalarProperty Name="VATRateForTakeAway" ColumnName="VATRateForTakeAway" />
+                <ScalarProperty Name="GiftVoucherChange_index" ColumnName="GiftVoucherChange_index" />
+                <ScalarProperty Name="GiftVoucherChange" ColumnName="GiftVoucherChange" />
+                <ScalarProperty Name="FootStampRule_index" ColumnName="FootStampRule_index" />
+                <ScalarProperty Name="FootStampRule" ColumnName="FootStampRule" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_PageFour">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageFour">
+              <MappingFragment StoreEntitySet="WH_Sys_PageFour">
+                <ScalarProperty Name="VATNum" ColumnName="VATNum" />
+                <ScalarProperty Name="TotalInDrawerLimit" ColumnName="TotalInDrawerLimit" />
+                <ScalarProperty Name="HALO" ColumnName="HALO" />
+                <ScalarProperty Name="TrainingModePassCode" ColumnName="TrainingModePassCode" />
+                <ScalarProperty Name="MaxTipsAmount" ColumnName="MaxTipsAmount" />
+                <ScalarProperty Name="TakeOutPrintTickets" ColumnName="TakeOutPrintTickets" />
+                <ScalarProperty Name="TableColorChangeTime" ColumnName="TableColorChangeTime" />
+                <ScalarProperty Name="ChangeInfoDisplayTime" ColumnName="ChangeInfoDisplayTime" />
+                <ScalarProperty Name="PaymentInfoDisplayTime" ColumnName="PaymentInfoDisplayTime" />
+                <ScalarProperty Name="LineFeedCount" ColumnName="LineFeedCount" />
+                <ScalarProperty Name="DuplicateReceiptCounter" ColumnName="DuplicateReceiptCounter" />
+                <ScalarProperty Name="PTDZCounterPreset" ColumnName="PTDZCounterPreset" />
+                <ScalarProperty Name="DailyZCounterPreset" ColumnName="DailyZCounterPreset" />
+                <ScalarProperty Name="ReceiptNumPreset" ColumnName="ReceiptNumPreset" />
+                <ScalarProperty Name="MachinNumPreset" ColumnName="MachinNumPreset" />
+                <ScalarProperty Name="AgeTwo" ColumnName="AgeTwo" />
+                <ScalarProperty Name="AgeOne" ColumnName="AgeOne" />
+                <ScalarProperty Name="TaxSystem_index" ColumnName="TaxSystem_index" />
+                <ScalarProperty Name="TaxSystem" ColumnName="TaxSystem" />
+                <ScalarProperty Name="OtherRoundingFactor_index" ColumnName="OtherRoundingFactor_index" />
+                <ScalarProperty Name="OtherRoundingFactor" ColumnName="OtherRoundingFactor" />
+                <ScalarProperty Name="ClerkPassCodeDigits_index" ColumnName="ClerkPassCodeDigits_index" />
+                <ScalarProperty Name="ClerkPassCodeDigits" ColumnName="ClerkPassCodeDigits" />
+                <ScalarProperty Name="ReportExportDevice_index" ColumnName="ReportExportDevice_index" />
+                <ScalarProperty Name="ReportExportDevice" ColumnName="ReportExportDevice" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1285,6 +1525,10 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_Ftp" Width="1.5" PointX="15.375" PointY="9.75" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_mailer" Width="1.5" PointX="15.375" PointY="12.75" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_TableBarcode" Width="1.5" PointX="13.375" PointY="15.75" Height="3.3084114583333246" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_PageOne" Width="1.5" PointX="15.375" PointY="15.75" Height="1.2849739583333246" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTwo" Width="1.5" PointX="7.375" PointY="16.75" Height="2.6339322916666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTree" Width="1.5" PointX="9.375" PointY="16.75" Height="3.9828906250000102" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_PageFour" Width="1.5" PointX="17.375" PointY="3.75" Height="5.3318489583333246" />
       </Diagram>
     </Diagrams>
   </Designer>
