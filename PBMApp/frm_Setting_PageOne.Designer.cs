@@ -84,6 +84,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Setting_PageOne
             // 
@@ -94,6 +95,7 @@
             this.Controls.Add(this.checkedListBox1);
             this.Name = "frm_Setting_PageOne";
             this.Text = "frm_Setting_PageOne";
+            this.Load += new System.EventHandler(this.frm_Setting_PageOne_Load);
             this.ResumeLayout(false);
 
         }

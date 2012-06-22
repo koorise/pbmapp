@@ -26,6 +26,8 @@
     <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
     <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
     <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.Store.WH_Sys_mailer" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_PageOne" EntityType="pbmModel.Store.WH_Sys_PageOne" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.Store.WH_Sys_PageTwo" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH_linkpayment" EntityType="pbmModel.Store.WH_Sys_PCASH_linkpayment" store:Type="Tables" />
@@ -304,6 +306,28 @@
     <Property Name="MailerName" Type="nvarchar" />
     <Property Name="MailerCode" Type="nvarchar" />
     <Property Name="TenantCode" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PageOne">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Authority" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PageTwo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Authority" Type="nvarchar" />
+    <Property Name="PositionOfReceipt_index" Type="integer" />
+    <Property Name="PositionOfReceipt" Type="nvarchar" />
+    <Property Name="PositionOfLogo_index" Type="integer" />
+    <Property Name="PositionOfLogo" Type="nvarchar" />
+    <Property Name="PrintItemsWhenCloseTable_index" Type="integer" />
+    <Property Name="PrintItemsWhenCloseTable" Type="nvarchar" />
+    <Property Name="ItemDesc_RP_index" Type="integer" />
+    <Property Name="ItemDesc_RP" Type="nvarchar" />
   </EntityType>
   <EntityType Name="WH_Sys_Payment">
     <Key>
