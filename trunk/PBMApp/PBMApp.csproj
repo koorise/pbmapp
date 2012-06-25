@@ -157,6 +157,12 @@
     <Compile Include="frm_Setting_HeaderFooter.Designer.cs">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Setting_KeyDesc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Setting_KeyDesc.Designer.cs">
+      <DependentUpon>frm_Setting_KeyDesc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Setting_PageFour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_HeaderFooter.resx">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Setting_KeyDesc.resx">
+      <DependentUpon>frm_Setting_KeyDesc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_PageFour.resx">
       <DependentUpon>frm_Setting_PageFour.cs</DependentUpon>

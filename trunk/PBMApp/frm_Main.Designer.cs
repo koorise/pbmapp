@@ -56,9 +56,10 @@
             this.pageThreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageTwoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.flashReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.keyDescriptorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +112,8 @@
             this.headerFooterSettingToolStripMenuItem,
             this.supplierSettingToolStripMenuItem,
             this.paymentRefundCouponToolStripMenuItem,
-            this.pCASHToolStripMenuItem});
+            this.pCASHToolStripMenuItem,
+            this.keyDescriptorToolStripMenuItem});
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             resources.ApplyResources(this.systemToolStripMenuItem, "systemToolStripMenuItem");
             // 
@@ -250,14 +252,6 @@
             resources.ApplyResources(this.pageOneToolStripMenuItem, "pageOneToolStripMenuItem");
             this.pageOneToolStripMenuItem.Click += new System.EventHandler(this.pageOneToolStripMenuItem_Click_1);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            this.openFileDialog1.InitialDirectory = "Application.ExecutablePath";
-            this.openFileDialog1.RestoreDirectory = true;
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
             // flashReportToolStripMenuItem
             // 
             this.flashReportToolStripMenuItem.Name = "flashReportToolStripMenuItem";
@@ -269,6 +263,20 @@
             this.kPToolStripMenuItem.Name = "kPToolStripMenuItem";
             resources.ApplyResources(this.kPToolStripMenuItem, "kPToolStripMenuItem");
             this.kPToolStripMenuItem.Click += new System.EventHandler(this.kPToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            this.openFileDialog1.InitialDirectory = "Application.ExecutablePath";
+            this.openFileDialog1.RestoreDirectory = true;
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // keyDescriptorToolStripMenuItem
+            // 
+            this.keyDescriptorToolStripMenuItem.Name = "keyDescriptorToolStripMenuItem";
+            resources.ApplyResources(this.keyDescriptorToolStripMenuItem, "keyDescriptorToolStripMenuItem");
+            this.keyDescriptorToolStripMenuItem.Click += new System.EventHandler(this.keyDescriptorToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
@@ -318,6 +326,7 @@
         private System.Windows.Forms.ToolStripMenuItem pageOneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flashReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem keyDescriptorToolStripMenuItem;
 
     }
 }

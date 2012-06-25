@@ -24,9 +24,13 @@
     <EntitySet Name="WH_Sys_Ftp" EntityType="pbmModel.Store.WH_Sys_Ftp" store:Type="Tables" />
     <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.Store.WH_Sys_happyHour_ServiceTax_Hours" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.Store.WH_Sys_KeyDesc" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.Store.WH_Sys_KeyType" store:Type="Tables" />
     <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
     <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.Store.WH_Sys_mailer" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.Store.WH_Sys_PageFour" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PageOne" EntityType="pbmModel.Store.WH_Sys_PageOne" store:Type="Tables" />
+    <EntitySet Name="WH_Sys_PageTree" EntityType="pbmModel.Store.WH_Sys_PageTree" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.Store.WH_Sys_PageTwo" store:Type="Tables" />
     <EntitySet Name="WH_Sys_Payment" EntityType="pbmModel.Store.WH_Sys_Payment" store:Type="Tables" />
     <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.Store.WH_Sys_PCASH" store:Type="Tables" />
@@ -285,6 +289,22 @@
     <Property Name="isHeader" Type="integer" />
     <Property Name="isHeaderStr" Type="nvarchar" />
   </EntityType>
+  <EntityType Name="WH_Sys_KeyDesc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KeyTypeID" Type="integer" />
+    <Property Name="EnStr" Type="nvarchar" />
+    <Property Name="CNStr" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_KeyType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descs" Type="nvarchar" />
+  </EntityType>
   <EntityType Name="WH_Sys_KP">
     <Key>
       <PropertyRef Name="ID" />
@@ -307,12 +327,66 @@
     <Property Name="MailerCode" Type="nvarchar" />
     <Property Name="TenantCode" Type="nvarchar" />
   </EntityType>
+  <EntityType Name="WH_Sys_PageFour">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReportExportDevice" Type="nvarchar" />
+    <Property Name="ReportExportDevice_index" Type="integer" />
+    <Property Name="ClerkPassCodeDigits" Type="nvarchar" />
+    <Property Name="ClerkPassCodeDigits_index" Type="integer" />
+    <Property Name="OtherRoundingFactor" Type="nvarchar" />
+    <Property Name="OtherRoundingFactor_index" Type="integer" />
+    <Property Name="TaxSystem" Type="nvarchar" />
+    <Property Name="TaxSystem_index" Type="integer" />
+    <Property Name="AgeOne" Type="integer" />
+    <Property Name="AgeTwo" Type="integer" />
+    <Property Name="MachinNumPreset" Type="nvarchar" />
+    <Property Name="ReceiptNumPreset" Type="nvarchar" />
+    <Property Name="DailyZCounterPreset" Type="integer" />
+    <Property Name="PTDZCounterPreset" Type="integer" />
+    <Property Name="DuplicateReceiptCounter" Type="nvarchar" />
+    <Property Name="LineFeedCount" Type="nvarchar" />
+    <Property Name="PaymentInfoDisplayTime" Type="integer" />
+    <Property Name="ChangeInfoDisplayTime" Type="integer" />
+    <Property Name="TableColorChangeTime" Type="integer" />
+    <Property Name="TakeOutPrintTickets" Type="integer" />
+    <Property Name="MaxTipsAmount" Type="integer" />
+    <Property Name="TrainingModePassCode" Type="integer" />
+    <Property Name="HALO" Type="decimal" Scale="4" />
+    <Property Name="TotalInDrawerLimit" Type="decimal" Scale="4" />
+    <Property Name="VATNum" Type="integer" />
+  </EntityType>
   <EntityType Name="WH_Sys_PageOne">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Authority" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PageTree">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Authority" Type="nvarchar" />
+    <Property Name="FootStampRule" Type="nvarchar" />
+    <Property Name="FootStampRule_index" Type="integer" />
+    <Property Name="GiftVoucherChange" Type="nvarchar" />
+    <Property Name="GiftVoucherChange_index" Type="integer" />
+    <Property Name="VATRateForTakeAway" Type="nvarchar" />
+    <Property Name="VATRateForTakeAway_index" Type="integer" />
+    <Property Name="VATRateForInHouse" Type="nvarchar" />
+    <Property Name="VATRateForInHouse_index" Type="integer" />
+    <Property Name="VATRateForOutHouse" Type="nvarchar" />
+    <Property Name="VATRateForOutHouse_index" Type="integer" />
+    <Property Name="PLUPriceForTakeAway" Type="nvarchar" />
+    <Property Name="PLUPriceForTakeAway_index" Type="integer" />
+    <Property Name="KPPrintSetting" Type="nvarchar" />
+    <Property Name="KPPrintSetting_index" Type="integer" />
+    <Property Name="CompReport" Type="nvarchar" />
+    <Property Name="CompReport_index" Type="integer" />
   </EntityType>
   <EntityType Name="WH_Sys_PageTwo">
     <Key>

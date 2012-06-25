@@ -736,6 +736,38 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Sys_PageFour> _WH_Sys_PageFour;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_KeyDesc> WH_Sys_KeyDesc
+        {
+            get
+            {
+                if ((_WH_Sys_KeyDesc == null))
+                {
+                    _WH_Sys_KeyDesc = base.CreateObjectSet<WH_Sys_KeyDesc>("WH_Sys_KeyDesc");
+                }
+                return _WH_Sys_KeyDesc;
+            }
+        }
+        private ObjectSet<WH_Sys_KeyDesc> _WH_Sys_KeyDesc;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_KeyType> WH_Sys_KeyType
+        {
+            get
+            {
+                if ((_WH_Sys_KeyType == null))
+                {
+                    _WH_Sys_KeyType = base.CreateObjectSet<WH_Sys_KeyType>("WH_Sys_KeyType");
+                }
+                return _WH_Sys_KeyType;
+            }
+        }
+        private ObjectSet<WH_Sys_KeyType> _WH_Sys_KeyType;
 
         #endregion
         #region AddTo 方法
@@ -1074,6 +1106,22 @@ namespace PBMApp.Model
         public void AddToWH_Sys_PageFour(WH_Sys_PageFour wH_Sys_PageFour)
         {
             base.AddObject("WH_Sys_PageFour", wH_Sys_PageFour);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_KeyDesc EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_KeyDesc(WH_Sys_KeyDesc wH_Sys_KeyDesc)
+        {
+            base.AddObject("WH_Sys_KeyDesc", wH_Sys_KeyDesc);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_KeyType EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_KeyType(WH_Sys_KeyType wH_Sys_KeyType)
+        {
+            base.AddObject("WH_Sys_KeyType", wH_Sys_KeyType);
         }
 
         #endregion
@@ -4864,6 +4912,212 @@ namespace PBMApp.Model
         private global::System.String _isHeaderStr;
         partial void OnisHeaderStrChanging(global::System.String value);
         partial void OnisHeaderStrChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_KeyDesc")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_KeyDesc : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_KeyDesc 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_KeyDesc CreateWH_Sys_KeyDesc(global::System.Int64 id)
+        {
+            WH_Sys_KeyDesc wH_Sys_KeyDesc = new WH_Sys_KeyDesc();
+            wH_Sys_KeyDesc.ID = id;
+            return wH_Sys_KeyDesc;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> KeyTypeID
+        {
+            get
+            {
+                return _KeyTypeID;
+            }
+            set
+            {
+                OnKeyTypeIDChanging(value);
+                ReportPropertyChanging("KeyTypeID");
+                _KeyTypeID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("KeyTypeID");
+                OnKeyTypeIDChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _KeyTypeID;
+        partial void OnKeyTypeIDChanging(Nullable<global::System.Int64> value);
+        partial void OnKeyTypeIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String EnStr
+        {
+            get
+            {
+                return _EnStr;
+            }
+            set
+            {
+                OnEnStrChanging(value);
+                ReportPropertyChanging("EnStr");
+                _EnStr = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("EnStr");
+                OnEnStrChanged();
+            }
+        }
+        private global::System.String _EnStr;
+        partial void OnEnStrChanging(global::System.String value);
+        partial void OnEnStrChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CNStr
+        {
+            get
+            {
+                return _CNStr;
+            }
+            set
+            {
+                OnCNStrChanging(value);
+                ReportPropertyChanging("CNStr");
+                _CNStr = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("CNStr");
+                OnCNStrChanged();
+            }
+        }
+        private global::System.String _CNStr;
+        partial void OnCNStrChanging(global::System.String value);
+        partial void OnCNStrChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="pbmModel", Name="WH_Sys_KeyType")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class WH_Sys_KeyType : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 WH_Sys_KeyType 对象。
+        /// </summary>
+        /// <param name="id">ID 属性的初始值。</param>
+        public static WH_Sys_KeyType CreateWH_Sys_KeyType(global::System.Int64 id)
+        {
+            WH_Sys_KeyType wH_Sys_KeyType = new WH_Sys_KeyType();
+            wH_Sys_KeyType.ID = id;
+            return wH_Sys_KeyType;
+        }
+
+        #endregion
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int64 _ID;
+        partial void OnIDChanging(global::System.Int64 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Descs
+        {
+            get
+            {
+                return _Descs;
+            }
+            set
+            {
+                OnDescsChanging(value);
+                ReportPropertyChanging("Descs");
+                _Descs = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Descs");
+                OnDescsChanged();
+            }
+        }
+        private global::System.String _Descs;
+        partial void OnDescsChanging(global::System.String value);
+        partial void OnDescsChanged();
 
         #endregion
     
