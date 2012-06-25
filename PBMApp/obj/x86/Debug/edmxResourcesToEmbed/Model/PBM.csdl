@@ -41,6 +41,10 @@
     <EntitySet Name="WH_Sys_TableBarcode" EntityType="pbmModel.WH_Sys_TableBarcode" />
     <EntitySet Name="WH_Sys_PageOne" EntityType="pbmModel.WH_Sys_PageOne" />
     <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
+    <EntitySet Name="WH_Sys_PageTree" EntityType="pbmModel.WH_Sys_PageTree" />
+    <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.WH_Sys_PageFour" />
+    <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
+    <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.WH_Sys_KeyType" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -462,5 +466,75 @@
     <Property Type="String" Name="PrintItemsWhenCloseTable" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Type="Int64" Name="ItemDesc_RP_index" />
     <Property Type="String" Name="ItemDesc_RP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PageTree">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FootStampRule" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="FootStampRule_index" />
+    <Property Type="String" Name="GiftVoucherChange" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="GiftVoucherChange_index" />
+    <Property Type="String" Name="VATRateForTakeAway" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="VATRateForTakeAway_index" />
+    <Property Type="String" Name="VATRateForInHouse" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="VATRateForInHouse_index" />
+    <Property Type="String" Name="VATRateForOutHouse" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="VATRateForOutHouse_index" />
+    <Property Type="String" Name="PLUPriceForTakeAway" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="PLUPriceForTakeAway_index" />
+    <Property Type="String" Name="KPPrintSetting" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="KPPrintSetting_index" />
+    <Property Type="String" Name="CompReport" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="CompReport_index" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PageFour">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ReportExportDevice" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ReportExportDevice_index" />
+    <Property Type="String" Name="ClerkPassCodeDigits" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ClerkPassCodeDigits_index" />
+    <Property Type="String" Name="OtherRoundingFactor" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="OtherRoundingFactor_index" />
+    <Property Type="String" Name="TaxSystem" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="TaxSystem_index" />
+    <Property Type="Int64" Name="AgeOne" />
+    <Property Type="Int64" Name="AgeTwo" />
+    <Property Type="String" Name="MachinNumPreset" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ReceiptNumPreset" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="DailyZCounterPreset" />
+    <Property Type="Int64" Name="PTDZCounterPreset" />
+    <Property Type="String" Name="DuplicateReceiptCounter" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LineFeedCount" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="PaymentInfoDisplayTime" />
+    <Property Type="Int64" Name="ChangeInfoDisplayTime" />
+    <Property Type="Int64" Name="TableColorChangeTime" />
+    <Property Type="Int64" Name="TakeOutPrintTickets" />
+    <Property Type="Int64" Name="MaxTipsAmount" />
+    <Property Type="Int64" Name="TrainingModePassCode" />
+    <Property Type="Decimal" Name="HALO" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="TotalInDrawerLimit" Precision="18" Scale="4" />
+    <Property Type="Int64" Name="VATNum" />
+  </EntityType>
+  <EntityType Name="WH_Sys_KeyDesc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="KeyTypeID" />
+    <Property Type="String" Name="EnStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CNStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WH_Sys_KeyType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descs" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

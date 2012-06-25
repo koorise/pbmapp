@@ -29,6 +29,8 @@
           <EntitySet Name="WH_Sys_Ftp" EntityType="pbmModel.Store.WH_Sys_Ftp" store:Type="Tables" />
           <EntitySet Name="WH_Sys_happyHour_ServiceTax_Hours" EntityType="pbmModel.Store.WH_Sys_happyHour_ServiceTax_Hours" store:Type="Tables" />
           <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.Store.WH_Sys_Header_Footer" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.Store.WH_Sys_KeyDesc" store:Type="Tables" />
+          <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.Store.WH_Sys_KeyType" store:Type="Tables" />
           <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.Store.WH_Sys_KP" store:Type="Tables" />
           <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.Store.WH_Sys_mailer" store:Type="Tables" />
           <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.Store.WH_Sys_PageFour" store:Type="Tables" />
@@ -291,6 +293,22 @@
           <Property Name="flag" Type="integer" />
           <Property Name="isHeader" Type="integer" />
           <Property Name="isHeaderStr" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WH_Sys_KeyDesc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KeyTypeID" Type="integer" />
+          <Property Name="EnStr" Type="nvarchar" />
+          <Property Name="CNStr" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WH_Sys_KeyType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descs" Type="nvarchar" />
         </EntityType>
         <EntityType Name="WH_Sys_KP">
           <Key>
@@ -571,6 +589,8 @@
           <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
           <EntitySet Name="WH_Sys_PageTree" EntityType="pbmModel.WH_Sys_PageTree" />
           <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.WH_Sys_PageFour" />
+          <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
+          <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.WH_Sys_KeyType" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -1047,6 +1067,22 @@
           <Property Type="Decimal" Name="TotalInDrawerLimit" Precision="18" Scale="4" />
           <Property Type="Int64" Name="VATNum" />
         </EntityType>
+        <EntityType Name="WH_Sys_KeyDesc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="KeyTypeID" />
+          <Property Type="String" Name="EnStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CNStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WH_Sys_KeyType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Descs" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1466,6 +1502,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_KeyDesc">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_KeyDesc">
+              <MappingFragment StoreEntitySet="WH_Sys_KeyDesc">
+                <ScalarProperty Name="CNStr" ColumnName="CNStr" />
+                <ScalarProperty Name="EnStr" ColumnName="EnStr" />
+                <ScalarProperty Name="KeyTypeID" ColumnName="KeyTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_KeyType">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_KeyType">
+              <MappingFragment StoreEntitySet="WH_Sys_KeyType">
+                <ScalarProperty Name="Descs" ColumnName="Descs" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1529,6 +1583,8 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTwo" Width="1.5" PointX="7.375" PointY="16.75" Height="2.6339322916666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTree" Width="1.5" PointX="9.375" PointY="16.75" Height="3.9828906250000102" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageFour" Width="1.5" PointX="17.375" PointY="3.75" Height="5.3318489583333246" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_KeyDesc" Width="1.5" PointX="17.375" PointY="10.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_KeyType" Width="1.5" PointX="17.375" PointY="13.75" Height="1.2849739583333246" />
       </Diagram>
     </Diagrams>
   </Designer>

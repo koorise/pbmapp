@@ -462,5 +462,79 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_PageTree">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTree">
+        <MappingFragment StoreEntitySet="WH_Sys_PageTree">
+          <ScalarProperty Name="CompReport_index" ColumnName="CompReport_index" />
+          <ScalarProperty Name="CompReport" ColumnName="CompReport" />
+          <ScalarProperty Name="KPPrintSetting_index" ColumnName="KPPrintSetting_index" />
+          <ScalarProperty Name="KPPrintSetting" ColumnName="KPPrintSetting" />
+          <ScalarProperty Name="PLUPriceForTakeAway_index" ColumnName="PLUPriceForTakeAway_index" />
+          <ScalarProperty Name="PLUPriceForTakeAway" ColumnName="PLUPriceForTakeAway" />
+          <ScalarProperty Name="VATRateForOutHouse_index" ColumnName="VATRateForOutHouse_index" />
+          <ScalarProperty Name="VATRateForOutHouse" ColumnName="VATRateForOutHouse" />
+          <ScalarProperty Name="VATRateForInHouse_index" ColumnName="VATRateForInHouse_index" />
+          <ScalarProperty Name="VATRateForInHouse" ColumnName="VATRateForInHouse" />
+          <ScalarProperty Name="VATRateForTakeAway_index" ColumnName="VATRateForTakeAway_index" />
+          <ScalarProperty Name="VATRateForTakeAway" ColumnName="VATRateForTakeAway" />
+          <ScalarProperty Name="GiftVoucherChange_index" ColumnName="GiftVoucherChange_index" />
+          <ScalarProperty Name="GiftVoucherChange" ColumnName="GiftVoucherChange" />
+          <ScalarProperty Name="FootStampRule_index" ColumnName="FootStampRule_index" />
+          <ScalarProperty Name="FootStampRule" ColumnName="FootStampRule" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_PageFour">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageFour">
+        <MappingFragment StoreEntitySet="WH_Sys_PageFour">
+          <ScalarProperty Name="VATNum" ColumnName="VATNum" />
+          <ScalarProperty Name="TotalInDrawerLimit" ColumnName="TotalInDrawerLimit" />
+          <ScalarProperty Name="HALO" ColumnName="HALO" />
+          <ScalarProperty Name="TrainingModePassCode" ColumnName="TrainingModePassCode" />
+          <ScalarProperty Name="MaxTipsAmount" ColumnName="MaxTipsAmount" />
+          <ScalarProperty Name="TakeOutPrintTickets" ColumnName="TakeOutPrintTickets" />
+          <ScalarProperty Name="TableColorChangeTime" ColumnName="TableColorChangeTime" />
+          <ScalarProperty Name="ChangeInfoDisplayTime" ColumnName="ChangeInfoDisplayTime" />
+          <ScalarProperty Name="PaymentInfoDisplayTime" ColumnName="PaymentInfoDisplayTime" />
+          <ScalarProperty Name="LineFeedCount" ColumnName="LineFeedCount" />
+          <ScalarProperty Name="DuplicateReceiptCounter" ColumnName="DuplicateReceiptCounter" />
+          <ScalarProperty Name="PTDZCounterPreset" ColumnName="PTDZCounterPreset" />
+          <ScalarProperty Name="DailyZCounterPreset" ColumnName="DailyZCounterPreset" />
+          <ScalarProperty Name="ReceiptNumPreset" ColumnName="ReceiptNumPreset" />
+          <ScalarProperty Name="MachinNumPreset" ColumnName="MachinNumPreset" />
+          <ScalarProperty Name="AgeTwo" ColumnName="AgeTwo" />
+          <ScalarProperty Name="AgeOne" ColumnName="AgeOne" />
+          <ScalarProperty Name="TaxSystem_index" ColumnName="TaxSystem_index" />
+          <ScalarProperty Name="TaxSystem" ColumnName="TaxSystem" />
+          <ScalarProperty Name="OtherRoundingFactor_index" ColumnName="OtherRoundingFactor_index" />
+          <ScalarProperty Name="OtherRoundingFactor" ColumnName="OtherRoundingFactor" />
+          <ScalarProperty Name="ClerkPassCodeDigits_index" ColumnName="ClerkPassCodeDigits_index" />
+          <ScalarProperty Name="ClerkPassCodeDigits" ColumnName="ClerkPassCodeDigits" />
+          <ScalarProperty Name="ReportExportDevice_index" ColumnName="ReportExportDevice_index" />
+          <ScalarProperty Name="ReportExportDevice" ColumnName="ReportExportDevice" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_KeyDesc">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_KeyDesc">
+        <MappingFragment StoreEntitySet="WH_Sys_KeyDesc">
+          <ScalarProperty Name="CNStr" ColumnName="CNStr" />
+          <ScalarProperty Name="EnStr" ColumnName="EnStr" />
+          <ScalarProperty Name="KeyTypeID" ColumnName="KeyTypeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_KeyType">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_KeyType">
+        <MappingFragment StoreEntitySet="WH_Sys_KeyType">
+          <ScalarProperty Name="Descs" ColumnName="Descs" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
