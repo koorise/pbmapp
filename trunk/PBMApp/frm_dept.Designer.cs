@@ -187,6 +187,7 @@
             // 
             // chkGST
             // 
+            this.chkGST.CheckOnClick = true;
             this.chkGST.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkGST.FormattingEnabled = true;
             this.chkGST.Items.AddRange(new object[] {
@@ -213,6 +214,7 @@
             // 
             // chkTax
             // 
+            this.chkTax.CheckOnClick = true;
             this.chkTax.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkTax.FormattingEnabled = true;
             this.chkTax.Items.AddRange(new object[] {
