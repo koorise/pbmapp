@@ -198,6 +198,7 @@
             // 
             // chkLimitList
             // 
+            this.chkLimitList.CheckOnClick = true;
             this.chkLimitList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkLimitList.FormattingEnabled = true;
             this.chkLimitList.Items.AddRange(new object[] {
