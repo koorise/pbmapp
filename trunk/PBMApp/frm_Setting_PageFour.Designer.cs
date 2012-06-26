@@ -295,9 +295,9 @@
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
+            "Vat",
             "Tax",
-            "GST",
-            "VAT"});
+            "GST"});
             this.comboBox4.Location = new System.Drawing.Point(163, 99);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 20);

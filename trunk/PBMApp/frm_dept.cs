@@ -68,6 +68,14 @@ namespace PBMApp
 
             cbHDLO.SelectedIndex = 0;
             BindData();
+            using (var m = new Entities())
+            {
+                var q = (from c in m.WH_Sys_PageFour
+                        orderby c.ID descending
+                        select c.TaxSystem_index).FirstOrDefault();
+                cbisVat.SelectedIndex = int.Parse(q.Value.ToString());
+                cbisVat.Enabled = false;
+            }
         }
         private void BindData()
         {
