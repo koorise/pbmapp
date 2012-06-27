@@ -244,22 +244,6 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Relation_Cook_PLU> WH_Relation_Cook_PLU
-        {
-            get
-            {
-                if ((_WH_Relation_Cook_PLU == null))
-                {
-                    _WH_Relation_Cook_PLU = base.CreateObjectSet<WH_Relation_Cook_PLU>("WH_Relation_Cook_PLU");
-                }
-                return _WH_Relation_Cook_PLU;
-            }
-        }
-        private ObjectSet<WH_Relation_Cook_PLU> _WH_Relation_Cook_PLU;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<WH_Relation_PLU_Condiment> WH_Relation_PLU_Condiment
         {
             get
@@ -768,6 +752,22 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Sys_KeyType> _WH_Sys_KeyType;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Relation_Cook_PLU> WH_Relation_Cook_PLU
+        {
+            get
+            {
+                if ((_WH_Relation_Cook_PLU == null))
+                {
+                    _WH_Relation_Cook_PLU = base.CreateObjectSet<WH_Relation_Cook_PLU>("WH_Relation_Cook_PLU");
+                }
+                return _WH_Relation_Cook_PLU;
+            }
+        }
+        private ObjectSet<WH_Relation_Cook_PLU> _WH_Relation_Cook_PLU;
 
         #endregion
         #region AddTo 方法
@@ -858,14 +858,6 @@ namespace PBMApp.Model
         public void AddToWH_PLU_Modifier(WH_PLU_Modifier wH_PLU_Modifier)
         {
             base.AddObject("WH_PLU_Modifier", wH_PLU_Modifier);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Relation_Cook_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Relation_Cook_PLU(WH_Relation_Cook_PLU wH_Relation_Cook_PLU)
-        {
-            base.AddObject("WH_Relation_Cook_PLU", wH_Relation_Cook_PLU);
         }
     
         /// <summary>
@@ -1122,6 +1114,14 @@ namespace PBMApp.Model
         public void AddToWH_Sys_KeyType(WH_Sys_KeyType wH_Sys_KeyType)
         {
             base.AddObject("WH_Sys_KeyType", wH_Sys_KeyType);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Relation_Cook_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Relation_Cook_PLU(WH_Relation_Cook_PLU wH_Relation_Cook_PLU)
+        {
+            base.AddObject("WH_Relation_Cook_PLU", wH_Relation_Cook_PLU);
         }
 
         #endregion
@@ -3515,6 +3515,30 @@ namespace PBMApp.Model
         private Nullable<global::System.Int64> _PLUID;
         partial void OnPLUIDChanging(Nullable<global::System.Int64> value);
         partial void OnPLUIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> isFlag
+        {
+            get
+            {
+                return _isFlag;
+            }
+            set
+            {
+                OnisFlagChanging(value);
+                ReportPropertyChanging("isFlag");
+                _isFlag = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("isFlag");
+                OnisFlagChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _isFlag;
+        partial void OnisFlagChanging(Nullable<global::System.Int64> value);
+        partial void OnisFlagChanged();
 
         #endregion
     

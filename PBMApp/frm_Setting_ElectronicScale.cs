@@ -173,6 +173,10 @@ namespace PBMApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(cbID.SelectedIndex==-1)
+            {
+                return;
+            }
             string WID = ((ComboBoxItem)cbID.SelectedItem).Value.ToString();
             using (var m = new Entities())
             {
@@ -182,6 +186,8 @@ namespace PBMApp
                 q.WAID = cbWA.SelectedIndex;
                 q.Dots = cbDots.SelectedIndex;
                 m.SaveChanges();
+                MessageBox.Show("success", "alert");
+
             }
         }
 

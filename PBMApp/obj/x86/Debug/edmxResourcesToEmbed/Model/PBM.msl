@@ -148,15 +148,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WH_Relation_Cook_PLU">
-      <EntityTypeMapping TypeName="pbmModel.WH_Relation_Cook_PLU">
-        <MappingFragment StoreEntitySet="WH_Relation_Cook_PLU">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="CookID" ColumnName="CookID" />
-          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="WH_Relation_PLU_Condiment">
       <EntityTypeMapping TypeName="pbmModel.WH_Relation_PLU_Condiment">
         <MappingFragment StoreEntitySet="WH_Relation_PLU_Condiment">
@@ -532,6 +523,16 @@
       <EntityTypeMapping TypeName="pbmModel.WH_Sys_KeyType">
         <MappingFragment StoreEntitySet="WH_Sys_KeyType">
           <ScalarProperty Name="Descs" ColumnName="Descs" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Relation_Cook_PLU">
+      <EntityTypeMapping TypeName="pbmModel.WH_Relation_Cook_PLU">
+        <MappingFragment StoreEntitySet="WH_Relation_Cook_PLU">
+          <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+          <ScalarProperty Name="CookID" ColumnName="CookID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

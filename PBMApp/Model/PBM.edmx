@@ -194,6 +194,7 @@
           <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CookID" Type="integer" />
           <Property Name="PLUID" Type="integer" />
+          <Property Name="isFlag" Type="integer" />
         </EntityType>
         <EntityType Name="WH_Relation_PLU_Condiment">
           <Key>
@@ -558,7 +559,6 @@
           <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
           <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
           <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.WH_PLU_Modifier" />
-          <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
           <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
           <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
           <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
@@ -591,6 +591,7 @@
           <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.WH_Sys_PageFour" />
           <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
           <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.WH_Sys_KeyType" />
+          <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -727,14 +728,6 @@
           <Property Name="Modifier_desc" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
           <Property Name="Modifier_Unit_Quantity" Type="Int64" />
           <Property Name="Modifier_Price" Type="Decimal" Precision="18" Scale="4" />
-        </EntityType>
-        <EntityType Name="WH_Relation_Cook_PLU">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CookID" Type="Int64" />
-          <Property Name="PLUID" Type="Int64" />
         </EntityType>
         <EntityType Name="WH_Relation_PLU_Condiment">
           <Key>
@@ -1083,6 +1076,15 @@
           <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Descs" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="WH_Relation_Cook_PLU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CookID" />
+          <Property Type="Int64" Name="PLUID" />
+          <Property Type="Int64" Name="isFlag" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1191,11 +1193,6 @@
             <ScalarProperty Name="Modifier_desc" ColumnName="Modifier_desc" />
             <ScalarProperty Name="Modifier_Unit_Quantity" ColumnName="Modifier_Unit_Quantity" />
             <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="WH_Relation_Cook_PLU"><EntityTypeMapping TypeName="pbmModel.WH_Relation_Cook_PLU"><MappingFragment StoreEntitySet="WH_Relation_Cook_PLU">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="CookID" ColumnName="CookID" />
-            <ScalarProperty Name="PLUID" ColumnName="PLUID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="WH_Relation_PLU_Condiment"><EntityTypeMapping TypeName="pbmModel.WH_Relation_PLU_Condiment"><MappingFragment StoreEntitySet="WH_Relation_PLU_Condiment">
             <ScalarProperty Name="ID" ColumnName="ID" />
@@ -1520,6 +1517,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Relation_Cook_PLU">
+            <EntityTypeMapping TypeName="pbmModel.WH_Relation_Cook_PLU">
+              <MappingFragment StoreEntitySet="WH_Relation_Cook_PLU">
+                <ScalarProperty Name="isFlag" ColumnName="isFlag" />
+                <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+                <ScalarProperty Name="CookID" ColumnName="CookID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1552,7 +1559,6 @@
         <EntityTypeShape EntityType="pbmModel.WH_Menu_List" Width="1.5" PointX="6.75" PointY="3.75" Height="1.6222135416666674" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_PLU" Width="1.5" PointX="6.75" PointY="6.75" Height="4.1515104166666674" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_PLU_Modifier" Width="1.5" PointX="8.75" PointY="0.75" Height="1.7908333333333353" IsExpanded="true" />
-        <EntityTypeShape EntityType="pbmModel.WH_Relation_Cook_PLU" Width="1.5" PointX="2.75" PointY="8.75" Height="1.4535937500000031" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Relation_PLU_Condiment" Width="1.5" PointX="8.75" PointY="3.75" Height="1.4535937500000031" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" Width="1.5" PointX="8.75" PointY="6.75" Height="1.2849739583333388" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_CouponInformation" Width="1.5" PointX="8.75" PointY="9.75" Height="1.4535937500000031" IsExpanded="true" />
@@ -1585,6 +1591,7 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageFour" Width="1.5" PointX="17.375" PointY="3.75" Height="5.3318489583333246" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_KeyDesc" Width="1.5" PointX="17.375" PointY="10.75" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_KeyType" Width="1.5" PointX="17.375" PointY="13.75" Height="1.2849739583333246" />
+        <EntityTypeShape EntityType="pbmModel.WH_Relation_Cook_PLU" Width="1.5" PointX="3.375" PointY="8.75" Height="1.6222135416666674" />
       </Diagram>
     </Diagrams>
   </Designer>

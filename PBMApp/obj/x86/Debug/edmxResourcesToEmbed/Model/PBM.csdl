@@ -12,7 +12,6 @@
     <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
     <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
     <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.WH_PLU_Modifier" />
-    <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
     <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
     <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
     <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
@@ -45,6 +44,7 @@
     <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.WH_Sys_PageFour" />
     <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
     <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.WH_Sys_KeyType" />
+    <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -181,14 +181,6 @@
     <Property Name="Modifier_desc" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Name="Modifier_Unit_Quantity" Type="Int64" />
     <Property Name="Modifier_Price" Type="Decimal" Precision="18" Scale="4" />
-  </EntityType>
-  <EntityType Name="WH_Relation_Cook_PLU">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CookID" Type="Int64" />
-    <Property Name="PLUID" Type="Int64" />
   </EntityType>
   <EntityType Name="WH_Relation_PLU_Condiment">
     <Key>
@@ -536,5 +528,14 @@
     </Key>
     <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="Descs" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WH_Relation_Cook_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="CookID" />
+    <Property Type="Int64" Name="PLUID" />
+    <Property Type="Int64" Name="isFlag" />
   </EntityType>
 </Schema>

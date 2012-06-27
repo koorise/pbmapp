@@ -35,7 +35,7 @@ namespace PBMApp
                 dt.Columns.Add(dc1);
 
                 var q = from c in m.WH_Sys_Supplier
-                        orderby c.ID descending
+                        orderby c.ID ascending 
                         select c;
                 foreach (var w in q)
                 {
@@ -92,6 +92,10 @@ namespace PBMApp
                     int id;
                     int.TryParse(textBox1.Text, out id);
                     var ctx = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == id);
+                    if(ctx==null)
+                    {
+                        return;
+                    }
                     ctx.Description = textBox2.Text;
                     m.SaveChanges();
                 }
