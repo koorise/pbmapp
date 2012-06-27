@@ -45,31 +45,31 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.listBox1_Condiment = new System.Windows.Forms.ListBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.listBox2_Condiment = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.listBox2_Condiment = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.listBox1_Condiment = new System.Windows.Forms.ListBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.tbInventory = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbInventoryStock = new System.Windows.Forms.TextBox();
-            this.ckIsInventoryActive = new System.Windows.Forms.CheckBox();
-            this.cbInventoryChange = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.cbInventoryChange = new System.Windows.Forms.ComboBox();
+            this.ckIsInventoryActive = new System.Windows.Forms.CheckBox();
+            this.tbInventoryStock = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbInventory = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tbModifierDesc = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbModifiers = new System.Windows.Forms.ComboBox();
-            this.tbModifierUnitQuantity = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbModifierPrice = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tbModifierPrice = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbModifierUnitQuantity = new System.Windows.Forms.TextBox();
+            this.cbModifiers = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbModifierDesc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,25 +84,26 @@
             this.tbPrice3 = new System.Windows.Forms.TextBox();
             this.ckCondiment = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbPriceMat0 = new System.Windows.Forms.RadioButton();
             this.rbPriceMat1 = new System.Windows.Forms.RadioButton();
+            this.rbPriceMat0 = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbMode0 = new System.Windows.Forms.RadioButton();
             this.rbMode1 = new System.Windows.Forms.RadioButton();
+            this.rbMode0 = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.tbID = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listbox1_Cook_ALL = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.listBox2_Cook_Selected = new System.Windows.Forms.ListBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.listBox2_Cook_Selected = new System.Windows.Forms.ListBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listbox1_Cook_ALL = new System.Windows.Forms.ListBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.chkFS = new System.Windows.Forms.CheckBox();
             this.chkES = new System.Windows.Forms.CheckBox();
             this.chkMenu = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -127,7 +128,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(423, 745);
+            this.dataGridView1.Size = new System.Drawing.Size(430, 760);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -150,14 +151,14 @@
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripButton2});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 720);
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 735);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(423, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(430, 25);
             this.bindingNavigator1.TabIndex = 28;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -255,6 +256,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(27, 22);
             this.toolStripButton2.Text = "DEL";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // groupBox6
             // 
@@ -271,45 +273,14 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Condiment";
             // 
-            // button11
+            // label14
             // 
-            this.button11.Location = new System.Drawing.Point(183, 56);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(29, 23);
-            this.button11.TabIndex = 29;
-            this.button11.Text = "<<";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // listBox1_Condiment
-            // 
-            this.listBox1_Condiment.FormattingEnabled = true;
-            this.listBox1_Condiment.ItemHeight = 12;
-            this.listBox1_Condiment.Location = new System.Drawing.Point(27, 43);
-            this.listBox1_Condiment.Name = "listBox1_Condiment";
-            this.listBox1_Condiment.ScrollAlwaysVisible = true;
-            this.listBox1_Condiment.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1_Condiment.Size = new System.Drawing.Size(150, 88);
-            this.listBox1_Condiment.TabIndex = 27;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(183, 94);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(29, 23);
-            this.button12.TabIndex = 30;
-            this.button12.Text = ">>";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(57, 25);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 12);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "All Condiment";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(234, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(113, 12);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Selected Condiment";
             // 
             // listBox2_Condiment
             // 
@@ -322,14 +293,45 @@
             this.listBox2_Condiment.Size = new System.Drawing.Size(150, 88);
             this.listBox2_Condiment.TabIndex = 28;
             // 
-            // label14
+            // label13
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(234, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 12);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "Selected Condiment";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(57, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 12);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "All Condiment";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(183, 94);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(29, 23);
+            this.button12.TabIndex = 30;
+            this.button12.Text = ">>";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // listBox1_Condiment
+            // 
+            this.listBox1_Condiment.FormattingEnabled = true;
+            this.listBox1_Condiment.ItemHeight = 12;
+            this.listBox1_Condiment.Location = new System.Drawing.Point(27, 43);
+            this.listBox1_Condiment.Name = "listBox1_Condiment";
+            this.listBox1_Condiment.ScrollAlwaysVisible = true;
+            this.listBox1_Condiment.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBox1_Condiment.Size = new System.Drawing.Size(150, 88);
+            this.listBox1_Condiment.TabIndex = 27;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(183, 56);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(29, 23);
+            this.button11.TabIndex = 29;
+            this.button11.Text = "<<";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox5
             // 
@@ -347,49 +349,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Inventroy";
             // 
-            // tbInventory
+            // label15
             // 
-            this.tbInventory.Location = new System.Drawing.Point(114, 23);
-            this.tbInventory.Name = "tbInventory";
-            this.tbInventory.Size = new System.Drawing.Size(100, 21);
-            this.tbInventory.TabIndex = 17;
-            this.tbInventory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventory_KeyPress);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 12);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Inventory Stock";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(49, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 12);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Inventory";
-            // 
-            // tbInventoryStock
-            // 
-            this.tbInventoryStock.Location = new System.Drawing.Point(114, 47);
-            this.tbInventoryStock.Name = "tbInventoryStock";
-            this.tbInventoryStock.Size = new System.Drawing.Size(100, 21);
-            this.tbInventoryStock.TabIndex = 19;
-            this.tbInventoryStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventoryStock_KeyPress);
-            // 
-            // ckIsInventoryActive
-            // 
-            this.ckIsInventoryActive.AutoSize = true;
-            this.ckIsInventoryActive.Location = new System.Drawing.Point(68, -1);
-            this.ckIsInventoryActive.Name = "ckIsInventoryActive";
-            this.ckIsInventoryActive.Size = new System.Drawing.Size(120, 16);
-            this.ckIsInventoryActive.TabIndex = 17;
-            this.ckIsInventoryActive.Text = "Inventroy Active";
-            this.ckIsInventoryActive.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1, 74);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(107, 12);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Inventory Changes";
             // 
             // cbInventoryChange
             // 
@@ -404,14 +371,49 @@
             this.cbInventoryChange.Size = new System.Drawing.Size(100, 20);
             this.cbInventoryChange.TabIndex = 20;
             // 
-            // label15
+            // ckIsInventoryActive
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1, 74);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(107, 12);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Inventory Changes";
+            this.ckIsInventoryActive.AutoSize = true;
+            this.ckIsInventoryActive.Location = new System.Drawing.Point(68, -1);
+            this.ckIsInventoryActive.Name = "ckIsInventoryActive";
+            this.ckIsInventoryActive.Size = new System.Drawing.Size(120, 16);
+            this.ckIsInventoryActive.TabIndex = 17;
+            this.ckIsInventoryActive.Text = "Inventroy Active";
+            this.ckIsInventoryActive.UseVisualStyleBackColor = true;
+            // 
+            // tbInventoryStock
+            // 
+            this.tbInventoryStock.Location = new System.Drawing.Point(114, 47);
+            this.tbInventoryStock.Name = "tbInventoryStock";
+            this.tbInventoryStock.Size = new System.Drawing.Size(100, 21);
+            this.tbInventoryStock.TabIndex = 19;
+            this.tbInventoryStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventoryStock_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(49, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 12);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Inventory";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 12);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Inventory Stock";
+            // 
+            // tbInventory
+            // 
+            this.tbInventory.Location = new System.Drawing.Point(114, 23);
+            this.tbInventory.Name = "tbInventory";
+            this.tbInventory.Size = new System.Drawing.Size(100, 21);
+            this.tbInventory.TabIndex = 17;
+            this.tbInventory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventory_KeyPress);
             // 
             // groupBox4
             // 
@@ -432,74 +434,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Modifier";
             // 
-            // tbModifierDesc
+            // button2
             // 
-            this.tbModifierDesc.Location = new System.Drawing.Point(99, 40);
-            this.tbModifierDesc.Name = "tbModifierDesc";
-            this.tbModifierDesc.Size = new System.Drawing.Size(100, 21);
-            this.tbModifierDesc.TabIndex = 21;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 69);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 12);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Unit Quantity";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 12);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Description";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(55, 93);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 12);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Price";
-            // 
-            // cbModifiers
-            // 
-            this.cbModifiers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbModifiers.FormattingEnabled = true;
-            this.cbModifiers.Location = new System.Drawing.Point(99, 17);
-            this.cbModifiers.Name = "cbModifiers";
-            this.cbModifiers.Size = new System.Drawing.Size(42, 20);
-            this.cbModifiers.TabIndex = 19;
-            this.cbModifiers.SelectedIndexChanged += new System.EventHandler(this.cbModifiers_SelectedIndexChanged);
-            // 
-            // tbModifierUnitQuantity
-            // 
-            this.tbModifierUnitQuantity.Location = new System.Drawing.Point(99, 64);
-            this.tbModifierUnitQuantity.Name = "tbModifierUnitQuantity";
-            this.tbModifierUnitQuantity.Size = new System.Drawing.Size(100, 21);
-            this.tbModifierUnitQuantity.TabIndex = 24;
-            this.tbModifierUnitQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierUnitQuantity_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(37, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Modifier";
-            // 
-            // tbModifierPrice
-            // 
-            this.tbModifierPrice.Location = new System.Drawing.Point(99, 89);
-            this.tbModifierPrice.Name = "tbModifierPrice";
-            this.tbModifierPrice.Size = new System.Drawing.Size(100, 21);
-            this.tbModifierPrice.TabIndex = 25;
-            this.tbModifierPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierPrice_KeyPress);
+            this.button2.Location = new System.Drawing.Point(56, 116);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 24);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "ADD";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -511,15 +454,74 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // tbModifierPrice
             // 
-            this.button2.Location = new System.Drawing.Point(56, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 24);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.tbModifierPrice.Location = new System.Drawing.Point(99, 89);
+            this.tbModifierPrice.Name = "tbModifierPrice";
+            this.tbModifierPrice.Size = new System.Drawing.Size(100, 21);
+            this.tbModifierPrice.TabIndex = 25;
+            this.tbModifierPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierPrice_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(37, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Modifier";
+            // 
+            // tbModifierUnitQuantity
+            // 
+            this.tbModifierUnitQuantity.Location = new System.Drawing.Point(99, 64);
+            this.tbModifierUnitQuantity.Name = "tbModifierUnitQuantity";
+            this.tbModifierUnitQuantity.Size = new System.Drawing.Size(100, 21);
+            this.tbModifierUnitQuantity.TabIndex = 24;
+            this.tbModifierUnitQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierUnitQuantity_KeyPress);
+            // 
+            // cbModifiers
+            // 
+            this.cbModifiers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbModifiers.FormattingEnabled = true;
+            this.cbModifiers.Location = new System.Drawing.Point(99, 17);
+            this.cbModifiers.Name = "cbModifiers";
+            this.cbModifiers.Size = new System.Drawing.Size(42, 20);
+            this.cbModifiers.TabIndex = 19;
+            this.cbModifiers.SelectedIndexChanged += new System.EventHandler(this.cbModifiers_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(55, 93);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 12);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Price";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 12);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Description";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 12);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Unit Quantity";
+            // 
+            // tbModifierDesc
+            // 
+            this.tbModifierDesc.Location = new System.Drawing.Point(99, 40);
+            this.tbModifierDesc.Name = "tbModifierDesc";
+            this.tbModifierDesc.Size = new System.Drawing.Size(100, 21);
+            this.tbModifierDesc.TabIndex = 21;
             // 
             // label1
             // 
@@ -631,6 +633,7 @@
             this.ckCondiment.TabIndex = 26;
             this.ckCondiment.Text = "Condiment";
             this.ckCondiment.UseVisualStyleBackColor = true;
+            this.ckCondiment.CheckedChanged += new System.EventHandler(this.ckCondiment_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -643,27 +646,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Price Format";
             // 
-            // rbPriceMat0
-            // 
-            this.rbPriceMat0.AutoSize = true;
-            this.rbPriceMat0.Location = new System.Drawing.Point(29, 21);
-            this.rbPriceMat0.Name = "rbPriceMat0";
-            this.rbPriceMat0.Size = new System.Drawing.Size(59, 16);
-            this.rbPriceMat0.TabIndex = 0;
-            this.rbPriceMat0.TabStop = true;
-            this.rbPriceMat0.Text = "0-Open";
-            this.rbPriceMat0.UseVisualStyleBackColor = true;
-            // 
             // rbPriceMat1
             // 
             this.rbPriceMat1.AutoSize = true;
             this.rbPriceMat1.Location = new System.Drawing.Point(117, 21);
             this.rbPriceMat1.Name = "rbPriceMat1";
-            this.rbPriceMat1.Size = new System.Drawing.Size(71, 16);
+            this.rbPriceMat1.Size = new System.Drawing.Size(59, 16);
             this.rbPriceMat1.TabIndex = 1;
             this.rbPriceMat1.TabStop = true;
-            this.rbPriceMat1.Text = "1-Preset";
+            this.rbPriceMat1.Text = "Preset";
             this.rbPriceMat1.UseVisualStyleBackColor = true;
+            // 
+            // rbPriceMat0
+            // 
+            this.rbPriceMat0.AutoSize = true;
+            this.rbPriceMat0.Location = new System.Drawing.Point(29, 21);
+            this.rbPriceMat0.Name = "rbPriceMat0";
+            this.rbPriceMat0.Size = new System.Drawing.Size(47, 16);
+            this.rbPriceMat0.TabIndex = 0;
+            this.rbPriceMat0.TabStop = true;
+            this.rbPriceMat0.Text = "Open";
+            this.rbPriceMat0.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -676,17 +679,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mode";
             // 
-            // rbMode0
-            // 
-            this.rbMode0.AutoSize = true;
-            this.rbMode0.Location = new System.Drawing.Point(29, 21);
-            this.rbMode0.Name = "rbMode0";
-            this.rbMode0.Size = new System.Drawing.Size(59, 16);
-            this.rbMode0.TabIndex = 0;
-            this.rbMode0.TabStop = true;
-            this.rbMode0.Text = "Normal";
-            this.rbMode0.UseVisualStyleBackColor = true;
-            // 
             // rbMode1
             // 
             this.rbMode1.AutoSize = true;
@@ -697,6 +689,17 @@
             this.rbMode1.TabStop = true;
             this.rbMode1.Text = "Menu";
             this.rbMode1.UseVisualStyleBackColor = true;
+            // 
+            // rbMode0
+            // 
+            this.rbMode0.AutoSize = true;
+            this.rbMode0.Location = new System.Drawing.Point(29, 21);
+            this.rbMode0.Name = "rbMode0";
+            this.rbMode0.Size = new System.Drawing.Size(59, 16);
+            this.rbMode0.TabIndex = 0;
+            this.rbMode0.TabStop = true;
+            this.rbMode0.Text = "Normal";
+            this.rbMode0.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -727,6 +730,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.comboBox1);
             this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Controls.Add(this.listBox2_Cook_Selected);
             this.groupBox7.Controls.Add(this.label18);
@@ -740,45 +744,14 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Cooking Message Setting";
             // 
-            // button5
+            // label17
             // 
-            this.button5.Location = new System.Drawing.Point(183, 56);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 23);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "<<";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // listbox1_Cook_ALL
-            // 
-            this.listbox1_Cook_ALL.FormattingEnabled = true;
-            this.listbox1_Cook_ALL.ItemHeight = 12;
-            this.listbox1_Cook_ALL.Location = new System.Drawing.Point(27, 43);
-            this.listbox1_Cook_ALL.Name = "listbox1_Cook_ALL";
-            this.listbox1_Cook_ALL.ScrollAlwaysVisible = true;
-            this.listbox1_Cook_ALL.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listbox1_Cook_ALL.Size = new System.Drawing.Size(150, 88);
-            this.listbox1_Cook_ALL.TabIndex = 27;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(183, 94);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(29, 23);
-            this.button4.TabIndex = 30;
-            this.button4.Text = ">>";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(57, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(23, 12);
-            this.label18.TabIndex = 31;
-            this.label18.Text = "ALL";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(234, 25);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 12);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Selected(Max 6)";
             // 
             // listBox2_Cook_Selected
             // 
@@ -791,14 +764,45 @@
             this.listBox2_Cook_Selected.Size = new System.Drawing.Size(150, 88);
             this.listBox2_Cook_Selected.TabIndex = 28;
             // 
-            // label17
+            // label18
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(234, 25);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 12);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "Selected(Max 6)";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(57, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(23, 12);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "ALL";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(183, 94);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(29, 23);
+            this.button4.TabIndex = 30;
+            this.button4.Text = ">>";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listbox1_Cook_ALL
+            // 
+            this.listbox1_Cook_ALL.FormattingEnabled = true;
+            this.listbox1_Cook_ALL.ItemHeight = 12;
+            this.listbox1_Cook_ALL.Location = new System.Drawing.Point(27, 43);
+            this.listbox1_Cook_ALL.Name = "listbox1_Cook_ALL";
+            this.listbox1_Cook_ALL.ScrollAlwaysVisible = true;
+            this.listbox1_Cook_ALL.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listbox1_Cook_ALL.Size = new System.Drawing.Size(150, 88);
+            this.listbox1_Cook_ALL.TabIndex = 27;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(183, 56);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(29, 23);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "<<";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // chkFS
             // 
@@ -859,25 +863,39 @@
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(423, 0);
+            this.groupBox1.Location = new System.Drawing.Point(430, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(503, 745);
+            this.groupBox1.Size = new System.Drawing.Size(503, 760);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PLU Information";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBox1.Location = new System.Drawing.Point(148, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.TabIndex = 33;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frm_PLU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(926, 745);
+            this.ClientSize = new System.Drawing.Size(933, 760);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frm_PLU";
             this.Text = "PLU Setting";
             this.Load += new System.EventHandler(this.frm_PLU_Load);
@@ -979,6 +997,7 @@
         private System.Windows.Forms.CheckBox chkES;
         private System.Windows.Forms.CheckBox chkMenu;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
 
     }
 }

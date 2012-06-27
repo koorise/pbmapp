@@ -50,7 +50,8 @@ namespace PBMApp
                 Combox_Condiment_Selected(id);
                 Combox_Condiment_ALL();
                 ListBox_Cooking_ALL();
-                ListBox_Cooking_Selected(id);
+                comboBox1.SelectedIndex = 0;
+                ListBox_Cooking_Selected(id,1);
 
 
             }
@@ -59,14 +60,14 @@ namespace PBMApp
         /// 已选口味信息
         /// </summary>
         /// <param name="pluid"></param>
-        private void ListBox_Cooking_Selected(int pluid)
+        private void ListBox_Cooking_Selected(int pluid,int isflag)
         {
             listBox2_Cook_Selected.Items.Clear();
             using (var m=new Entities())
             {
                 var q = from c in m.WH_Relation_Cook_PLU
                         from b in m.WH_CookInformation
-                        where c.PLUID == pluid && c.CookID==b.ID
+                        where c.PLUID == pluid && c.CookID==b.ID && c.isFlag==isflag
                         select new
                                    {
                                        c.CookID,b.Description
@@ -246,7 +247,7 @@ namespace PBMApp
             {
                 dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
-
+            
         }
 
         private void frm_PLU_Load(object sender, EventArgs e)
@@ -303,13 +304,7 @@ namespace PBMApp
                     m.SaveChanges();
                 }
 
-                foreach (ComboBoxItem cb in listBox2_Cook_Selected.Items)
-                {
-                    WH_Relation_Cook_PLU wp = new WH_Relation_Cook_PLU();
-                    wp.PLUID = id;
-                    wp.CookID = int.Parse(cb.Value.ToString());
-                    m.AddToWH_Relation_Cook_PLU(wp);
-                }
+               
                 m.SaveChanges();
             }
           
@@ -391,14 +386,25 @@ namespace PBMApp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            foreach (ComboBoxItem cb in listbox1_Cook_ALL.SelectedItems)
+            int pluid = int.Parse(tbID.Text);
+            using (var m = new Entities())
             {
-                if(listBox2_Cook_Selected.Items.Count<6)
+                foreach (ComboBoxItem cb in listbox1_Cook_ALL.SelectedItems)
                 {
-                    listBox2_Cook_Selected.Items.Add(cb); 
+                    if (listBox2_Cook_Selected.Items.Count < 6)
+                    {
+                        listBox2_Cook_Selected.Items.Add(cb);
+                        WH_Relation_Cook_PLU wp = new WH_Relation_Cook_PLU();
+                        wp.PLUID = pluid;
+                        wp.CookID = int.Parse(cb.Value.ToString());
+                        wp.isFlag = comboBox1.SelectedIndex + 1;
+                        m.AddToWH_Relation_Cook_PLU(wp);
+                    }
                 }
-                
+                m.SaveChanges();
             }
+            
+             
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -406,7 +412,18 @@ namespace PBMApp
             List<int> ints1 = new List<int>();
             foreach (ComboBoxItem cb in listBox2_Cook_Selected.SelectedItems)
             {
-                ints1.Add(int.Parse(cb.Value.ToString()));
+                int pluid = int.Parse(tbID.Text);
+                int isFlag = comboBox1.SelectedIndex + 1;
+                int cookID = int.Parse(cb.Value.ToString());
+                ints1.Add(cookID);
+                using (var m = new Entities())
+                {
+                    WH_Relation_Cook_PLU q = (from c in m.WH_Relation_Cook_PLU
+                            where c.PLUID == pluid && c.isFlag == isFlag && c.CookID ==cookID
+                            select c).FirstOrDefault();
+                    m.DeleteObject(q);
+                    m.SaveChanges();
+                }
             }
             List<int> ints = new List<int>();
             for (int i = 0; i < listBox2_Cook_Selected.Items.Count; i++)
@@ -597,7 +614,7 @@ namespace PBMApp
                 Combox_Condiment_Selected(id);
                 Combox_Condiment_ALL();
                 ListBox_Cooking_ALL();
-                ListBox_Cooking_Selected(id);
+                ListBox_Cooking_Selected(id,1);
 
 
             }
@@ -626,6 +643,67 @@ namespace PBMApp
         
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            using (var m = new Entities())
+            {
+                int ID = int.Parse((from c in m.WH_PLU
+                                    orderby c.ID descending
+                                    select c.ID).FirstOrDefault().ToString()) + 1;
+                WH_PLU p = new WH_PLU();
+                p.Bar_Code = ID.ToString().PadLeft(13, '0');
+                p.Description = "PLU#" + p.Bar_Code;
+                p.Dept_No = 1;
+                p.Price1 = 0;
+                p.Price2 = 0;
+                p.Price3 = 0;
+                p.PriceMat = 0;
+                p.isMode = 0;
+                p.isMenu = 0;
+                p.isCondiment = 0;
+                p.FS_Tenderable = 0;
+                p.ExemptServTax = 0;
+                m.AddToWH_PLU(p);
+                m.SaveChanges();
+            }
+            BindData();
+            using (var m = new Entities())
+            {
+                int index = (from c in m.WH_PLU
+                             select c).Count() - 1;
+                dataGridView1.Rows[index].Selected = true;
+            }
+            
+            BindDetail();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            using (var m = new Entities())
+            {
+                var q = m.WH_PLU.FirstOrDefault(x => x.ID == id);
+                m.DeleteObject(q);
+                m.SaveChanges();
+            }
+            BindData();
+            BindDetail();
+        }
+
+        private void ckCondiment_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ckCondiment.Checked)
+            {
+                groupBox6.Enabled = false;
+            }
+            else
+            {
+                groupBox6.Enabled = true;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int pluid = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            ListBox_Cooking_Selected(pluid, comboBox1.SelectedIndex + 1);
 
         }
 

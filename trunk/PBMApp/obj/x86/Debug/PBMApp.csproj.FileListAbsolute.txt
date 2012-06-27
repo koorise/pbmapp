@@ -46,3 +46,5 @@ D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageThree.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageTwo.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_Port_KP.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_KeyDesc.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_kp_preview.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_kp_preview_sigle.resources

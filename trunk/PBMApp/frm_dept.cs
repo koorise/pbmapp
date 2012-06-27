@@ -617,5 +617,48 @@ namespace PBMApp
         {
             BindDetail();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Department
+                        select c;
+                foreach (var w in q)
+                {
+                    w.Description = "DEPT" + w.ID.ToString().PadLeft(3, '0');
+                    w.High_Digit_LockOut = 7;
+                    w.isDirectSale = 0;
+                    w.isAge = 1;
+                    w.isPrice = 0;
+                    w.DepartmentGroup = 0;
+                    w.KP = 0;
+                    w.KP2 = 0;
+                    w.KP_receipt = 0;
+                    w.isMode = 0;
+                    w.isPriceFormat = 0;
+                    w.isType = 0;
+                    w.isVat_Tax_GST = 0;
+                    w.str_Vat_Tax_GST = "0";
+                    w.FS_Tenderable = 0;
+                }
+                m.SaveChanges();  
+            }
+            BindData();
+        }
+
+        private void rbKP0_CheckedChanged(object sender, EventArgs e)
+        {
+            frm_kp_preview_sigle frm1 = new frm_kp_preview_sigle();
+            frm_kp_preview frm2 = new frm_kp_preview();
+            if(rbKP0.Checked)
+            {
+                frm1.ShowDialog();
+             }
+            else
+            {
+                frm2.ShowDialog();
+            }
+        }
     }
 }

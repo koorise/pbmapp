@@ -86,6 +86,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -253,6 +254,7 @@
             this.rbVat0.TabStop = true;
             this.rbVat0.Text = "None";
             this.rbVat0.UseVisualStyleBackColor = true;
+            this.rbVat0.Visible = false;
             // 
             // rbVat2
             // 
@@ -318,6 +320,7 @@
             this.rbKP0.TabIndex = 1;
             this.rbKP0.Text = "Single";
             this.rbKP0.UseVisualStyleBackColor = true;
+            this.rbKP0.CheckedChanged += new System.EventHandler(this.rbKP0_CheckedChanged);
             // 
             // rbKP1
             // 
@@ -347,9 +350,9 @@
             this.rbType1.AutoSize = true;
             this.rbType1.Location = new System.Drawing.Point(6, 42);
             this.rbType1.Name = "rbType1";
-            this.rbType1.Size = new System.Drawing.Size(71, 16);
+            this.rbType1.Size = new System.Drawing.Size(59, 16);
             this.rbType1.TabIndex = 1;
-            this.rbType1.Text = "1-Single";
+            this.rbType1.Text = "Single";
             this.rbType1.UseVisualStyleBackColor = true;
             // 
             // rbType0
@@ -358,10 +361,10 @@
             this.rbType0.Checked = true;
             this.rbType0.Location = new System.Drawing.Point(6, 20);
             this.rbType0.Name = "rbType0";
-            this.rbType0.Size = new System.Drawing.Size(71, 16);
+            this.rbType0.Size = new System.Drawing.Size(59, 16);
             this.rbType0.TabIndex = 0;
             this.rbType0.TabStop = true;
-            this.rbType0.Text = "0-Normal";
+            this.rbType0.Text = "Normal";
             this.rbType0.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -380,9 +383,9 @@
             this.rbPriceFormat1.AutoSize = true;
             this.rbPriceFormat1.Location = new System.Drawing.Point(6, 42);
             this.rbPriceFormat1.Name = "rbPriceFormat1";
-            this.rbPriceFormat1.Size = new System.Drawing.Size(71, 16);
+            this.rbPriceFormat1.Size = new System.Drawing.Size(59, 16);
             this.rbPriceFormat1.TabIndex = 1;
-            this.rbPriceFormat1.Text = "1-Preset";
+            this.rbPriceFormat1.Text = "Preset";
             this.rbPriceFormat1.UseVisualStyleBackColor = true;
             // 
             // rbPriceFormat0
@@ -391,10 +394,10 @@
             this.rbPriceFormat0.Checked = true;
             this.rbPriceFormat0.Location = new System.Drawing.Point(6, 20);
             this.rbPriceFormat0.Name = "rbPriceFormat0";
-            this.rbPriceFormat0.Size = new System.Drawing.Size(59, 16);
+            this.rbPriceFormat0.Size = new System.Drawing.Size(47, 16);
             this.rbPriceFormat0.TabIndex = 0;
             this.rbPriceFormat0.TabStop = true;
-            this.rbPriceFormat0.Text = "0-Open";
+            this.rbPriceFormat0.Text = "Open";
             this.rbPriceFormat0.UseVisualStyleBackColor = true;
             // 
             // cbisVat
@@ -629,7 +632,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripButton1});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 649);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -732,6 +736,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(39, 22);
+            this.toolStripButton1.Text = "RESET";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // frm_dept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -795,7 +809,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.CheckedListBox chkTax;
-        private System.Windows.Forms.RadioButton rbVat0;
         private System.Windows.Forms.RadioButton rbVat4;
         private System.Windows.Forms.RadioButton rbVat3;
         private System.Windows.Forms.RadioButton rbVat2;
@@ -823,5 +836,7 @@
         private System.Windows.Forms.ComboBox cbKP2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox chkFS;
+        private System.Windows.Forms.RadioButton rbVat0;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
