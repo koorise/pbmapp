@@ -128,7 +128,8 @@
             this.comboBox10.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox10.Location = new System.Drawing.Point(252, 165);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(135, 20);
@@ -161,7 +162,8 @@
             this.comboBox8.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox8.Location = new System.Drawing.Point(252, 136);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(135, 20);
@@ -194,7 +196,8 @@
             this.comboBox6.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox6.Location = new System.Drawing.Point(252, 107);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(135, 20);
@@ -227,7 +230,8 @@
             this.comboBox4.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox4.Location = new System.Drawing.Point(252, 78);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(135, 20);
@@ -252,6 +256,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 20);
             this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -260,11 +265,13 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox1.Location = new System.Drawing.Point(252, 49);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(135, 20);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -367,7 +374,8 @@
             this.comboBox12.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox12.Location = new System.Drawing.Point(252, 165);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(135, 20);
@@ -400,7 +408,8 @@
             this.comboBox14.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox14.Location = new System.Drawing.Point(252, 136);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(135, 20);
@@ -433,7 +442,8 @@
             this.comboBox16.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox16.Location = new System.Drawing.Point(252, 107);
             this.comboBox16.Name = "comboBox16";
             this.comboBox16.Size = new System.Drawing.Size(135, 20);
@@ -466,7 +476,8 @@
             this.comboBox18.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox18.Location = new System.Drawing.Point(252, 78);
             this.comboBox18.Name = "comboBox18";
             this.comboBox18.Size = new System.Drawing.Size(135, 20);
@@ -499,7 +510,8 @@
             this.comboBox20.Items.AddRange(new object[] {
             "Double Width",
             "Double Height",
-            "Double Width & Height"});
+            "Double Width & Height",
+            "Normal"});
             this.comboBox20.Location = new System.Drawing.Point(252, 49);
             this.comboBox20.Name = "comboBox20";
             this.comboBox20.Size = new System.Drawing.Size(135, 20);
