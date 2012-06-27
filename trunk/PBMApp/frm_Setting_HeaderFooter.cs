@@ -17,7 +17,8 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-         
+
+        public int pageLoad = 0;
         private void frm_Setting_HeaderFooter_Load(object sender, EventArgs e)
         { 
             using (var m = new Entities())
@@ -85,6 +86,8 @@ namespace PBMApp
                     }
                 }
             #endregion
+
+                pageLoad++;
 
                 #region BundelSaving ReceiptNum
                 var br = from c in m.WH_Sys_BundleSaving_ReceiptNumber
@@ -195,7 +198,10 @@ namespace PBMApp
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if(pageLoad==0)
+            {
+                return;
+            }
 
             switch (comboBox1.SelectedIndex)
             {
@@ -222,7 +228,10 @@ namespace PBMApp
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (pageLoad == 0)
+            {
+                return;
+            }
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
