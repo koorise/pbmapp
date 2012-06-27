@@ -259,6 +259,42 @@
     <Compile Include="frm_TouchScreen_Payment.Designer.cs">
       <DependentUpon>frm_TouchScreen_Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeaderFooterPreview\frm_a.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_a.Designer.cs">
+      <DependentUpon>frm_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_b.Designer.cs">
+      <DependentUpon>frm_b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_c.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_c.Designer.cs">
+      <DependentUpon>frm_c.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_d.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_d.Designer.cs">
+      <DependentUpon>frm_d.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_e.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_e.Designer.cs">
+      <DependentUpon>frm_e.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_f.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_f.Designer.cs">
+      <DependentUpon>frm_f.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\PBM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -369,6 +405,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_TouchScreen_Payment.resx">
       <DependentUpon>frm_TouchScreen_Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderFooterPreview\frm_a.resx">
+      <DependentUpon>frm_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderFooterPreview\frm_b.resx">
+      <DependentUpon>frm_b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderFooterPreview\frm_c.resx">
+      <DependentUpon>frm_c.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderFooterPreview\frm_d.resx">
+      <DependentUpon>frm_d.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderFooterPreview\frm_e.resx">
+      <DependentUpon>frm_e.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderFooterPreview\frm_f.resx">
+      <DependentUpon>frm_f.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

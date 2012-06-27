@@ -48,3 +48,9 @@ D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_Port_KP.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_KeyDesc.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_kp_preview.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_kp_preview_sigle.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_a.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_b.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_c.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_d.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_e.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_f.resources

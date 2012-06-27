@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PBMApp.HeaderFooterPreview;
 using PBMApp.Model;
 
 namespace PBMApp
@@ -16,10 +17,9 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-
+         
         private void frm_Setting_HeaderFooter_Load(object sender, EventArgs e)
-        {
-            
+        { 
             using (var m = new Entities())
             {
                 #region header footer init
@@ -190,6 +190,53 @@ namespace PBMApp
                 #endregion
                 m.SaveChanges();
                 MessageBox.Show("success！", "alert");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    frm_a frma = new frm_a();
+                    frma.ShowDialog();
+                    break;
+                case 3:
+                    frm_b frmb = new frm_b();
+                    frmb.ShowDialog();
+                    break;
+                case 1:
+                    frm_c frmC=new frm_c();
+                    frmC.ShowDialog();
+                    break;
+                case 2:
+                    frm_d frmD=new frm_d();
+                    frmD.ShowDialog();
+                    break;
+                default: break;
+                    
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    frm_e frme = new frm_e();
+                    frme.ShowDialog();
+                    break;
+                
+                case 2:
+                    frm_f frmf = new frm_f();
+                    frmf.ShowDialog();
+                    break;
+                
+                default: break;
+
             }
         }
     }
