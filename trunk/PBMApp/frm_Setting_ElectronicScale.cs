@@ -20,6 +20,8 @@ namespace PBMApp
          
         private void frm_Setting_ElectronicScale_Load(object sender, EventArgs e)
         {
+            tbTare.KeyPress += (Tools.Validate.KeyPress);
+            tbBarcode.KeyPress += (Tools.Validate.KeyPress);
             using (var m = new Entities())
             {
                 #region 部门绑定

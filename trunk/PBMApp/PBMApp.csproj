@@ -304,6 +304,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\ComboBoxItem.cs" />
     <Compile Include="Tools\Config.cs" />
+    <Compile Include="Tools\validate.cs" />
     <EmbeddedResource Include="frm_bundle.resx">
       <DependentUpon>frm_bundle.cs</DependentUpon>
     </EmbeddedResource>

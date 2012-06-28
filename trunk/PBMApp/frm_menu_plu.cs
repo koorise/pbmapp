@@ -297,7 +297,7 @@ namespace PBMApp
                          where c.ID == MenuID
                          select c).FirstOrDefault();
                 tbDesc.Text = q.Description;
-                cbIsMode.SelectedIndex = int.Parse(q.isMode.ToString());
+                //cbIsMode.SelectedIndex = int.Parse(q.isMode.ToString());
                 if (cbIsMode.SelectedIndex == 1)
                 {
                     panel1.Enabled = false;
@@ -328,6 +328,32 @@ namespace PBMApp
 
             dataGridView1.Enabled = true;
             dataGridView2.Enabled = true;
+        }
+
+        private void tbPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(((e.KeyChar >= '0') && (e.KeyChar <= '9')) || e.KeyChar <= 31))
+            {
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                        e.Handled = true;
+                }
+                else
+                    e.Handled = true;
+            }
+            else
+            {
+                if (e.KeyChar <= 31)
+                {
+                    e.Handled = false;
+                }
+                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                {
+                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                        e.Handled = true;
+                }
+            }
         }
     }
 }

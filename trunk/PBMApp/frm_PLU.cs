@@ -27,6 +27,13 @@ namespace PBMApp
             {
                 return;
             }
+            tbPrice1.KeyPress += (Tools.Validate.KeyPress);
+            tbPrice2.KeyPress += (Tools.Validate.KeyPress);
+            tbPrice3.KeyPress += (Tools.Validate.KeyPress);
+            tbInventory.KeyPress += (Tools.Validate.KeyPress);
+            tbInventoryStock.KeyPress += (Tools.Validate.KeyPress);
+            tbModifierPrice.KeyPress += (Tools.Validate.KeyPress);
+            tbModifierUnitQuantity.KeyPress += (Tools.Validate.KeyPress);
             id = int.Parse(dataGridView1.Rows[id].Cells[0].Value.ToString());
             tbID.Text = id.ToString();
             using (var m=new Entities())
@@ -445,149 +452,37 @@ namespace PBMApp
 
         private void tbPrice1_KeyPress(object sender, KeyPressEventArgs e)
         {
-             if ((Convert.ToInt32(e.KeyChar) == 8))
-              {
-                  e.Handled = false;
-              }
-              else
-              {
-                  Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                 Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                 if (Result.Success)
-                 {
-                    e.Handled = false;
-                 }
-                 else
-                 {
-                     e.Handled = true;
-                 }
-             }
+
         }
 
         private void tbPrice2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
+
         }
 
         private void tbPrice3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
+
         }
 
         private void tbInventory_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
+
         }
 
         private void tbInventoryStock_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
+
         }
 
         private void tbModifierUnitQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
+
         }
 
         private void tbModifierPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
+
         }
 
         private void BindDetail()

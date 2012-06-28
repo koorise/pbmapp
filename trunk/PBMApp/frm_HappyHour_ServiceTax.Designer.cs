@@ -51,7 +51,7 @@
             this.b1 = new System.Windows.Forms.ComboBox();
             this.a1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox5 = new System.Windows.Forms.CheckedListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@
             this.b5 = new System.Windows.Forms.ComboBox();
             this.a5 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.groupBox1.Controls.Add(this.b1);
             this.groupBox1.Controls.Add(this.a1);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkedListBox1);
+            this.groupBox1.Controls.Add(this.checkedListBox5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -331,11 +331,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkedListBox1
+            // checkedListBox5
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBox5.CheckOnClick = true;
+            this.checkedListBox5.FormattingEnabled = true;
+            this.checkedListBox5.Items.AddRange(new object[] {
             "Sunday",
             "Monday",
             "Tuesday",
@@ -343,11 +343,11 @@
             "Thursday",
             "Friday",
             "Saturday"});
-            this.checkedListBox1.Location = new System.Drawing.Point(265, 32);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(111, 116);
-            this.checkedListBox1.TabIndex = 8;
+            this.checkedListBox5.Location = new System.Drawing.Point(265, 32);
+            this.checkedListBox5.MultiColumn = true;
+            this.checkedListBox5.Name = "checkedListBox5";
+            this.checkedListBox5.Size = new System.Drawing.Size(111, 116);
+            this.checkedListBox5.TabIndex = 8;
             // 
             // label4
             // 
@@ -410,7 +410,7 @@
             this.groupBox2.Controls.Add(this.b5);
             this.groupBox2.Controls.Add(this.a5);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.checkedListBox2);
+            this.groupBox2.Controls.Add(this.checkedListBox4);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
@@ -640,11 +640,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkedListBox2
+            // checkedListBox4
             // 
-            this.checkedListBox2.CheckOnClick = true;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
+            this.checkedListBox4.CheckOnClick = true;
+            this.checkedListBox4.FormattingEnabled = true;
+            this.checkedListBox4.Items.AddRange(new object[] {
             "Sunday",
             "Monday",
             "Tuesday",
@@ -652,11 +652,11 @@
             "Thursday",
             "Friday",
             "Saturday"});
-            this.checkedListBox2.Location = new System.Drawing.Point(269, 76);
-            this.checkedListBox2.MultiColumn = true;
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(111, 116);
-            this.checkedListBox2.TabIndex = 14;
+            this.checkedListBox4.Location = new System.Drawing.Point(269, 76);
+            this.checkedListBox4.MultiColumn = true;
+            this.checkedListBox4.Name = "checkedListBox4";
+            this.checkedListBox4.Size = new System.Drawing.Size(111, 116);
+            this.checkedListBox4.TabIndex = 14;
             // 
             // label11
             // 
@@ -700,6 +700,7 @@
             this.tbRate.Name = "tbRate";
             this.tbRate.Size = new System.Drawing.Size(100, 21);
             this.tbRate.TabIndex = 5;
+            this.tbRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRate_KeyPress);
             // 
             // tbName
             // 
@@ -757,14 +758,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.CheckedListBox checkedListBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;

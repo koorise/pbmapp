@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,25 +36,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox1b = new System.Windows.Forms.ComboBox();
+            this.comboBox2b = new System.Windows.Forms.ComboBox();
+            this.comboBox3b = new System.Windows.Forms.ComboBox();
+            this.comboBox4b = new System.Windows.Forms.ComboBox();
+            this.comboBox5b = new System.Windows.Forms.ComboBox();
+            this.comboBox6b = new System.Windows.Forms.ComboBox();
+            this.comboBox7b = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboBox8b = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // checkedListBox1
+            // checkedListBox3
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.ColumnWidth = 300;
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBox3.CheckOnClick = true;
+            this.checkedListBox3.ColumnWidth = 300;
+            this.checkedListBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkedListBox3.FormattingEnabled = true;
+            this.checkedListBox3.Items.AddRange(new object[] {
             "Enable key description refresh",
             "Change to tips need confirm",
             "Special RM active",
@@ -76,11 +76,11 @@
             "Print the Z counter",
             "Print Total Transactions",
             "Compulsory PM Declaration"});
-            this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(702, 212);
-            this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox3.Location = new System.Drawing.Point(0, 0);
+            this.checkedListBox3.MultiColumn = true;
+            this.checkedListBox3.Name = "checkedListBox3";
+            this.checkedListBox3.Size = new System.Drawing.Size(702, 212);
+            this.checkedListBox3.TabIndex = 0;
             // 
             // label1
             // 
@@ -145,101 +145,101 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "KP Print Setting";
             // 
-            // comboBox1
+            // comboBox1b
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox1b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1b.FormattingEnabled = true;
+            this.comboBox1b.Items.AddRange(new object[] {
             "New Jersey",
             "illinois"});
-            this.comboBox1.Location = new System.Drawing.Point(194, 217);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 8;
+            this.comboBox1b.Location = new System.Drawing.Point(194, 217);
+            this.comboBox1b.Name = "comboBox1b";
+            this.comboBox1b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1b.TabIndex = 8;
             // 
-            // comboBox2
+            // comboBox2b
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox2b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2b.FormattingEnabled = true;
+            this.comboBox2b.Items.AddRange(new object[] {
             "No return",
             "Local currency",
             "Payment Media"});
-            this.comboBox2.Location = new System.Drawing.Point(194, 243);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 9;
+            this.comboBox2b.Location = new System.Drawing.Point(194, 243);
+            this.comboBox2b.Name = "comboBox2b";
+            this.comboBox2b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2b.TabIndex = 9;
             // 
-            // comboBox3
+            // comboBox3b
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBox3b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3b.FormattingEnabled = true;
+            this.comboBox3b.Items.AddRange(new object[] {
             "VAT1",
             "VAT2",
             "VAT3",
             "VAT4",
             "DEPT VAT"});
-            this.comboBox3.Location = new System.Drawing.Point(194, 269);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 10;
+            this.comboBox3b.Location = new System.Drawing.Point(194, 269);
+            this.comboBox3b.Name = "comboBox3b";
+            this.comboBox3b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox3b.TabIndex = 10;
             // 
-            // comboBox4
+            // comboBox4b
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBox4b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4b.FormattingEnabled = true;
+            this.comboBox4b.Items.AddRange(new object[] {
             "VAT1",
             "VAT2",
             "VAT3",
             "VAT4",
             "DEPT VAT"});
-            this.comboBox4.Location = new System.Drawing.Point(194, 295);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 20);
-            this.comboBox4.TabIndex = 11;
+            this.comboBox4b.Location = new System.Drawing.Point(194, 295);
+            this.comboBox4b.Name = "comboBox4b";
+            this.comboBox4b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox4b.TabIndex = 11;
             // 
-            // comboBox5
+            // comboBox5b
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.comboBox5b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5b.FormattingEnabled = true;
+            this.comboBox5b.Items.AddRange(new object[] {
             "VAT1",
             "VAT2",
             "VAT3",
             "VAT4",
             "DEPT VAT"});
-            this.comboBox5.Location = new System.Drawing.Point(194, 321);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 20);
-            this.comboBox5.TabIndex = 12;
+            this.comboBox5b.Location = new System.Drawing.Point(194, 321);
+            this.comboBox5b.Name = "comboBox5b";
+            this.comboBox5b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox5b.TabIndex = 12;
             // 
-            // comboBox6
+            // comboBox6b
             // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.comboBox6b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6b.FormattingEnabled = true;
+            this.comboBox6b.Items.AddRange(new object[] {
             "None",
             "Price1",
             "Price2",
             "Price3"});
-            this.comboBox6.Location = new System.Drawing.Point(194, 347);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 20);
-            this.comboBox6.TabIndex = 13;
+            this.comboBox6b.Location = new System.Drawing.Point(194, 347);
+            this.comboBox6b.Name = "comboBox6b";
+            this.comboBox6b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox6b.TabIndex = 13;
             // 
-            // comboBox7
+            // comboBox7b
             // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.comboBox7b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7b.FormattingEnabled = true;
+            this.comboBox7b.Items.AddRange(new object[] {
             "Single items",
             "Multiple items"});
-            this.comboBox7.Location = new System.Drawing.Point(194, 373);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 20);
-            this.comboBox7.TabIndex = 14;
+            this.comboBox7b.Location = new System.Drawing.Point(194, 373);
+            this.comboBox7b.Name = "comboBox7b";
+            this.comboBox7b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox7b.TabIndex = 14;
             // 
             // label8
             // 
@@ -250,17 +250,17 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Comp report print Qty/Counter";
             // 
-            // comboBox8
+            // comboBox8b
             // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.comboBox8b.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox8b.FormattingEnabled = true;
+            this.comboBox8b.Items.AddRange(new object[] {
             "Counter",
             "Quantity"});
-            this.comboBox8.Location = new System.Drawing.Point(194, 398);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 20);
-            this.comboBox8.TabIndex = 16;
+            this.comboBox8b.Location = new System.Drawing.Point(194, 398);
+            this.comboBox8b.Name = "comboBox8b";
+            this.comboBox8b.Size = new System.Drawing.Size(121, 20);
+            this.comboBox8b.TabIndex = 16;
             // 
             // button1
             // 
@@ -278,15 +278,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 422);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox8);
+            this.Controls.Add(this.comboBox8b);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox7b);
+            this.Controls.Add(this.comboBox6b);
+            this.Controls.Add(this.comboBox5b);
+            this.Controls.Add(this.comboBox4b);
+            this.Controls.Add(this.comboBox3b);
+            this.Controls.Add(this.comboBox2b);
+            this.Controls.Add(this.comboBox1b);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -294,7 +294,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.checkedListBox3);
             this.Name = "frm_Setting_PageThree";
             this.Text = "frm_Setting_PageThree";
             this.Load += new System.EventHandler(this.frm_Setting_PageThree_Load);
@@ -305,7 +305,7 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -313,15 +313,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox1b;
+        private System.Windows.Forms.ComboBox comboBox2b;
+        private System.Windows.Forms.ComboBox comboBox3b;
+        private System.Windows.Forms.ComboBox comboBox4b;
+        private System.Windows.Forms.ComboBox comboBox5b;
+        private System.Windows.Forms.ComboBox comboBox6b;
+        private System.Windows.Forms.ComboBox comboBox7b;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBox8b;
         private System.Windows.Forms.Button button1;
     }
 }

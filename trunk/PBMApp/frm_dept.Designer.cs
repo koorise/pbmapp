@@ -461,7 +461,7 @@
             this.tbisPrice.Location = new System.Drawing.Point(146, 87);
             this.tbisPrice.Name = "tbisPrice";
             this.tbisPrice.Size = new System.Drawing.Size(100, 21);
-            this.tbisPrice.TabIndex = 14;
+            this.tbisPrice.TabIndex = 14; 
             this.tbisPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbisPrice_KeyPress);
             // 
             // checkBox1

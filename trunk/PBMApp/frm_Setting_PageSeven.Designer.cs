@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox3d = new System.Windows.Forms.CheckBox();
+            this.checkBox2d = new System.Windows.Forms.CheckBox();
+            this.checkBox1d = new System.Windows.Forms.CheckBox();
+            this.textBox2d = new System.Windows.Forms.TextBox();
+            this.textBox1d = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox5d = new System.Windows.Forms.ComboBox();
+            this.comboBox4d = new System.Windows.Forms.ComboBox();
+            this.comboBox2d = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox1d = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox5d = new System.Windows.Forms.TextBox();
+            this.textBox4d = new System.Windows.Forms.TextBox();
+            this.textBox3d = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox6d = new System.Windows.Forms.TextBox();
+            this.textBox7d = new System.Windows.Forms.TextBox();
+            this.textBox8d = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -66,20 +66,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.checkBox3d);
+            this.groupBox1.Controls.Add(this.checkBox2d);
+            this.groupBox1.Controls.Add(this.checkBox1d);
+            this.groupBox1.Controls.Add(this.textBox2d);
+            this.groupBox1.Controls.Add(this.textBox1d);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.comboBox5);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox5d);
+            this.groupBox1.Controls.Add(this.comboBox4d);
+            this.groupBox1.Controls.Add(this.comboBox2d);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBox1d);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -88,49 +88,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Table barcode";
             // 
-            // checkBox3
+            // checkBox3d
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(189, 242);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(264, 16);
-            this.checkBox3.TabIndex = 18;
-            this.checkBox3.Text = "Table barcode print after transfer table";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3d.AutoSize = true;
+            this.checkBox3d.Location = new System.Drawing.Point(189, 242);
+            this.checkBox3d.Name = "checkBox3d";
+            this.checkBox3d.Size = new System.Drawing.Size(264, 16);
+            this.checkBox3d.TabIndex = 18;
+            this.checkBox3d.Text = "Table barcode print after transfer table";
+            this.checkBox3d.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBox2d
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(189, 220);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(258, 16);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Table barcode print after suspend table";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2d.AutoSize = true;
+            this.checkBox2d.Location = new System.Drawing.Point(189, 220);
+            this.checkBox2d.Name = "checkBox2d";
+            this.checkBox2d.Size = new System.Drawing.Size(258, 16);
+            this.checkBox2d.TabIndex = 17;
+            this.checkBox2d.Text = "Table barcode print after suspend table";
+            this.checkBox2d.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBox1d
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(189, 198);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(216, 16);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Table bar print after print list";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1d.AutoSize = true;
+            this.checkBox1d.Location = new System.Drawing.Point(189, 198);
+            this.checkBox1d.Name = "checkBox1d";
+            this.checkBox1d.Size = new System.Drawing.Size(216, 16);
+            this.checkBox1d.TabIndex = 16;
+            this.checkBox1d.Text = "Table bar print after print list";
+            this.checkBox1d.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // textBox2d
             // 
-            this.textBox2.Location = new System.Drawing.Point(189, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 21);
-            this.textBox2.TabIndex = 15;
+            this.textBox2d.Location = new System.Drawing.Point(189, 117);
+            this.textBox2d.Name = "textBox2d";
+            this.textBox2d.Size = new System.Drawing.Size(121, 21);
+            this.textBox2d.TabIndex = 15;
             // 
-            // textBox1
+            // textBox1d
             // 
-            this.textBox1.Location = new System.Drawing.Point(189, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 21);
-            this.textBox1.TabIndex = 14;
+            this.textBox1d.Location = new System.Drawing.Point(189, 89);
+            this.textBox1d.Name = "textBox1d";
+            this.textBox1d.Size = new System.Drawing.Size(121, 21);
+            this.textBox1d.TabIndex = 14;
             // 
             // label9
             // 
@@ -141,44 +141,44 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Talbe barcode height";
             // 
-            // comboBox5
+            // comboBox5d
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.comboBox5d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5d.FormattingEnabled = true;
+            this.comboBox5d.Items.AddRange(new object[] {
             "12*24",
             "7*19"});
-            this.comboBox5.Location = new System.Drawing.Point(189, 172);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 20);
-            this.comboBox5.TabIndex = 12;
+            this.comboBox5d.Location = new System.Drawing.Point(189, 172);
+            this.comboBox5d.Name = "comboBox5d";
+            this.comboBox5d.Size = new System.Drawing.Size(121, 20);
+            this.comboBox5d.TabIndex = 12;
             // 
-            // comboBox4
+            // comboBox4d
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBox4d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4d.FormattingEnabled = true;
+            this.comboBox4d.Items.AddRange(new object[] {
             "Don\'t print",
             "Above",
             "Below",
             "Above&Below"});
-            this.comboBox4.Location = new System.Drawing.Point(189, 145);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 20);
-            this.comboBox4.TabIndex = 11;
+            this.comboBox4d.Location = new System.Drawing.Point(189, 145);
+            this.comboBox4d.Name = "comboBox4d";
+            this.comboBox4d.Size = new System.Drawing.Size(121, 20);
+            this.comboBox4d.TabIndex = 11;
             // 
-            // comboBox2
+            // comboBox2d
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox2d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2d.FormattingEnabled = true;
+            this.comboBox2d.Items.AddRange(new object[] {
             "LEFT",
             "CENTER",
             "RIGHT"});
-            this.comboBox2.Location = new System.Drawing.Point(189, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 9;
+            this.comboBox2d.Location = new System.Drawing.Point(189, 62);
+            this.comboBox2d.Name = "comboBox2d";
+            this.comboBox2d.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2d.TabIndex = 9;
             // 
             // label5
             // 
@@ -216,18 +216,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Table barcode position";
             // 
-            // comboBox1
+            // comboBox1d
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox1d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1d.FormattingEnabled = true;
+            this.comboBox1d.Items.AddRange(new object[] {
             "Don\'t surport",
             "Tender",
             "Open table"});
-            this.comboBox1.Location = new System.Drawing.Point(189, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 1;
+            this.comboBox1d.Location = new System.Drawing.Point(189, 35);
+            this.comboBox1d.Name = "comboBox1d";
+            this.comboBox1d.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1d.TabIndex = 1;
             // 
             // label1
             // 
@@ -240,9 +240,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.textBox5d);
+            this.groupBox2.Controls.Add(this.textBox4d);
+            this.groupBox2.Controls.Add(this.textBox3d);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -253,26 +253,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "mailer";
             // 
-            // textBox5
+            // textBox5d
             // 
-            this.textBox5.Location = new System.Drawing.Point(102, 70);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 5;
+            this.textBox5d.Location = new System.Drawing.Point(102, 70);
+            this.textBox5d.Name = "textBox5d";
+            this.textBox5d.Size = new System.Drawing.Size(100, 21);
+            this.textBox5d.TabIndex = 5;
             // 
-            // textBox4
+            // textBox4d
             // 
-            this.textBox4.Location = new System.Drawing.Point(102, 46);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 4;
+            this.textBox4d.Location = new System.Drawing.Point(102, 46);
+            this.textBox4d.Name = "textBox4d";
+            this.textBox4d.Size = new System.Drawing.Size(100, 21);
+            this.textBox4d.TabIndex = 4;
             // 
-            // textBox3
+            // textBox3d
             // 
-            this.textBox3.Location = new System.Drawing.Point(102, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 3;
+            this.textBox3d.Location = new System.Drawing.Point(102, 22);
+            this.textBox3d.Name = "textBox3d";
+            this.textBox3d.Size = new System.Drawing.Size(100, 21);
+            this.textBox3d.TabIndex = 3;
             // 
             // label8
             // 
@@ -303,9 +303,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.textBox6d);
+            this.groupBox3.Controls.Add(this.textBox7d);
+            this.groupBox3.Controls.Add(this.textBox8d);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
@@ -316,26 +316,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ftp";
             // 
-            // textBox6
+            // textBox6d
             // 
-            this.textBox6.Location = new System.Drawing.Point(88, 70);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 5;
+            this.textBox6d.Location = new System.Drawing.Point(88, 70);
+            this.textBox6d.Name = "textBox6d";
+            this.textBox6d.Size = new System.Drawing.Size(100, 21);
+            this.textBox6d.TabIndex = 5;
             // 
-            // textBox7
+            // textBox7d
             // 
-            this.textBox7.Location = new System.Drawing.Point(88, 46);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 21);
-            this.textBox7.TabIndex = 4;
+            this.textBox7d.Location = new System.Drawing.Point(88, 46);
+            this.textBox7d.Name = "textBox7d";
+            this.textBox7d.Size = new System.Drawing.Size(100, 21);
+            this.textBox7d.TabIndex = 4;
             // 
-            // textBox8
+            // textBox8d
             // 
-            this.textBox8.Location = new System.Drawing.Point(88, 22);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 21);
-            this.textBox8.TabIndex = 3;
+            this.textBox8d.Location = new System.Drawing.Point(88, 22);
+            this.textBox8d.Name = "textBox8d";
+            this.textBox8d.Size = new System.Drawing.Size(100, 21);
+            this.textBox8d.TabIndex = 3;
             // 
             // label10
             // 
@@ -399,32 +399,32 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkBox3d;
+        private System.Windows.Forms.CheckBox checkBox2d;
+        private System.Windows.Forms.CheckBox checkBox1d;
+        private System.Windows.Forms.TextBox textBox2d;
+        private System.Windows.Forms.TextBox textBox1d;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox5d;
+        private System.Windows.Forms.ComboBox comboBox4d;
+        private System.Windows.Forms.ComboBox comboBox2d;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox1d;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox5d;
+        private System.Windows.Forms.TextBox textBox4d;
+        private System.Windows.Forms.TextBox textBox3d;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox6d;
+        private System.Windows.Forms.TextBox textBox7d;
+        private System.Windows.Forms.TextBox textBox8d;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

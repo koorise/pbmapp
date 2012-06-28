@@ -93,6 +93,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.tbID = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.listBox2_Cook_Selected = new System.Windows.Forms.ListBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -103,7 +104,6 @@
             this.chkES = new System.Windows.Forms.CheckBox();
             this.chkMenu = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -387,7 +387,6 @@
             this.tbInventoryStock.Name = "tbInventoryStock";
             this.tbInventoryStock.Size = new System.Drawing.Size(100, 21);
             this.tbInventoryStock.TabIndex = 19;
-            this.tbInventoryStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventoryStock_KeyPress);
             // 
             // label7
             // 
@@ -413,7 +412,6 @@
             this.tbInventory.Name = "tbInventory";
             this.tbInventory.Size = new System.Drawing.Size(100, 21);
             this.tbInventory.TabIndex = 17;
-            this.tbInventory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInventory_KeyPress);
             // 
             // groupBox4
             // 
@@ -460,7 +458,6 @@
             this.tbModifierPrice.Name = "tbModifierPrice";
             this.tbModifierPrice.Size = new System.Drawing.Size(100, 21);
             this.tbModifierPrice.TabIndex = 25;
-            this.tbModifierPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierPrice_KeyPress);
             // 
             // label9
             // 
@@ -477,7 +474,6 @@
             this.tbModifierUnitQuantity.Name = "tbModifierUnitQuantity";
             this.tbModifierUnitQuantity.Size = new System.Drawing.Size(100, 21);
             this.tbModifierUnitQuantity.TabIndex = 24;
-            this.tbModifierUnitQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbModifierUnitQuantity_KeyPress);
             // 
             // cbModifiers
             // 
@@ -588,7 +584,6 @@
             this.tbPrice1.Name = "tbPrice1";
             this.tbPrice1.Size = new System.Drawing.Size(100, 21);
             this.tbPrice1.TabIndex = 7;
-            this.tbPrice1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice1_KeyPress);
             // 
             // label5
             // 
@@ -605,7 +600,6 @@
             this.tbPrice2.Name = "tbPrice2";
             this.tbPrice2.Size = new System.Drawing.Size(100, 21);
             this.tbPrice2.TabIndex = 9;
-            this.tbPrice2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice2_KeyPress);
             // 
             // label6
             // 
@@ -622,7 +616,6 @@
             this.tbPrice3.Name = "tbPrice3";
             this.tbPrice3.Size = new System.Drawing.Size(100, 21);
             this.tbPrice3.TabIndex = 11;
-            this.tbPrice3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice3_KeyPress);
             // 
             // ckCondiment
             // 
@@ -743,6 +736,22 @@
             this.groupBox7.TabIndex = 36;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Cooking Message Setting";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBox1.Location = new System.Drawing.Point(148, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.TabIndex = 33;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -870,22 +879,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PLU Information";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.comboBox1.Location = new System.Drawing.Point(148, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 33;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frm_PLU
             // 

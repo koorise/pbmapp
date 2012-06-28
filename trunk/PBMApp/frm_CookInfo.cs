@@ -100,21 +100,26 @@ namespace PBMApp
 
         private void tbPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
+            if (!(((e.KeyChar >= '0') && (e.KeyChar <= '9')) || e.KeyChar <= 31))
             {
-                e.Handled = false;
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                        e.Handled = true;
+                }
+                else
+                    e.Handled = true;
             }
             else
             {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
+                if (e.KeyChar <= 31)
                 {
                     e.Handled = false;
                 }
-                else
+                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    e.Handled = true;
+                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                        e.Handled = true;
                 }
             }
         }
