@@ -23,9 +23,9 @@ namespace PBMApp
             {
                 WH_Sys_PageTree wp = new WH_Sys_PageTree();
                 string limit = "";
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                for (int i = 0; i < checkedListBox3.Items.Count; i++)
                 {
-                    if(checkedListBox1.GetItemChecked(i))
+                    if(checkedListBox3.GetItemChecked(i))
                     {
                         limit += "1";
                     }
@@ -35,22 +35,22 @@ namespace PBMApp
                     }
                 }
                 wp.Authority = limit;
-                wp.FootStampRule = comboBox1.SelectedText;
-                wp.FootStampRule_index = comboBox1.SelectedIndex;
-                wp.GiftVoucherChange = comboBox2.SelectedText;
-                wp.GiftVoucherChange_index = comboBox2.SelectedIndex;
-                wp.VATRateForTakeAway = comboBox3.SelectedText;
-                wp.VATRateForTakeAway_index = comboBox3.SelectedIndex;
-                wp.VATRateForInHouse = comboBox4.SelectedText;
-                wp.VATRateForInHouse_index = comboBox4.SelectedIndex;
-                wp.VATRateForOutHouse = comboBox5.SelectedText;
-                wp.VATRateForOutHouse_index = comboBox5.SelectedIndex;
-                wp.PLUPriceForTakeAway = comboBox6.SelectedText;
-                wp.PLUPriceForTakeAway_index = comboBox6.SelectedIndex;
-                wp.KPPrintSetting = comboBox7.SelectedText;
-                wp.KPPrintSetting_index = comboBox7.SelectedIndex;
-                wp.CompReport = comboBox8.SelectedText;
-                wp.CompReport_index = comboBox8.SelectedIndex;
+                wp.FootStampRule = comboBox1b.SelectedText;
+                wp.FootStampRule_index = comboBox1b.SelectedIndex;
+                wp.GiftVoucherChange = comboBox2b.SelectedText;
+                wp.GiftVoucherChange_index = comboBox2b.SelectedIndex;
+                wp.VATRateForTakeAway = comboBox3b.SelectedText;
+                wp.VATRateForTakeAway_index = comboBox3b.SelectedIndex;
+                wp.VATRateForInHouse = comboBox4b.SelectedText;
+                wp.VATRateForInHouse_index = comboBox4b.SelectedIndex;
+                wp.VATRateForOutHouse = comboBox5b.SelectedText;
+                wp.VATRateForOutHouse_index = comboBox5b.SelectedIndex;
+                wp.PLUPriceForTakeAway = comboBox6b.SelectedText;
+                wp.PLUPriceForTakeAway_index = comboBox6b.SelectedIndex;
+                wp.KPPrintSetting = comboBox7b.SelectedText;
+                wp.KPPrintSetting_index = comboBox7b.SelectedIndex;
+                wp.CompReport = comboBox8b.SelectedText;
+                wp.CompReport_index = comboBox8b.SelectedIndex;
                 m.AddToWH_Sys_PageTree(wp);
                 m.SaveChanges();
             }
@@ -68,21 +68,21 @@ namespace PBMApp
                 {
                     if(limit.Substring(i,1)=="1")
                     {
-                        checkedListBox1.SetItemChecked(i,true);
+                        checkedListBox3.SetItemChecked(i,true);
                     }
                     else
                     {
-                        checkedListBox1.SetItemChecked(i,false);
+                        checkedListBox3.SetItemChecked(i,false);
                     }
                 }
-                comboBox1.SelectedIndex = int.Parse(q.FootStampRule_index.ToString());
-                comboBox2.SelectedIndex = int.Parse(q.GiftVoucherChange_index.ToString());
-                comboBox3.SelectedIndex = int.Parse(q.VATRateForTakeAway_index.ToString());
-                comboBox4.SelectedIndex = int.Parse(q.VATRateForInHouse_index.ToString());
-                comboBox5.SelectedIndex = int.Parse(q.VATRateForOutHouse_index.ToString());
-                comboBox6.SelectedIndex = int.Parse(q.PLUPriceForTakeAway_index.ToString());
-                comboBox7.SelectedIndex = int.Parse(q.KPPrintSetting_index.ToString());
-                comboBox8.SelectedIndex = int.Parse(q.CompReport_index.ToString());
+                comboBox1b.SelectedIndex = int.Parse(q.FootStampRule_index.ToString());
+                comboBox2b.SelectedIndex = int.Parse(q.GiftVoucherChange_index.ToString());
+                comboBox3b.SelectedIndex = int.Parse(q.VATRateForTakeAway_index.ToString());
+                comboBox4b.SelectedIndex = int.Parse(q.VATRateForInHouse_index.ToString());
+                comboBox5b.SelectedIndex = int.Parse(q.VATRateForOutHouse_index.ToString());
+                comboBox6b.SelectedIndex = int.Parse(q.PLUPriceForTakeAway_index.ToString());
+                comboBox7b.SelectedIndex = int.Parse(q.KPPrintSetting_index.ToString());
+                comboBox8b.SelectedIndex = int.Parse(q.CompReport_index.ToString());
 
             }
         }

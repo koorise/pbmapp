@@ -279,22 +279,28 @@
     <value>Page One</value>
   </data>
   <data name="pagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="pagesToolStripMenuItem.Text" xml:space="preserve">
     <value>Pages</value>
   </data>
   <data name="flashReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="flashReportToolStripMenuItem.Text" xml:space="preserve">
     <value>Flash Report</value>
   </data>
   <data name="kPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="kPToolStripMenuItem.Text" xml:space="preserve">
     <value>KP</value>
+  </data>
+  <data name="systemFlagToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="systemFlagToolStripMenuItem.Text" xml:space="preserve">
+    <value>System Flag</value>
   </data>
   <data name="optionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
@@ -400,6 +406,12 @@
     <value>pCASHToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;pCASHToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;keyDescriptorToolStripMenuItem.Name" xml:space="preserve">
+    <value>keyDescriptorToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;keyDescriptorToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;taxSettingToolStripMenuItem.Name" xml:space="preserve">
@@ -522,10 +534,10 @@
   <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;keyDescriptorToolStripMenuItem.Name" xml:space="preserve">
-    <value>keyDescriptorToolStripMenuItem</value>
+  <data name="&gt;&gt;systemFlagToolStripMenuItem.Name" xml:space="preserve">
+    <value>systemFlagToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;keyDescriptorToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;systemFlagToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

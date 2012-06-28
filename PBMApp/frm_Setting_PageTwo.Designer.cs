@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox1a = new System.Windows.Forms.ComboBox();
+            this.comboBox2a = new System.Windows.Forms.ComboBox();
+            this.comboBox3a = new System.Windows.Forms.ComboBox();
+            this.comboBox4a = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // checkedListBox1
+            // checkedListBox2
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.ColumnWidth = 300;
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedListBox2.CheckOnClick = true;
+            this.checkedListBox2.ColumnWidth = 300;
+            this.checkedListBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Items.AddRange(new object[] {
             "Print CM on receipt ",
             "Inventory function active  ",
             "Zero price for Dept/PLU sale",
@@ -72,11 +72,11 @@
             "Allow to TSVD before suspend ",
             "Allow to E.C. item before suspend",
             "Mark item more than 1 on kp  "});
-            this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(613, 260);
-            this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox2.Location = new System.Drawing.Point(0, 0);
+            this.checkedListBox2.MultiColumn = true;
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(613, 260);
+            this.checkedListBox2.TabIndex = 0;
             // 
             // label1
             // 
@@ -114,55 +114,55 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Item descriptor at RP";
             // 
-            // comboBox1
+            // comboBox1a
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox1a.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1a.FormattingEnabled = true;
+            this.comboBox1a.Items.AddRange(new object[] {
             "Head",
             "Foot"});
-            this.comboBox1.Location = new System.Drawing.Point(199, 268);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox1a.Location = new System.Drawing.Point(199, 268);
+            this.comboBox1a.Name = "comboBox1a";
+            this.comboBox1a.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1a.TabIndex = 5;
             // 
-            // comboBox2
+            // comboBox2a
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox2a.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2a.FormattingEnabled = true;
+            this.comboBox2a.Items.AddRange(new object[] {
             "Head",
             "Foot"});
-            this.comboBox2.Location = new System.Drawing.Point(199, 292);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 6;
+            this.comboBox2a.Location = new System.Drawing.Point(199, 292);
+            this.comboBox2a.Name = "comboBox2a";
+            this.comboBox2a.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2a.TabIndex = 6;
             // 
-            // comboBox3
+            // comboBox3a
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBox3a.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3a.FormattingEnabled = true;
+            this.comboBox3a.Items.AddRange(new object[] {
             "No",
             "ALL",
             "Last List"});
-            this.comboBox3.Location = new System.Drawing.Point(199, 316);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 7;
+            this.comboBox3a.Location = new System.Drawing.Point(199, 316);
+            this.comboBox3a.Name = "comboBox3a";
+            this.comboBox3a.Size = new System.Drawing.Size(121, 20);
+            this.comboBox3a.TabIndex = 7;
             // 
-            // comboBox4
+            // comboBox4a
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBox4a.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4a.FormattingEnabled = true;
+            this.comboBox4a.Items.AddRange(new object[] {
             "English",
             "Chinese",
             "Both"});
-            this.comboBox4.Location = new System.Drawing.Point(199, 340);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 20);
-            this.comboBox4.TabIndex = 8;
+            this.comboBox4a.Location = new System.Drawing.Point(199, 340);
+            this.comboBox4a.Name = "comboBox4a";
+            this.comboBox4a.Size = new System.Drawing.Size(121, 20);
+            this.comboBox4a.TabIndex = 8;
             // 
             // button1
             // 
@@ -180,15 +180,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 405);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox4a);
+            this.Controls.Add(this.comboBox3a);
+            this.Controls.Add(this.comboBox2a);
+            this.Controls.Add(this.comboBox1a);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.checkedListBox2);
             this.Name = "frm_Setting_PageTwo";
             this.Text = "frm_Setting_PageTwo";
             this.Load += new System.EventHandler(this.frm_Setting_PageTwo_Load);
@@ -199,15 +199,15 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox1a;
+        private System.Windows.Forms.ComboBox comboBox2a;
+        private System.Windows.Forms.ComboBox comboBox3a;
+        private System.Windows.Forms.ComboBox comboBox4a;
         private System.Windows.Forms.Button button1;
     }
 }

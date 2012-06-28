@@ -29,6 +29,7 @@ namespace PBMApp
                 foreach (var w in q)
                 {
                     TextBox tb1 = this.groupBox1.Controls["textBoxa" + i] as TextBox;
+                    tb1.KeyPress += (Tools.Validate.KeyPress);
                     TextBox tb2 = this.groupBox1.Controls["textBoxb" + i] as TextBox;
                     ComboBox cb1 = this.groupBox1.Controls["comboBox" + i] as ComboBox;
                     tb1.Text = w.Rate.ToString();

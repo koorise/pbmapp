@@ -16,9 +16,11 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-
+         
         private void frm_payment_Load(object sender, EventArgs e)
         {
+            tbPrice.KeyPress += (Tools.Validate.KeyPress);
+            tbHALO.KeyPress += (Tools.Validate.KeyPress);
             using (var m = new Entities())
             {
                 //payment
@@ -51,8 +53,10 @@ namespace PBMApp
                     tb1.Text = w.Description;
                     TextBox tb2 = this.groupBox2.Controls["textBoxb" + i1] as TextBox;
                     tb2.Text = w.Price.ToString();
+                    tb2.KeyPress+=new KeyPressEventHandler(Tools.Validate.KeyPress);
                     TextBox tb3 = this.groupBox2.Controls["textBoxc" + i1] as TextBox;
                     tb3.Text = w.HALO.ToString();
+                    tb3.KeyPress += new KeyPressEventHandler(Tools.Validate.KeyPress);
                     i1++;
                 }
                 //coupon
@@ -101,6 +105,35 @@ namespace PBMApp
                 q2.HALO = decimal.Parse(tbHALO.Text);
                 m.SaveChanges();
                 MessageBox.Show("success！", "alert");
+            }
+        }
+
+        
+        private void tbHALO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(((e.KeyChar >= '0') && (e.KeyChar <= '9')) || e.KeyChar <= 31))
+            {
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                        e.Handled = true;
+                }
+                else
+                    e.Handled = true;
+            }
+            else
+            {
+                if (e.KeyChar <= 31)
+                {
+                    e.Handled = false;
+                }
+                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                {
+                    if (
+                        ((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
+                        e.Handled = true;
+                }
             }
         }
     }

@@ -117,16 +117,16 @@ namespace PBMApp
         {
             if (checkBox2.Checked)
             {
-                for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                for (int i = 0; i < checkedListBox4.Items.Count; i++)
                 {
-                    checkedListBox2.SetItemChecked(i, true);
+                    checkedListBox4.SetItemChecked(i, true);
                 }
             }
             else
             {
-                for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                for (int i = 0; i < checkedListBox4.Items.Count; i++)
                 {
-                    checkedListBox2.SetItemChecked(i, false);
+                    checkedListBox4.SetItemChecked(i, false);
                 }
             }
         }
@@ -135,16 +135,16 @@ namespace PBMApp
         {
             if (checkBox1.Checked)
             {
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                for (int i = 0; i < checkedListBox5.Items.Count; i++)
                 {
-                    checkedListBox1.SetItemChecked(i, true);
+                    checkedListBox5.SetItemChecked(i, true);
                 }
             }
             else
             {
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                for (int i = 0; i < checkedListBox5.Items.Count; i++)
                 {
-                    checkedListBox1.SetItemChecked(i, false);
+                    checkedListBox5.SetItemChecked(i, false);
                 }
             }
         }
@@ -160,9 +160,9 @@ namespace PBMApp
                 q.timeC = a3.SelectedIndex + ":" + b3.SelectedIndex + ":" + c3.SelectedIndex;
                 q.timeD = a4.SelectedIndex + ":" + b4.SelectedIndex + ":" + c4.SelectedIndex;
                 string limit = "";
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                for (int i = 0; i < checkedListBox5.Items.Count; i++)
                 {
-                    if (checkedListBox1.GetItemChecked(i))
+                    if (checkedListBox5.GetItemChecked(i))
                     {
                         limit += "1";
                     }
@@ -188,9 +188,9 @@ namespace PBMApp
                 q.timeC = a7.SelectedIndex + ":" + b7.SelectedIndex + ":" + c7.SelectedIndex;
                 q.timeD = a8.SelectedIndex + ":" + b8.SelectedIndex + ":" + c8.SelectedIndex;
                 string limit = "";
-                for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                for (int i = 0; i < checkedListBox4.Items.Count; i++)
                 {
-                    if (checkedListBox2.GetItemChecked(i))
+                    if (checkedListBox4.GetItemChecked(i))
                     {
                         limit += "1";
                     }
@@ -209,12 +209,33 @@ namespace PBMApp
                 m.SaveChanges();
             }
         }
+
+        private void tbRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(((e.KeyChar >= '0') && (e.KeyChar <= '9')) || e.KeyChar <= 31))
+            {
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                        e.Handled = true;
+                }
+                else
+                    e.Handled = true;
+            }
+            else
+            {
+                if (e.KeyChar <= 31)
+                {
+                    e.Handled = false;
+                }
+                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                {
+                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                        e.Handled = true;
+                }
+            }
+        }
          
     }
-    public class Dog
-    { 
-        public int head { get; set; }
-        public int body { get; set; }
-        public int foot { get; set; }
-    }
+    
 }

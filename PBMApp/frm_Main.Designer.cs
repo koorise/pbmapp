@@ -39,6 +39,7 @@
             this.supplierSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentRefundCouponToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pCASHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keyDescriptorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deptSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +60,7 @@
             this.flashReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.keyDescriptorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemFlagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,6 +142,12 @@
             resources.ApplyResources(this.pCASHToolStripMenuItem, "pCASHToolStripMenuItem");
             this.pCASHToolStripMenuItem.Click += new System.EventHandler(this.pCASHToolStripMenuItem_Click);
             // 
+            // keyDescriptorToolStripMenuItem
+            // 
+            this.keyDescriptorToolStripMenuItem.Name = "keyDescriptorToolStripMenuItem";
+            resources.ApplyResources(this.keyDescriptorToolStripMenuItem, "keyDescriptorToolStripMenuItem");
+            this.keyDescriptorToolStripMenuItem.Click += new System.EventHandler(this.keyDescriptorToolStripMenuItem_Click);
+            // 
             // taxSettingToolStripMenuItem
             // 
             this.taxSettingToolStripMenuItem.Name = "taxSettingToolStripMenuItem";
@@ -193,7 +200,8 @@
             this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pagesToolStripMenuItem,
             this.flashReportToolStripMenuItem,
-            this.kPToolStripMenuItem});
+            this.kPToolStripMenuItem,
+            this.systemFlagToolStripMenuItem});
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
             resources.ApplyResources(this.optionToolStripMenuItem, "optionToolStripMenuItem");
             // 
@@ -272,11 +280,11 @@
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // keyDescriptorToolStripMenuItem
+            // systemFlagToolStripMenuItem
             // 
-            this.keyDescriptorToolStripMenuItem.Name = "keyDescriptorToolStripMenuItem";
-            resources.ApplyResources(this.keyDescriptorToolStripMenuItem, "keyDescriptorToolStripMenuItem");
-            this.keyDescriptorToolStripMenuItem.Click += new System.EventHandler(this.keyDescriptorToolStripMenuItem_Click);
+            this.systemFlagToolStripMenuItem.Name = "systemFlagToolStripMenuItem";
+            resources.ApplyResources(this.systemFlagToolStripMenuItem, "systemFlagToolStripMenuItem");
+            this.systemFlagToolStripMenuItem.Click += new System.EventHandler(this.systemFlagToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
@@ -327,6 +335,7 @@
         private System.Windows.Forms.ToolStripMenuItem flashReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keyDescriptorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem systemFlagToolStripMenuItem;
 
     }
 }

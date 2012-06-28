@@ -419,5 +419,22 @@ namespace PBMApp
             }
             frm.Show();
         }
+
+        private void systemFlagToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Setting_SystemFlag frm = new frm_Setting_SystemFlag();
+            frm.MdiParent = this;
+            frm.Location = p;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f != frm)
+                {
+                    f.Dispose();
+                }
+            }
+            frm.Show();
+        }
     }
 }
