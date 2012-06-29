@@ -20,6 +20,7 @@ namespace PBMApp
         private void frm_payment_Load(object sender, EventArgs e)
         {
             tbPrice.KeyPress += (Tools.Validate.KeyPress);
+            tbPrice.KeyUp += (Tools.Validate.Price_KepUp);
             tbHALO.KeyPress += (Tools.Validate.KeyPress);
             using (var m = new Entities())
             {
@@ -57,6 +58,7 @@ namespace PBMApp
                     TextBox tb3 = this.groupBox2.Controls["textBoxc" + i1] as TextBox;
                     tb3.Text = w.HALO.ToString();
                     tb3.KeyPress += new KeyPressEventHandler(Tools.Validate.KeyPress);
+                    tb3.MaxLength = 7;
                     i1++;
                 }
                 //coupon
@@ -136,5 +138,7 @@ namespace PBMApp
                 }
             }
         }
+
+        
     }
 }
