@@ -178,11 +178,8 @@ namespace PBMApp
                     int q = (from c in m.WH_Tax_Table
                             where c.TaxID == comboBox1.SelectedIndex + 1
                             orderby c.isFlag descending
-                            select c.isFlag).Count();
-                    int isFlag = q + 1;
+                            select c.isFlag).Count(); 
                      
-                    if(decimal.Parse(tbTaxA.Text)<decimal.Parse(tbTaxB.Text))
-                    {
                         WH_Tax wt= m.WH_Tax.FirstOrDefault(x => x.ID == comboBox1.SelectedIndex + 1);
                         wt.TaxTypeID = comboBox2.SelectedIndex;
                         wt.Rate = 0;
@@ -200,11 +197,7 @@ namespace PBMApp
                         //tbTaxRate.Text = "";
                         DataBind_Dvg(comboBox1.SelectedIndex + 1);
                         MessageBox.Show("success", "alert");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Err", "alert");
-                    }
+                     
                 }
                 else
                 {
