@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.G1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.C_A_cbAmtQnt = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.C_A_tbLimit = new System.Windows.Forms.TextBox();
             this.C_A_tbDiscount = new System.Windows.Forms.TextBox();
             this.G3 = new System.Windows.Forms.GroupBox();
@@ -77,38 +75,13 @@
             this.C_cbBundleList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
             this.G1.SuspendLayout();
             this.G3.SuspendLayout();
             this.G2.SuspendLayout();
             this.G5.SuspendLayout();
             this.G4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.G1);
-            this.groupBox1.Controls.Add(this.G3);
-            this.groupBox1.Controls.Add(this.G2);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.C_cbType);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.G5);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.G4);
-            this.groupBox1.Controls.Add(this.C_SelectPLU1);
-            this.groupBox1.Controls.Add(this.C_AllPLU1);
-            this.groupBox1.Controls.Add(this.C_tbDesc);
-            this.groupBox1.Controls.Add(this.C_cbBundleList);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(617, 556);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Bundle";
             // 
             // G1
             // 
@@ -118,9 +91,9 @@
             this.G1.Controls.Add(this.label3);
             this.G1.Controls.Add(this.C_A_tbLimit);
             this.G1.Controls.Add(this.C_A_tbDiscount);
-            this.G1.Location = new System.Drawing.Point(300, 98);
+            this.G1.Location = new System.Drawing.Point(20, 300);
             this.G1.Name = "G1";
-            this.G1.Size = new System.Drawing.Size(144, 100);
+            this.G1.Size = new System.Drawing.Size(476, 126);
             this.G1.TabIndex = 30;
             this.G1.TabStop = false;
             this.G1.Text = "Type A";
@@ -128,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 75);
+            this.label5.Location = new System.Drawing.Point(2, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 5;
@@ -137,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 48);
+            this.label4.Location = new System.Drawing.Point(20, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 12);
             this.label4.TabIndex = 4;
@@ -150,33 +123,24 @@
             this.C_A_cbAmtQnt.Items.AddRange(new object[] {
             "Amount",
             "Quantity"});
-            this.C_A_cbAmtQnt.Location = new System.Drawing.Point(68, 18);
+            this.C_A_cbAmtQnt.Location = new System.Drawing.Point(61, 18);
             this.C_A_cbAmtQnt.Name = "C_A_cbAmtQnt";
-            this.C_A_cbAmtQnt.Size = new System.Drawing.Size(61, 20);
+            this.C_A_cbAmtQnt.Size = new System.Drawing.Size(121, 20);
             this.C_A_cbAmtQnt.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 12);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Amt/Qnt";
             // 
             // C_A_tbLimit
             // 
-            this.C_A_tbLimit.Location = new System.Drawing.Point(68, 44);
+            this.C_A_tbLimit.Location = new System.Drawing.Point(61, 44);
             this.C_A_tbLimit.Name = "C_A_tbLimit";
-            this.C_A_tbLimit.Size = new System.Drawing.Size(61, 21);
+            this.C_A_tbLimit.Size = new System.Drawing.Size(121, 21);
             this.C_A_tbLimit.TabIndex = 1;
             this.C_A_tbLimit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C_A_tbLimit_KeyPress);
             // 
             // C_A_tbDiscount
             // 
-            this.C_A_tbDiscount.Location = new System.Drawing.Point(68, 71);
+            this.C_A_tbDiscount.Location = new System.Drawing.Point(61, 71);
             this.C_A_tbDiscount.Name = "C_A_tbDiscount";
-            this.C_A_tbDiscount.Size = new System.Drawing.Size(61, 21);
+            this.C_A_tbDiscount.Size = new System.Drawing.Size(121, 21);
             this.C_A_tbDiscount.TabIndex = 2;
             this.C_A_tbDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C_A_tbDiscount_KeyPress);
             // 
@@ -189,9 +153,9 @@
             this.G3.Controls.Add(this.label12);
             this.G3.Controls.Add(this.C_C_tbDiscount);
             this.G3.Controls.Add(this.C_C_Limit);
-            this.G3.Location = new System.Drawing.Point(455, 98);
+            this.G3.Location = new System.Drawing.Point(20, 300);
             this.G3.Name = "G3";
-            this.G3.Size = new System.Drawing.Size(148, 100);
+            this.G3.Size = new System.Drawing.Size(476, 126);
             this.G3.TabIndex = 9;
             this.G3.TabStop = false;
             this.G3.Text = "Type C";
@@ -203,15 +167,15 @@
             this.C_C_cbAmtQnt.Items.AddRange(new object[] {
             "Amount",
             "Quantity"});
-            this.C_C_cbAmtQnt.Location = new System.Drawing.Point(59, 18);
+            this.C_C_cbAmtQnt.Location = new System.Drawing.Point(61, 18);
             this.C_C_cbAmtQnt.Name = "C_C_cbAmtQnt";
-            this.C_C_cbAmtQnt.Size = new System.Drawing.Size(77, 20);
+            this.C_C_cbAmtQnt.Size = new System.Drawing.Size(121, 20);
             this.C_C_cbAmtQnt.TabIndex = 10;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 22);
+            this.label8.Location = new System.Drawing.Point(8, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 12);
             this.label8.TabIndex = 9;
@@ -220,7 +184,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(124, 75);
+            this.label10.Location = new System.Drawing.Point(184, 75);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 12);
             this.label10.TabIndex = 8;
@@ -229,7 +193,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 75);
+            this.label11.Location = new System.Drawing.Point(2, 75);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 7;
@@ -238,7 +202,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 48);
+            this.label12.Location = new System.Drawing.Point(20, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 12);
             this.label12.TabIndex = 5;
@@ -246,16 +210,16 @@
             // 
             // C_C_tbDiscount
             // 
-            this.C_C_tbDiscount.Location = new System.Drawing.Point(59, 71);
+            this.C_C_tbDiscount.Location = new System.Drawing.Point(61, 71);
             this.C_C_tbDiscount.Name = "C_C_tbDiscount";
-            this.C_C_tbDiscount.Size = new System.Drawing.Size(59, 21);
+            this.C_C_tbDiscount.Size = new System.Drawing.Size(121, 21);
             this.C_C_tbDiscount.TabIndex = 6;
             // 
             // C_C_Limit
             // 
-            this.C_C_Limit.Location = new System.Drawing.Point(59, 44);
+            this.C_C_Limit.Location = new System.Drawing.Point(61, 44);
             this.C_C_Limit.Name = "C_C_Limit";
-            this.C_C_Limit.Size = new System.Drawing.Size(77, 21);
+            this.C_C_Limit.Size = new System.Drawing.Size(121, 21);
             this.C_C_Limit.TabIndex = 2;
             this.C_C_Limit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C_C_Limit_KeyPress);
             // 
@@ -265,9 +229,9 @@
             this.G2.Controls.Add(this.label7);
             this.G2.Controls.Add(this.C_B_tbFree);
             this.G2.Controls.Add(this.C_B_tbLimit);
-            this.G2.Location = new System.Drawing.Point(300, 204);
+            this.G2.Location = new System.Drawing.Point(20, 300);
             this.G2.Name = "G2";
-            this.G2.Size = new System.Drawing.Size(303, 78);
+            this.G2.Size = new System.Drawing.Size(476, 126);
             this.G2.TabIndex = 8;
             this.G2.TabStop = false;
             this.G2.Text = "Type B";
@@ -275,7 +239,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(103, 37);
+            this.label6.Location = new System.Drawing.Point(26, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 5;
@@ -284,7 +248,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 37);
+            this.label7.Location = new System.Drawing.Point(20, 37);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 12);
             this.label7.TabIndex = 4;
@@ -292,22 +256,22 @@
             // 
             // C_B_tbFree
             // 
-            this.C_B_tbFree.Location = new System.Drawing.Point(144, 33);
+            this.C_B_tbFree.Location = new System.Drawing.Point(61, 69);
             this.C_B_tbFree.Name = "C_B_tbFree";
-            this.C_B_tbFree.Size = new System.Drawing.Size(44, 21);
+            this.C_B_tbFree.Size = new System.Drawing.Size(121, 21);
             this.C_B_tbFree.TabIndex = 2;
             this.C_B_tbFree.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.C_B_tbFree_KeyPress);
             // 
             // C_B_tbLimit
             // 
-            this.C_B_tbLimit.Location = new System.Drawing.Point(48, 33);
+            this.C_B_tbLimit.Location = new System.Drawing.Point(61, 33);
             this.C_B_tbLimit.Name = "C_B_tbLimit";
-            this.C_B_tbLimit.Size = new System.Drawing.Size(44, 21);
+            this.C_B_tbLimit.Size = new System.Drawing.Size(121, 21);
             this.C_B_tbLimit.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(323, 49);
+            this.btnSave.Location = new System.Drawing.Point(323, 52);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 29;
@@ -325,7 +289,7 @@
             "Type C",
             "Type D",
             "Type E"});
-            this.C_cbType.Location = new System.Drawing.Point(323, 19);
+            this.C_cbType.Location = new System.Drawing.Point(323, 22);
             this.C_cbType.Name = "C_cbType";
             this.C_cbType.Size = new System.Drawing.Size(121, 20);
             this.C_cbType.TabIndex = 17;
@@ -334,7 +298,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(183, 80);
+            this.label17.Location = new System.Drawing.Point(183, 83);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(77, 12);
             this.label17.TabIndex = 7;
@@ -350,9 +314,9 @@
             this.G5.Controls.Add(this.C_AllPLU3);
             this.G5.Controls.Add(this.label14);
             this.G5.Controls.Add(this.C_E_tbLimit);
-            this.G5.Location = new System.Drawing.Point(20, 420);
+            this.G5.Location = new System.Drawing.Point(20, 300);
             this.G5.Name = "G5";
-            this.G5.Size = new System.Drawing.Size(473, 126);
+            this.G5.Size = new System.Drawing.Size(476, 126);
             this.G5.TabIndex = 16;
             this.G5.TabStop = false;
             this.G5.Text = "Type E";
@@ -378,7 +342,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 63);
+            this.label13.Location = new System.Drawing.Point(2, 63);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 7;
@@ -415,7 +379,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 33);
+            this.label14.Location = new System.Drawing.Point(20, 33);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(35, 12);
             this.label14.TabIndex = 5;
@@ -423,7 +387,7 @@
             // 
             // C_E_tbLimit
             // 
-            this.C_E_tbLimit.Location = new System.Drawing.Point(60, 30);
+            this.C_E_tbLimit.Location = new System.Drawing.Point(61, 30);
             this.C_E_tbLimit.Name = "C_E_tbLimit";
             this.C_E_tbLimit.Size = new System.Drawing.Size(121, 21);
             this.C_E_tbLimit.TabIndex = 2;
@@ -432,7 +396,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(58, 80);
+            this.label16.Location = new System.Drawing.Point(58, 83);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 12);
             this.label16.TabIndex = 6;
@@ -448,7 +412,7 @@
             this.G4.Controls.Add(this.label9);
             this.G4.Controls.Add(this.label15);
             this.G4.Controls.Add(this.C_D_tbLimit);
-            this.G4.Location = new System.Drawing.Point(17, 288);
+            this.G4.Location = new System.Drawing.Point(20, 300);
             this.G4.Name = "G4";
             this.G4.Size = new System.Drawing.Size(476, 126);
             this.G4.TabIndex = 10;
@@ -517,7 +481,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 68);
+            this.label15.Location = new System.Drawing.Point(20, 62);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(35, 12);
             this.label15.TabIndex = 5;
@@ -525,7 +489,7 @@
             // 
             // C_D_tbLimit
             // 
-            this.C_D_tbLimit.Location = new System.Drawing.Point(61, 64);
+            this.C_D_tbLimit.Location = new System.Drawing.Point(61, 59);
             this.C_D_tbLimit.Name = "C_D_tbLimit";
             this.C_D_tbLimit.Size = new System.Drawing.Size(121, 21);
             this.C_D_tbLimit.TabIndex = 2;
@@ -535,7 +499,7 @@
             // 
             this.C_SelectPLU1.FormattingEnabled = true;
             this.C_SelectPLU1.ItemHeight = 12;
-            this.C_SelectPLU1.Location = new System.Drawing.Point(157, 98);
+            this.C_SelectPLU1.Location = new System.Drawing.Point(157, 101);
             this.C_SelectPLU1.Name = "C_SelectPLU1";
             this.C_SelectPLU1.Size = new System.Drawing.Size(128, 184);
             this.C_SelectPLU1.TabIndex = 5;
@@ -545,7 +509,7 @@
             // 
             this.C_AllPLU1.FormattingEnabled = true;
             this.C_AllPLU1.ItemHeight = 12;
-            this.C_AllPLU1.Location = new System.Drawing.Point(17, 98);
+            this.C_AllPLU1.Location = new System.Drawing.Point(17, 101);
             this.C_AllPLU1.Name = "C_AllPLU1";
             this.C_AllPLU1.Size = new System.Drawing.Size(128, 184);
             this.C_AllPLU1.TabIndex = 4;
@@ -553,7 +517,7 @@
             // 
             // C_tbDesc
             // 
-            this.C_tbDesc.Location = new System.Drawing.Point(95, 45);
+            this.C_tbDesc.Location = new System.Drawing.Point(95, 48);
             this.C_tbDesc.Name = "C_tbDesc";
             this.C_tbDesc.Size = new System.Drawing.Size(198, 21);
             this.C_tbDesc.TabIndex = 1;
@@ -562,7 +526,7 @@
             // 
             this.C_cbBundleList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.C_cbBundleList.FormattingEnabled = true;
-            this.C_cbBundleList.Location = new System.Drawing.Point(95, 17);
+            this.C_cbBundleList.Location = new System.Drawing.Point(95, 20);
             this.C_cbBundleList.Name = "C_cbBundleList";
             this.C_cbBundleList.Size = new System.Drawing.Size(198, 20);
             this.C_cbBundleList.TabIndex = 2;
@@ -571,7 +535,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 21);
+            this.label2.Location = new System.Drawing.Point(48, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 3;
@@ -580,23 +544,45 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 49);
+            this.label1.Location = new System.Drawing.Point(18, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Description";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Location = new System.Drawing.Point(8, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Amt/Qnt";
+            // 
             // frm_bundle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 556);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(516, 438);
+            this.Controls.Add(this.G1);
+            this.Controls.Add(this.G3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.G2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.C_cbBundleList);
+            this.Controls.Add(this.C_cbType);
+            this.Controls.Add(this.C_tbDesc);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.C_AllPLU1);
+            this.Controls.Add(this.G5);
+            this.Controls.Add(this.C_SelectPLU1);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.G4);
             this.Name = "frm_bundle";
             this.Text = "Bundle";
             this.Load += new System.EventHandler(this.frm_bundle_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.G1.ResumeLayout(false);
             this.G1.PerformLayout();
             this.G3.ResumeLayout(false);
@@ -608,12 +594,12 @@
             this.G4.ResumeLayout(false);
             this.G4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox G3;
         private System.Windows.Forms.ComboBox C_C_cbAmtQnt;
         private System.Windows.Forms.Label label8;
@@ -629,7 +615,6 @@
         private System.Windows.Forms.TextBox C_B_tbLimit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox C_A_tbDiscount;
         private System.Windows.Forms.TextBox C_A_tbLimit;
         private System.Windows.Forms.ComboBox C_A_cbAmtQnt;
@@ -662,6 +647,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox G1;
+        private System.Windows.Forms.Label label3;
 
 
     }

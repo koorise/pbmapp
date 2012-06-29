@@ -519,13 +519,29 @@ namespace PBMApp
                     sysWeightingPlu.Dots = x.SelectedIndex;
                 }
 
-                WH_Sys_WeightingPLU q = m.WH_Sys_WeightingPLU.FirstOrDefault(o => o.ID == 11);
-                q.WID = t11.Text;
-                q.TypeID = u11.Checked ? 1 : 0;
-                q.BarCodeLength = int.Parse(v11.Text);
-                q.WAID = w11.SelectedIndex;
-                q.Dots = x11.SelectedIndex;
+                WH_Sys_WeightingPLU weightingPlu = m.WH_Sys_WeightingPLU.FirstOrDefault(o => o.ID == 11);
+                weightingPlu.WID = t11.Text;
+                weightingPlu.TypeID = u11.Checked ? 1 : 0;
+                weightingPlu.BarCodeLength = int.Parse(v11.Text);
+                weightingPlu.WAID = w11.SelectedIndex;
+                weightingPlu.Dots = x11.SelectedIndex;
 
+                var tares = from c in m.WH_Sys_ElectronicScale_Tare
+                        where c.awID == cbUnit.SelectedIndex
+                        select c;
+                foreach (var w in tares)
+                {
+                    m.DeleteObject(w);
+                }
+
+                for (int i = 1; i < 11; i++)
+                {
+                    WH_Sys_ElectronicScale_Tare w = new WH_Sys_ElectronicScale_Tare();
+                    w.awID = cbUnit.SelectedIndex;
+                    TextBox t = this.groupBox4.Controls["z" + i] as TextBox;
+                    w.tare = decimal.Parse(t.Text);
+                    m.AddToWH_Sys_ElectronicScale_Tare(w);
+                }
                 
                 //page 6 
                 #endregion
