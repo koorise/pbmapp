@@ -31,12 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Tax));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbRateTaxB = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tbTaxRate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbTaxB = new System.Windows.Forms.TextBox();
-            this.tbTaxA = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbLimit = new System.Windows.Forms.TextBox();
@@ -47,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbTaxA = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -60,10 +64,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tbRateTaxB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -90,6 +90,16 @@
             this.panel1.Size = new System.Drawing.Size(280, 593);
             this.panel1.TabIndex = 0;
             // 
+            // tbRateTaxB
+            // 
+            this.tbRateTaxB.Location = new System.Drawing.Point(150, 342);
+            this.tbRateTaxB.Name = "tbRateTaxB";
+            this.tbRateTaxB.ReadOnly = true;
+            this.tbRateTaxB.Size = new System.Drawing.Size(75, 21);
+            this.tbRateTaxB.TabIndex = 9;
+            this.tbRateTaxB.Text = "0";
+            this.tbRateTaxB.Visible = false;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(150, 301);
@@ -115,6 +125,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tax Table";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(57, 33);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "REGULAR";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(20, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 12);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Range";
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(103, 101);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "ADD";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // tbTaxRate
             // 
             this.tbTaxRate.Location = new System.Drawing.Point(105, 74);
@@ -137,15 +177,6 @@
             this.tbTaxB.Name = "tbTaxB";
             this.tbTaxB.Size = new System.Drawing.Size(64, 21);
             this.tbTaxB.TabIndex = 3;
-            // 
-            // tbTaxA
-            // 
-            this.tbTaxA.Location = new System.Drawing.Point(46, 342);
-            this.tbTaxA.Name = "tbTaxA";
-            this.tbTaxA.ReadOnly = true;
-            this.tbTaxA.Size = new System.Drawing.Size(64, 21);
-            this.tbTaxA.TabIndex = 1;
-            this.tbTaxA.Visible = false;
             // 
             // groupBox1
             // 
@@ -249,6 +280,16 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // tbTaxA
+            // 
+            this.tbTaxA.Location = new System.Drawing.Point(46, 342);
+            this.tbTaxA.Name = "tbTaxA";
+            this.tbTaxA.ReadOnly = true;
+            this.tbTaxA.Size = new System.Drawing.Size(64, 21);
+            this.tbTaxA.TabIndex = 1;
+            this.tbTaxA.Text = "0";
+            this.tbTaxA.Visible = false;
             // 
             // panel2
             // 
@@ -375,45 +416,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(382, 565);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(103, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "ADD";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 12);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Range";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(57, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "REGULAR";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // tbRateTaxB
-            // 
-            this.tbRateTaxB.Location = new System.Drawing.Point(150, 342);
-            this.tbRateTaxB.Name = "tbRateTaxB";
-            this.tbRateTaxB.ReadOnly = true;
-            this.tbRateTaxB.Size = new System.Drawing.Size(75, 21);
-            this.tbRateTaxB.TabIndex = 9;
-            this.tbRateTaxB.Visible = false;
             // 
             // frm_Tax
             // 
