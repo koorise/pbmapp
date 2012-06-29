@@ -80,22 +80,22 @@ namespace PBMApp
         private void C_cbType_SelectedIndexChanged(object sender, EventArgs e)
         {
             int typeID = C_cbType.SelectedIndex + 1;
-            for (int i = 1; i < 6; i++)
-            {
-                GroupBox gb = this.groupBox1.Controls["G" + i] as GroupBox;
-                if (i == typeID)
-                {
-                    gb.Enabled = true;
-                }
-                else
-                {
-                    gb.Enabled = false;
-                }
-                foreach (Control c in gb.Controls)
-                {
-                    c.Text = "";
-                }
-            }
+            //for (int i = 1; i < 6; i++)
+            //{
+            //    GroupBox gb = this.Controls["G" + i] as GroupBox;
+            //    if (i == typeID)
+            //    {
+            //        gb.Enabled = true;
+            //    }
+            //    else
+            //    {
+            //        gb.Enabled = false;
+            //    }
+            //    foreach (Control c in gb.Controls)
+            //    {
+            //        c.Text = "";
+            //    }
+            //}
             using (var m = new Entities())
             {
                 var q = m.WH_Bundle.FirstOrDefault(x => x.ID == (C_cbBundleList.SelectedIndex + 1));
@@ -105,41 +105,41 @@ namespace PBMApp
                         C_A_cbAmtQnt.SelectedIndex = int.Parse(q.isAmtOrQnt.ToString());
                         C_A_tbLimit.Text = q.Limit.ToString();
                         C_A_tbDiscount.Text = q.Discount.ToString();
-                        G1.Enabled = true;
-                        G2.Enabled = false;
-                        G3.Enabled = false;
-                        G4.Enabled = false;
-                        G5.Enabled = false;
+                        G1.Visible = true;
+                        G2.Visible = false;
+                        G3.Visible = false;
+                        G4.Visible = false;
+                        G5.Visible = false;
                         break;
                     case 1:
                         C_B_tbFree.Text = q.Discount.ToString();
                         C_B_tbLimit.Text = q.Limit.ToString();
-                        G1.Enabled = false;
-                        G2.Enabled = true;
-                        G3.Enabled = false;
-                        G4.Enabled = false;
-                        G5.Enabled = false;
+                        G1.Visible = false;
+                        G2.Visible = true;
+                        G3.Visible = false;
+                        G4.Visible = false;
+                        G5.Visible = false;
                         break;
                     case 2:
                         C_C_Limit.Text = q.Limit.ToString();
                         C_C_cbAmtQnt.SelectedIndex = int.Parse(q.isAmtOrQnt.ToString());
                         C_C_tbDiscount.Text = q.Discount.ToString();
-                        G1.Enabled = false;
-                        G2.Enabled = false;
-                        G3.Enabled = true;
-                        G4.Enabled = false;
-                        G5.Enabled = false;
+                        G1.Visible = false;
+                        G2.Visible = false;
+                        G3.Visible = true;
+                        G4.Visible = false;
+                        G5.Visible = false;
                         break;
                     case 3:
                         //D 达到促销数量或者金额，可以从三个免费商品中任选一个
                         C_D_cbAmtQnt.SelectedIndex = int.Parse(q.isAmtOrQnt.ToString());
                         C_D_tbLimit.Text = q.Limit.ToString();
                         Bind_CSelectPLU2();
-                        G1.Enabled = false;
-                        G2.Enabled = false;
-                        G3.Enabled = false;
-                        G4.Enabled = true;
-                        G5.Enabled = false;
+                        G1.Visible = false;
+                        G2.Visible = false;
+                        G3.Visible = false;
+                        G4.Visible = true;
+                        G5.Visible = false;
                         break;
 
                     case 4:
@@ -147,11 +147,11 @@ namespace PBMApp
                         C_E_tbDiscount.Text = q.Discount.ToString();
                         C_E_tbLimit.Text = q.Limit.ToString();
                         Bind_CSelectPLU3();
-                        G1.Enabled = false;
-                        G2.Enabled = false;
-                        G3.Enabled = false;
-                        G4.Enabled = false;
-                        G5.Enabled = true;
+                        G1.Visible = false;
+                        G2.Visible = false;
+                        G3.Visible = false;
+                        G4.Visible = false;
+                        G5.Visible = true;
                         break;
                     default:
                         break;

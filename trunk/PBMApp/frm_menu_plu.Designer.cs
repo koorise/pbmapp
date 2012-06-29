@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbVat = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cbVat = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,22 +80,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu PLU";
-            // 
-            // cbVat
-            // 
-            this.cbVat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVat.FormattingEnabled = true;
-            this.cbVat.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cbVat.Location = new System.Drawing.Point(102, 108);
-            this.cbVat.Name = "cbVat";
-            this.cbVat.Size = new System.Drawing.Size(121, 20);
-            this.cbVat.TabIndex = 12;
             // 
             // button3
             // 
@@ -296,6 +280,32 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(96, 21);
             this.textBox3.TabIndex = 1;
+            // 
+            // cbVat
+            // 
+            this.cbVat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVat.FormattingEnabled = true;
+            this.cbVat.Items.AddRange(new object[] {
+            "NONE",
+            "Tax1",
+            "Tax2",
+            "Tax3",
+            "Tax4",
+            "Tax1&Tax2",
+            "Tax1&Tax3",
+            "Tax1&Tax4",
+            "Tax2&Tax3",
+            "Tax2&Tax4",
+            "Tax3&Tax4",
+            "Tax1&Tax2&Tax3",
+            "Tax1&Tax2&Tax4",
+            "Tax2&Tax3&Tax4",
+            "Tax1&Tax3&Tax4",
+            "Tax1&Tax2&Tax3&Tax4"});
+            this.cbVat.Location = new System.Drawing.Point(102, 108);
+            this.cbVat.Name = "cbVat";
+            this.cbVat.Size = new System.Drawing.Size(121, 20);
+            this.cbVat.TabIndex = 12;
             // 
             // frm_menu_plu
             // 

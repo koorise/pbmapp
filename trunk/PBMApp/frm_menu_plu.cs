@@ -93,14 +93,7 @@ namespace PBMApp
                         select c).FirstOrDefault();
                 tbDesc.Text = q.Description;
                 cbIsMode.SelectedIndex = int.Parse(q.isMode.ToString());
-                if (cbIsMode.SelectedIndex == 1)
-                {
-                    panel1.Enabled = true;
-                }
-                else
-                {
-                    panel1.Enabled = false;
-                }
+                
                 tbPrice.Text = q.Price.ToString();
                 cbVat.SelectedIndex = int.Parse(q.isTax.ToString());
                 var p = from c in m.WH_Menu_List
@@ -300,11 +293,11 @@ namespace PBMApp
                 //cbIsMode.SelectedIndex = int.Parse(q.isMode.ToString());
                 if (cbIsMode.SelectedIndex == 1)
                 {
-                    panel1.Enabled = false;
+                    panel1.Enabled = true ;
                 }
                 else
                 {
-                    panel1.Enabled = true;
+                    panel1.Enabled = false;
                 }
                 tbPrice.Text = q.Price.ToString();
                 cbVat.SelectedIndex = int.Parse(q.isTax.ToString());
