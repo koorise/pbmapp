@@ -113,8 +113,7 @@
             this.tbPrice.Location = new System.Drawing.Point(137, 97);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(100, 21);
-            this.tbPrice.TabIndex = 5;
-            this.tbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice_KeyPress);
+            this.tbPrice.TabIndex = 5; 
             // 
             // tbDesc
             // 

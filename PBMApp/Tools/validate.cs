@@ -43,6 +43,10 @@ namespace PBMApp.Tools
                 }
             }
         }
+
+        public static void Price_KepUp(object sender, KeyEventArgs e)
+        { 
+        }
     }
 
 }

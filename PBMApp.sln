@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBMApp", "PBMApp\PBMApp.csproj", "{E0E1469A-453D-43FF-9842-120C4D9675D7}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{F92014D6-F25C-4543-9B1F-F2FF72BAA6AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,8 @@ Global
 		{E0E1469A-453D-43FF-9842-120C4D9675D7}.Debug|x86.Build.0 = Debug|x86
 		{E0E1469A-453D-43FF-9842-120C4D9675D7}.Release|x86.ActiveCfg = Release|x86
 		{E0E1469A-453D-43FF-9842-120C4D9675D7}.Release|x86.Build.0 = Release|x86
+		{F92014D6-F25C-4543-9B1F-F2FF72BAA6AB}.Debug|x86.ActiveCfg = Debug
+		{F92014D6-F25C-4543-9B1F-F2FF72BAA6AB}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
