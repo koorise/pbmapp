@@ -326,12 +326,6 @@
     <EmbeddedResource Include="frm_HappyHour_ServiceTax.resx">
       <DependentUpon>frm_HappyHour_ServiceTax.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_kp_preview.resx">
-      <DependentUpon>frm_kp_preview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_kp_preview_sigle.resx">
-      <DependentUpon>frm_kp_preview_sigle.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,9 +355,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_HeaderFooter.resx">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Setting_KeyDesc.resx">
-      <DependentUpon>frm_Setting_KeyDesc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_PageFour.resx">
       <DependentUpon>frm_Setting_PageFour.cs</DependentUpon>
