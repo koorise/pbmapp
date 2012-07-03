@@ -174,19 +174,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WH_Sys_FCE">
-      <EntityTypeMapping TypeName="pbmModel.WH_Sys_FCE">
-        <MappingFragment StoreEntitySet="WH_Sys_FCE">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Local" ColumnName="Local" />
-          <ScalarProperty Name="FC" ColumnName="FC" />
-          <ScalarProperty Name="Decimals" ColumnName="Decimals" />
-          <ScalarProperty Name="SymbolID" ColumnName="SymbolID" />
-          <ScalarProperty Name="SymbolStr" ColumnName="SymbolStr" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="WH_Sys_Header_Footer">
       <EntityTypeMapping TypeName="pbmModel.WH_Sys_Header_Footer">
         <MappingFragment StoreEntitySet="WH_Sys_Header_Footer">
@@ -533,6 +520,20 @@
           <ScalarProperty Name="isFlag" ColumnName="isFlag" />
           <ScalarProperty Name="PLUID" ColumnName="PLUID" />
           <ScalarProperty Name="CookID" ColumnName="CookID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_FCE">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_FCE">
+        <MappingFragment StoreEntitySet="WH_Sys_FCE">
+          <ScalarProperty Name="isFCE" ColumnName="isFCE" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SymbolStr" ColumnName="SymbolStr" />
+          <ScalarProperty Name="SymbolID" ColumnName="SymbolID" />
+          <ScalarProperty Name="Decimals" ColumnName="Decimals" />
+          <ScalarProperty Name="FC" ColumnName="FC" />
+          <ScalarProperty Name="Local" ColumnName="Local" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

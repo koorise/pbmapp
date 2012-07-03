@@ -292,22 +292,6 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Sys_FCE> WH_Sys_FCE
-        {
-            get
-            {
-                if ((_WH_Sys_FCE == null))
-                {
-                    _WH_Sys_FCE = base.CreateObjectSet<WH_Sys_FCE>("WH_Sys_FCE");
-                }
-                return _WH_Sys_FCE;
-            }
-        }
-        private ObjectSet<WH_Sys_FCE> _WH_Sys_FCE;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<WH_Sys_Header_Footer> WH_Sys_Header_Footer
         {
             get
@@ -768,6 +752,22 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Relation_Cook_PLU> _WH_Relation_Cook_PLU;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_FCE> WH_Sys_FCE
+        {
+            get
+            {
+                if ((_WH_Sys_FCE == null))
+                {
+                    _WH_Sys_FCE = base.CreateObjectSet<WH_Sys_FCE>("WH_Sys_FCE");
+                }
+                return _WH_Sys_FCE;
+            }
+        }
+        private ObjectSet<WH_Sys_FCE> _WH_Sys_FCE;
 
         #endregion
         #region AddTo 方法
@@ -882,14 +882,6 @@ namespace PBMApp.Model
         public void AddToWH_Sys_CouponInformation(WH_Sys_CouponInformation wH_Sys_CouponInformation)
         {
             base.AddObject("WH_Sys_CouponInformation", wH_Sys_CouponInformation);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Sys_FCE EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_FCE(WH_Sys_FCE wH_Sys_FCE)
-        {
-            base.AddObject("WH_Sys_FCE", wH_Sys_FCE);
         }
     
         /// <summary>
@@ -1122,6 +1114,14 @@ namespace PBMApp.Model
         public void AddToWH_Relation_Cook_PLU(WH_Relation_Cook_PLU wH_Relation_Cook_PLU)
         {
             base.AddObject("WH_Relation_Cook_PLU", wH_Relation_Cook_PLU);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_FCE EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_FCE(WH_Sys_FCE wH_Sys_FCE)
+        {
+            base.AddObject("WH_Sys_FCE", wH_Sys_FCE);
         }
 
         #endregion
@@ -4308,6 +4308,30 @@ namespace PBMApp.Model
         private global::System.String _Description;
         partial void OnDescriptionChanging(global::System.String value);
         partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> isFCE
+        {
+            get
+            {
+                return _isFCE;
+            }
+            set
+            {
+                OnisFCEChanging(value);
+                ReportPropertyChanging("isFCE");
+                _isFCE = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("isFCE");
+                OnisFCEChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _isFCE;
+        partial void OnisFCEChanging(Nullable<global::System.Int64> value);
+        partial void OnisFCEChanged();
 
         #endregion
     

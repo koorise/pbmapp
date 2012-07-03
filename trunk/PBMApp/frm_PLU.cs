@@ -231,6 +231,7 @@ namespace PBMApp
 
             var m = new Entities();
             var q = from c in m.WH_PLU
+                    orderby c.Bar_Code ascending 
                     select c;
             foreach (WH_PLU c in q)
             {
@@ -254,11 +255,15 @@ namespace PBMApp
             {
                 dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
-            
+            groupBox5.Enabled = false;
         }
 
         private void frm_PLU_Load(object sender, EventArgs e)
         {
+            tbBarcode.KeyPress += (Tools.Validate.KeyPressNum);
+            tbPrice1.KeyPress += (Tools.Validate.KeyPress);
+            tbPrice2.KeyPress += (Tools.Validate.KeyPress);
+            tbPrice3.KeyPress += (Tools.Validate.KeyPress);
             BindData();
         }
 
@@ -449,41 +454,7 @@ namespace PBMApp
                 t++;
             }
         }
-
-        private void tbPrice1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbPrice2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbPrice3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbInventory_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbInventoryStock_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbModifierUnitQuantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbModifierPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
+         
 
         private void BindDetail()
         {
@@ -600,6 +571,19 @@ namespace PBMApp
             int pluid = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             ListBox_Cooking_Selected(pluid, comboBox1.SelectedIndex + 1);
 
+        }
+
+        private void ckIsInventoryActive_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ckIsInventoryActive.Checked)
+            {
+                groupBox5.Enabled = true;
+
+            }
+            else
+            {
+                groupBox5.Enabled = false;
+            }
         }
 
         

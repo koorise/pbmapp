@@ -50,11 +50,13 @@ namespace PBMApp
                         TextBox tb3 = this.groupBox2.Controls["textBoxe" + j] as TextBox;
                         ComboBox cb1 = this.groupBox2.Controls["comboBoxa" + j] as ComboBox;
                         ComboBox cb2 = this.groupBox2.Controls["comboBoxb" + j] as ComboBox;
+                        CheckBox ck = this.groupBox2.Controls["checkbox" + j] as CheckBox;
                         tb1.Text = w.Local.ToString();
                         tb2.Text = w.FC.ToString();
                         cb1.SelectedIndex = int.Parse(w.Decimals.ToString());
                         ComboxB_ItemBind(int.Parse(w.SymbolID.ToString()) - 1, cb2);
                         tb3.Text = w.Description.ToString();
+                        ck.Checked = int.Parse(w.isFCE.ToString()) == 1;
                     }
                     else
                     {
@@ -139,7 +141,7 @@ namespace PBMApp
                     TextBox tb3 = this.groupBox2.Controls["textBoxe" + j] as TextBox;
                     ComboBox cb1 = this.groupBox2.Controls["comboBoxa" + j] as ComboBox;
                     ComboBox cb2 = this.groupBox2.Controls["comboBoxb" + j] as ComboBox;
-
+                    CheckBox ck = this.groupBox2.Controls["checkbox" + j] as CheckBox;
                     WH_Sys_FCE w = m.WH_Sys_FCE.FirstOrDefault(x => x.ID == j);
                     w.Local = decimal.Parse(tb1.Text);
                     w.FC = int.Parse(tb2.Text);
@@ -147,6 +149,7 @@ namespace PBMApp
                     w.SymbolID = cb2.SelectedIndex + 1;
                     w.SymbolStr = cb2.SelectedText;
                     w.Description = tb3.Text;
+                    w.isFCE = ck.Checked ? 1 : 0;
                 }
                 m.SaveChanges();
                 m.Dispose();

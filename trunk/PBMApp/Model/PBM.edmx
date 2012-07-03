@@ -253,6 +253,7 @@
           <Property Name="SymbolID" Type="integer" />
           <Property Name="SymbolStr" Type="nvarchar" />
           <Property Name="Description" Type="nvarchar" />
+          <Property Name="isFCE" Type="integer" />
         </EntityType>
         <EntityType Name="WH_Sys_FlashReport">
           <Key>
@@ -562,7 +563,6 @@
           <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
           <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
           <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
-          <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
           <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.WH_Sys_Header_Footer" />
           <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.WH_Sys_KP" />
           <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.WH_Sys_PCASH" />
@@ -592,6 +592,7 @@
           <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
           <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.WH_Sys_KeyType" />
           <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
+          <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -751,18 +752,6 @@
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="price" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="HALO" Type="Decimal" Precision="18" Scale="4" />
-        </EntityType>
-        <EntityType Name="WH_Sys_FCE">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Local" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="FC" Type="Int64" />
-          <Property Name="Decimals" Type="Int64" />
-          <Property Name="SymbolID" Type="Int64" />
-          <Property Name="SymbolStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
         </EntityType>
         <EntityType Name="WH_Sys_Header_Footer">
           <Key>
@@ -1085,6 +1074,19 @@
           <Property Type="Int64" Name="PLUID" />
           <Property Type="Int64" Name="isFlag" />
         </EntityType>
+        <EntityType Name="WH_Sys_FCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Local" Precision="18" Scale="4" />
+          <Property Type="Int64" Name="FC" />
+          <Property Type="Int64" Name="Decimals" />
+          <Property Type="Int64" Name="SymbolID" />
+          <Property Type="String" Name="SymbolStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="isFCE" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1207,15 +1209,6 @@
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="price" ColumnName="price" />
             <ScalarProperty Name="HALO" ColumnName="HALO" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="WH_Sys_FCE"><EntityTypeMapping TypeName="pbmModel.WH_Sys_FCE"><MappingFragment StoreEntitySet="WH_Sys_FCE">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="Local" ColumnName="Local" />
-            <ScalarProperty Name="FC" ColumnName="FC" />
-            <ScalarProperty Name="Decimals" ColumnName="Decimals" />
-            <ScalarProperty Name="SymbolID" ColumnName="SymbolID" />
-            <ScalarProperty Name="SymbolStr" ColumnName="SymbolStr" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="WH_Sys_Header_Footer"><EntityTypeMapping TypeName="pbmModel.WH_Sys_Header_Footer"><MappingFragment StoreEntitySet="WH_Sys_Header_Footer">
             <ScalarProperty Name="ID" ColumnName="ID" />
@@ -1527,6 +1520,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_FCE">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_FCE">
+              <MappingFragment StoreEntitySet="WH_Sys_FCE">
+                <ScalarProperty Name="isFCE" ColumnName="isFCE" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SymbolStr" ColumnName="SymbolStr" />
+                <ScalarProperty Name="SymbolID" ColumnName="SymbolID" />
+                <ScalarProperty Name="Decimals" ColumnName="Decimals" />
+                <ScalarProperty Name="FC" ColumnName="FC" />
+                <ScalarProperty Name="Local" ColumnName="Local" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1562,7 +1569,6 @@
         <EntityTypeShape EntityType="pbmModel.WH_Relation_PLU_Condiment" Width="1.5" PointX="8.75" PointY="3.75" Height="1.4535937500000031" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" Width="1.5" PointX="8.75" PointY="6.75" Height="1.2849739583333388" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_CouponInformation" Width="1.5" PointX="8.75" PointY="9.75" Height="1.4535937500000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="pbmModel.WH_Sys_FCE" Width="1.5" PointX="10.75" PointY="0.75" Height="2.1280729166666674" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_Header_Footer" Width="1.5" PointX="10.75" PointY="3.75" Height="2.1280729166666674" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_KP" Width="1.5" PointX="10.75" PointY="6.75" Height="2.2966927083333388" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PCASH" Width="1.5" PointX="10.75" PointY="10.75" Height="1.7908333333333388" IsExpanded="true" />
@@ -1592,6 +1598,7 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_KeyDesc" Width="1.5" PointX="17.375" PointY="10.75" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_KeyType" Width="1.5" PointX="17.375" PointY="13.75" Height="1.2849739583333246" />
         <EntityTypeShape EntityType="pbmModel.WH_Relation_Cook_PLU" Width="1.5" PointX="3.375" PointY="8.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_FCE" Width="1.5" PointX="17.375" PointY="16.75" Height="2.2966927083333246" />
       </Diagram>
     </Diagrams>
   </Designer>

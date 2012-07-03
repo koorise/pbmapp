@@ -32,6 +32,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.C_A_cbAmtQnt = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.C_A_tbLimit = new System.Windows.Forms.TextBox();
             this.C_A_tbDiscount = new System.Windows.Forms.TextBox();
             this.G3 = new System.Windows.Forms.GroupBox();
@@ -75,7 +76,7 @@
             this.C_cbBundleList = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.G1.SuspendLayout();
             this.G3.SuspendLayout();
             this.G2.SuspendLayout();
@@ -127,6 +128,16 @@
             this.C_A_cbAmtQnt.Name = "C_A_cbAmtQnt";
             this.C_A_cbAmtQnt.Size = new System.Drawing.Size(121, 20);
             this.C_A_cbAmtQnt.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Location = new System.Drawing.Point(8, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Amt/Qnt";
             // 
             // C_A_tbLimit
             // 
@@ -550,21 +561,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Description";
             // 
-            // label3
+            // btnReset
             // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Location = new System.Drawing.Point(8, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 12);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Amt/Qnt";
+            this.btnReset.Location = new System.Drawing.Point(402, 52);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 31;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frm_bundle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 438);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.G1);
             this.Controls.Add(this.G3);
             this.Controls.Add(this.label2);
@@ -648,6 +660,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox G1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnReset;
 
 
     }

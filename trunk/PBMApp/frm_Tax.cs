@@ -227,32 +227,35 @@ namespace PBMApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(float.Parse(tbRateTaxB.Text)>=float.Parse(tbTaxRate.Text))
+            if (button3.Text == "Finish")
             {
-                MessageBox.Show("Tax should be greater than  " + tbRateTaxB.Text, "alert");
-                return;
-                
+                if (float.Parse(tbRateTaxB.Text) >= float.Parse(tbTaxRate.Text))
+                {
+                    MessageBox.Show("Tax should be greater than  " + tbRateTaxB.Text, "alert");
+                    return;
+
+                }
+                if (float.Parse(tbTaxA.Text) <= float.Parse(tbTaxB.Text))
+                {
+                    DataRow dr = dataTable.NewRow();
+                    dr[0] = dataTable.Rows.Count + 1;
+                    dr[1] = "REGULAR";
+                    dr[2] = tbTaxA.Text + "-" + tbTaxB.Text;
+                    dr[3] = tbTaxRate.Text;
+                    dataTable.Rows.Add(dr);
+                    bs.DataSource = dataTable;
+                    dataGridView1.DataSource = bs;
+                    bindingNavigator1.BindingSource = bs;
+                    float dots = 0.1f;
+                    tbTaxA.Text = (float.Parse(tbTaxB.Text) + dots).ToString();
+                    tbRateTaxB.Text = (float.Parse(tbTaxRate.Text) + dots).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Range should be greater than  " + tbTaxA.Text, "alert");
+                }
             }
-            if(float.Parse(tbTaxA.Text)<=float.Parse(tbTaxB.Text))
-            {
-                DataRow dr = dataTable.NewRow();
-                dr[0] = dataTable.Rows.Count + 1;
-                dr[1] = "REGULAR";
-                dr[2] = tbTaxA.Text + "-" + tbTaxB.Text;
-                dr[3] = tbTaxRate.Text;
-                dataTable.Rows.Add(dr);
-                bs.DataSource = dataTable;
-                dataGridView1.DataSource = bs;
-                bindingNavigator1.BindingSource = bs;
-                float dots = 0.1f;
-                tbTaxA.Text = (float.Parse(tbTaxB.Text) + dots).ToString();
-                tbRateTaxB.Text = (float.Parse(tbTaxRate.Text) + dots).ToString(); 
-            }
-            else
-            {
-                MessageBox.Show("Range should be greater than  " + tbTaxA.Text, "alert");
-            }
-           
+
         }
 
         
@@ -264,7 +267,7 @@ namespace PBMApp
                 if (MessageBox.Show("This operation will delete the original data\n\r make sure to do this?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     btn.Text = "Finish";
-                    button2.Enabled = true;
+                    //button2.Enabled = true;
                     dataTable = new DataTable("dtt");
                     dataTable.Clear();
                     dataGridView1.Columns.Clear();
@@ -285,7 +288,7 @@ namespace PBMApp
                  if (MessageBox.Show("Have you done?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
                  {
                      btn.Text = "REGULAR";
-                     button2.Enabled = false;
+                     //button2.Enabled = false;
                      using (var m = new Entities())
                      {
                          var q = from c in m.WH_Tax_Table
@@ -313,6 +316,31 @@ namespace PBMApp
                   
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Tax_Table
+                        select c;
+                foreach (WH_Tax_Table w in q)
+                {
+                    m.DeleteObject(w);
+                }
+                var qq = from c in m.WH_Tax
+                         select c;
+                foreach (WH_Tax whTax in qq)
+                {
+                    whTax.TaxTypeID = 0;
+                    whTax.Rate = 0;
+                    whTax.Limit = 0;
+                }
+                m.SaveChanges();
+            }
+            comboBox1.SelectedIndexChanged += (comboBox1_SelectedIndexChanged);
+        }
+
+        
 
         
     }

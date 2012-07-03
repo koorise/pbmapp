@@ -49,18 +49,10 @@
             this.clerkSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableBarcodeMailerftpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.electronicScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.happyHourServiceTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pageFourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pageThreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pageTwoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pageOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flashReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.systemFlagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,67 +190,11 @@
             // optionToolStripMenuItem
             // 
             this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pagesToolStripMenuItem,
             this.flashReportToolStripMenuItem,
             this.kPToolStripMenuItem,
             this.systemFlagToolStripMenuItem});
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
             resources.ApplyResources(this.optionToolStripMenuItem, "optionToolStripMenuItem");
-            // 
-            // pagesToolStripMenuItem
-            // 
-            this.pagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tableBarcodeMailerftpToolStripMenuItem,
-            this.electronicScaleToolStripMenuItem,
-            this.happyHourServiceTaxToolStripMenuItem,
-            this.pageFourToolStripMenuItem,
-            this.pageThreeToolStripMenuItem,
-            this.pageTwoToolStripMenuItem,
-            this.pageOneToolStripMenuItem});
-            this.pagesToolStripMenuItem.Name = "pagesToolStripMenuItem";
-            resources.ApplyResources(this.pagesToolStripMenuItem, "pagesToolStripMenuItem");
-            // 
-            // tableBarcodeMailerftpToolStripMenuItem
-            // 
-            this.tableBarcodeMailerftpToolStripMenuItem.Name = "tableBarcodeMailerftpToolStripMenuItem";
-            resources.ApplyResources(this.tableBarcodeMailerftpToolStripMenuItem, "tableBarcodeMailerftpToolStripMenuItem");
-            this.tableBarcodeMailerftpToolStripMenuItem.Click += new System.EventHandler(this.tableBarcodeMailerftpToolStripMenuItem_Click_1);
-            // 
-            // electronicScaleToolStripMenuItem
-            // 
-            this.electronicScaleToolStripMenuItem.Name = "electronicScaleToolStripMenuItem";
-            resources.ApplyResources(this.electronicScaleToolStripMenuItem, "electronicScaleToolStripMenuItem");
-            this.electronicScaleToolStripMenuItem.Click += new System.EventHandler(this.electronicScaleToolStripMenuItem_Click_1);
-            // 
-            // happyHourServiceTaxToolStripMenuItem
-            // 
-            this.happyHourServiceTaxToolStripMenuItem.Name = "happyHourServiceTaxToolStripMenuItem";
-            resources.ApplyResources(this.happyHourServiceTaxToolStripMenuItem, "happyHourServiceTaxToolStripMenuItem");
-            this.happyHourServiceTaxToolStripMenuItem.Click += new System.EventHandler(this.happyHourServiceTaxToolStripMenuItem_Click_1);
-            // 
-            // pageFourToolStripMenuItem
-            // 
-            this.pageFourToolStripMenuItem.Name = "pageFourToolStripMenuItem";
-            resources.ApplyResources(this.pageFourToolStripMenuItem, "pageFourToolStripMenuItem");
-            this.pageFourToolStripMenuItem.Click += new System.EventHandler(this.pageFourToolStripMenuItem_Click_1);
-            // 
-            // pageThreeToolStripMenuItem
-            // 
-            this.pageThreeToolStripMenuItem.Name = "pageThreeToolStripMenuItem";
-            resources.ApplyResources(this.pageThreeToolStripMenuItem, "pageThreeToolStripMenuItem");
-            this.pageThreeToolStripMenuItem.Click += new System.EventHandler(this.pageThreeToolStripMenuItem_Click_1);
-            // 
-            // pageTwoToolStripMenuItem
-            // 
-            this.pageTwoToolStripMenuItem.Name = "pageTwoToolStripMenuItem";
-            resources.ApplyResources(this.pageTwoToolStripMenuItem, "pageTwoToolStripMenuItem");
-            this.pageTwoToolStripMenuItem.Click += new System.EventHandler(this.pageTwoToolStripMenuItem_Click_1);
-            // 
-            // pageOneToolStripMenuItem
-            // 
-            this.pageOneToolStripMenuItem.Name = "pageOneToolStripMenuItem";
-            resources.ApplyResources(this.pageOneToolStripMenuItem, "pageOneToolStripMenuItem");
-            this.pageOneToolStripMenuItem.Click += new System.EventHandler(this.pageOneToolStripMenuItem_Click_1);
             // 
             // flashReportToolStripMenuItem
             // 
@@ -272,6 +208,12 @@
             resources.ApplyResources(this.kPToolStripMenuItem, "kPToolStripMenuItem");
             this.kPToolStripMenuItem.Click += new System.EventHandler(this.kPToolStripMenuItem_Click);
             // 
+            // systemFlagToolStripMenuItem
+            // 
+            this.systemFlagToolStripMenuItem.Name = "systemFlagToolStripMenuItem";
+            resources.ApplyResources(this.systemFlagToolStripMenuItem, "systemFlagToolStripMenuItem");
+            this.systemFlagToolStripMenuItem.Click += new System.EventHandler(this.systemFlagToolStripMenuItem_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -279,12 +221,6 @@
             this.openFileDialog1.InitialDirectory = "Application.ExecutablePath";
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // systemFlagToolStripMenuItem
-            // 
-            this.systemFlagToolStripMenuItem.Name = "systemFlagToolStripMenuItem";
-            resources.ApplyResources(this.systemFlagToolStripMenuItem, "systemFlagToolStripMenuItem");
-            this.systemFlagToolStripMenuItem.Click += new System.EventHandler(this.systemFlagToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
@@ -324,14 +260,6 @@
         private System.Windows.Forms.ToolStripMenuItem supplierSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentRefundCouponToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pCASHToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pagesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tableBarcodeMailerftpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem electronicScaleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem happyHourServiceTaxToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pageFourToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pageThreeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pageTwoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pageOneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flashReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keyDescriptorToolStripMenuItem;

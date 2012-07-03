@@ -337,14 +337,13 @@
             // 
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.cbInventoryChange);
-            this.groupBox5.Controls.Add(this.ckIsInventoryActive);
             this.groupBox5.Controls.Add(this.tbInventoryStock);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.tbInventory);
-            this.groupBox5.Location = new System.Drawing.Point(15, 266);
+            this.groupBox5.Location = new System.Drawing.Point(16, 305);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(231, 151);
+            this.groupBox5.Size = new System.Drawing.Size(231, 110);
             this.groupBox5.TabIndex = 34;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Inventroy";
@@ -374,12 +373,13 @@
             // ckIsInventoryActive
             // 
             this.ckIsInventoryActive.AutoSize = true;
-            this.ckIsInventoryActive.Location = new System.Drawing.Point(68, -1);
+            this.ckIsInventoryActive.Location = new System.Drawing.Point(23, 283);
             this.ckIsInventoryActive.Name = "ckIsInventoryActive";
             this.ckIsInventoryActive.Size = new System.Drawing.Size(120, 16);
             this.ckIsInventoryActive.TabIndex = 17;
             this.ckIsInventoryActive.Text = "Inventroy Active";
             this.ckIsInventoryActive.UseVisualStyleBackColor = true;
+            this.ckIsInventoryActive.CheckedChanged += new System.EventHandler(this.ckIsInventoryActive_CheckedChanged);
             // 
             // tbInventoryStock
             // 
@@ -848,6 +848,7 @@
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.chkMenu);
             this.groupBox1.Controls.Add(this.chkES);
+            this.groupBox1.Controls.Add(this.ckIsInventoryActive);
             this.groupBox1.Controls.Add(this.chkFS);
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.tbID);

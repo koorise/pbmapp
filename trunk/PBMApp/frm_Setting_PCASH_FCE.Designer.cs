@@ -104,6 +104,10 @@
             this.textBoxd1 = new System.Windows.Forms.TextBox();
             this.textBoxc1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -336,9 +340,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(269, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 12);
+            this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 22;
-            this.label8.Text = "Link payment";
+            this.label8.Text = "Type";
             // 
             // label7
             // 
@@ -354,9 +358,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(56, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.Size = new System.Drawing.Size(35, 12);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Rate";
+            this.label6.Text = "Price";
             // 
             // comboBox5
             // 
@@ -520,6 +524,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox4);
+            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBoxe4);
             this.groupBox2.Controls.Add(this.comboBoxb4);
@@ -571,7 +579,7 @@
             // 
             this.textBoxe4.Location = new System.Drawing.Point(290, 119);
             this.textBoxe4.Name = "textBoxe4";
-            this.textBoxe4.Size = new System.Drawing.Size(118, 21);
+            this.textBoxe4.Size = new System.Drawing.Size(69, 21);
             this.textBoxe4.TabIndex = 28;
             // 
             // comboBoxb4
@@ -624,7 +632,7 @@
             // 
             this.textBoxe3.Location = new System.Drawing.Point(290, 92);
             this.textBoxe3.Name = "textBoxe3";
-            this.textBoxe3.Size = new System.Drawing.Size(118, 21);
+            this.textBoxe3.Size = new System.Drawing.Size(69, 21);
             this.textBoxe3.TabIndex = 22;
             // 
             // comboBoxb3
@@ -677,7 +685,7 @@
             // 
             this.textBoxe2.Location = new System.Drawing.Point(290, 65);
             this.textBoxe2.Name = "textBoxe2";
-            this.textBoxe2.Size = new System.Drawing.Size(118, 21);
+            this.textBoxe2.Size = new System.Drawing.Size(69, 21);
             this.textBoxe2.TabIndex = 16;
             // 
             // comboBoxb2
@@ -775,7 +783,7 @@
             // 
             this.textBoxe1.Location = new System.Drawing.Point(290, 39);
             this.textBoxe1.Name = "textBoxe1";
-            this.textBoxe1.Size = new System.Drawing.Size(118, 21);
+            this.textBoxe1.Size = new System.Drawing.Size(69, 21);
             this.textBoxe1.TabIndex = 5;
             // 
             // comboBoxb1
@@ -823,6 +831,46 @@
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 0;
             this.label9.Text = "FCE1";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(366, 42);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(42, 16);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.Text = "FCE";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(366, 70);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(42, 16);
+            this.checkBox2.TabIndex = 31;
+            this.checkBox2.Text = "FCE";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(366, 97);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(42, 16);
+            this.checkBox3.TabIndex = 32;
+            this.checkBox3.Text = "FCE";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(365, 123);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(42, 16);
+            this.checkBox4.TabIndex = 33;
+            this.checkBox4.Text = "FCE";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // frm_Setting_PCASH_FCE
             // 
@@ -920,5 +968,9 @@
         private System.Windows.Forms.TextBox textBoxb6;
         private System.Windows.Forms.TextBox textBoxa6;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

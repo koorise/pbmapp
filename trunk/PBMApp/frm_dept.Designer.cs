@@ -87,6 +87,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.rbVat5 = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -195,8 +196,7 @@
             "GST",
             "PST1",
             "PST2",
-            "PST3",
-            "NONE"});
+            "PST3"});
             this.chkGST.Location = new System.Drawing.Point(3, 17);
             this.chkGST.MultiColumn = true;
             this.chkGST.Name = "chkGST";
@@ -222,8 +222,7 @@
             "Tax1",
             "Tax2",
             "Tax3",
-            "Tax4",
-            "None-Taxable"});
+            "Tax4"});
             this.chkTax.Location = new System.Drawing.Point(3, 17);
             this.chkTax.MultiColumn = true;
             this.chkTax.Name = "chkTax";
@@ -232,6 +231,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.rbVat5);
             this.groupBox6.Controls.Add(this.rbVat0);
             this.groupBox6.Controls.Add(this.rbVat2);
             this.groupBox6.Controls.Add(this.rbVat4);
@@ -247,7 +247,7 @@
             // rbVat0
             // 
             this.rbVat0.AutoSize = true;
-            this.rbVat0.Location = new System.Drawing.Point(12, 104);
+            this.rbVat0.Location = new System.Drawing.Point(13, 111);
             this.rbVat0.Name = "rbVat0";
             this.rbVat0.Size = new System.Drawing.Size(47, 16);
             this.rbVat0.TabIndex = 4;
@@ -259,7 +259,7 @@
             // rbVat2
             // 
             this.rbVat2.AutoSize = true;
-            this.rbVat2.Location = new System.Drawing.Point(12, 41);
+            this.rbVat2.Location = new System.Drawing.Point(12, 36);
             this.rbVat2.Name = "rbVat2";
             this.rbVat2.Size = new System.Drawing.Size(47, 16);
             this.rbVat2.TabIndex = 1;
@@ -270,7 +270,7 @@
             // rbVat4
             // 
             this.rbVat4.AutoSize = true;
-            this.rbVat4.Location = new System.Drawing.Point(12, 83);
+            this.rbVat4.Location = new System.Drawing.Point(12, 68);
             this.rbVat4.Name = "rbVat4";
             this.rbVat4.Size = new System.Drawing.Size(47, 16);
             this.rbVat4.TabIndex = 3;
@@ -292,7 +292,7 @@
             // rbVat3
             // 
             this.rbVat3.AutoSize = true;
-            this.rbVat3.Location = new System.Drawing.Point(12, 62);
+            this.rbVat3.Location = new System.Drawing.Point(12, 52);
             this.rbVat3.Name = "rbVat3";
             this.rbVat3.Size = new System.Drawing.Size(47, 16);
             this.rbVat3.TabIndex = 2;
@@ -321,6 +321,7 @@
             this.rbKP0.Text = "Single";
             this.rbKP0.UseVisualStyleBackColor = true;
             this.rbKP0.CheckedChanged += new System.EventHandler(this.rbKP0_CheckedChanged);
+            this.rbKP0.MouseUp += new System.Windows.Forms.MouseEventHandler(this.rbKP0_MouseUp);
             // 
             // rbKP1
             // 
@@ -333,6 +334,7 @@
             this.rbKP1.TabStop = true;
             this.rbKP1.Text = "Mulitiple";
             this.rbKP1.UseVisualStyleBackColor = true;
+            this.rbKP1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.rbKP1_MouseUp);
             // 
             // groupBox4
             // 
@@ -461,7 +463,7 @@
             this.tbisPrice.Location = new System.Drawing.Point(146, 87);
             this.tbisPrice.Name = "tbisPrice";
             this.tbisPrice.Size = new System.Drawing.Size(100, 21);
-            this.tbisPrice.TabIndex = 14; 
+            this.tbisPrice.TabIndex = 14;
             this.tbisPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbisPrice_KeyPress);
             // 
             // checkBox1
@@ -473,6 +475,7 @@
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "1-Direct Sale";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             // 
             // cbisAge
             // 
@@ -746,6 +749,17 @@
             this.toolStripButton1.Text = "RESET";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // rbVat5
+            // 
+            this.rbVat5.AutoSize = true;
+            this.rbVat5.Location = new System.Drawing.Point(12, 84);
+            this.rbVat5.Name = "rbVat5";
+            this.rbVat5.Size = new System.Drawing.Size(47, 16);
+            this.rbVat5.TabIndex = 5;
+            this.rbVat5.TabStop = true;
+            this.rbVat5.Text = "vat5";
+            this.rbVat5.UseVisualStyleBackColor = true;
+            // 
             // frm_dept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -838,5 +852,6 @@
         private System.Windows.Forms.CheckBox chkFS;
         private System.Windows.Forms.RadioButton rbVat0;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.RadioButton rbVat5;
     }
 }

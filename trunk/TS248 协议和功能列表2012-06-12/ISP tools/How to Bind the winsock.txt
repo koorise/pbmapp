@@ -1,0 +1,5 @@
+If cannot use the ISP tool, then click
+
+Start --> Run --> 
+
+regsvr32  winsock.ocx
