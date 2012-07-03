@@ -392,6 +392,10 @@ namespace PBMApp
                        {
                            wd.str_Vat_Tax_GST = "4";
                        }
+                       if (rbVat5.Checked)
+                       {
+                           wd.str_Vat_Tax_GST = "5";
+                       }
                         break;
                     case 1:
                         for (int i = 0; i < chkTax.Items.Count; i++)
@@ -654,12 +658,32 @@ namespace PBMApp
 
         private void rbKP0_CheckedChanged(object sender, EventArgs e)
         {
+          
+        }
+
+        private void rbKP0_MouseUp(object sender, MouseEventArgs e)
+        {
             frm_kp_preview_sigle frm1 = new frm_kp_preview_sigle();
             frm_kp_preview frm2 = new frm_kp_preview();
-            if(rbKP0.Checked)
+            if (rbKP0.Checked)
             {
                 frm1.ShowDialog();
-             }
+            }
+            else
+            {
+                frm2.ShowDialog();
+            }
+
+        }
+
+        private void rbKP1_MouseUp(object sender, MouseEventArgs e)
+        {
+            frm_kp_preview_sigle frm1 = new frm_kp_preview_sigle();
+            frm_kp_preview frm2 = new frm_kp_preview();
+            if (rbKP0.Checked)
+            {
+                frm1.ShowDialog();
+            }
             else
             {
                 frm2.ShowDialog();

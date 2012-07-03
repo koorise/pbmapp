@@ -295,6 +295,12 @@
     <Compile Include="HeaderFooterPreview\frm_f.Designer.cs">
       <DependentUpon>frm_f.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeaderFooterPreview\frm_g.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderFooterPreview\frm_g.Designer.cs">
+      <DependentUpon>frm_g.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\PBM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -416,6 +422,9 @@
     <EmbeddedResource Include="HeaderFooterPreview\frm_f.resx">
       <DependentUpon>frm_f.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HeaderFooterPreview\frm_g.resx">
+      <DependentUpon>frm_g.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -447,7 +456,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

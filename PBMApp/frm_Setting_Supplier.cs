@@ -16,150 +16,93 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-        BindingSource bs = new BindingSource();
+         
         private void frm_Setting_Supplier_Load(object sender, EventArgs e)
         {
-            BindData();
-        }
-        private void BindData()
-        {
+             
+            int y = 10;
+            for (int i = 1; i < 11; i++)
+            {
+                Point p = new Point(30 ,y+30);
+                Label lb = new Label();
+                Size size=new Size(70,20);
+                lb.Location = p;
+                lb.Size = size;
+                lb.Text = "Supplier" + i.ToString().PadLeft(2, '0');
+                lb.Visible = true;
+                groupBox1.Controls.Add(lb);
+                
+                Point pp = new Point(100,y+28);
+                TextBox tb = new TextBox();
+                Size tbSize = new Size(100,20);
+                tb.Location = pp;
+                tb.Size = tbSize;
+                tb.Visible = true;
+                tb.Name = "tb" + i;
+                groupBox1.Controls.Add(tb);
+                y += 30;
+            }
+            y = 10;
+            for (int i = 11; i < 21; i++)
+            {
+                Point p = new Point(230, y + 30);
+                Label lb = new Label();
+                Size size = new Size(70, 20);
+                lb.Location = p;
+                lb.Size = size;
+                lb.Text = "Supplier" + i.ToString().PadLeft(2, '0');
+                lb.Visible = true;
+                groupBox1.Controls.Add(lb);
+
+                Point pp = new Point(300, y + 28);
+                TextBox tb = new TextBox();
+                Size tbSize = new Size(100, 20);
+                tb.Location = pp;
+                tb.Size = tbSize;
+                tb.Visible = true;
+                tb.Name = "tb" + i;
+                groupBox1.Controls.Add(tb);
+                y += 30;
+            }
             using (var m = new Entities())
             {
-                DataTable dt = new DataTable("dt");
-                dt.Clear();
-                dataGridView1.Columns.Clear();
-
-                DataColumn dc0 = new DataColumn("NO.", typeof(int));
-                dt.Columns.Add(dc0);
-                DataColumn dc1 = new DataColumn("Description", typeof(string));
-                dt.Columns.Add(dc1);
-
-                var q = from c in m.WH_Sys_Supplier
-                        orderby c.ID ascending 
-                        select c;
-                foreach (var w in q)
+                for (int i = 1; i < 21; i++)
                 {
-                    DataRow dr = dt.NewRow();
-                    dr[0] = int.Parse(w.ID.ToString());
-                    dr[1] = w.Description;
-                    dt.Rows.Add(dr);
-                }
-                bs.DataSource = dt;
-                dataGridView1.DataSource = bs;
-                bindingNavigator1.BindingSource = bs;
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    TextBox tb = this.groupBox1.Controls["tb" + i] as TextBox;
+                    WH_Sys_Supplier w = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == i);
+                    tb.Text = w.Description; 
                 }
             }
-        }
-        private void BindDetail()
-        {
-            int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-            using (var m = new Entities())
-            {
-                var ctx = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == id);
-                textBox1.Text = ctx.ID.ToString();
-                textBox2.Text = ctx.Description.ToString(); 
-            }
-        }
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-            BindDetail();
-        }
-
-        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
-        {
-            BindDetail();
-        }
-
-        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
-        {
-            BindDetail();
-        }
-
-        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
-        {
-            BindDetail();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             using (var m = new Entities())
             {
-                if(textBox1.Text!="")
+                for (int i = 1; i < 21; i++)
                 {
-                    int id;
-                    int.TryParse(textBox1.Text, out id);
-                    var ctx = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == id);
-                    if(ctx==null)
-                    {
-                        return;
-                    }
-                    ctx.Description = textBox2.Text;
-                    m.SaveChanges();
+                    TextBox tb = this.groupBox1.Controls["tb" + i] as TextBox;
+                    WH_Sys_Supplier w = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == i);
+                    w.Description = tb.Text;
                 }
-                else
-                {
-                    WH_Sys_Supplier sp = new WH_Sys_Supplier();
-                    sp.Description = textBox2.Text;
-                    m.AddToWH_Sys_Supplier(sp);
-                    m.SaveChanges();
-                }
-               
-            }
-            BindData();
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            using (var m= new Entities())
-            {
-                WH_Sys_Supplier s = new WH_Sys_Supplier();
-                s.Description = "New One";
-                m.AddToWH_Sys_Supplier(s);
                 m.SaveChanges();
-
-                var q = m.WH_Sys_Supplier.FirstOrDefault(x => x.Description =="New One");
-                textBox1.Text = q.ID.ToString();
-                textBox2.Text = q.Description;
-
             }
-            
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count!=0)
-            {
-                int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-                using (var m = new Entities())
-                {
-                    WH_Sys_Supplier w = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == id);
-                    m.DeleteObject(w);
-                    m.SaveChanges();
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                }
-            }
-            BindData();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             using (var m = new Entities())
             {
-                var ctx = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == id);
-                textBox1.Text = ctx.ID.ToString();
-                textBox2.Text = ctx.Description.ToString();
+                for (int i = 1; i < 21; i++)
+                {
+                    TextBox tb = this.groupBox1.Controls["tb" + i] as TextBox;
+                    WH_Sys_Supplier w = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == i);
+                    w.Description = "Supplier"+i;
+                }
+                m.SaveChanges();
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
+         
 
     }
 }

@@ -34,7 +34,7 @@ namespace PBMApp
                     C_AllPLU2.Items.Add(cb);
                     C_AllPLU3.Items.Add(cb);
                 }
-#endregion
+                #endregion
 
                 #region 促销信息初始化
 
@@ -613,6 +613,37 @@ namespace PBMApp
                         e.Handled = true;
                 }
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Bundle
+                        select c;
+                foreach (var w in q)
+                {
+                    w.Description = "Bundle#" + w.ID.ToString().PadLeft(2, '0');
+                    w.TypeID = 1;
+                    w.isAmtOrQnt = 0;
+                    w.Limit = 0;
+                    w.Discount = 0;
+                }
+                var qq = from c in m.WH_Bundle_FreeOrDiscount
+                         select c;
+                foreach (var whBundleFreeOrDiscount in qq)
+                {
+                    m.DeleteObject(whBundleFreeOrDiscount);
+                }
+                var qqq = from c in m.WH_Bundle_member
+                          select c;
+                foreach (var whBundleMember in qqq)
+                {
+                    m.DeleteObject(whBundleMember);
+                }
+                m.SaveChanges();
+            }
+            MenuBind(0);
         }
 
        

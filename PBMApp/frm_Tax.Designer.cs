@@ -64,6 +64,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.tbRateTaxB);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox2);
@@ -89,7 +91,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 593);
             this.panel1.TabIndex = 0;
-            
             // 
             // tbRateTaxB
             // 
@@ -147,7 +148,6 @@
             // 
             // button2
             // 
-            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(103, 101);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -418,6 +418,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(382, 565);
             this.dataGridView1.TabIndex = 2;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(56, 301);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Reset";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // frm_Tax
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -481,5 +491,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbRateTaxB;
+        private System.Windows.Forms.Button button4;
     }
 }

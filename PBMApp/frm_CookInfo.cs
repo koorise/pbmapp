@@ -146,6 +146,22 @@ namespace PBMApp
         {
             BindDetail();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_CookInformation
+                        select c;
+                foreach (var w in q)
+                {
+                    w.Description = "CookMsg" + w.ID.ToString().PadLeft(3, '0');
+                    w.price = 0;
+                }
+                m.SaveChanges();
+            }
+            BindData();
+        }
         
     }
 }

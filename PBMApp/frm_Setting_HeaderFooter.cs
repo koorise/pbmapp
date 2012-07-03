@@ -238,7 +238,10 @@ namespace PBMApp
                     frm_e frme = new frm_e();
                     frme.ShowDialog();
                     break;
-                
+                case 1:
+                    frm_g frmg = new frm_g();
+                    frmg.ShowDialog();
+                    break;
                 case 2:
                     frm_f frmf = new frm_f();
                     frmf.ShowDialog();

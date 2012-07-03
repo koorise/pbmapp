@@ -263,11 +263,11 @@ namespace PBMApp
                 }
                 #endregion 
 
-                var o = from c in m.WH_Sys_WeightingPLU
+                var weightingPlus = from c in m.WH_Sys_WeightingPLU
                         orderby c.ID ascending
                         select c;
                 int count = 0;
-                foreach (var oo in o)
+                foreach (var oo in weightingPlus)
                 {
                     count++;
                     TextBox t = this.groupBox3.Controls["t" + count] as TextBox;
@@ -588,7 +588,7 @@ namespace PBMApp
                 ComboBox a = this.groupBox1.Controls["a" + i] as ComboBox;
                 ComboBox b = this.groupBox1.Controls["b" + i] as ComboBox;
                 ComboBox c = this.groupBox1.Controls["c" + i] as ComboBox;
-
+                c.Visible = false;
                 for (int j = 0; j < 25; j++)
                 {
                     ComboBoxItem cb = new ComboBoxItem();
@@ -614,7 +614,7 @@ namespace PBMApp
                 ComboBox a = this.groupBox2.Controls["a" + i] as ComboBox;
                 ComboBox b = this.groupBox2.Controls["b" + i] as ComboBox;
                 ComboBox c = this.groupBox2.Controls["c" + i] as ComboBox;
-
+                c.Visible = false;
                 for (int j = 0; j < 25; j++)
                 {
                     ComboBoxItem cb = new ComboBoxItem();

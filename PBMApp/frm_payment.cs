@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -22,6 +23,10 @@ namespace PBMApp
             tbPrice.KeyPress += (Tools.Validate.KeyPress);
             tbPrice.KeyUp += (Tools.Validate.Price_KepUp);
             tbHALO.KeyPress += (Tools.Validate.KeyPress);
+            FrmLoad();
+        }
+        private void FrmLoad()
+        {
             using (var m = new Entities())
             {
                 //payment
@@ -33,7 +38,8 @@ namespace PBMApp
                 {
                     TextBox tb1 = this.groupBox1.Controls["textBox" + i] as TextBox;
                     tb1.Text = w.Description;
-                    TextBox tb2= this.groupBox1.Controls["textBoxd" + i] as TextBox;
+                    TextBox tb2 = this.groupBox1.Controls["textBoxd" + i] as TextBox;
+                    tb2.Visible = false;
                     tb2.Text = w.DescriptionBlod;
                     ComboBox cba = this.groupBox1.Controls["comboBoxa" + i] as ComboBox;
                     cba.SelectedIndex = int.Parse(w.ChargeReturn.ToString());
@@ -41,6 +47,8 @@ namespace PBMApp
                     cbb.SelectedIndex = int.Parse(w.DuplicateNo.ToString());
                     CheckBox ck = this.groupBox1.Controls["checkBox" + i] as CheckBox;
                     ck.Checked = int.Parse(w.isTips.ToString()) == 1;
+                    ComboBox cbType = this.groupBox1.Controls["comboBox" + i] as ComboBox;
+                    cbType.SelectedIndex = int.Parse(w.TypeID.ToString());
                     i++;
                 }
                 //Refund
@@ -54,7 +62,7 @@ namespace PBMApp
                     tb1.Text = w.Description;
                     TextBox tb2 = this.groupBox2.Controls["textBoxb" + i1] as TextBox;
                     tb2.Text = w.Price.ToString();
-                    tb2.KeyPress+=new KeyPressEventHandler(Tools.Validate.KeyPress);
+                    tb2.KeyPress += new KeyPressEventHandler(Tools.Validate.KeyPress);
                     TextBox tb3 = this.groupBox2.Controls["textBoxc" + i1] as TextBox;
                     tb3.Text = w.HALO.ToString();
                     tb3.KeyPress += new KeyPressEventHandler(Tools.Validate.KeyPress);
@@ -67,7 +75,6 @@ namespace PBMApp
                 tbHALO.Text = q2.HALO.ToString();
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             using (var m = new Entities())
@@ -80,14 +87,15 @@ namespace PBMApp
                     ComboBox cbb = this.groupBox1.Controls["comboBoxb" + j] as ComboBox;
                     ComboBox cba = this.groupBox1.Controls["comboBoxa" + j] as ComboBox;
                     CheckBox ck = this.groupBox1.Controls["checkBox" + j] as CheckBox;
-
+                    ComboBox cbType = this.groupBox1.Controls["comboBox" + j] as ComboBox; 
                     var w = m.WH_Sys_Payment.FirstOrDefault(x => x.ID == j);
                     w.Description = tb1.Text;
                     w.DescriptionBlod = tb2.Text;
                     w.ChargeReturn = cba.SelectedIndex;
                     w.ChargeReturn_Str = cba.SelectedText;
                     w.DuplicateNo = cbb.SelectedIndex;
-                    w.isTips = ck.Checked ? 1 : 0; 
+                    w.isTips = ck.Checked ? 1 : 0;
+                    w.TypeID = cbType.SelectedIndex;
                 } 
                 //Refund
                 for (int i = 1; i < 9; i++)
@@ -137,6 +145,36 @@ namespace PBMApp
                         e.Handled = true;
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_Payment
+                        select c;
+                foreach (WH_Sys_Payment w in q)
+                {
+                    w.Description = "";
+                    w.ChargeReturn = 0;
+                    w.DuplicateNo = 0;
+                    w.isTips = 0;
+                    w.TypeID = 0;
+                }
+                var qq = from c in m.WH_Sys_Refund
+                         select c;
+                foreach (WH_Sys_Refund w in qq)
+                {
+                    w.Description = "";
+                    w.Price = 0;
+                    w.HALO = decimal.Parse("9999.99");
+                }
+                WH_Sys_CouponInformation qqq = m.WH_Sys_CouponInformation.FirstOrDefault();
+                qqq.price = 0;
+                qqq.HALO = 0;
+                m.SaveChanges();
+            }
+            FrmLoad();
         }
 
         

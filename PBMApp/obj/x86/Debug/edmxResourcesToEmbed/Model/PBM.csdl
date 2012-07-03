@@ -15,7 +15,6 @@
     <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
     <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
     <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
-    <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
     <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.WH_Sys_Header_Footer" />
     <EntitySet Name="WH_Sys_KP" EntityType="pbmModel.WH_Sys_KP" />
     <EntitySet Name="WH_Sys_PCASH" EntityType="pbmModel.WH_Sys_PCASH" />
@@ -45,6 +44,7 @@
     <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
     <EntitySet Name="WH_Sys_KeyType" EntityType="pbmModel.WH_Sys_KeyType" />
     <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
+    <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -204,18 +204,6 @@
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="price" Type="Decimal" Precision="18" Scale="4" />
     <Property Name="HALO" Type="Decimal" Precision="18" Scale="4" />
-  </EntityType>
-  <EntityType Name="WH_Sys_FCE">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Local" Type="Decimal" Precision="18" Scale="4" />
-    <Property Name="FC" Type="Int64" />
-    <Property Name="Decimals" Type="Int64" />
-    <Property Name="SymbolID" Type="Int64" />
-    <Property Name="SymbolStr" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="WH_Sys_Header_Footer">
     <Key>
@@ -537,5 +525,18 @@
     <Property Type="Int64" Name="CookID" />
     <Property Type="Int64" Name="PLUID" />
     <Property Type="Int64" Name="isFlag" />
+  </EntityType>
+  <EntityType Name="WH_Sys_FCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="Local" Precision="18" Scale="4" />
+    <Property Type="Int64" Name="FC" />
+    <Property Type="Int64" Name="Decimals" />
+    <Property Type="Int64" Name="SymbolID" />
+    <Property Type="String" Name="SymbolStr" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="isFCE" />
   </EntityType>
 </Schema>

@@ -53,6 +53,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -62,6 +63,7 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button2);
@@ -81,7 +83,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(223, 144);
+            this.button5.Location = new System.Drawing.Point(266, 145);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(57, 23);
             this.button5.TabIndex = 10;
@@ -90,7 +92,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(156, 144);
+            this.button4.Location = new System.Drawing.Point(199, 145);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(51, 23);
             this.button4.TabIndex = 9;
@@ -100,7 +102,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(85, 144);
+            this.button2.Location = new System.Drawing.Point(128, 145);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(51, 23);
             this.button2.TabIndex = 7;
@@ -113,7 +115,7 @@
             this.tbPrice.Location = new System.Drawing.Point(137, 97);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(100, 21);
-            this.tbPrice.TabIndex = 5; 
+            this.tbPrice.TabIndex = 5;
             // 
             // tbDesc
             // 
@@ -293,6 +295,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(62, 145);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(51, 23);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frm_CookInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -340,5 +352,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Button btnReset;
     }
 }

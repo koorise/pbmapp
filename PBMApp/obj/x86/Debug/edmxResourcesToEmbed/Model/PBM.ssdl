@@ -248,6 +248,7 @@
     <Property Name="SymbolID" Type="integer" />
     <Property Name="SymbolStr" Type="nvarchar" />
     <Property Name="Description" Type="nvarchar" />
+    <Property Name="isFCE" Type="integer" />
   </EntityType>
   <EntityType Name="WH_Sys_FlashReport">
     <Key>

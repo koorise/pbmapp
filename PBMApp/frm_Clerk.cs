@@ -279,6 +279,29 @@ namespace PBMApp
             BindDetail();
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            using (var m=new Entities())
+            {
+                var q = from c in m.WH_Clerk
+                        select c;
+                foreach (var whClerk in q)
+                {
+                    whClerk.isNum = "Clerk" + whClerk.ID.ToString().PadLeft(3, '0');
+                    whClerk.SecretCode = "000";
+                    whClerk.Description = "Clerk" + whClerk.ID.ToString().PadLeft(3, '0');
+                    whClerk.Limitaions = "00000000000000000";
+                    whClerk.InterruptNo = "";
+                }
+                var qq = (from c in m.WH_Clerk
+                          orderby c.ID descending
+                          select c).FirstOrDefault();
+                qq.Limitaions = "11111111111111111";
+                m.SaveChanges();
+            }
+            BindData();
+        }
+
         //private void button4_Click(object sender, EventArgs e)
         //{
         //    for (int i = 7; i <= 50; i++)

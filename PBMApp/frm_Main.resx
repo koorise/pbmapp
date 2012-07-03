@@ -236,54 +236,6 @@
   <data name="receiptToolStripMenuItem.Text" xml:space="preserve">
     <value>Receipt</value>
   </data>
-  <data name="tableBarcodeMailerftpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="tableBarcodeMailerftpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Table Barcode / Mailer / ftp</value>
-  </data>
-  <data name="electronicScaleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="electronicScaleToolStripMenuItem.Text" xml:space="preserve">
-    <value>Electronic Scale</value>
-  </data>
-  <data name="happyHourServiceTaxToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="happyHourServiceTaxToolStripMenuItem.Text" xml:space="preserve">
-    <value>Happy Hour / Service Tax</value>
-  </data>
-  <data name="pageFourToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="pageFourToolStripMenuItem.Text" xml:space="preserve">
-    <value>Page Four</value>
-  </data>
-  <data name="pageThreeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="pageThreeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Page Three</value>
-  </data>
-  <data name="pageTwoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="pageTwoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Page Two</value>
-  </data>
-  <data name="pageOneToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
-  </data>
-  <data name="pageOneToolStripMenuItem.Text" xml:space="preserve">
-    <value>Page One</value>
-  </data>
-  <data name="pagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="pagesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pages</value>
-  </data>
   <data name="flashReportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
@@ -468,54 +420,6 @@
   <data name="&gt;&gt;optionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pagesToolStripMenuItem.Name" xml:space="preserve">
-    <value>pagesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pagesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableBarcodeMailerftpToolStripMenuItem.Name" xml:space="preserve">
-    <value>tableBarcodeMailerftpToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;tableBarcodeMailerftpToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Name" xml:space="preserve">
-    <value>electronicScaleToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;electronicScaleToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;happyHourServiceTaxToolStripMenuItem.Name" xml:space="preserve">
-    <value>happyHourServiceTaxToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;happyHourServiceTaxToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pageFourToolStripMenuItem.Name" xml:space="preserve">
-    <value>pageFourToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pageFourToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pageThreeToolStripMenuItem.Name" xml:space="preserve">
-    <value>pageThreeToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pageThreeToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pageTwoToolStripMenuItem.Name" xml:space="preserve">
-    <value>pageTwoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pageTwoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pageOneToolStripMenuItem.Name" xml:space="preserve">
-    <value>pageOneToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pageOneToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;flashReportToolStripMenuItem.Name" xml:space="preserve">
     <value>flashReportToolStripMenuItem</value>
   </data>
@@ -528,17 +432,17 @@
   <data name="&gt;&gt;kPToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
-    <value>openFileDialog1</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;systemFlagToolStripMenuItem.Name" xml:space="preserve">
     <value>systemFlagToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;systemFlagToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frm_Main</value>
