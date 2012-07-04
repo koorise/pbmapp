@@ -22,27 +22,27 @@ namespace PBMApp
         { 
             using (var m = new Entities())
             {
-                var q = from c in m.WH_Menu
+                var menus = from c in m.WH_Menu
                         orderby c.ID ascending 
                         select c;
-                foreach (var w in q)
+                foreach (var w in menus)
                 {
                     Tools.ComboBoxItem cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.ID.ToString();
                     comboBox1.Items.Add(cb);
                 }
-                DataTable dt = new DataTable("dt");
+                DataTable dataTable = new DataTable("dt");
 
-                dt.Clear();
+                dataTable.Clear();
                 dataGridView1.Columns.Clear(); 
 
                 DataColumn dt1= new DataColumn("ID",typeof(string));
-                dt.Columns.Add(dt1);
+                dataTable.Columns.Add(dt1);
                 DataColumn dt2 = new DataColumn("Bar Code", typeof(string));
-                dt.Columns.Add(dt2);
+                dataTable.Columns.Add(dt2);
                 DataColumn dt3 = new DataColumn("Description", typeof(string));
-                dt.Columns.Add(dt3);
+                dataTable.Columns.Add(dt3);
 
                 var j = from c in m.WH_PLU
                         where c.isMenu == 1
@@ -55,16 +55,16 @@ namespace PBMApp
                                    };
                 foreach (var w in j)
                 {
-                    DataRow dr = dt.NewRow();
+                    DataRow dr = dataTable.NewRow();
                     dr[0] = w.ID;
                     dr[1] = w.Bar_Code;
                     dr[2] = w.Description;
-                    dt.Rows.Add(dr);
+                    dataTable.Rows.Add(dr);
                 }
 
-                dataGridView1.DataSource = dt;
+                dataGridView1.DataSource = dataTable;
 
-                for (int i = 0; i < dt.Columns.Count; i++)
+                for (int i = 0; i < dataTable.Columns.Count; i++)
                 {
                     dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 }
@@ -78,7 +78,22 @@ namespace PBMApp
                 {
                     panel1.Enabled = false;
                 }
+                //系统税表
+                var q = (from c in m.WH_Sys_PageFour
+                         orderby c.ID descending
+                         select c.TaxSystem_index).FirstOrDefault();
                
+                switch (int.Parse(q.Value.ToString()))
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
 
             }
         }
@@ -96,19 +111,20 @@ namespace PBMApp
                 
                 tbPrice.Text = q.Price.ToString();
                 cbVat.SelectedIndex = int.Parse(q.isTax.ToString());
-                var p = from c in m.WH_Menu_List
-                        where c.MenuID == MenuID
-                        orderby c.isFlag ascending 
-                        select c;
-                comboBox3.Items.Clear();
-                foreach (var w in p)
-                {
-                    ComboBoxItem cb = new ComboBoxItem();
-                    cb.Text = w.Description;
-                    cb.Value = w.ID;
-                    comboBox3.Items.Add(cb);
-                }
-                comboBox3.SelectedIndex = 0;
+                numMember.Value = decimal.Parse(q.isCount.ToString());
+                //var whMenuLists = from c in m.WH_Menu_List
+                //        where c.MenuID == MenuID
+                //        orderby c.isFlag ascending 
+                //        select c;
+                //cbMenuSelection.Items.Clear();
+                //foreach (var w in whMenuLists)
+                //{
+                //    ComboBoxItem cb = new ComboBoxItem();
+                //    cb.Text = w.Description;
+                //    cb.Value = w.ID;
+                //    cbMenuSelection.Items.Add(cb);
+                //}
+                //cbMenuSelection.SelectedIndex = 0;
 
                 Dgv2_DataBind();
 
@@ -126,7 +142,7 @@ namespace PBMApp
                 foreach (DataGridViewRow dvr in dataGridView1.SelectedRows)
                 {
                     int pluid = int.Parse(dvr.Cells[0].Value.ToString());
-                    int MenuListID = int.Parse(((ComboBoxItem)comboBox3.SelectedItem).Value.ToString());
+                    int MenuListID = int.Parse(((ComboBoxItem)cbMenuSelection.SelectedItem).Value.ToString());
                     int MenuID = comboBox1.SelectedIndex + 1;
                     var q = from c in m.WH_Menu_Details
                             where c.MenuID == MenuID && c.MenuListID == MenuListID
@@ -166,6 +182,7 @@ namespace PBMApp
                 ctx.Price = decimal.Parse(tbPrice.Text);
                 ctx.Description = tbDesc.Text;
                 ctx.isTax = cbVat.SelectedIndex;
+                ctx.isCount = int.Parse(numMember.Value.ToString());
                 m.SaveChanges();
                 if(cbIsMode.SelectedIndex==1)
                 {
@@ -220,7 +237,7 @@ namespace PBMApp
 
             using (var m = new Entities())
             {
-                int MenuListID = int.Parse(((ComboBoxItem)comboBox3.SelectedItem).Value.ToString());
+                int MenuListID = int.Parse(((ComboBoxItem)cbMenuSelection.SelectedItem).Value.ToString());
                 var r = from c in m.WH_Menu_Details
                         from b in m.WH_Menu_List
                         from d in m.WH_Menu
@@ -258,8 +275,8 @@ namespace PBMApp
 
             using (var m = new Entities())
             {
-                int index = comboBox3.SelectedIndex;
-                int MenuListID = int.Parse(((ComboBoxItem)comboBox3.SelectedItem).Value.ToString());
+                int index = cbMenuSelection.SelectedIndex;
+                int MenuListID = int.Parse(((ComboBoxItem)cbMenuSelection.SelectedItem).Value.ToString());
                 var q = m.WH_Menu_List.FirstOrDefault(x => x.ID == MenuListID);
                 q.Description = textBox3.Text;
                 m.SaveChanges();
@@ -268,15 +285,15 @@ namespace PBMApp
                         where c.MenuID == MenuID
                         orderby c.isFlag ascending
                         select c;
-                comboBox3.Items.Clear();
+                cbMenuSelection.Items.Clear();
                 foreach (var w in p)
                 {
                     ComboBoxItem cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.ID;
-                    comboBox3.Items.Add(cb);
+                    cbMenuSelection.Items.Add(cb);
                 }
-                comboBox3.SelectedIndex = index;
+                cbMenuSelection.SelectedIndex = index;
                 textBox3.Text = "";
             }
         }
@@ -305,15 +322,15 @@ namespace PBMApp
                         where c.MenuID == MenuID
                         orderby c.isFlag ascending
                         select c;
-                comboBox3.Items.Clear();
+                cbMenuSelection.Items.Clear();
                 foreach (var w in p)
                 {
                     ComboBoxItem cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.ID;
-                    comboBox3.Items.Add(cb);
+                    cbMenuSelection.Items.Add(cb);
                 }
-                comboBox3.SelectedIndex = 0;
+                cbMenuSelection.SelectedIndex = 0;
 
                 Dgv2_DataBind();
 
@@ -346,6 +363,58 @@ namespace PBMApp
                     if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
                         e.Handled = true;
                 }
+            }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            int MenuID = comboBox1.SelectedIndex + 1;
+            using (var m = new Entities())
+            {
+                var whMenuLists = from c in m.WH_Menu_List
+                                  where c.MenuID == MenuID && c.isFlag<=numMember.Value
+                                  orderby c.isFlag ascending
+                                  select c;
+                cbMenuSelection.Items.Clear();
+                
+                foreach (var w in whMenuLists)
+                {
+                    ComboBoxItem cb = new ComboBoxItem();
+                    cb.Text = w.Description;
+                    cb.Value = w.ID;
+                    cbMenuSelection.Items.Add(cb);
+                }
+                cbMenuSelection.SelectedIndex = 0;
+            }
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                var q = m.WH_Menu;
+                foreach (var w in q)
+                {
+                    w.Description = "Menu#" + w.ID.ToString().PadLeft(2, '0');
+                    w.isMode = 0;
+                    w.Price = 0;
+                    w.isTax = 0;
+                    w.isCount = 12;
+                }
+                var qq = m.WH_Menu_List;
+                foreach (var w in qq)
+                {
+                    w.Description = "Menu#" + w.MenuID.ToString().PadLeft(2, '0') + "-Selection#" +
+                                    w.isFlag.ToString().PadLeft(2, '0');
+                }
+                var qqq = m.WH_Menu_Details;
+                foreach (var w in qqq)
+                {
+                    m.DeleteObject(w);
+                }
+                m.SaveChanges();
+                comboBox1.SelectedIndex = 0;
+                MessageBox.Show("Success", "Alert");
             }
         }
     }

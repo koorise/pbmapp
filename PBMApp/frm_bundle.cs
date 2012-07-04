@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
@@ -17,33 +12,33 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-         
+
         private void frm_bundle_Load(object sender, EventArgs e)
         {
             using (var m = new Entities())
             {
                 #region ALL plu初始化
-                var o = from c in m.WH_PLU
-                        select c;
-                foreach (var w in o)
+
+                IQueryable<WH_PLU> o = from c in m.WH_PLU
+                                       select c;
+                foreach (WH_PLU w in o)
                 {
-                    ComboBoxItem cb = new ComboBoxItem();
+                    var cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.ID.ToString();
                     C_AllPLU1.Items.Add(cb);
                     C_AllPLU2.Items.Add(cb);
                     C_AllPLU3.Items.Add(cb);
                 }
+
                 #endregion
 
                 #region 促销信息初始化
 
                 MenuBind(0);
-                #endregion
 
-                
+                #endregion
             }
-            
         }
 
         private void MenuBind(int index)
@@ -51,13 +46,13 @@ namespace PBMApp
             C_cbBundleList.Items.Clear();
             using (var m = new Entities())
             {
-                var q = from c in m.WH_Bundle
-                        orderby c.ID ascending
-                        select c;
-                foreach (var w in q)
+                IOrderedQueryable<WH_Bundle> q = from c in m.WH_Bundle
+                                                 orderby c.ID ascending
+                                                 select c;
+                foreach (WH_Bundle w in q)
                 {
                     //促销列表添加
-                    ComboBoxItem cb = new ComboBoxItem();
+                    var cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.ID;
                     C_cbBundleList.Items.Add(cb);
@@ -70,7 +65,7 @@ namespace PBMApp
         {
             using (var m = new Entities())
             {
-                var q = m.WH_Bundle.FirstOrDefault(x => x.ID == (C_cbBundleList.SelectedIndex + 1));
+                WH_Bundle q = m.WH_Bundle.FirstOrDefault(x => x.ID == (C_cbBundleList.SelectedIndex + 1));
                 C_cbType.SelectedIndex = int.Parse(q.TypeID.ToString()) - 1;
                 C_tbDesc.Text = q.Description;
             }
@@ -98,7 +93,7 @@ namespace PBMApp
             //}
             using (var m = new Entities())
             {
-                var q = m.WH_Bundle.FirstOrDefault(x => x.ID == (C_cbBundleList.SelectedIndex + 1));
+                WH_Bundle q = m.WH_Bundle.FirstOrDefault(x => x.ID == (C_cbBundleList.SelectedIndex + 1));
                 switch (C_cbType.SelectedIndex)
                 {
                     case 0:
@@ -159,27 +154,37 @@ namespace PBMApp
                 q.TypeID = C_cbType.SelectedIndex + 1;
                 m.SaveChanges();
             }
-
         }
 
         private void C_AllPLU2_DoubleClick(object sender, EventArgs e)
-        { 
+        {
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
+                int pluID = int.Parse(((ComboBoxItem) C_AllPLU2.SelectedItem).Value.ToString());
                 int result = (from c in m.WH_Bundle_FreeOrDiscount
-                              where c.BundleID == BundleID && c.isFreeOrDiscount ==1
+                              where c.BundleID == BundleID && c.isFreeOrDiscount == 1
                               select c).Count();
+                int pluResult = (from c in m.WH_Bundle_FreeOrDiscount
+                                 where c.BundleID == BundleID && c.isFreeOrDiscount == 1 && c.PLUID == pluID
+                                 select c).Count();
+
                 if (result < 3)
                 {
-
-                    WH_Bundle_FreeOrDiscount b = new WH_Bundle_FreeOrDiscount();
-                    b.BundleID = BundleID;
-                    b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU2.SelectedItem).Value.ToString());
-                    b.KeyPosition = 0;
-                    b.isFreeOrDiscount = 1;
-                    m.AddToWH_Bundle_FreeOrDiscount(b);
-                    m.SaveChanges();
+                    if (pluResult == 0)
+                    {
+                        var b = new WH_Bundle_FreeOrDiscount();
+                        b.BundleID = BundleID;
+                        b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU2.SelectedItem).Value.ToString());
+                        b.KeyPosition = 0;
+                        b.isFreeOrDiscount = 1;
+                        m.AddToWH_Bundle_FreeOrDiscount(b);
+                        m.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Already exists ", "alert");
+                    }
                 }
                 else
                 {
@@ -197,7 +202,7 @@ namespace PBMApp
                 foreach (ComboBoxItem cb in C_SelectPLU2.SelectedItems)
                 {
                     int pluid = int.Parse(cb.Value.ToString());
-                    var q =
+                    WH_Bundle_FreeOrDiscount q =
                         m.WH_Bundle_FreeOrDiscount.FirstOrDefault(
                             x => (x.BundleID == BundleID && x.PLUID == pluid && x.isFreeOrDiscount == 1));
                     m.DeleteObject(q);
@@ -213,7 +218,7 @@ namespace PBMApp
         private void Bind_CSelectPLU2()
         {
             C_SelectPLU2.Items.Clear();
-             
+
 
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
@@ -224,39 +229,50 @@ namespace PBMApp
                               && c.isFreeOrDiscount == 1
                               && c.PLUID == d.ID
                         select new
-                        {
-                            c.PLUID,
-                            d.Description,
-                            c.KeyPosition
-                        };
+                                   {
+                                       c.PLUID,
+                                       d.Description,
+                                       c.KeyPosition
+                                   };
                 foreach (var w in r)
                 {
-                    ComboBoxItem cb = new ComboBoxItem();
+                    var cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.PLUID;
                     C_SelectPLU2.Items.Add(cb);
                 }
-
             }
         }
 
         private void C_AllPLU3_DoubleClick(object sender, EventArgs e)
         {
             int BundleID = C_cbBundleList.SelectedIndex + 1;
+            int pluID = int.Parse(((ComboBoxItem) C_AllPLU3.SelectedItem).Value.ToString());
+
             using (var m = new Entities())
             {
                 int reuslt = (from c in m.WH_Bundle_FreeOrDiscount
                               where c.BundleID == BundleID && c.isFreeOrDiscount == 0
                               select c).Count();
+                int pluResult = (from c in m.WH_Bundle_FreeOrDiscount
+                                 where c.BundleID == BundleID && c.isFreeOrDiscount == 0 && c.PLUID == pluID
+                                 select c).Count();
                 if (reuslt < 3)
                 {
-                    WH_Bundle_FreeOrDiscount b = new WH_Bundle_FreeOrDiscount();
-                    b.BundleID = BundleID;
-                    b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU3.SelectedItem).Value.ToString());
-                    b.KeyPosition = 0;
-                    b.isFreeOrDiscount = 0;
-                    m.AddToWH_Bundle_FreeOrDiscount(b);
-                    m.SaveChanges();
+                    if (pluResult == 0)
+                    {
+                        var b = new WH_Bundle_FreeOrDiscount();
+                        b.BundleID = BundleID;
+                        b.PLUID = pluID;
+                        b.KeyPosition = 0;
+                        b.isFreeOrDiscount = 0;
+                        m.AddToWH_Bundle_FreeOrDiscount(b);
+                        m.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Already exists ", "alert");
+                    }
                 }
                 else
                 {
@@ -275,21 +291,21 @@ namespace PBMApp
                 foreach (ComboBoxItem cb in C_SelectPLU3.SelectedItems)
                 {
                     int pluid = int.Parse(cb.Value.ToString());
-                    var q =
+                    WH_Bundle_FreeOrDiscount q =
                         m.WH_Bundle_FreeOrDiscount.FirstOrDefault(
                             x => (x.BundleID == BundleID && x.PLUID == pluid && x.isFreeOrDiscount == 0));
                     m.DeleteObject(q);
                 }
                 m.SaveChanges();
-            } 
+            }
             Bind_CSelectPLU3();
         }
-        
+
         /// <summary>
         /// Groupbox 5 绑定 combobox
         /// </summary>
         private void Bind_CSelectPLU3()
-        { 
+        {
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
@@ -299,14 +315,14 @@ namespace PBMApp
                               && c.isFreeOrDiscount == 0
                               && c.PLUID == d.ID
                         select new
-                        {
-                            c.PLUID,
-                            d.Description,
-                            c.KeyPosition
-                        };
+                                   {
+                                       c.PLUID,
+                                       d.Description,
+                                       c.KeyPosition
+                                   };
                 foreach (var w in r)
                 {
-                    ComboBoxItem cb = new ComboBoxItem();
+                    var cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.PLUID;
                     C_SelectPLU3.Items.Add(cb);
@@ -322,9 +338,9 @@ namespace PBMApp
                 foreach (ComboBoxItem cb in C_SelectPLU1.SelectedItems)
                 {
                     int pluid = int.Parse(cb.Value.ToString());
-                    var q =
+                    WH_Bundle_member q =
                         m.WH_Bundle_member.FirstOrDefault(
-                            x => (x.BundleID == BundleID && x.PLUID == pluid ));
+                            x => (x.BundleID == BundleID && x.PLUID == pluid));
                     m.DeleteObject(q);
                 }
                 m.SaveChanges();
@@ -337,17 +353,28 @@ namespace PBMApp
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
+                int pluid = int.Parse(((ComboBoxItem) C_AllPLU1.SelectedItem).Value.ToString());
                 int result = (from c in m.WH_Bundle_member
                               where c.BundleID == BundleID
                               select c).Count();
+                int pluResult = (from c in m.WH_Bundle_member
+                                 where c.BundleID == BundleID && c.PLUID == pluid
+                                 select c).Count();
                 if (result <= 12)
                 {
-                    WH_Bundle_member b = new WH_Bundle_member();
-                    b.BundleID = BundleID;
-                    b.PLUID = int.Parse(((ComboBoxItem) C_AllPLU1.SelectedItem).Value.ToString());
-                    b.KeyPosition = 0;
-                    m.AddToWH_Bundle_member(b);
-                    m.SaveChanges();
+                    if (pluResult == 0)
+                    {
+                        var b = new WH_Bundle_member();
+                        b.BundleID = BundleID;
+                        b.PLUID = pluid;
+                        b.KeyPosition = 0;
+                        m.AddToWH_Bundle_member(b);
+                        m.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Already exists ", "alert");
+                    }
                 }
                 else
                 {
@@ -360,40 +387,37 @@ namespace PBMApp
         private void Bind_CSelectPLU1()
         {
             C_SelectPLU1.Items.Clear();
-            
+
 
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
                 var r = from c in m.WH_Bundle_member
                         from d in m.WH_PLU
-                        where c.BundleID == BundleID 
+                        where c.BundleID == BundleID
                               && c.PLUID == d.ID
                         select new
-                        {
-                            c.PLUID,
-                            d.Description,
-                            c.KeyPosition
-                        };
+                                   {
+                                       c.PLUID,
+                                       d.Description,
+                                       c.KeyPosition
+                                   };
                 foreach (var w in r)
                 {
-                    ComboBoxItem cb = new ComboBoxItem();
+                    var cb = new ComboBoxItem();
                     cb.Text = w.Description;
                     cb.Value = w.PLUID;
                     C_SelectPLU1.Items.Add(cb);
-                     
                 }
-
             }
-            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        { 
+        {
             int BundleID = C_cbBundleList.SelectedIndex + 1;
             using (var m = new Entities())
             {
-                var q = m.WH_Bundle.FirstOrDefault(x => x.ID == BundleID);
+                WH_Bundle q = m.WH_Bundle.FirstOrDefault(x => x.ID == BundleID);
                 q.Description = C_tbDesc.Text;
                 q.TypeID = C_cbType.SelectedIndex + 1;
                 switch (C_cbType.SelectedIndex)
@@ -429,7 +453,7 @@ namespace PBMApp
                 }
                 m.SaveChanges();
             }
-            MenuBind(BundleID-1);
+            MenuBind(BundleID - 1);
             MessageBox.Show("success!", "alert");
         }
 
@@ -439,7 +463,7 @@ namespace PBMApp
             {
                 if (e.KeyChar == '.')
                 {
-                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                    if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                         e.Handled = true;
                 }
                 else
@@ -451,9 +475,11 @@ namespace PBMApp
                 {
                     e.Handled = false;
                 }
-                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                else if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                    if (
+                        ((TextBox) sender).Text.Trim().Substring(((TextBox) sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
                         e.Handled = true;
                 }
             }
@@ -465,7 +491,7 @@ namespace PBMApp
             {
                 if (e.KeyChar == '.')
                 {
-                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                    if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                         e.Handled = true;
                 }
                 else
@@ -477,9 +503,11 @@ namespace PBMApp
                 {
                     e.Handled = false;
                 }
-                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                else if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                    if (
+                        ((TextBox) sender).Text.Trim().Substring(((TextBox) sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
                         e.Handled = true;
                 }
             }
@@ -491,7 +519,7 @@ namespace PBMApp
             {
                 if (e.KeyChar == '.')
                 {
-                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                    if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                         e.Handled = true;
                 }
                 else
@@ -503,9 +531,11 @@ namespace PBMApp
                 {
                     e.Handled = false;
                 }
-                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                else if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                    if (
+                        ((TextBox) sender).Text.Trim().Substring(((TextBox) sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
                         e.Handled = true;
                 }
             }
@@ -517,7 +547,7 @@ namespace PBMApp
             {
                 if (e.KeyChar == '.')
                 {
-                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                    if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                         e.Handled = true;
                 }
                 else
@@ -529,9 +559,11 @@ namespace PBMApp
                 {
                     e.Handled = false;
                 }
-                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                else if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                    if (
+                        ((TextBox) sender).Text.Trim().Substring(((TextBox) sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
                         e.Handled = true;
                 }
             }
@@ -543,7 +575,7 @@ namespace PBMApp
             {
                 if (e.KeyChar == '.')
                 {
-                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                    if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                         e.Handled = true;
                 }
                 else
@@ -555,9 +587,11 @@ namespace PBMApp
                 {
                     e.Handled = false;
                 }
-                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                else if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                    if (
+                        ((TextBox) sender).Text.Trim().Substring(((TextBox) sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
                         e.Handled = true;
                 }
             }
@@ -569,7 +603,7 @@ namespace PBMApp
             {
                 if (e.KeyChar == '.')
                 {
-                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                    if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                         e.Handled = true;
                 }
                 else
@@ -581,9 +615,11 @@ namespace PBMApp
                 {
                     e.Handled = false;
                 }
-                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                else if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                    if (
+                        ((TextBox) sender).Text.Trim().Substring(((TextBox) sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
                         e.Handled = true;
                 }
             }
@@ -595,7 +631,7 @@ namespace PBMApp
             {
                 if (e.KeyChar == '.')
                 {
-                    if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                    if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                         e.Handled = true;
                 }
                 else
@@ -607,9 +643,11 @@ namespace PBMApp
                 {
                     e.Handled = false;
                 }
-                else if (((TextBox)sender).Text.Trim().IndexOf('.') > -1)
+                else if (((TextBox) sender).Text.Trim().IndexOf('.') > -1)
                 {
-                    if (((TextBox)sender).Text.Trim().Substring(((TextBox)sender).Text.Trim().IndexOf('.') + 1).Length >= 4)
+                    if (
+                        ((TextBox) sender).Text.Trim().Substring(((TextBox) sender).Text.Trim().IndexOf('.') + 1).Length >=
+                        4)
                         e.Handled = true;
                 }
             }
@@ -619,9 +657,9 @@ namespace PBMApp
         {
             using (var m = new Entities())
             {
-                var q = from c in m.WH_Bundle
-                        select c;
-                foreach (var w in q)
+                IQueryable<WH_Bundle> whBundles = from c in m.WH_Bundle
+                                                  select c;
+                foreach (WH_Bundle w in whBundles)
                 {
                     w.Description = "Bundle#" + w.ID.ToString().PadLeft(2, '0');
                     w.TypeID = 1;
@@ -629,15 +667,15 @@ namespace PBMApp
                     w.Limit = 0;
                     w.Discount = 0;
                 }
-                var qq = from c in m.WH_Bundle_FreeOrDiscount
-                         select c;
-                foreach (var whBundleFreeOrDiscount in qq)
+                IQueryable<WH_Bundle_FreeOrDiscount> bundleFreeOrDiscounts = from c in m.WH_Bundle_FreeOrDiscount
+                                                                             select c;
+                foreach (WH_Bundle_FreeOrDiscount whBundleFreeOrDiscount in bundleFreeOrDiscounts)
                 {
                     m.DeleteObject(whBundleFreeOrDiscount);
                 }
-                var qqq = from c in m.WH_Bundle_member
-                          select c;
-                foreach (var whBundleMember in qqq)
+                IQueryable<WH_Bundle_member> bundleMembers = from c in m.WH_Bundle_member
+                                                             select c;
+                foreach (WH_Bundle_member whBundleMember in bundleMembers)
                 {
                     m.DeleteObject(whBundleMember);
                 }
@@ -645,8 +683,5 @@ namespace PBMApp
             }
             MenuBind(0);
         }
-
-       
-         
     }
 }

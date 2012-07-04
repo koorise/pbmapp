@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numMember = new System.Windows.Forms.NumericUpDown();
+            this.cbVat = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,11 +49,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbMenuSelection = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.cbVat = new System.Windows.Forms.ComboBox();
+            this.BtnReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMember)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -61,6 +65,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnReset);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.numMember);
             this.groupBox1.Controls.Add(this.cbVat);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -80,6 +87,65 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu PLU";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(261, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 12);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Members";
+            // 
+            // numMember
+            // 
+            this.numMember.Location = new System.Drawing.Point(313, 107);
+            this.numMember.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.numMember.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMember.Name = "numMember";
+            this.numMember.Size = new System.Drawing.Size(50, 21);
+            this.numMember.TabIndex = 13;
+            this.numMember.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numMember.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMember.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // cbVat
+            // 
+            this.cbVat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVat.FormattingEnabled = true;
+            this.cbVat.Items.AddRange(new object[] {
+            "NONE",
+            "Tax1",
+            "Tax2",
+            "Tax3",
+            "Tax4",
+            "Tax1&Tax2",
+            "Tax1&Tax3",
+            "Tax1&Tax4",
+            "Tax2&Tax3",
+            "Tax2&Tax4",
+            "Tax3&Tax4",
+            "Tax1&Tax2&Tax3",
+            "Tax1&Tax2&Tax4",
+            "Tax2&Tax3&Tax4",
+            "Tax1&Tax3&Tax4",
+            "Tax1&Tax2&Tax3&Tax4"});
+            this.cbVat.Location = new System.Drawing.Point(102, 107);
+            this.cbVat.Name = "cbVat";
+            this.cbVat.Size = new System.Drawing.Size(121, 20);
+            this.cbVat.TabIndex = 12;
             // 
             // button3
             // 
@@ -245,7 +311,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.cbMenuSelection);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -254,15 +320,15 @@
             this.panel1.Size = new System.Drawing.Size(415, 30);
             this.panel1.TabIndex = 3;
             // 
-            // comboBox3
+            // cbMenuSelection
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(3, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(185, 20);
-            this.comboBox3.TabIndex = 0;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.cbMenuSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMenuSelection.FormattingEnabled = true;
+            this.cbMenuSelection.Location = new System.Drawing.Point(3, 3);
+            this.cbMenuSelection.Name = "cbMenuSelection";
+            this.cbMenuSelection.Size = new System.Drawing.Size(185, 20);
+            this.cbMenuSelection.TabIndex = 0;
+            this.cbMenuSelection.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -281,31 +347,15 @@
             this.textBox3.Size = new System.Drawing.Size(96, 21);
             this.textBox3.TabIndex = 1;
             // 
-            // cbVat
+            // BtnReset
             // 
-            this.cbVat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVat.FormattingEnabled = true;
-            this.cbVat.Items.AddRange(new object[] {
-            "NONE",
-            "Tax1",
-            "Tax2",
-            "Tax3",
-            "Tax4",
-            "Tax1&Tax2",
-            "Tax1&Tax3",
-            "Tax1&Tax4",
-            "Tax2&Tax3",
-            "Tax2&Tax4",
-            "Tax3&Tax4",
-            "Tax1&Tax2&Tax3",
-            "Tax1&Tax2&Tax4",
-            "Tax2&Tax3&Tax4",
-            "Tax1&Tax3&Tax4",
-            "Tax1&Tax2&Tax3&Tax4"});
-            this.cbVat.Location = new System.Drawing.Point(102, 108);
-            this.cbVat.Name = "cbVat";
-            this.cbVat.Size = new System.Drawing.Size(121, 20);
-            this.cbVat.TabIndex = 12;
+            this.BtnReset.Location = new System.Drawing.Point(322, 137);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(75, 23);
+            this.BtnReset.TabIndex = 15;
+            this.BtnReset.Text = "Reset";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // frm_menu_plu
             // 
@@ -320,6 +370,7 @@
             this.Load += new System.EventHandler(this.frm_menu_plu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMember)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -350,10 +401,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbMenuSelection;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox tbDesc;
         private System.Windows.Forms.ComboBox cbVat;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numMember;
+        private System.Windows.Forms.Button BtnReset;
     }
 }
