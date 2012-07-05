@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using PBMApp.Model;
-using PBMApp.Tools;
 
 namespace PBMApp
 {
@@ -21,93 +16,210 @@ namespace PBMApp
         private void button1_Click(object sender, EventArgs e)
         {
             using (var m = new Entities())
-            { 
-                for (int i = 1; i <= 5;i++ )
+            {
+                for (int i = 1; i <= 5; i++)
                 {
-                    var qq = m.WH_Sys_Port.FirstOrDefault(x=>x.ID==i);
-                    ComboBox cb = this.groupBox1.Controls["a" + i] as ComboBox; 
+                    WH_Sys_Port qq = m.WH_Sys_Port.FirstOrDefault(x => x.ID == i);
+                    var cb = groupBox1.Controls["a" + i] as ComboBox;
                     qq.PortIndex = cb.SelectedIndex;
                     qq.Port = cb.SelectedText;
-                    ComboBox cbb = this.groupBox1.Controls["b" + i] as ComboBox; 
+                    var cbb = groupBox1.Controls["b" + i] as ComboBox;
                     qq.BaudIndex = cbb.SelectedIndex;
                     qq.BaudRate = cbb.SelectedText;
-                    m.SaveChanges();
                 }
-                var q = m.WH_Sys_RP.FirstOrDefault();
+                WH_Sys_RP q = m.WH_Sys_RP.FirstOrDefault();
                 q.DeviceIndex = cbRP.SelectedIndex;
                 q.Device = cbRP.SelectedText;
-                m.SaveChanges();
-                if (cbKP.SelectedIndex != -1)
+
+                for (int count = 1; count < 14; count++)
                 {
-                    int kpID = cbKP.SelectedIndex + 1;
-                    var p = m.WH_Sys_KP.FirstOrDefault(x => x.ID == kpID);
-                    p.TypeIndex = cbKPType.SelectedIndex;
-                    p.TypeStr = cbKPType.SelectedText;
-                    p.HeadFeed = int.Parse(tbHead.Text);
-                    p.FootFeed = int.Parse(tbFoot.Text);
-                    p.isCutPaper = chkCutPaper.Checked ? 1 : 0;
-                    p.IP_Addr = tbIP.Text;
-                    p.Port = int.Parse(tbPort.Text);
-                    m.SaveChanges();
+                    WH_Sys_KP whSysKp = m.WH_Sys_KP.FirstOrDefault(x => x.ID == count);
+                    var cb = groupBox3.Controls["cb" + count] as ComboBox;
+                    whSysKp.TypeIndex = cb.SelectedIndex;
+                    var hBox = groupBox3.Controls["headfeed" + count] as TextBox;
+                    whSysKp.HeadFeed = int.Parse(hBox.Text);
+                    var fBox = groupBox3.Controls["footfeed" + count] as TextBox;
+                    whSysKp.FootFeed = int.Parse(fBox.Text);
+                    var ck = groupBox3.Controls["ck" + count] as CheckBox;
+                    whSysKp.isCutPaper = ck.Checked ? 1 : 0;
+                    var ipBox = groupBox3.Controls["ip" + count] as TextBox;
+                    whSysKp.IP_Addr = ipBox.Text;
+                    var portBox = groupBox3.Controls["port" + count] as TextBox;
+                    whSysKp.Port = int.Parse(portBox.Text);
                 }
+
+                m.SaveChanges();
+
                 MessageBox.Show("success", "alert");
-            } 
+            }
         }
 
         private void frm_Setting_Port_KP_Load(object sender, EventArgs e)
         {
+            #region 控件初始化
+
+            int y = 40;
+            int x = 20;
+            for (int i = 1; i < 14; i++)
+            {
+                var p = new Point(x, y);
+                var s = new Size(50, 21);
+                var t = new TextBox();
+                t.Location = p;
+                t.Size = s;
+                t.Name = "kp" + i;
+                t.ReadOnly = true;
+                t.Text = "KP" + i;
+                groupBox3.Controls.Add(t);
+                y += 26;
+            }
+            x = 20 + 60;
+            y = 40;
+            for (int i = 1; i < 14; i++)
+            {
+                var p = new Point(x, y);
+                var s = new Size(90, 21);
+                var comboBox = new ComboBox();
+                comboBox.Location = p;
+                comboBox.Size = s;
+                comboBox.Name = "cb" + i;
+                comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox.Items.Add("TM-88III");
+                comboBox.Items.Add("TM-U220");
+                comboBox.Items.Add("58mm printer");
+                comboBox.Items.Add("80mm printer");
+                groupBox3.Controls.Add(comboBox);
+                y += 26;
+            }
+            x = 80 + 100;
+            y = 40;
+            for (int i = 1; i < 14; i++)
+            {
+                var p = new Point(x, y);
+                var s = new Size(80, 21);
+                var t = new TextBox();
+                t.Location = p;
+                t.Size = s;
+                t.Name = "headfeed" + i;
+                //t.ReadOnly = true;
+                //t.Text = "KP" + i;
+                groupBox3.Controls.Add(t);
+                y += 26;
+            }
+            x = 180 + 90;
+            y = 40;
+            for (int i = 1; i < 14; i++)
+            {
+                var p = new Point(x, y);
+                var s = new Size(80, 21);
+                var t = new TextBox();
+                t.Location = p;
+                t.Size = s;
+                t.Name = "footfeed" + i;
+                //t.ReadOnly = true;
+                //t.Text = "KP" + i;
+                groupBox3.Controls.Add(t);
+                y += 26;
+            }
+            x = 360;
+            y = 40;
+            for (int i = 1; i < 14; i++)
+            {
+                var p = new Point(x, y);
+                var s = new Size(80, 21);
+                var t = new CheckBox();
+                t.Location = p;
+                t.Size = s;
+                t.Name = "ck" + i;
+                t.Text = "Cut Paper";
+                //t.ReadOnly = true;
+                //t.Text = "KP" + i;
+                groupBox3.Controls.Add(t);
+                y += 26;
+            }
+            x = 450;
+            y = 40;
+            for (int i = 1; i < 14; i++)
+            {
+                var p = new Point(x, y);
+                var s = new Size(80, 21);
+                var t = new TextBox();
+                t.Location = p;
+                t.Size = s;
+                t.Name = "ip" + i;
+                //t.ReadOnly = true;
+                //t.Text = "KP" + i;
+                if (i <= 5)
+                {
+                    t.Visible = false;
+                }
+                groupBox3.Controls.Add(t);
+                y += 26;
+            }
+            x = 540;
+            y = 40;
+            for (int i = 1; i < 14; i++)
+            {
+                var p = new Point(x, y);
+                var s = new Size(80, 21);
+                var t = new TextBox();
+                t.Location = p;
+                t.Size = s;
+                t.Name = "port" + i;
+                //t.ReadOnly = true;
+                //t.Text = "KP" + i;
+                if (i <= 5)
+                {
+                    t.Visible = false;
+                }
+                groupBox3.Controls.Add(t);
+                y += 26;
+            }
+
+            #endregion
+
             using (var m = new Entities())
             {
-                var q = from c in m.WH_Sys_Port
-                        orderby c.ID ascending
-                        select c;
+                IOrderedQueryable<WH_Sys_Port> q = from c in m.WH_Sys_Port
+                                                   orderby c.ID ascending
+                                                   select c;
                 int i = 1;
-                foreach (var qq in q)
+                foreach (WH_Sys_Port qq in q)
                 {
-                    ComboBox cb = this.groupBox1.Controls["a" + i] as ComboBox;
+                    var cb = groupBox1.Controls["a" + i] as ComboBox;
                     cb.SelectedIndex = int.Parse(qq.PortIndex.ToString());
-                    ComboBox cbb = this.groupBox1.Controls["b" + i] as ComboBox;
+                    var cbb = groupBox1.Controls["b" + i] as ComboBox;
                     cbb.SelectedIndex = int.Parse(qq.BaudIndex.ToString());
                     i++;
                 }
 
-                var o = m.WH_Sys_RP.FirstOrDefault();
+                WH_Sys_RP o = m.WH_Sys_RP.FirstOrDefault();
                 cbRP.SelectedIndex = int.Parse(o.DeviceIndex.ToString());
 
-                for (int j = 1; j < 14; j++)
+
+                IOrderedQueryable<WH_Sys_KP> qqq = from c in m.WH_Sys_KP
+                                                   orderby c.ID ascending
+                                                   select c;
+                int count = 1;
+                foreach (WH_Sys_KP whSysKp in qqq)
                 {
-                    ComboBoxItem combo = new ComboBoxItem();
-                    combo.Text = "KP" + j;
-                    combo.Value = j;
-                    cbKP.Items.Add(combo);
+                    var cb = groupBox3.Controls["cb" + count] as ComboBox;
+                    cb.SelectedIndex = int.Parse(whSysKp.TypeIndex.ToString());
+                    var hBox = groupBox3.Controls["headfeed" + count] as TextBox;
+                    hBox.Text = whSysKp.HeadFeed.ToString();
+                    var fBox = groupBox3.Controls["footfeed" + count] as TextBox;
+                    fBox.Text = whSysKp.FootFeed.ToString();
+                    var ck = groupBox3.Controls["ck" + count] as CheckBox;
+                    ck.Checked = int.Parse(whSysKp.isCutPaper.ToString()) == 1;
+                    var ipBox = groupBox3.Controls["ip" + count] as TextBox;
+                    ipBox.Text = whSysKp.IP_Addr;
+                    var portBox = groupBox3.Controls["port" + count] as TextBox;
+                    portBox.Text = whSysKp.Port.ToString();
+                    count++;
                 }
-                
             }
         }
 
-        private void cbKP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int kpID = cbKP.SelectedIndex + 1;
-            using (var m = new Entities() )
-            {
-                var q = m.WH_Sys_KP.FirstOrDefault(x => x.ID == kpID);
-                cbKPType.SelectedIndex = int.Parse(q.TypeIndex.ToString());
-                tbHead.Text = q.HeadFeed.ToString();
-                tbFoot.Text = q.FootFeed.ToString();
-                chkCutPaper.Checked = int.Parse(q.isCutPaper.ToString()) == 1;
-                tbIP.Text = q.IP_Addr.ToString();
-                tbPort.Text = q.Port.ToString(); 
-                if(kpID>=6)
-                {
-                    tbIP.Enabled = true;
-                    tbPort.Enabled = true;
-                }
-                else
-                {
-                    tbIP.Enabled = false;
-                    tbPort.Enabled = false;
-                }
-            }
-        }
+         
     }
 }
