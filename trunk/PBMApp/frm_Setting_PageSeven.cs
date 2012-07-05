@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PBMApp.Model;
+using PBMApp.Tools;
 
 namespace PBMApp
 {
@@ -19,6 +21,7 @@ namespace PBMApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+             
             using (var m = new Entities())
             {
                 WH_Sys_TableBarcode q = m.WH_Sys_TableBarcode.FirstOrDefault(); 
