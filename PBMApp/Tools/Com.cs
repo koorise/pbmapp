@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Ports;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -54,24 +55,25 @@ namespace PBMApp.Tools
         /// PC->ECR
         /// </summary>
         /// <param name="buf"></param>
-        public void SendToECR(string str)
-        { 
-            if(isHex)
-            {
-                MatchCollection mc = Regex.Matches(str, @"(?i)[\da-f]{2}");
-                List<byte> buf = new List<byte>();//填充到这个临时列表中
-                //依次添加到列表中
-                foreach (Match m in mc)
-                {
-                    buf.Add(byte.Parse(m.Value, System.Globalization.NumberStyles.HexNumber));
-                }
-                //转换列表为数组后发送
-                comm.Write(buf.ToArray(), 0, buf.Count);
-            }
-            else
-            {
-                comm.Write(str);
-            }
+        public void SendToECR(byte[] bytes)
+        {
+            comm.Write(bytes, 0, bytes.Length);
+            //if (isHex)
+            //{
+            //    MatchCollection mc = Regex.Matches(str, @"(?i)[\da-f]{2}");
+            //    List<byte> buf = new List<byte>();//填充到这个临时列表中
+            //    //依次添加到列表中
+            //    foreach (Match m in mc)
+            //    {
+            //        buf.Add(byte.Parse(m.Value, System.Globalization.NumberStyles.HexNumber));
+            //    }
+            //    //转换列表为数组后发送
+            //    comm.Write(buf.ToArray(), 0, buf.Count);
+            //}
+            //else
+            //{
+            //    comm.Write(str);
+            //}
         }
         /// <summary>
         /// 获取COM口列表
@@ -110,16 +112,19 @@ namespace PBMApp.Tools
             {
                 //依次的拼接出16进制字符串
                 foreach (byte b in buf)
-                {
-                    //MessageBox.Show(b.ToString("X2"), "Alert");
+                { 
                     builder.Append(b.ToString("X2") + " ");
+                    //MessageBox.Show(b.ToString("X2"), "a");
                 }
+                //MessageBox.Show(System.Text.Encoding.Default.GetString(buf),"AA");
+
             }
             else
             {
                 //直接按ASCII规则转换成字符串
                 builder.Append(Encoding.ASCII.GetString(buf));
             }
+            MessageBox.Show(Encoding.ASCII.GetString(buf), "AA");
         }
     }
 }
