@@ -317,6 +317,7 @@
     <Compile Include="Tools\Com.cs" />
     <Compile Include="Tools\ComboBoxItem.cs" />
     <Compile Include="Tools\Config.cs" />
+    <Compile Include="Tools\TextHelper.cs" />
     <Compile Include="Tools\validate.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
