@@ -41,8 +41,8 @@ namespace PBMApp
         {
              
             richTextBox1.Text = f.builder.ToString();
-            byte[] b1 = TextHelper.Buf("2");//命令 
-            TextHelper t = new TextHelper();
+            byte[] b1 = ByteHelper.Buf("2");//命令 
+            ByteHelper t = new ByteHelper();
             
             t.BufCopyTo(b1);
             foreach (var bb in t.SBytes())
@@ -51,8 +51,8 @@ namespace PBMApp
                 
             }
             richTextBox1.Text += "\n\r";
-            //textBox1.Text = TextHelper.CheckSum(t.Bytes.ToArray()).ToString();
-            //int checksum = TextHelper.CheckSum(t.Bytes.ToArray());
+            //textBox1.Text = ByteHelper.CheckSum(t.Bytes.ToArray()).ToString();
+            //int checksum = ByteHelper.CheckSum(t.Bytes.ToArray());
             //string cs = checksum.ToString().Substring(checksum.ToString().Length - 2, 2);
             //textBox1.Text = cs;
             //f.SendToECR(t.SBytes());
@@ -71,13 +71,13 @@ namespace PBMApp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TextHelper t = new TextHelper();
+            ByteHelper t = new ByteHelper();
             t.Bytes.Clear();
-            byte[] b1 = TextHelper.Buf("Z");//命令 
+            byte[] b1 = ByteHelper.Buf("Z");//命令 
             t.BufCopyTo(b1);
-            byte[] b2 = TextHelper.Buf("1000000000001");//命令 
+            byte[] b2 = ByteHelper.Buf("1000000000001");//命令 
             t.BufCopyTo(b2);
-            textBox1.Text = TextHelper.CheckSum(t.Bytes.ToArray()).ToString();
+            textBox1.Text = ByteHelper.CheckSum(t.Bytes.ToArray()).ToString();
             //foreach (var bbb in t.SBytes())
             //{
             //    richTextBox1.Text += bbb.ToString("X2") + " ";
