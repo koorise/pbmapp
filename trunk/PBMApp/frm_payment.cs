@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PBMApp.Model;
+using PBMApp.Tools;
 
 namespace PBMApp
 {
@@ -175,6 +176,17 @@ namespace PBMApp
                 m.SaveChanges();
             }
             FrmLoad();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Tools.ORB cmd = new ORB();
+            cmd.Down = 113;
+            cmd.Up = 13;
+            for (int i = 1; i < 10; i++)
+            {
+                byte[] b = cmd.UpSingleCMD(); 
+            }
         }
 
         
