@@ -314,11 +314,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\CommPort.cs" />
     <Compile Include="Tools\Fox.cs" />
     <Compile Include="Tools\ComboBoxItem.cs" />
     <Compile Include="Tools\Config.cs" />
     <Compile Include="Tools\ORB.cs" />
     <Compile Include="Tools\ByteHelper.cs" />
+    <Compile Include="Tools\PortData.cs" />
     <Compile Include="Tools\validate.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

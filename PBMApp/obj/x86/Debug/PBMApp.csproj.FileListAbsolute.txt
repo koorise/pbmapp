@@ -53,3 +53,4 @@ D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_e.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_f.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_g.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.Form1.resources
+D:\PBMApp\PBMApp\obj\x86\Debug\GenerateResource.read.2.tlog
