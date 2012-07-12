@@ -13,6 +13,7 @@ namespace PBMApp.Tools
         public SerialPort port;
         public bool ReceiveEventFlag = false;  //接收事件是否有效 false表示有效
         public bool isACK { get; set; }
+        public bool isNext { get; set; }
         public bool isData { get; set; }
         public bool ByeBye { get; set; }
         public PortData(string sPortName, int baudrate, Parity parity)

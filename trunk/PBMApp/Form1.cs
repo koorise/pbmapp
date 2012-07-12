@@ -30,7 +30,7 @@ namespace PBMApp
                 comboBox2.Items.Add(s);
             }
         }
-        private ORB o = new ORB(13, 113);
+        private ORB o = new ORB(13, 113,"1");
         private PortData p;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,52 +44,68 @@ namespace PBMApp
        private  void p_Received(object sender, PortDataReciveEventArgs e)
        {
            result = "";
-           p.isACK = ORB.IsACK(e.Data[0]);
-            if(p.isACK)
-            {
-                if(p.isData)
-                {
-                    sendData();
-                    p.isACK = false;
-                    p.isData = false;
-                   
-                    
-                }
-                else
-                {
-                    sendCMD();
-                    p.isACK = false;
-                    p.isData = true;
-                } 
-            } 
-            
+           if(p.isNext)
+           {
+               sendACK();
+           }
+           else
+           {
+
+               p.isACK = e.Data[0] == ByteHelper.ACK;
+               if (p.isACK)
+               {
+                   if (p.isData)
+                   {
+                       sendData();
+                       p.isACK = false;
+                       p.isData = false;
+                       p.isNext = true;
+
+                   }
+                   else
+                   {
+                       sendCMD();
+                       p.isACK = false;
+                       p.isData = true;
+                   }
+               }
+           }
+
+
            if(ByteHelper.Decode(e.Data)!=null)
            {
+
                foreach (byte b in ByteHelper.Decode(e.Data))
                {
                    result += b.ToString("X2") + "-";
                }
                this.Invoke((MethodInvoker)delegate { richTextBox1.AppendText(result + "\n\r"); });
+               foreach (string c in ByteHelper.GetString(ByteHelper.Decode(e.Data).ToArray()))
+               {
+                   this.Invoke((MethodInvoker)delegate { richTextBox1.AppendText(c + "\n\r"); });
+               }
+               
            }
            
        } 
         public  void sendCMD()
         {
-            o.ID = "1"; 
             p.SendData(o.UpSingleCMD()); 
         }
         public void sendData()
         {
-            o.ID = "1"; 
             p.SendData(o.UpSingleData());
         }
         public void sendACK()
         {
-            p.SendData(Tools.ORB.ACKBytes());
+            byte[] bytes=new byte[1024];
+            p.SendCommand(Tools.ORB.ACKBytes(), ref bytes,300);
+            sendByeBye();
         }
         public void sendByeBye()
         {
-            p.SendData(Tools.ORB.ByeByeBytes());
+            byte[] bytes = new byte[1024];
+            p.SendCommand(Tools.ORB.ByeByeBytes(), ref bytes, 300); 
         }
         private void button3_Click(object sender, EventArgs e)
         {  

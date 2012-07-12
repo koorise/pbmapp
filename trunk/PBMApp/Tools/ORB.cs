@@ -11,10 +11,11 @@ namespace PBMApp.Tools
         public  int Down { get; set; }
         public  string ID { get; set; }
 
-        public ORB(int a,int b)
+        public ORB(int a,int b,string c)
         {
             Up = a;
             Down = b;
+            ID = c;
         }
         public ORB()
         {
@@ -108,15 +109,7 @@ namespace PBMApp.Tools
             bytes[0] = b;
             return bytes;
         }
-        /// <summary>
-        /// 判断是否为ACK
-        /// </summary>
-        /// <param name="bytes"></param>
-        /// <returns></returns>
-        public static  bool IsACK(byte  bytes)
-        {
-            return bytes  == ACKBytes()[0];
-        }
+         
        
     }
 }
