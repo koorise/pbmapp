@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PBMApp.Tools;
-
+using System.Threading;
 namespace PBMApp
 {
     public partial class Form1 : Form
@@ -16,7 +17,7 @@ namespace PBMApp
         {
             InitializeComponent();
         }
-       public Tools.Fox f = new Fox();
+        public Tools.Fox f = new Fox();
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -29,61 +30,70 @@ namespace PBMApp
                 comboBox2.Items.Add(s);
             }
         }
-
+        private ORB o = new ORB(13, 113);
+        private PortData p;
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            f.isHex = true;
-            f.Open(comboBox1.Text.ToString(),int.Parse(comboBox2.Text.ToString()));
+
+            p = new PortData(comboBox1.Text.ToString(), int.Parse(comboBox2.Text.ToString()), Parity.None);
+            p.Open();
+            p.Received += new PortDataReceivedEventHandle(p_Received);  
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-             
-            richTextBox1.Text = f.builder.ToString();
-            byte[] b1 = ByteHelper.Buf("2");//命令 
-            ByteHelper t = new ByteHelper();
-            
-            t.BufCopyTo(b1);
-            foreach (var bb in t.SBytes())
+       private string result = "";
+       private  void p_Received(object sender, PortDataReciveEventArgs e)
+       {
+           result = "";
+           p.isACK = ORB.IsACK(e.Data[0]);
+            if(p.isACK)
             {
-                richTextBox1.Text += bb.ToString("X2") + " ";
-                
-            }
-            richTextBox1.Text += "\n\r";
-            //textBox1.Text = ByteHelper.CheckSum(t.Bytes.ToArray()).ToString();
-            //int checksum = ByteHelper.CheckSum(t.Bytes.ToArray());
-            //string cs = checksum.ToString().Substring(checksum.ToString().Length - 2, 2);
-            //textBox1.Text = cs;
-            //f.SendToECR(t.SBytes());
-
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            byte b = byte.Parse("05", System.Globalization.NumberStyles.HexNumber);
-            byte[] bytes = new byte[1];
-            bytes[0] = b;
+                if(p.isData)
+                {
+                    sendData();
+                    p.isACK = false;
+                    p.isData = false;
+                   
+                    
+                }
+                else
+                {
+                    sendCMD();
+                    p.isACK = false;
+                    p.isData = true;
+                } 
+            } 
             
-            //f.SendToECR(bytes);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+           if(ByteHelper.Decode(e.Data)!=null)
+           {
+               foreach (byte b in ByteHelper.Decode(e.Data))
+               {
+                   result += b.ToString("X2") + "-";
+               }
+               this.Invoke((MethodInvoker)delegate { richTextBox1.AppendText(result + "\n\r"); });
+           }
+           
+       } 
+        public  void sendCMD()
         {
-            ByteHelper t = new ByteHelper();
-            t.Bytes.Clear();
-            byte[] b1 = ByteHelper.Buf("Z");//命令 
-            t.BufCopyTo(b1);
-            byte[] b2 = ByteHelper.Buf("1000000000001");//命令 
-            t.BufCopyTo(b2);
-            textBox1.Text = ByteHelper.CheckSum(t.Bytes.ToArray()).ToString();
-            //foreach (var bbb in t.SBytes())
-            //{
-            //    richTextBox1.Text += bbb.ToString("X2") + " ";
-
-            //}
-            //f.SendToECR(t.SBytes());
+            o.ID = "1"; 
+            p.SendData(o.UpSingleCMD()); 
+        }
+        public void sendData()
+        {
+            o.ID = "1"; 
+            p.SendData(o.UpSingleData());
+        }
+        public void sendACK()
+        {
+            p.SendData(Tools.ORB.ACKBytes());
+        }
+        public void sendByeBye()
+        {
+            p.SendData(Tools.ORB.ByeByeBytes());
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {  
+            p.SendData(Tools.ORB.ENQBytes());
         }
     }
 }
