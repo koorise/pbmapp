@@ -5,10 +5,10 @@
  {
      public class JustinIO
      {
-         public class CommPort 
+         public class CommPort
          {
- 
-             public string PortNum; 
+
+             public string PortNum ;
              public int BaudRate;
              public byte ByteSize;
              public byte Parity; // 0-4=no,odd,even,mark,space 

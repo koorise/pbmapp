@@ -179,10 +179,14 @@ namespace PBMApp
                 cbKP.SelectedIndex = int.Parse(ctx.KP.ToString());
                 cbKP2.SelectedIndex = int.Parse(ctx.KP2.ToString());
                 chkFS.Checked = int.Parse(ctx.FS_Tenderable.ToString()) == 1;
-                cbisVat.SelectedIndex = int.Parse(ctx.isVat_Tax_GST.ToString());
+                var q = (from c in m.WH_Sys_PageFour
+                         orderby c.ID descending
+                         select c.TaxSystem_index).FirstOrDefault();
+                cbisVat.SelectedIndex = int.Parse(q.Value.ToString());
+                cbisVat.Enabled = false;
                 string str_vat_tax_gst = ctx.str_Vat_Tax_GST.ToString();
                 char[] chars = str_vat_tax_gst.ToCharArray();
-                switch (int.Parse(ctx.isVat_Tax_GST.ToString()))
+                switch (int.Parse(q.Value.ToString()))
                 {
                     case 0:
                         switch (int.Parse(str_vat_tax_gst))
@@ -239,15 +243,15 @@ namespace PBMApp
                         break;
                     case 1:
                         
-                        for (int i = 0; i < chkTax.Items.Count; i++)
+                        for (int i = 1; i < chkTax.Items.Count+1; i++)
                         {
                             if(str_vat_tax_gst.IndexOf(i.ToString())!=-1)
                             {
-                                chkTax.SetItemChecked(i,true);
+                                chkTax.SetItemChecked(i-1,true);
                             }
                             else
                             {
-                                chkTax.SetItemChecked(i, false);
+                                chkTax.SetItemChecked(i-1, false);
                             }
                         }
                         for (int i = 0; i < chkGST.Items.Count; i++)
@@ -402,7 +406,7 @@ namespace PBMApp
                         {
                             if(chkTax.GetItemChecked(i))
                             {
-                                wd.str_Vat_Tax_GST += i.ToString();
+                                wd.str_Vat_Tax_GST += (i+1).ToString();
                             }
                         }
                         break;
@@ -411,7 +415,7 @@ namespace PBMApp
                         {
                             if (chkGST.GetItemChecked(i))
                             {
-                                wd.str_Vat_Tax_GST += i.ToString();
+                                wd.str_Vat_Tax_GST += (i+1).ToString();
                             }
                         }
                         break;
@@ -560,15 +564,15 @@ namespace PBMApp
                         break;
                     case 1:
 
-                        for (int i = 0; i < chkTax.Items.Count; i++)
+                        for (int i = 1; i < chkTax.Items.Count+1; i++)
                         {
                             if (str_vat_tax_gst.IndexOf(i.ToString()) != -1)
                             {
-                                chkTax.SetItemChecked(i, true);
+                                chkTax.SetItemChecked(i-1, true);
                             }
                             else
                             {
-                                chkTax.SetItemChecked(i, false);
+                                chkTax.SetItemChecked(i-1, false);
                             }
                         }
                         for (int i = 0; i < chkGST.Items.Count; i++)
@@ -688,6 +692,30 @@ namespace PBMApp
             {
                 frm2.ShowDialog();
             }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Department
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Department w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString()); 
+                    s.Add(w.isPrice.ToString());
+                    s.Add(w.isMode.ToString()+w.isType.ToString()+w.High_Digit_LockOut.ToString()+w.isAge.ToString());
+                    strs.Add(s);
+                }
+            }
+            rm.GetDownArrayString(pIo, strs, 4, 104);
+            pIo.Close();
         }
 
          

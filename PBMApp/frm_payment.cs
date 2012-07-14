@@ -178,16 +178,70 @@ namespace PBMApp
             FrmLoad();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e)
         {
-            Tools.ORB cmd = new ORB();
-            cmd.Down = 113;
-            cmd.Up = 13;
-            for (int i = 1; i < 10; i++)
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
             {
-                byte[] b = cmd.UpSingleCMD(); 
+                var q = from c in m.WH_Sys_Refund
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Sys_Refund w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.Price.ToString());
+                    s.Add(w.HALO.ToString());
+                    s.Add(w.Description.ToString());
+                    strs.Add(s);
+                }
             }
+            rm.GetDownArrayString(pIo, strs, 13, 113); 
+            pIo.Close();
         }
+
+        private void btnReceive_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+            
+            List<string> strs=new List<string>();
+            for (int i = 1; i < 9; i++)
+            {
+                strs.Add(i.ToString());   
+            }
+            rm.GetUpArrayString(pIo, strs, 13, 113);
+            using (var m = new Entities())
+            { 
+                foreach (List<string> str in rm.List)
+                {
+                    //MessageBox.Show(str[0], "AA");
+                    int id = int.Parse(str[0].Substring(str[0].Length-1,1));
+                    var q = m.WH_Sys_Refund.FirstOrDefault(x => x.ID == id);
+                    if (str[1] != null && str[1] != "")
+                    {
+                        q.Price = decimal.Parse(str[1]);
+                    }
+                    else
+                    {
+                        q.Price = 0;
+                    }
+
+                    q.HALO = decimal.Parse(str[2]);
+                    q.Description = str[3];
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+            FrmLoad();
+        }
+
+        
 
         
     }

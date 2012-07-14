@@ -12,16 +12,24 @@ namespace PBMApp.Tools
         
         public static readonly byte STX = 0x02; //数据包起始标识符
         public static readonly byte ETX = 0x03; //数据包结束标识符
+        public static readonly byte ENQ = 0x05;//ENQ
         public static readonly byte FS = 0x1c;//数据分割标示符
         public static readonly byte ACK = 0x06;// ack标示符
         public static readonly byte NAK = 0x15;// NAK
         public static readonly byte bye = 0x1A;//结束命令
+
         public  int Status { get; set; }
          
         public byte[] RBytes { get; set; }
 
         public List<string> SList { get; set; }
 
+        public static byte[] oneCmd(byte b)
+        {
+            byte[] _b = new byte[1];
+            _b[0] = b;
+            return _b;
+        }
         /// <summary>
         /// 将字符串转换成Byte[]
         /// </summary>
