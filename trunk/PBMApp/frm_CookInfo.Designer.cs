@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_CookInfo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tbPrice = new System.Windows.Forms.TextBox();
             this.tbDesc = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -65,7 +65,7 @@
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnSend);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.tbPrice);
             this.groupBox1.Controls.Add(this.tbDesc);
@@ -81,6 +81,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cook Information";
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(62, 145);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(51, 23);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(266, 145);
@@ -89,16 +99,17 @@
             this.button5.TabIndex = 10;
             this.button5.Text = "RECEIVE";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btnSend
             // 
-            this.button4.Location = new System.Drawing.Point(199, 145);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(51, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Send";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnSend.Location = new System.Drawing.Point(199, 145);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(51, 23);
+            this.btnSend.TabIndex = 9;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // button2
             // 
@@ -295,16 +306,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(62, 145);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(51, 23);
-            this.btnReset.TabIndex = 11;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // frm_CookInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -331,7 +332,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbPrice;
         private System.Windows.Forms.TextBox tbDesc;

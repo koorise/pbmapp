@@ -10,7 +10,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
  
 using PBMApp.Model;
- 
+using PBMApp.Tools;
+
 namespace PBMApp
 {
     public partial class frm_Clerk : Form
@@ -290,17 +291,91 @@ namespace PBMApp
                     whClerk.isNum = "Clerk" + whClerk.ID.ToString().PadLeft(3, '0');
                     whClerk.SecretCode = "000";
                     whClerk.Description = "Clerk" + whClerk.ID.ToString().PadLeft(3, '0');
-                    whClerk.Limitaions = "00000000000000000";
+                    whClerk.Limitaions = "00000000000000000000";
                     whClerk.InterruptNo = "";
                 }
                 var qq = (from c in m.WH_Clerk
                           orderby c.ID descending
                           select c).FirstOrDefault();
-                qq.Limitaions = "11111111111111111";
+                qq.Limitaions = "11111111111111111111";
                 m.SaveChanges();
             }
             BindData();
         }
+
+        private void btnReceive_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i <=50; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 5, 105);
+            using (var m = new Entities())
+            {
+                int count = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    count++;
+                    //MessageBox.Show(str[0], "AA");
+                    //int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
+                    var q = m.WH_Clerk.FirstOrDefault(x => x.ID == count);
+                    if (str[1] != null && str[1] != "")
+                    {
+                        q.SecretCode = str[1];
+                    }
+                    else
+                    {
+                        q.SecretCode = "";
+                    }
+
+                    q.InterruptNo = str[2];
+                    q.Description = str[3];
+                    q.Limitaions = str[4].PadLeft(8, '0') + str[5].PadLeft(8, '0') + str[6].PadLeft(2, '0');
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+            BindData(); 
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Clerk
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Clerk w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.SecretCode.ToString());
+                    s.Add(w.InterruptNo.ToString());
+                    s.Add(w.Description.ToString());
+                    s.Add(w.Limitaions.Substring(0,8));
+                    s.Add(w.Limitaions.Substring(8,8));
+                    s.Add(w.Limitaions.Substring(16,4));
+                    strs.Add(s);
+                }
+            }
+            rm.GetDownArrayString(pIo, strs, 5, 105);
+            pIo.Close();
+        }
+
+       
+        
+
+         
 
         //private void button4_Click(object sender, EventArgs e)
         //{

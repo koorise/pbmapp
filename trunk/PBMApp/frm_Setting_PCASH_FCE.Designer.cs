@@ -74,6 +74,10 @@
             this.textBoxa1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxe4 = new System.Windows.Forms.TextBox();
             this.comboBoxb4 = new System.Windows.Forms.ComboBox();
@@ -104,10 +108,8 @@
             this.textBoxd1 = new System.Windows.Forms.TextBox();
             this.textBoxc1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnReceive = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -158,7 +160,7 @@
             this.groupBox1.Controls.Add(this.textBoxb1);
             this.groupBox1.Controls.Add(this.textBoxa1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 23);
+            this.groupBox1.Location = new System.Drawing.Point(22, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(438, 356);
             this.groupBox1.TabIndex = 0;
@@ -558,12 +560,52 @@
             this.groupBox2.Controls.Add(this.textBoxd1);
             this.groupBox2.Controls.Add(this.textBoxc1);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(22, 413);
+            this.groupBox2.Location = new System.Drawing.Point(22, 374);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(438, 185);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Foreign Currency Exchange";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(365, 123);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(42, 16);
+            this.checkBox4.TabIndex = 33;
+            this.checkBox4.Text = "FCE";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(366, 97);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(42, 16);
+            this.checkBox3.TabIndex = 32;
+            this.checkBox3.Text = "FCE";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(366, 70);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(42, 16);
+            this.checkBox2.TabIndex = 31;
+            this.checkBox2.Text = "FCE";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(366, 42);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(42, 16);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.Text = "FCE";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -832,51 +874,33 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "FCE1";
             // 
-            // checkBox1
+            // btnSend
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(366, 42);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(42, 16);
-            this.checkBox1.TabIndex = 30;
-            this.checkBox1.Text = "FCE";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(305, 572);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // checkBox2
+            // btnReceive
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(366, 70);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(42, 16);
-            this.checkBox2.TabIndex = 31;
-            this.checkBox2.Text = "FCE";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(366, 97);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(42, 16);
-            this.checkBox3.TabIndex = 32;
-            this.checkBox3.Text = "FCE";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(365, 123);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(42, 16);
-            this.checkBox4.TabIndex = 33;
-            this.checkBox4.Text = "FCE";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.btnReceive.Location = new System.Drawing.Point(383, 572);
+            this.btnReceive.Name = "btnReceive";
+            this.btnReceive.Size = new System.Drawing.Size(75, 23);
+            this.btnReceive.TabIndex = 3;
+            this.btnReceive.Text = "Receive";
+            this.btnReceive.UseVisualStyleBackColor = true;
+            this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
             // frm_Setting_PCASH_FCE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 624);
+            this.ClientSize = new System.Drawing.Size(470, 607);
+            this.Controls.Add(this.btnReceive);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_Setting_PCASH_FCE";
@@ -972,5 +996,7 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnReceive;
     }
 }
