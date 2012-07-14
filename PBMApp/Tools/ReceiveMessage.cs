@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace PBMApp.Tools
 {
@@ -110,10 +112,13 @@ namespace PBMApp.Tools
                             pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.ACK));
                         }
                         pIo.Write(orb.DownSingleData(s));
-                        if(!rm.ReadOne(pIo))
-                        { 
-                            List.Add(s);
-                        }
+                        pIo.Read(1);
+                        //if(!rm.ReadOne(pIo))
+                        //{ 
+                        //    List.Add(s);
+                        //}
+                        
+                        Application.DoEvents();
                         i++;
                     }
                     pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.bye));

@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using PBMApp.Model;
+using PBMApp.Tools;
 
 namespace PBMApp
 {
@@ -79,11 +80,6 @@ namespace PBMApp
                 tbPrice.Text = ctx.price.ToString();
 
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-             
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -160,6 +156,69 @@ namespace PBMApp
                 }
                 m.SaveChanges();
             }
+            BindData();
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_CookInformation
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_CookInformation w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.price.ToString().Replace(".",""));
+                    s.Add(w.Description.ToString());
+                    //s.Add(w.Description.ToString());
+                    strs.Add(s);
+                }
+            }
+            rm.GetDownArrayString(pIo, strs, 8, 108);
+            pIo.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i < 9; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 8, 108);
+            using (var m = new Entities())
+            {
+                int count = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    count++;
+                    //MessageBox.Show(str[0], "AA");
+
+                    var q = m.WH_CookInformation.FirstOrDefault(x => x.ID == count);
+                    if (str[1] != null && str[1] != "")
+                    {
+                        q.price = decimal.Parse(str[1]);
+                    }
+                    else
+                    {
+                        q.price = 0;
+                    } 
+                    q.Description = str[2];
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
             BindData();
         }
         

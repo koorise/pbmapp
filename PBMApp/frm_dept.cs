@@ -639,7 +639,7 @@ namespace PBMApp
                         select c;
                 foreach (var w in q)
                 {
-                    w.Description = "DEPT" + w.ID.ToString().PadLeft(3, '0');
+                    w.Description = "BBB" + w.ID.ToString().PadLeft(3, '0');
                     w.High_Digit_LockOut = 7;
                     w.isDirectSale = 0;
                     w.isAge = 1;
@@ -696,6 +696,22 @@ namespace PBMApp
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            List<string> list = new List<string>();
+            list.Add("1");
+            list.Add("2");
+            list.Add("3");
+            list.Add("4");
+            list.Add("12");
+            list.Add("13");
+            list.Add("14");
+            list.Add("23");
+            list.Add("24");
+            list.Add("34");
+            list.Add("123");
+            list.Add("124");
+            list.Add("134");
+            list.Add("234");
+            list.Add("1234"); 
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
             ReceiveMessage rm = new ReceiveMessage();
@@ -703,21 +719,94 @@ namespace PBMApp
             using (var m = new Entities())
             {
                 var q = from c in m.WH_Department
-                        orderby c.ID ascending
+                        orderby c.ID ascending 
                         select c;
                 foreach (WH_Department w in q)
                 {
                     List<string> s = new List<string>();
                     s.Add(w.ID.ToString()); 
                     s.Add(w.isPrice.ToString());
-                    s.Add(w.isMode.ToString()+w.isType.ToString()+w.High_Digit_LockOut.ToString()+w.isAge.ToString());
+                    string _tax = w.str_Vat_Tax_GST.ToString().Replace("0","");
+                    string tax = "";
+                    if(_tax=="")
+                    {
+                        tax = "0";
+                    }
+                    else
+                    {
+                        int c = 0;
+                        foreach (string s1 in list)
+                        {
+                            c++;
+                            if(s1==_tax)
+                            {
+                                tax = c.ToString();
+                            }
+                        }
+                    }
+                    s.Add(w.isMode.ToString()+w.isType.ToString()+w.High_Digit_LockOut.ToString()+w.isAge.ToString()+tax.PadLeft(2,'0')+w.FS_Tenderable.ToString());
+                    s.Add(w.Description);
+                    s.Add(w.DepartmentGroup.ToString()+w.KP.ToString()+w.KP2.ToString()+w.isPriceFormat.ToString()+w.KP_receipt.ToString()+w.isType.ToString());
                     strs.Add(s);
                 }
             }
+            
             rm.GetDownArrayString(pIo, strs, 4, 104);
+            foreach (List<string> str in rm.List)
+            {
+                foreach (string s in str)
+                {
+                    richTextBox1.Text += s + "#";
+                }
+                richTextBox1.Text += "\n\r";
+            }
             pIo.Close();
+            MessageBox.Show("Success", "alert");
         }
 
+        private void btnRev_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i <=200; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 4, 104);
+            using (var m = new Entities())
+            {
+                foreach (List<string> str in rm.List)
+                {
+                    foreach (string s in str)
+                    {
+                        richTextBox1.Text += s + "#";
+                    }
+                     
+                    richTextBox1.Text += "\n\r";
+                    //MessageBox.Show(str[0], "AA");
+                    //int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
+                    //var q = m.WH_Department.FirstOrDefault(x => x.ID == id);
+                    //if (str[1] != null && str[1] != "")
+                    //{
+                    //    q.isPrice = int.Parse(str[1]);
+                    //}
+                    //else
+                    //{
+                    //    q.isPrice = 0;
+                    //}
+
+                    //q.Description = str[3];
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+        }
+        
+        
          
     }
 }

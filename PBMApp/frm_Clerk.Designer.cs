@@ -37,9 +37,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReceive = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkLimitList = new System.Windows.Forms.CheckedListBox();
             this.ckAll = new System.Windows.Forms.CheckBox();
@@ -63,7 +64,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -151,13 +151,23 @@
             // 
             this.panel5.Controls.Add(this.btnReset);
             this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.btnReceive);
+            this.panel5.Controls.Add(this.btnSend);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(32, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(333, 28);
             this.panel5.TabIndex = 0;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(11, 3);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // button3
             // 
@@ -169,23 +179,25 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnReceive
             // 
-            this.button2.Location = new System.Drawing.Point(174, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Receive";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReceive.Location = new System.Drawing.Point(174, 3);
+            this.btnReceive.Name = "btnReceive";
+            this.btnReceive.Size = new System.Drawing.Size(75, 23);
+            this.btnReceive.TabIndex = 1;
+            this.btnReceive.Text = "Receive";
+            this.btnReceive.UseVisualStyleBackColor = true;
+            this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
-            // button1
+            // btnSend
             // 
-            this.button1.Location = new System.Drawing.Point(90, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(90, 3);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 0;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // groupBox2
             // 
@@ -193,7 +205,7 @@
             this.groupBox2.Controls.Add(this.ckAll);
             this.groupBox2.Location = new System.Drawing.Point(6, 100);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 173);
+            this.groupBox2.Size = new System.Drawing.Size(353, 231);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Limitation";
@@ -205,26 +217,29 @@
             this.chkLimitList.FormattingEnabled = true;
             this.chkLimitList.Items.AddRange(new object[] {
             "Void",
-            "R.M.",
-            "Coupon",
-            "PLU List",
-            "Receipt ON/OFF",
-            "#NO SALE",
-            "EJ report",
-            "Z report",
-            "Access Table",
             "Discount",
-            "Refund",
+            "R.M",
             "RA/PO",
-            "Not Found",
-            "Change payment",
+            "PLU price list",
+            "Not Found       ",
+            "X report     ",
+            "Z report ",
+            "Programming     ",
+            "Refund       ",
+            "coupon       ",
+            "Rcpt On/Off     ",
+            "EJ    ",
+            "Access TABLE",
+            "#NS",
             "Voucher/Credit",
-            "X report",
-            "Programming"});
+            "Change payment",
+            "Comp",
+            "FOC",
+            "Payment"});
             this.chkLimitList.Location = new System.Drawing.Point(3, 17);
             this.chkLimitList.MultiColumn = true;
             this.chkLimitList.Name = "chkLimitList";
-            this.chkLimitList.Size = new System.Drawing.Size(347, 153);
+            this.chkLimitList.Size = new System.Drawing.Size(347, 211);
             this.chkLimitList.TabIndex = 0;
             // 
             // ckAll
@@ -426,16 +441,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(11, 3);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // frm_Clerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -483,8 +488,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReceive;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_dept));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRev = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.chkFS = new System.Windows.Forms.CheckBox();
             this.cbKP2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -88,8 +90,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.btnRev = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -142,6 +143,26 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Department Information Setting";
+            // 
+            // btnRev
+            // 
+            this.btnRev.Location = new System.Drawing.Point(292, 549);
+            this.btnRev.Name = "btnRev";
+            this.btnRev.Size = new System.Drawing.Size(75, 23);
+            this.btnRev.TabIndex = 30;
+            this.btnRev.Text = "Receive";
+            this.btnRev.UseVisualStyleBackColor = true;
+            this.btnRev.Click += new System.EventHandler(this.btnRev_Click);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(209, 549);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 29;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // chkFS
             // 
@@ -764,24 +785,13 @@
             this.toolStripButton1.Text = "RESET";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // btnSend
+            // richTextBox1
             // 
-            this.btnSend.Location = new System.Drawing.Point(209, 549);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 23);
-            this.btnSend.TabIndex = 29;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // btnRev
-            // 
-            this.btnRev.Location = new System.Drawing.Point(292, 549);
-            this.btnRev.Name = "btnRev";
-            this.btnRev.Size = new System.Drawing.Size(75, 23);
-            this.btnRev.TabIndex = 30;
-            this.btnRev.Text = "Receive";
-            this.btnRev.UseVisualStyleBackColor = true;
+            this.richTextBox1.Location = new System.Drawing.Point(121, 67);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(307, 318);
+            this.richTextBox1.TabIndex = 28;
+            this.richTextBox1.Text = "";
             // 
             // frm_dept
             // 
@@ -789,6 +799,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(893, 674);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -878,5 +889,6 @@
         private System.Windows.Forms.RadioButton rbVat5;
         private System.Windows.Forms.Button btnRev;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

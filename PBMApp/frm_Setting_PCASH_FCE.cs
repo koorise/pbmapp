@@ -156,5 +156,67 @@ namespace PBMApp
                 MessageBox.Show("success！", "alert");
             }
         }
+
+        private void btnReceive_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i <= 4; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 11, 111);
+            using (var m = new Entities())
+            {
+                int count = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    count++;
+                    //MessageBox.Show(str[0], "AA");
+                    //int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
+                    var q = m.WH_Sys_FCE.FirstOrDefault(x => x.ID == count);
+                    string ab = str[1].ToString().PadLeft(2, '0');
+                    q.Decimals = int.Parse(ab.Substring(0, 1));
+                    q.SymbolID = int.Parse(ab.Substring(1, 1));
+                    q.Local = int.Parse(str[2]);
+                    q.FC = int.Parse(str[3]);
+                    q.Description = str[4];
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+            
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_FCE
+                        where c.ID <=4
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Sys_FCE w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.Decimals.ToString()+w.SymbolID.ToString());
+                    s.Add(w.Local.ToString());
+                    s.Add(w.FC.ToString());
+                    s.Add(w.Description.ToString()); 
+                    strs.Add(s);
+                }
+            }
+            rm.GetDownArrayString(pIo, strs, 11, 111);
+            pIo.Close();
+        }
     }
 }
