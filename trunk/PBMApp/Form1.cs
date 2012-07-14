@@ -7,6 +7,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PBMApp.Model;
 using PBMApp.Tools;
 using System.Threading;
 namespace PBMApp
@@ -30,86 +31,81 @@ namespace PBMApp
                 comboBox2.Items.Add(s);
             }
         }
-        private ORB o = new ORB(13, 113,"1");
-        private PortData p;
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-            p = new PortData(comboBox1.Text.ToString(), int.Parse(comboBox2.Text.ToString()), Parity.None);
-            p.Open();
-            p.Received += new PortDataReceivedEventHandle(p_Received);  
+        public JustinIO.CommPort pIo = new JustinIO.CommPort();
+        private void button1_Click(object sender, EventArgs e)
+        { 
+            
+             
+            //JustinIO.CommPort pIo = new JustinIO.CommPort();
+            pIo.PortNum = comboBox1.Text;
+            pIo.BaudRate = int.Parse(comboBox2.Text);
+            pIo.Parity = 0;
+            pIo.StopBits = 0;
+            pIo.ReadTimeout = 300000;
+            pIo.Open();
+            //p = new PortData(comboBox1.Text.ToString(), int.Parse(comboBox2.Text.ToString()), Parity.None);
+            //p.Open();
+            //p.Received += new PortDataReceivedEventHandle(p_Received);  
         }
 
        private string result = "";
-       private  void p_Received(object sender, PortDataReciveEventArgs e)
+      
+       private void button3_Click(object sender, EventArgs e)
        {
-           result = "";
-           if(p.isNext)
+           List<string> strs = new List<string>();
+           strs.Add("1");
+           strs.Add("2");
+           strs.Add("3");
+           ReceiveMessage rm = new ReceiveMessage();
+           rm.GetUpArrayString(pIo,strs,13,113);
+           foreach (List<string> str in rm.List)
            {
-               sendACK();
-           }
-           else
-           {
-
-               p.isACK = e.Data[0] == ByteHelper.ACK;
-               if (p.isACK)
+               richTextBox1.Text += "***************\n\r";
+               foreach (string s in str)
                {
-                   if (p.isData)
-                   {
-                       sendData();
-                       p.isACK = false;
-                       p.isData = false;
-                       p.isNext = true;
+                   richTextBox1.Text += s + "@";
+               }
+               richTextBox1.Text += "\n\r";
 
-                   }
-                   else
-                   {
-                       sendCMD();
-                       p.isACK = false;
-                       p.isData = true;
-                   }
+           }
+           //byte[] bytes = new byte[1];
+           //bytes = pIo.Read(1);
+           //foreach (byte b in bytes)
+           //{
+           //    richTextBox1.Text += b.ToString("X2") + "-";
+           //    //MessageBox.Show("AA", "AA");
+           //} 
+        
+           //List<string> strs=new List<string>();
+           //for (int i = 1; i < 10; i++)
+           //{
+           //    strs.Add(i.ToString());
+           //}
+           //o.IDs=strs;
+           //p.SendData(Tools.ORB.ENQBytes());
+       }
+
+       private void button2_Click(object sender, EventArgs e)
+       {
+           ReceiveMessage rm = new ReceiveMessage();
+           List<List<string>> strs = new List<List<string>>();
+           using (var m = new Entities())
+           {
+               var q = from c in m.WH_Sys_Refund
+                       orderby c.ID ascending
+                       select c;
+               foreach (WH_Sys_Refund w in q)
+               {
+                   List<string> s = new List<string>();
+                   s.Add(w.ID.ToString());
+                   s.Add(w.Price.ToString());
+                   s.Add(w.HALO.ToString());
+                   s.Add(w.Description.ToString());
+                   strs.Add(s);
                }
            }
-
-
-           if(ByteHelper.Decode(e.Data)!=null)
-           {
-
-               foreach (byte b in ByteHelper.Decode(e.Data))
-               {
-                   result += b.ToString("X2") + "-";
-               }
-               this.Invoke((MethodInvoker)delegate { richTextBox1.AppendText(result + "\n\r"); });
-               foreach (string c in ByteHelper.GetString(ByteHelper.Decode(e.Data).ToArray()))
-               {
-                   this.Invoke((MethodInvoker)delegate { richTextBox1.AppendText(c + "\n\r"); });
-               }
-               
-           }
-           
+           rm.GetDownArrayString(pIo, strs, 13, 113);
        } 
-        public  void sendCMD()
-        {
-            p.SendData(o.UpSingleCMD()); 
-        }
-        public void sendData()
-        {
-            p.SendData(o.UpSingleData());
-        }
-        public void sendACK()
-        {
-            byte[] bytes=new byte[1024];
-            p.SendCommand(Tools.ORB.ACKBytes(), ref bytes,300);
-            sendByeBye();
-        }
-        public void sendByeBye()
-        {
-            byte[] bytes = new byte[1024];
-            p.SendCommand(Tools.ORB.ByeByeBytes(), ref bytes, 300); 
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {  
-            p.SendData(Tools.ORB.ENQBytes());
-        }
     }
 }

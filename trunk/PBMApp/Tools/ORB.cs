@@ -8,15 +8,15 @@ namespace PBMApp.Tools
     public   class ORB
     {
         public  int Up { get; set; }
-        public  int Down { get; set; }
-        public  string ID { get; set; }
+        public  int Down { get; set; } 
+        public List<string> IDs { get; set; } 
 
-        public ORB(int a,int b,string c)
+        public ORB(int a,int b)
         {
             Up = a;
-            Down = b;
-            ID = c;
+            Down = b; 
         }
+        
         public ORB()
         {
         }
@@ -39,11 +39,11 @@ namespace PBMApp.Tools
         /// </summary>
         /// <param name="ID"></param>
         /// <returns></returns>
-        public  byte[] UpSingleData()
+        public  byte[] UpSingleData(string id)
         {
             ByteHelper t = new ByteHelper();
             t.BufCopyTo(ByteHelper.Buf("Z"));
-            t.BufCopyTo(ByteHelper.Buf(ID.ToString()));
+            t.BufCopyTo(ByteHelper.Buf(id));
             return t.SBytes();
         }
 
@@ -63,13 +63,13 @@ namespace PBMApp.Tools
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public  byte[] DownSingleData(params object[] param)
+        public byte[] DownSingleData(List<string> param)
         {
            ByteHelper t = new ByteHelper();
             t.BufCopyTo(ByteHelper.Buf("Z"));
-            foreach (var o in param)
+            foreach (string s in param)
             {
-                t.BufCopyTo(ByteHelper.Buf(o.ToString()));
+                t.BufCopyTo(ByteHelper.Buf(s));
             }
             return t.SBytes();
 

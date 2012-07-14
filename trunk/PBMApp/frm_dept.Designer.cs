@@ -40,6 +40,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.chkTax = new System.Windows.Forms.CheckedListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rbVat5 = new System.Windows.Forms.RadioButton();
             this.rbVat0 = new System.Windows.Forms.RadioButton();
             this.rbVat2 = new System.Windows.Forms.RadioButton();
             this.rbVat4 = new System.Windows.Forms.RadioButton();
@@ -87,7 +88,8 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.rbVat5 = new System.Windows.Forms.RadioButton();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnRev = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -102,6 +104,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnRev);
+            this.groupBox2.Controls.Add(this.btnSend);
             this.groupBox2.Controls.Add(this.chkFS);
             this.groupBox2.Controls.Add(this.cbKP2);
             this.groupBox2.Controls.Add(this.label10);
@@ -169,7 +173,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(306, 547);
+            this.button7.Location = new System.Drawing.Point(127, 549);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 6;
@@ -243,6 +247,17 @@
             this.groupBox6.TabIndex = 23;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Vat";
+            // 
+            // rbVat5
+            // 
+            this.rbVat5.AutoSize = true;
+            this.rbVat5.Location = new System.Drawing.Point(12, 84);
+            this.rbVat5.Name = "rbVat5";
+            this.rbVat5.Size = new System.Drawing.Size(47, 16);
+            this.rbVat5.TabIndex = 5;
+            this.rbVat5.TabStop = true;
+            this.rbVat5.Text = "vat5";
+            this.rbVat5.UseVisualStyleBackColor = true;
             // 
             // rbVat0
             // 
@@ -749,16 +764,24 @@
             this.toolStripButton1.Text = "RESET";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // rbVat5
+            // btnSend
             // 
-            this.rbVat5.AutoSize = true;
-            this.rbVat5.Location = new System.Drawing.Point(12, 84);
-            this.rbVat5.Name = "rbVat5";
-            this.rbVat5.Size = new System.Drawing.Size(47, 16);
-            this.rbVat5.TabIndex = 5;
-            this.rbVat5.TabStop = true;
-            this.rbVat5.Text = "vat5";
-            this.rbVat5.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(209, 549);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 29;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnRev
+            // 
+            this.btnRev.Location = new System.Drawing.Point(292, 549);
+            this.btnRev.Name = "btnRev";
+            this.btnRev.Size = new System.Drawing.Size(75, 23);
+            this.btnRev.TabIndex = 30;
+            this.btnRev.Text = "Receive";
+            this.btnRev.UseVisualStyleBackColor = true;
             // 
             // frm_dept
             // 
@@ -853,5 +876,7 @@
         private System.Windows.Forms.RadioButton rbVat0;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.RadioButton rbVat5;
+        private System.Windows.Forms.Button btnRev;
+        private System.Windows.Forms.Button btnSend;
     }
 }

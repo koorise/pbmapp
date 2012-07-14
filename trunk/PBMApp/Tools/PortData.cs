@@ -16,6 +16,7 @@ namespace PBMApp.Tools
         public bool isNext { get; set; }
         public bool isData { get; set; }
         public bool ByeBye { get; set; }
+        public int Count { get; set; }
         public PortData(string sPortName, int baudrate, Parity parity)
         {
             port = new SerialPort(sPortName, baudrate, parity, 8, StopBits.One);

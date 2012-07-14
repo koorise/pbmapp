@@ -150,7 +150,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnReceive = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1493,15 +1494,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnSend
             // 
-            this.button3.Location = new System.Drawing.Point(476, 632);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Send";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSend.Location = new System.Drawing.Point(476, 632);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 5;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnReceive
+            // 
+            this.btnReceive.Location = new System.Drawing.Point(579, 631);
+            this.btnReceive.Name = "btnReceive";
+            this.btnReceive.Size = new System.Drawing.Size(75, 23);
+            this.btnReceive.TabIndex = 6;
+            this.btnReceive.Text = "Receive";
+            this.btnReceive.UseVisualStyleBackColor = true;
+            this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
             // frm_payment
             // 
@@ -1509,7 +1520,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(804, 728);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnReceive);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
@@ -1652,6 +1664,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnReceive;
     }
 }
