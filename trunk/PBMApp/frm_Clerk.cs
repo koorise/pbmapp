@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
- 
+using System.Threading;
 using PBMApp.Model;
 using PBMApp.Tools;
 
@@ -369,6 +369,7 @@ namespace PBMApp
                 }
             }
             rm.GetDownArrayString(pIo, strs, 5, 105);
+            
             pIo.Close();
         }
 

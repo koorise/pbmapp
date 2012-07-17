@@ -90,7 +90,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -497,10 +496,10 @@
             // tbisPrice
             // 
             this.tbisPrice.Location = new System.Drawing.Point(146, 87);
+            this.tbisPrice.MaxLength = 8;
             this.tbisPrice.Name = "tbisPrice";
             this.tbisPrice.Size = new System.Drawing.Size(100, 21);
             this.tbisPrice.TabIndex = 14;
-            this.tbisPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbisPrice_KeyPress);
             // 
             // checkBox1
             // 
@@ -609,6 +608,7 @@
             // tbDesc
             // 
             this.tbDesc.Location = new System.Drawing.Point(146, 60);
+            this.tbDesc.MaxLength = 18;
             this.tbDesc.Name = "tbDesc";
             this.tbDesc.Size = new System.Drawing.Size(224, 21);
             this.tbDesc.TabIndex = 3;
@@ -785,21 +785,12 @@
             this.toolStripButton1.Text = "RESET";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(121, 67);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(307, 318);
-            this.richTextBox1.TabIndex = 28;
-            this.richTextBox1.Text = "";
-            // 
             // frm_dept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(893, 674);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -889,6 +880,5 @@
         private System.Windows.Forms.RadioButton rbVat5;
         private System.Windows.Forms.Button btnRev;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

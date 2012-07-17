@@ -50,13 +50,14 @@ namespace PBMApp
                         TextBox tb3 = this.groupBox2.Controls["textBoxe" + j] as TextBox;
                         ComboBox cb1 = this.groupBox2.Controls["comboBoxa" + j] as ComboBox;
                         ComboBox cb2 = this.groupBox2.Controls["comboBoxb" + j] as ComboBox;
-                        CheckBox ck = this.groupBox2.Controls["checkbox" + j] as CheckBox;
+
+                        ComboBox cbReturn = this.groupBox2.Controls["cbReturn" + j] as ComboBox;
                         tb1.Text = w.Local.ToString();
                         tb2.Text = w.FC.ToString();
                         cb1.SelectedIndex = int.Parse(w.Decimals.ToString());
                         ComboxB_ItemBind(int.Parse(w.SymbolID.ToString()) - 1, cb2);
                         tb3.Text = w.Description.ToString();
-                        ck.Checked = int.Parse(w.isFCE.ToString()) == 1;
+                        cbReturn.SelectedIndex = int.Parse(w.isFCE.ToString());
                     }
                     else
                     {
@@ -141,7 +142,7 @@ namespace PBMApp
                     TextBox tb3 = this.groupBox2.Controls["textBoxe" + j] as TextBox;
                     ComboBox cb1 = this.groupBox2.Controls["comboBoxa" + j] as ComboBox;
                     ComboBox cb2 = this.groupBox2.Controls["comboBoxb" + j] as ComboBox;
-                    CheckBox ck = this.groupBox2.Controls["checkbox" + j] as CheckBox;
+                    ComboBox cbReturn = this.groupBox2.Controls["cbReturn" + j] as ComboBox;
                     WH_Sys_FCE w = m.WH_Sys_FCE.FirstOrDefault(x => x.ID == j);
                     w.Local = decimal.Parse(tb1.Text);
                     w.FC = int.Parse(tb2.Text);
@@ -149,7 +150,7 @@ namespace PBMApp
                     w.SymbolID = cb2.SelectedIndex + 1;
                     w.SymbolStr = cb2.SelectedText;
                     w.Description = tb3.Text;
-                    w.isFCE = ck.Checked ? 1 : 0;
+                    w.isFCE = cbReturn.SelectedIndex;
                 }
                 m.SaveChanges();
                 m.Dispose();
@@ -179,9 +180,10 @@ namespace PBMApp
                     //MessageBox.Show(str[0], "AA");
                     //int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
                     var q = m.WH_Sys_FCE.FirstOrDefault(x => x.ID == count);
-                    string ab = str[1].ToString().PadLeft(2, '0');
+                    string ab = str[1].ToString().PadLeft(3, '0');
                     q.Decimals = int.Parse(ab.Substring(0, 1));
                     q.SymbolID = int.Parse(ab.Substring(1, 1));
+                    q.isFCE = int.Parse(ab.Substring(2, 1))-1;
                     q.Local = int.Parse(str[2]);
                     q.FC = int.Parse(str[3]);
                     q.Description = str[4];
@@ -208,7 +210,7 @@ namespace PBMApp
                 {
                     List<string> s = new List<string>();
                     s.Add(w.ID.ToString());
-                    s.Add(w.Decimals.ToString()+w.SymbolID.ToString());
+                    s.Add(w.Decimals.ToString()+w.SymbolID.ToString()+(int.Parse(w.isFCE.ToString())+1));
                     s.Add(w.Local.ToString());
                     s.Add(w.FC.ToString());
                     s.Add(w.Description.ToString()); 
