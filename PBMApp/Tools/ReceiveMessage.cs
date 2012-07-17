@@ -121,7 +121,6 @@ namespace PBMApp.Tools
                         {
                             List.Add(s);
                         } 
-                        
                         Application.DoEvents();
                         Steps++;
                     }
@@ -130,7 +129,7 @@ namespace PBMApp.Tools
             }
             else
             {
-                pIo.Read(2);
+                pIo.Read(3);
                 GetDownArrayString(pIo, strs, up, down);
             }
         }

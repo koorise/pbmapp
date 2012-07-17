@@ -198,9 +198,29 @@ namespace PBMApp
                     s.Add(w.Description.ToString());
                     strs.Add(s);
                 }
+                rm.GetDownArrayString(pIo, strs, 13, 113);
+                
+                strs.Clear();
+                var qq = from c in m.WH_Sys_Payment
+                         orderby c.ID ascending
+                         select c;
+                foreach (WH_Sys_Payment w in qq)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.ChargeReturn.ToString());
+                    s.Add(w.DuplicateNo.ToString());
+                    s.Add(w.isTips.ToString());
+                    s.Add(w.TypeID.ToString());
+                    s.Add(w.Description.ToString());
+                    strs.Add(s);
+                }
+                rm.GetDownArrayString(pIo, strs, 14, 114); 
             }
-            rm.GetDownArrayString(pIo, strs, 13, 113); 
-            pIo.Close();
+            
+            
+            pIo.Close(); 
+            MessageBox.Show("success", "alert");
         }
 
         private void btnReceive_Click(object sender, EventArgs e)
@@ -239,6 +259,7 @@ namespace PBMApp
             }
             pIo.Close();
             FrmLoad();
+            MessageBox.Show("success", "alert");
         }
 
         

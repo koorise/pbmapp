@@ -20,6 +20,10 @@ namespace PBMApp
 
         private void frm_Setting_PCASH_FCE_Load(object sender, EventArgs e)
         {
+            frm_load();
+        }
+        public void frm_load()
+        {
             using (var m = new Entities())
             {
                 var q = from c in m.WH_Sys_PCASH
@@ -68,7 +72,6 @@ namespace PBMApp
                 m.Dispose();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             using (var m = new Entities())
@@ -184,14 +187,15 @@ namespace PBMApp
                     q.Decimals = int.Parse(ab.Substring(0, 1));
                     q.SymbolID = int.Parse(ab.Substring(1, 1));
                     q.isFCE = int.Parse(ab.Substring(2, 1))-1;
-                    q.Local = int.Parse(str[2]);
-                    q.FC = int.Parse(str[3]);
+                    q.Local = decimal.Parse(str[2]==""?"0":str[2]);
+                    q.FC = int.Parse(str[3]==""?"0":str[3]);
                     q.Description = str[4];
                 }
                 m.SaveChanges();
             }
             pIo.Close();
-            
+            frm_load();
+            MessageBox.Show("success", "alert");
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -218,7 +222,8 @@ namespace PBMApp
                 }
             }
             rm.GetDownArrayString(pIo, strs, 11, 111);
-            pIo.Close();
+            pIo.Close(); 
+            MessageBox.Show("success", "alert");
         }
     }
 }

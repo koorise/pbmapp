@@ -74,6 +74,10 @@
             this.textBoxa1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbReturn4 = new System.Windows.Forms.ComboBox();
+            this.cbReturn3 = new System.Windows.Forms.ComboBox();
+            this.cbReturn2 = new System.Windows.Forms.ComboBox();
+            this.cbReturn1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxe4 = new System.Windows.Forms.TextBox();
             this.comboBoxb4 = new System.Windows.Forms.ComboBox();
@@ -106,10 +110,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnReceive = new System.Windows.Forms.Button();
-            this.cbReturn1 = new System.Windows.Forms.ComboBox();
-            this.cbReturn2 = new System.Windows.Forms.ComboBox();
-            this.cbReturn3 = new System.Windows.Forms.ComboBox();
-            this.cbReturn4 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -567,6 +567,54 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Foreign Currency Exchange";
             // 
+            // cbReturn4
+            // 
+            this.cbReturn4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn4.FormattingEnabled = true;
+            this.cbReturn4.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn4.Location = new System.Drawing.Point(365, 117);
+            this.cbReturn4.Name = "cbReturn4";
+            this.cbReturn4.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn4.TabIndex = 33;
+            // 
+            // cbReturn3
+            // 
+            this.cbReturn3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn3.FormattingEnabled = true;
+            this.cbReturn3.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn3.Location = new System.Drawing.Point(365, 91);
+            this.cbReturn3.Name = "cbReturn3";
+            this.cbReturn3.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn3.TabIndex = 32;
+            // 
+            // cbReturn2
+            // 
+            this.cbReturn2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn2.FormattingEnabled = true;
+            this.cbReturn2.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn2.Location = new System.Drawing.Point(365, 65);
+            this.cbReturn2.Name = "cbReturn2";
+            this.cbReturn2.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn2.TabIndex = 31;
+            // 
+            // cbReturn1
+            // 
+            this.cbReturn1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn1.FormattingEnabled = true;
+            this.cbReturn1.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn1.Location = new System.Drawing.Point(365, 39);
+            this.cbReturn1.Name = "cbReturn1";
+            this.cbReturn1.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn1.TabIndex = 30;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(333, 146);
@@ -580,6 +628,7 @@
             // textBoxe4
             // 
             this.textBoxe4.Location = new System.Drawing.Point(290, 119);
+            this.textBoxe4.MaxLength = 12;
             this.textBoxe4.Name = "textBoxe4";
             this.textBoxe4.Size = new System.Drawing.Size(69, 21);
             this.textBoxe4.TabIndex = 28;
@@ -610,6 +659,7 @@
             // textBoxd4
             // 
             this.textBoxd4.Location = new System.Drawing.Point(116, 119);
+            this.textBoxd4.MaxLength = 6;
             this.textBoxd4.Name = "textBoxd4";
             this.textBoxd4.Size = new System.Drawing.Size(57, 21);
             this.textBoxd4.TabIndex = 25;
@@ -617,6 +667,7 @@
             // textBoxc4
             // 
             this.textBoxc4.Location = new System.Drawing.Point(58, 119);
+            this.textBoxc4.MaxLength = 6;
             this.textBoxc4.Name = "textBoxc4";
             this.textBoxc4.Size = new System.Drawing.Size(52, 21);
             this.textBoxc4.TabIndex = 24;
@@ -633,6 +684,7 @@
             // textBoxe3
             // 
             this.textBoxe3.Location = new System.Drawing.Point(290, 92);
+            this.textBoxe3.MaxLength = 12;
             this.textBoxe3.Name = "textBoxe3";
             this.textBoxe3.Size = new System.Drawing.Size(69, 21);
             this.textBoxe3.TabIndex = 22;
@@ -663,6 +715,7 @@
             // textBoxd3
             // 
             this.textBoxd3.Location = new System.Drawing.Point(116, 92);
+            this.textBoxd3.MaxLength = 6;
             this.textBoxd3.Name = "textBoxd3";
             this.textBoxd3.Size = new System.Drawing.Size(57, 21);
             this.textBoxd3.TabIndex = 19;
@@ -670,6 +723,7 @@
             // textBoxc3
             // 
             this.textBoxc3.Location = new System.Drawing.Point(58, 92);
+            this.textBoxc3.MaxLength = 6;
             this.textBoxc3.Name = "textBoxc3";
             this.textBoxc3.Size = new System.Drawing.Size(52, 21);
             this.textBoxc3.TabIndex = 18;
@@ -686,6 +740,7 @@
             // textBoxe2
             // 
             this.textBoxe2.Location = new System.Drawing.Point(290, 65);
+            this.textBoxe2.MaxLength = 12;
             this.textBoxe2.Name = "textBoxe2";
             this.textBoxe2.Size = new System.Drawing.Size(69, 21);
             this.textBoxe2.TabIndex = 16;
@@ -716,6 +771,7 @@
             // textBoxd2
             // 
             this.textBoxd2.Location = new System.Drawing.Point(116, 65);
+            this.textBoxd2.MaxLength = 6;
             this.textBoxd2.Name = "textBoxd2";
             this.textBoxd2.Size = new System.Drawing.Size(57, 21);
             this.textBoxd2.TabIndex = 13;
@@ -723,6 +779,7 @@
             // textBoxc2
             // 
             this.textBoxc2.Location = new System.Drawing.Point(58, 65);
+            this.textBoxc2.MaxLength = 6;
             this.textBoxc2.Name = "textBoxc2";
             this.textBoxc2.Size = new System.Drawing.Size(52, 21);
             this.textBoxc2.TabIndex = 12;
@@ -784,6 +841,7 @@
             // textBoxe1
             // 
             this.textBoxe1.Location = new System.Drawing.Point(290, 39);
+            this.textBoxe1.MaxLength = 12;
             this.textBoxe1.Name = "textBoxe1";
             this.textBoxe1.Size = new System.Drawing.Size(69, 21);
             this.textBoxe1.TabIndex = 5;
@@ -814,6 +872,7 @@
             // textBoxd1
             // 
             this.textBoxd1.Location = new System.Drawing.Point(116, 39);
+            this.textBoxd1.MaxLength = 6;
             this.textBoxd1.Name = "textBoxd1";
             this.textBoxd1.Size = new System.Drawing.Size(57, 21);
             this.textBoxd1.TabIndex = 2;
@@ -821,6 +880,7 @@
             // textBoxc1
             // 
             this.textBoxc1.Location = new System.Drawing.Point(58, 39);
+            this.textBoxc1.MaxLength = 6;
             this.textBoxc1.Name = "textBoxc1";
             this.textBoxc1.Size = new System.Drawing.Size(52, 21);
             this.textBoxc1.TabIndex = 1;
@@ -853,54 +913,6 @@
             this.btnReceive.Text = "Receive";
             this.btnReceive.UseVisualStyleBackColor = true;
             this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
-            // 
-            // cbReturn1
-            // 
-            this.cbReturn1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReturn1.FormattingEnabled = true;
-            this.cbReturn1.Items.AddRange(new object[] {
-            "Local Currency",
-            "Foreign Currency"});
-            this.cbReturn1.Location = new System.Drawing.Point(365, 39);
-            this.cbReturn1.Name = "cbReturn1";
-            this.cbReturn1.Size = new System.Drawing.Size(103, 20);
-            this.cbReturn1.TabIndex = 30;
-            // 
-            // cbReturn2
-            // 
-            this.cbReturn2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReturn2.FormattingEnabled = true;
-            this.cbReturn2.Items.AddRange(new object[] {
-            "Local Currency",
-            "Foreign Currency"});
-            this.cbReturn2.Location = new System.Drawing.Point(365, 65);
-            this.cbReturn2.Name = "cbReturn2";
-            this.cbReturn2.Size = new System.Drawing.Size(103, 20);
-            this.cbReturn2.TabIndex = 31;
-            // 
-            // cbReturn3
-            // 
-            this.cbReturn3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReturn3.FormattingEnabled = true;
-            this.cbReturn3.Items.AddRange(new object[] {
-            "Local Currency",
-            "Foreign Currency"});
-            this.cbReturn3.Location = new System.Drawing.Point(365, 91);
-            this.cbReturn3.Name = "cbReturn3";
-            this.cbReturn3.Size = new System.Drawing.Size(103, 20);
-            this.cbReturn3.TabIndex = 32;
-            // 
-            // cbReturn4
-            // 
-            this.cbReturn4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReturn4.FormattingEnabled = true;
-            this.cbReturn4.Items.AddRange(new object[] {
-            "Local Currency",
-            "Foreign Currency"});
-            this.cbReturn4.Location = new System.Drawing.Point(365, 117);
-            this.cbReturn4.Name = "cbReturn4";
-            this.cbReturn4.Size = new System.Drawing.Size(103, 20);
-            this.cbReturn4.TabIndex = 33;
             // 
             // frm_Setting_PCASH_FCE
             // 
