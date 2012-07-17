@@ -615,7 +615,7 @@ namespace PBMApp
                         select c;
                 foreach (var w in q)
                 {
-                    w.Description = "BBB" + w.ID.ToString().PadLeft(3, '0');
+                    w.Description = "DEPT" + w.ID.ToString().PadLeft(3, '0');
                     w.High_Digit_LockOut = 7;
                     w.isDirectSale = 0;
                     w.isAge = 1;

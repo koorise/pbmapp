@@ -99,6 +99,8 @@ namespace PBMApp
 
         private void frm_Clerk_Load(object sender, EventArgs e)
         {
+            tbInterrupt.KeyPress += (Tools.Validate.KeyPressNum);
+            tbSecretCode.KeyPress+= (Tools.Validate.KeyPressNum);
             BindData();
         }
         private void BindData()
@@ -184,51 +186,7 @@ namespace PBMApp
 
 
         }
-
-         
-
-        private void tbSecretCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void tbInterrupt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Convert.ToInt32(e.KeyChar) == 8))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                Regex numRegex = new Regex(@"^(-?[0-9]*[.]*[0-9]*)$");
-                Match Result = numRegex.Match(Convert.ToString(e.KeyChar));
-                if (Result.Success)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
+  
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
             BindDetail();

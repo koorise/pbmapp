@@ -124,10 +124,10 @@
             // tbInterrupt
             // 
             this.tbInterrupt.Location = new System.Drawing.Point(265, 62);
+            this.tbInterrupt.MaxLength = 2;
             this.tbInterrupt.Name = "tbInterrupt";
             this.tbInterrupt.Size = new System.Drawing.Size(100, 21);
             this.tbInterrupt.TabIndex = 10;
-            this.tbInterrupt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInterrupt_KeyPress);
             // 
             // label4
             // 
@@ -256,6 +256,7 @@
             // tbDesc
             // 
             this.tbDesc.Location = new System.Drawing.Point(265, 39);
+            this.tbDesc.MaxLength = 12;
             this.tbDesc.Name = "tbDesc";
             this.tbDesc.Size = new System.Drawing.Size(100, 21);
             this.tbDesc.TabIndex = 5;
@@ -263,10 +264,10 @@
             // tbSecretCode
             // 
             this.tbSecretCode.Location = new System.Drawing.Point(73, 63);
+            this.tbSecretCode.MaxLength = 4;
             this.tbSecretCode.Name = "tbSecretCode";
             this.tbSecretCode.Size = new System.Drawing.Size(100, 21);
             this.tbSecretCode.TabIndex = 4;
-            this.tbSecretCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSecretCode_KeyPress);
             // 
             // label3
             // 
