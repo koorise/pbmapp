@@ -11,8 +11,8 @@ namespace PBMApp.Tools
     {
         public List<string> Data { get; set; }
         private string str = ""; 
-        public   List<List<string>> List = new List<List<string>>();  
-        
+        public   List<List<string>> List = new List<List<string>>();
+        public   int Steps { get; set; }
         public static JustinIO.CommPort sp()
         {
             JustinIO.CommPort pIo = new JustinIO.CommPort();
@@ -26,7 +26,7 @@ namespace PBMApp.Tools
         }
         
         public bool ReadOne(JustinIO.CommPort pio)
-        {
+        { 
             return ByteHelper.ACK == pio.Read(1)[0];
         }
         public bool ReadTwo(JustinIO.CommPort pio)
@@ -90,6 +90,11 @@ namespace PBMApp.Tools
                     pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.bye)); 
                 }
             }
+            else
+            {
+                pIo.Read(2);
+                GetUpArrayString(pIo, strs, up, down);
+            }
         }
         public void GetDownArrayString(JustinIO.CommPort pIo, List<List<string>> strs, int up, int down  )
         {
@@ -103,26 +108,30 @@ namespace PBMApp.Tools
                 pIo.Write(orb.DownSingleCMD()); //命令
                 if (rm.ReadTwo(pIo))
                 {
-                    int i = 0;
+                    Steps = 0;
                     foreach (List<string> s in strs) //循环发送数据包
                     {
                         rm.Data = new List<string>();
-                        if (i != 0)
+                        if (Steps != 0)
                         {
                             pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.ACK));
                         }
                         pIo.Write(orb.DownSingleData(s));
-                        pIo.Read(1);
-                        //if(!rm.ReadOne(pIo))
-                        //{ 
-                        //    List.Add(s);
-                        //}
+                        if (!rm.ReadOne(pIo))
+                        {
+                            List.Add(s);
+                        } 
                         
                         Application.DoEvents();
-                        i++;
+                        Steps++;
                     }
                     pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.bye));
                 }
+            }
+            else
+            {
+                pIo.Read(2);
+                GetDownArrayString(pIo, strs, up, down);
             }
         }
     }

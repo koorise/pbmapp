@@ -74,10 +74,6 @@
             this.textBoxa1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxe4 = new System.Windows.Forms.TextBox();
             this.comboBoxb4 = new System.Windows.Forms.ComboBox();
@@ -110,6 +106,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnReceive = new System.Windows.Forms.Button();
+            this.cbReturn1 = new System.Windows.Forms.ComboBox();
+            this.cbReturn2 = new System.Windows.Forms.ComboBox();
+            this.cbReturn3 = new System.Windows.Forms.ComboBox();
+            this.cbReturn4 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -526,10 +526,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.cbReturn4);
+            this.groupBox2.Controls.Add(this.cbReturn3);
+            this.groupBox2.Controls.Add(this.cbReturn2);
+            this.groupBox2.Controls.Add(this.cbReturn1);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBoxe4);
             this.groupBox2.Controls.Add(this.comboBoxb4);
@@ -562,50 +562,10 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(22, 374);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(438, 185);
+            this.groupBox2.Size = new System.Drawing.Size(491, 185);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Foreign Currency Exchange";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(365, 123);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(42, 16);
-            this.checkBox4.TabIndex = 33;
-            this.checkBox4.Text = "FCE";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(366, 97);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(42, 16);
-            this.checkBox3.TabIndex = 32;
-            this.checkBox3.Text = "FCE";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(366, 70);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(42, 16);
-            this.checkBox2.TabIndex = 31;
-            this.checkBox2.Text = "FCE";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(366, 42);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(42, 16);
-            this.checkBox1.TabIndex = 30;
-            this.checkBox1.Text = "FCE";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -894,11 +854,59 @@
             this.btnReceive.UseVisualStyleBackColor = true;
             this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
+            // cbReturn1
+            // 
+            this.cbReturn1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn1.FormattingEnabled = true;
+            this.cbReturn1.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn1.Location = new System.Drawing.Point(365, 39);
+            this.cbReturn1.Name = "cbReturn1";
+            this.cbReturn1.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn1.TabIndex = 30;
+            // 
+            // cbReturn2
+            // 
+            this.cbReturn2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn2.FormattingEnabled = true;
+            this.cbReturn2.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn2.Location = new System.Drawing.Point(365, 65);
+            this.cbReturn2.Name = "cbReturn2";
+            this.cbReturn2.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn2.TabIndex = 31;
+            // 
+            // cbReturn3
+            // 
+            this.cbReturn3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn3.FormattingEnabled = true;
+            this.cbReturn3.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn3.Location = new System.Drawing.Point(365, 91);
+            this.cbReturn3.Name = "cbReturn3";
+            this.cbReturn3.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn3.TabIndex = 32;
+            // 
+            // cbReturn4
+            // 
+            this.cbReturn4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReturn4.FormattingEnabled = true;
+            this.cbReturn4.Items.AddRange(new object[] {
+            "Local Currency",
+            "Foreign Currency"});
+            this.cbReturn4.Location = new System.Drawing.Point(365, 117);
+            this.cbReturn4.Name = "cbReturn4";
+            this.cbReturn4.Size = new System.Drawing.Size(103, 20);
+            this.cbReturn4.TabIndex = 33;
+            // 
             // frm_Setting_PCASH_FCE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 607);
+            this.ClientSize = new System.Drawing.Size(561, 607);
             this.Controls.Add(this.btnReceive);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox2);
@@ -992,11 +1000,11 @@
         private System.Windows.Forms.TextBox textBoxb6;
         private System.Windows.Forms.TextBox textBoxa6;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnReceive;
+        private System.Windows.Forms.ComboBox cbReturn4;
+        private System.Windows.Forms.ComboBox cbReturn3;
+        private System.Windows.Forms.ComboBox cbReturn2;
+        private System.Windows.Forms.ComboBox cbReturn1;
     }
 }
