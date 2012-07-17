@@ -61,12 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_bundle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,9 +317,6 @@
     <Compile Include="Tools\ByteHelper.cs" />
     <Compile Include="Tools\PortData.cs" />
     <Compile Include="Tools\validate.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_bundle.resx">
       <DependentUpon>frm_bundle.cs</DependentUpon>
     </EmbeddedResource>
