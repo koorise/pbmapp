@@ -180,6 +180,46 @@ namespace PBMApp
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+           SendA();
+           MessageBox.Show("Refund info has been sent", "Alert");
+           SendB();
+           MessageBox.Show("PayMentinfo has been sent", "Alert");
+            SendC();
+            MessageBox.Show("Coupon info has been sent", "Alert");
+        }
+        private void SendB()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                
+                var qq = from c in m.WH_Sys_Payment
+                         orderby c.ID ascending
+                         select c;
+                foreach (WH_Sys_Payment w in qq)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.ChargeReturn.ToString());
+                    s.Add(w.DuplicateNo.ToString());
+                    s.Add(w.isTips.ToString());
+                    s.Add(w.TypeID.ToString());
+                    s.Add(w.Description.ToString());
+                    strs.Add(s);
+                }
+                //MessageBox.Show(strs.Count.ToString(), "C");
+
+                rm.GetDownArrayString(pIo, strs, 14, 114);
+            }
+
+
+            pIo.Close();
+        }
+        private void SendA()
+        {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
             ReceiveMessage rm = new ReceiveMessage();
@@ -199,49 +239,63 @@ namespace PBMApp
                     strs.Add(s);
                 }
                 rm.GetDownArrayString(pIo, strs, 13, 113);
-                
-                strs.Clear();
-                var qq = from c in m.WH_Sys_Payment
-                         orderby c.ID ascending
-                         select c;
-                foreach (WH_Sys_Payment w in qq)
+ 
+            }
+            pIo.Close();
+        }
+        private void SendC()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_CouponInformation
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Sys_CouponInformation w in q)
                 {
                     List<string> s = new List<string>();
                     s.Add(w.ID.ToString());
-                    s.Add(w.ChargeReturn.ToString());
-                    s.Add(w.DuplicateNo.ToString());
-                    s.Add(w.isTips.ToString());
-                    s.Add(w.TypeID.ToString());
-                    s.Add(w.Description.ToString());
+                    s.Add(w.price.ToString());
+                    s.Add(w.HALO.ToString()); 
                     strs.Add(s);
                 }
-                rm.GetDownArrayString(pIo, strs, 14, 114); 
+                rm.GetDownArrayString(pIo, strs, 12, 112); 
             }
+            pIo.Close();
             
-            
-            pIo.Close(); 
-            MessageBox.Show("success", "alert");
         }
-
         private void btnReceive_Click(object sender, EventArgs e)
+        {
+            RevA();
+            MessageBox.Show("Refund has been Recieved.", "Alert");
+            RevB();
+            MessageBox.Show("Payment has been Recieved.", "Alert");
+            RevC();
+            MessageBox.Show("Coupon Info  has been Recieved.", "Alert");
+            FrmLoad();
+             
+        }
+        private void RevA()
         {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
 
             ReceiveMessage rm = new ReceiveMessage();
-            
-            List<string> strs=new List<string>();
+
+            List<string> strs = new List<string>();
             for (int i = 1; i < 9; i++)
             {
-                strs.Add(i.ToString());   
+                strs.Add(i.ToString());
             }
             rm.GetUpArrayString(pIo, strs, 13, 113);
             using (var m = new Entities())
-            { 
+            {
                 foreach (List<string> str in rm.List)
                 {
-                    //MessageBox.Show(str[0], "AA");
-                    int id = int.Parse(str[0].Substring(str[0].Length-1,1));
+                    int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
                     var q = m.WH_Sys_Refund.FirstOrDefault(x => x.ID == id);
                     if (str[1] != null && str[1] != "")
                     {
@@ -258,12 +312,57 @@ namespace PBMApp
                 m.SaveChanges();
             }
             pIo.Close();
-            FrmLoad();
-            MessageBox.Show("success", "alert");
         }
+        private void RevB()
+       {
+           JustinIO.CommPort pIo = ReceiveMessage.sp();
+           pIo.Open();
 
-        
+           ReceiveMessage rm = new ReceiveMessage();
 
-        
+           List<string> strs = new List<string>();
+           for (int i = 1; i < 11; i++)
+           {
+               strs.Add(i.ToString());
+           }
+           rm.GetUpArrayString(pIo, strs, 14, 114);
+           using (var m = new Entities())
+           {
+               int i = 1;
+               foreach (List<string> str in rm.List)
+               { 
+                   var q = m.WH_Sys_Payment.FirstOrDefault(x => x.ID == i);
+                   q.ChargeReturn = int.Parse(str[1]==""?"0":str[1]);
+                   q.DuplicateNo = int.Parse(str[2] == "" ? "0" : str[2]);
+                   q.isTips = int.Parse(str[3] == "" ? "0" : str[3]);
+                   q.TypeID = int.Parse(str[4] == "" ? "0" : str[4]);
+                   q.Description = str[5];
+                   i++;
+               }
+               m.SaveChanges();
+           }
+           pIo.Close();
+       }
+        private void RevC()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<string> strs = new List<string>();
+            strs.Add("1");
+            rm.GetUpArrayString(pIo, strs, 12, 112);
+            using (var m = new Entities())
+            {
+                foreach (List<string> str in rm.List)
+                {
+                    int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
+                    var q = m.WH_Sys_CouponInformation.FirstOrDefault(x => x.ID == id);
+                    q.price = decimal.Parse(str[1] == "" ? "0" : str[1]);
+                    q.HALO = decimal.Parse(str[2] == "" ? "0" : str[2]);
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+        } 
     }
 }

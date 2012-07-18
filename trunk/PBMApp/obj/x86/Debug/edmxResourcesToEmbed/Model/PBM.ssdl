@@ -105,7 +105,7 @@
     <Property Name="High_Digit_LockOut" Type="integer" />
     <Property Name="isDirectSale" Type="integer" />
     <Property Name="isAge" Type="integer" />
-    <Property Name="isPrice" Type="integer" />
+    <Property Name="isPrice" Type="decimal" Scale="4" />
     <Property Name="DepartmentGroup" Type="integer" />
     <Property Name="KP" Type="integer" />
     <Property Name="KP2" Type="integer" />

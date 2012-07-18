@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
-
+using System.Threading;
 namespace PBMApp
 {
     public partial class frm_dept : Form
@@ -615,7 +615,7 @@ namespace PBMApp
                         select c;
                 foreach (var w in q)
                 {
-                    w.Description = "DEPT" + w.ID.ToString().PadLeft(3, '0');
+                    w.Description = "CCCC" + w.ID.ToString().PadLeft(3, '0');
                     w.High_Digit_LockOut = 7;
                     w.isDirectSale = 0;
                     w.isAge = 1;
@@ -672,76 +672,13 @@ namespace PBMApp
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            List<string> list = new List<string>();
-            list.Add("0");
-            list.Add("1");
-            list.Add("2");
-            list.Add("3");
-            list.Add("4");
-            list.Add("12");
-            list.Add("13");
-            list.Add("14");
-            list.Add("23");
-            list.Add("24");
-            list.Add("34");
-            list.Add("123");
-            list.Add("124");
-            list.Add("134");
-            list.Add("234");
-            list.Add("1234"); 
-            JustinIO.CommPort pIo = ReceiveMessage.sp();
-            pIo.Open();
-            ReceiveMessage rm = new ReceiveMessage();
-            List<List<string>> strs = new List<List<string>>();
-            using (var m = new Entities())
+            for (int i = 1; i < 201; i++)
             {
-                var q = from c in m.WH_Department
-                        orderby c.ID ascending 
-                        select c;
-                foreach (WH_Department w in q)
-                {
-                    List<string> s = new List<string>();
-                    s.Add(w.ID.ToString()); 
-                    s.Add(w.isPrice.ToString());
-                    string _tax = w.str_Vat_Tax_GST.ToString().Replace("0","");
-                    string tax = "";
-                    if(_tax=="")
-                    {
-                        tax = "0";
-                    }
-                    else
-                    {
-                        int c = 0;
-                        foreach (string s1 in list)
-                        {  
-                            if(s1==_tax)
-                            {
-                                tax = c.ToString();
-                            }
-                            c++;
-                        }
-                    }
-                    s.Add(w.isMode.ToString()+w.isType.ToString()+w.High_Digit_LockOut.ToString()+w.isAge.ToString()+tax.PadLeft(2,'0')+w.FS_Tenderable.ToString());
-                    s.Add(w.Description);
-                    s.Add(w.DepartmentGroup.ToString()+w.KP.ToString().PadLeft(2,'0')+w.KP2.ToString().PadLeft(2,'0')+w.isPriceFormat.ToString()+w.KP_receipt.ToString()+w.isType.ToString());
-                    strs.Add(s);
-                }
-            }
-            
-            rm.GetDownArrayString(pIo, strs, 4, 104);
-            //foreach (List<string> str in rm.List)
-            //{
-            //    foreach (string s in str)
-            //    {
-            //        richTextBox1.Text += s + "#";
-            //    }
-            //    richTextBox1.Text += "\n\r";
-            //}
-            pIo.Close();
+                SendA(i);
+            } 
             MessageBox.Show("Success", "alert");
         }
-
-        private void btnRev_Click(object sender, EventArgs e)
+        private void SendA(int maxID)
         {
             List<string> list = new List<string>();
             list.Add("0");
@@ -759,40 +696,129 @@ namespace PBMApp
             list.Add("124");
             list.Add("134");
             list.Add("234");
-            list.Add("1234"); 
+            list.Add("1234");
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Department
+                        where c.ID ==maxID
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Department w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.isPrice.ToString());
+                    string _tax = w.str_Vat_Tax_GST.ToString().Replace("0", "");
+                    string tax = "";
+                    if (_tax == "")
+                    {
+                        tax = "0";
+                    }
+                    else
+                    {
+                        int c = 0;
+                        foreach (string s1 in list)
+                        {
+                            if (s1 == _tax)
+                            {
+                                tax = c.ToString();
+                            }
+                            c++;
+                        }
+                    }
+                    s.Add(w.isMode.ToString() + w.isType.ToString() + w.High_Digit_LockOut.ToString() + w.isAge.ToString() + tax.PadLeft(2, '0') + w.FS_Tenderable.ToString());
+                    s.Add(w.Description);
+                    s.Add(w.DepartmentGroup.ToString() + w.KP.ToString().PadLeft(2, '0') + w.KP2.ToString().PadLeft(2, '0') + w.isPriceFormat.ToString() + w.KP_receipt.ToString() + w.isType.ToString());
+                    strs.Add(s);
+                }
+            }
+
+            rm.GetDownArrayString(pIo, strs, 4, 104);
+
+            pIo.Close();
+        }
+        private void btnRev_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i < 50; i++)
+            {
+                RevA(i);
+            }
+            MessageBox.Show("A", "A");
+            Application.DoEvents();
+            for (int i = 50; i < 100; i++)
+            {
+                RevA(i);
+            }
+            MessageBox.Show("A", "A");
+            Application.DoEvents();
+            for (int i = 100; i < 150; i++)
+            {
+                RevA(i);
+            }
+            MessageBox.Show("A", "A");
+            Application.DoEvents();
+            for (int i = 150; i < 201; i++)
+            {
+                RevA(i);
+            }
+            BindData(); 
+             
+            MessageBox.Show("success", "alert"); 
+        }
+        
+        private void RevA(int maxID)
+        {
+            List<string> list = new List<string>();
+            list.Add("0");
+            list.Add("1");
+            list.Add("2");
+            list.Add("3");
+            list.Add("4");
+            list.Add("12");
+            list.Add("13");
+            list.Add("14");
+            list.Add("23");
+            list.Add("24");
+            list.Add("34");
+            list.Add("123");
+            list.Add("124");
+            list.Add("134");
+            list.Add("234");
+            list.Add("1234");
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
 
             ReceiveMessage rm = new ReceiveMessage();
 
             List<string> strs = new List<string>();
-            for (int i = 1; i <=200; i++)
-            {
-                strs.Add(i.ToString());
-            }
+             
+            strs.Add(maxID.ToString());
             rm.GetUpArrayString(pIo, strs, 4, 104);
             using (var m = new Entities())
             {
-
                 foreach (List<string> str in rm.List)
-                { 
-                    int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
-                    var q = m.WH_Department.FirstOrDefault(x => x.ID == id);
+                {
+                    //int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
+                    var q = m.WH_Department.FirstOrDefault(x => x.ID == maxID);
                     if (str[1] != null && str[1] != "")
                     {
-                        q.isPrice = int.Parse(str[1]);
+                        q.isPrice = decimal.Parse(str[1]);
                     }
                     else
-                    {
-                        q.isPrice = 0;
+                    { 
+                        q.isPrice = decimal.Parse("0");
                     }
-                    string ab = str[2].PadLeft(7,'0');
+                    string ab = str[2].PadLeft(7, '0');
                     q.isMode = int.Parse(ab.Substring(0, 1));
                     q.isType = int.Parse(ab.Substring(1, 1));
                     q.High_Digit_LockOut = int.Parse(ab.Substring(2, 1));
-                    q.isAge = int.Parse(ab.Substring(3, 1)); 
+                    q.isAge = int.Parse(ab.Substring(3, 1));
                     q.str_Vat_Tax_GST = list[int.Parse(ab.Substring(4, 2))];
-                    q.FS_Tenderable = int.Parse(ab.Substring(6, 1)); 
+                    q.FS_Tenderable = int.Parse(ab.Substring(6, 1));
                     q.Description = str[3];
                     string bc = str[4].PadLeft(8, '0');
                     q.DepartmentGroup = int.Parse(bc.Substring(0, 1));
@@ -801,15 +827,11 @@ namespace PBMApp
                     q.isPriceFormat = int.Parse(bc.Substring(5, 1));
                     q.KP_receipt = int.Parse(bc.Substring(6, 1));
                     q.isVat_Tax_GST = int.Parse(bc.Substring(7, 1));
-
-
                 }
                 m.SaveChanges();
             }
             pIo.Close();
         }
-        
-        
          
     }
 }

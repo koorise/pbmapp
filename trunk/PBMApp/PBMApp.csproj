@@ -97,12 +97,6 @@
     <Compile Include="frm_DPLU.Designer.cs">
       <DependentUpon>frm_DPLU.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_HappyHour_ServiceTax.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_HappyHour_ServiceTax.Designer.cs">
-      <DependentUpon>frm_HappyHour_ServiceTax.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_kp_preview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,36 +168,6 @@
     </Compile>
     <Compile Include="frm_Setting_KeyDesc.Designer.cs">
       <DependentUpon>frm_Setting_KeyDesc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Setting_PageFour.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Setting_PageFour.Designer.cs">
-      <DependentUpon>frm_Setting_PageFour.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Setting_PageOne.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Setting_PageOne.Designer.cs">
-      <DependentUpon>frm_Setting_PageOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Setting_PageSeven.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Setting_PageSeven.Designer.cs">
-      <DependentUpon>frm_Setting_PageSeven.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Setting_PageThree.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Setting_PageThree.Designer.cs">
-      <DependentUpon>frm_Setting_PageThree.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Setting_PageTwo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Setting_PageTwo.Designer.cs">
-      <DependentUpon>frm_Setting_PageTwo.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Setting_PCASH_FCE.cs">
       <SubType>Form</SubType>
@@ -335,9 +299,6 @@
     <EmbeddedResource Include="frm_DPLU.resx">
       <DependentUpon>frm_DPLU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_HappyHour_ServiceTax.resx">
-      <DependentUpon>frm_HappyHour_ServiceTax.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,21 +328,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_HeaderFooter.resx">
       <DependentUpon>frm_Setting_HeaderFooter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Setting_PageFour.resx">
-      <DependentUpon>frm_Setting_PageFour.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Setting_PageOne.resx">
-      <DependentUpon>frm_Setting_PageOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Setting_PageSeven.resx">
-      <DependentUpon>frm_Setting_PageSeven.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Setting_PageThree.resx">
-      <DependentUpon>frm_Setting_PageThree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Setting_PageTwo.resx">
-      <DependentUpon>frm_Setting_PageTwo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Setting_PCASH_FCE.resx">
       <DependentUpon>frm_Setting_PCASH_FCE.cs</DependentUpon>

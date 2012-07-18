@@ -56,28 +56,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WH_Department">
-      <EntityTypeMapping TypeName="pbmModel.WH_Department">
-        <MappingFragment StoreEntitySet="WH_Department">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="High_Digit_LockOut" ColumnName="High_Digit_LockOut" />
-          <ScalarProperty Name="isDirectSale" ColumnName="isDirectSale" />
-          <ScalarProperty Name="isAge" ColumnName="isAge" />
-          <ScalarProperty Name="isPrice" ColumnName="isPrice" />
-          <ScalarProperty Name="DepartmentGroup" ColumnName="DepartmentGroup" />
-          <ScalarProperty Name="KP" ColumnName="KP" />
-          <ScalarProperty Name="KP2" ColumnName="KP2" />
-          <ScalarProperty Name="isMode" ColumnName="isMode" />
-          <ScalarProperty Name="isPriceFormat" ColumnName="isPriceFormat" />
-          <ScalarProperty Name="KP_receipt" ColumnName="KP_receipt" />
-          <ScalarProperty Name="isType" ColumnName="isType" />
-          <ScalarProperty Name="isVat_Tax_GST" ColumnName="isVat_Tax_GST" />
-          <ScalarProperty Name="str_Vat_Tax_GST" ColumnName="str_Vat_Tax_GST" />
-          <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="WH_Menu">
       <EntityTypeMapping TypeName="pbmModel.WH_Menu">
         <MappingFragment StoreEntitySet="WH_Menu">
@@ -534,6 +512,28 @@
           <ScalarProperty Name="Decimals" ColumnName="Decimals" />
           <ScalarProperty Name="FC" ColumnName="FC" />
           <ScalarProperty Name="Local" ColumnName="Local" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Department">
+      <EntityTypeMapping TypeName="pbmModel.WH_Department">
+        <MappingFragment StoreEntitySet="WH_Department">
+          <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
+          <ScalarProperty Name="str_Vat_Tax_GST" ColumnName="str_Vat_Tax_GST" />
+          <ScalarProperty Name="isVat_Tax_GST" ColumnName="isVat_Tax_GST" />
+          <ScalarProperty Name="isType" ColumnName="isType" />
+          <ScalarProperty Name="KP_receipt" ColumnName="KP_receipt" />
+          <ScalarProperty Name="isPriceFormat" ColumnName="isPriceFormat" />
+          <ScalarProperty Name="isMode" ColumnName="isMode" />
+          <ScalarProperty Name="KP2" ColumnName="KP2" />
+          <ScalarProperty Name="KP" ColumnName="KP" />
+          <ScalarProperty Name="DepartmentGroup" ColumnName="DepartmentGroup" />
+          <ScalarProperty Name="isPrice" ColumnName="isPrice" />
+          <ScalarProperty Name="isAge" ColumnName="isAge" />
+          <ScalarProperty Name="isDirectSale" ColumnName="isDirectSale" />
+          <ScalarProperty Name="High_Digit_LockOut" ColumnName="High_Digit_LockOut" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
