@@ -35,7 +35,9 @@ namespace PBMApp
                     TextBox tb1 = this.groupBox1.Controls["textBoxa" + i] as TextBox;
                     tb1.KeyPress += (Tools.Validate.KeyPress);
                     TextBox tb2 = this.groupBox1.Controls["textBoxb" + i] as TextBox;
+
                     ComboBox cb1 = this.groupBox1.Controls["comboBox" + i] as ComboBox;
+                    cb1.Items.Clear();
                     tb1.Text = w.Rate.ToString();
                     tb2.Text = w.description;
                     Combox_ItemBind(int.Parse(w.LinkPaymentID.ToString()) - 1, cb1);
@@ -54,7 +56,7 @@ namespace PBMApp
                         TextBox tb3 = this.groupBox2.Controls["textBoxe" + j] as TextBox;
                         ComboBox cb1 = this.groupBox2.Controls["comboBoxa" + j] as ComboBox;
                         ComboBox cb2 = this.groupBox2.Controls["comboBoxb" + j] as ComboBox;
-
+                        cb2.Items.Clear();
                         ComboBox cbReturn = this.groupBox2.Controls["cbReturn" + j] as ComboBox;
                         tb1.Text = w.Local.ToString();
                         tb2.Text = w.FC.ToString();
@@ -163,6 +165,14 @@ namespace PBMApp
 
         private void btnReceive_Click(object sender, EventArgs e)
         {
+            RevA(); 
+            MessageBox.Show("FCE has been Recieved", "Alert");
+            RevB();
+            MessageBox.Show("PCASH has been Recieved", "Alert");
+            frm_load(); 
+        }
+        private void RevA()
+        {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
 
@@ -186,19 +196,54 @@ namespace PBMApp
                     string ab = str[1].ToString().PadLeft(3, '0');
                     q.Decimals = int.Parse(ab.Substring(0, 1));
                     q.SymbolID = int.Parse(ab.Substring(1, 1));
-                    q.isFCE = int.Parse(ab.Substring(2, 1))-1;
-                    q.Local = decimal.Parse(str[2]==""?"0":str[2]);
-                    q.FC = int.Parse(str[3]==""?"0":str[3]);
+                    q.isFCE = int.Parse(ab.Substring(2, 1)) - 1;
+                    q.Local = decimal.Parse(str[2] == "" ? "0" : str[2]);
+                    q.FC = int.Parse(str[3] == "" ? "0" : str[3]);
                     q.Description = str[4];
                 }
                 m.SaveChanges();
             }
             pIo.Close();
-            frm_load();
-            MessageBox.Show("success", "alert");
+        }
+        private void RevB()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i <= 10; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 24, 124);
+            using (var m = new Entities())
+            {
+                int count = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    count++;
+                    //MessageBox.Show(str[0], "AA");
+                    //int id = int.Parse(str[0].Substring(str[0].Length - 1, 1));
+                    var q = m.WH_Sys_PCASH.FirstOrDefault(x => x.ID == count);
+                    q.Rate = decimal.Parse(str[1]==""?"0":str[1]);
+                    q.LinkPaymentID = int.Parse(str[2] == "" ? "0" : str[2]) + 1;
+                    q.description = str[3];
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
         }
 
         private void btnSend_Click(object sender, EventArgs e)
+        {
+            SendA();
+            MessageBox.Show("FCE has been Sent", "alert");
+            SendB();
+            MessageBox.Show("PCASH has been Sent.", "alert");
+        }
+        private void SendA()
         {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
@@ -207,23 +252,46 @@ namespace PBMApp
             using (var m = new Entities())
             {
                 var q = from c in m.WH_Sys_FCE
-                        where c.ID <=4
+                        where c.ID <= 4
                         orderby c.ID ascending
                         select c;
                 foreach (WH_Sys_FCE w in q)
                 {
                     List<string> s = new List<string>();
                     s.Add(w.ID.ToString());
-                    s.Add(w.Decimals.ToString()+w.SymbolID.ToString()+(int.Parse(w.isFCE.ToString())+1));
+                    s.Add(w.Decimals.ToString() + w.SymbolID.ToString() + (int.Parse(w.isFCE.ToString()) + 1));
                     s.Add(w.Local.ToString());
                     s.Add(w.FC.ToString());
-                    s.Add(w.Description.ToString()); 
+                    s.Add(w.Description.ToString());
                     strs.Add(s);
                 }
             }
             rm.GetDownArrayString(pIo, strs, 11, 111);
             pIo.Close(); 
-            MessageBox.Show("success", "alert");
+        }
+        private void SendB()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_PCASH 
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Sys_PCASH w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.Rate.ToString());
+                    s.Add((w.LinkPaymentID-1).ToString());
+                    s.Add(w.description);
+                    strs.Add(s);
+                }
+            }
+            rm.GetDownArrayString(pIo, strs, 24, 124);
+            pIo.Close();
         }
     }
 }

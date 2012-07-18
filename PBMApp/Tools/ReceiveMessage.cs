@@ -85,9 +85,11 @@ namespace PBMApp.Tools
                         pIo.Write(orb.UpSingleData(s));
                         rm.ReadThree(pIo);
                         List.Add(rm.Data);
+                        Application.DoEvents();
                         i++;
                     }
                     pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.bye)); 
+                     
                 }
             }
             else
@@ -108,11 +110,11 @@ namespace PBMApp.Tools
                 pIo.Write(orb.DownSingleCMD()); //命令
                 if (rm.ReadTwo(pIo))
                 {
-                    Steps = 0;
+                    int i = 0;
                     foreach (List<string> s in strs) //循环发送数据包
                     {
                         rm.Data = new List<string>();
-                        if (Steps != 0)
+                        if (i != 0)
                         {
                             pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.ACK));
                         }
@@ -122,14 +124,19 @@ namespace PBMApp.Tools
                             List.Add(s);
                         } 
                         Application.DoEvents();
-                        Steps++;
+                        i++;
                     }
                     pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.bye));
                 }
             }
             else
             {
-                pIo.Read(3);
+                pIo.Read(2);
+                //byte[] bytes=pIo.Read(2);
+                //foreach (byte b in bytes)
+                //{
+                //    MessageBox.Show(b.ToString("X2"), "A");
+                //}
                 GetDownArrayString(pIo, strs, up, down);
             }
         }

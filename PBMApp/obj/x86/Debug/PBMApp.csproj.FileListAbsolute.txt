@@ -10,7 +10,6 @@ D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Clerk.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_CookInfo.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_dept.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_DPLU.resources
-D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_HappyHour_ServiceTax.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Main.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_menu_plu.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_payment.resources
@@ -39,11 +38,6 @@ D:\PBMApp\PBMApp\bin\Debug\System.Data.Entity.dll
 D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.dll
 D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.Linq.dll
 D:\PBMApp\PBMApp\bin\Debug\System.Data.SQLite.xml
-D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageFour.resources
-D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageOne.resources
-D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageSeven.resources
-D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageThree.resources
-D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_PageTwo.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.frm_Setting_Port_KP.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_a.resources
 D:\PBMApp\PBMApp\obj\x86\Debug\PBMApp.HeaderFooterPreview.frm_b.resources

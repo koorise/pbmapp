@@ -148,22 +148,6 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Department> WH_Department
-        {
-            get
-            {
-                if ((_WH_Department == null))
-                {
-                    _WH_Department = base.CreateObjectSet<WH_Department>("WH_Department");
-                }
-                return _WH_Department;
-            }
-        }
-        private ObjectSet<WH_Department> _WH_Department;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<WH_Menu> WH_Menu
         {
             get
@@ -768,6 +752,22 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Sys_FCE> _WH_Sys_FCE;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Department> WH_Department
+        {
+            get
+            {
+                if ((_WH_Department == null))
+                {
+                    _WH_Department = base.CreateObjectSet<WH_Department>("WH_Department");
+                }
+                return _WH_Department;
+            }
+        }
+        private ObjectSet<WH_Department> _WH_Department;
 
         #endregion
         #region AddTo 方法
@@ -810,14 +810,6 @@ namespace PBMApp.Model
         public void AddToWH_CookInformation(WH_CookInformation wH_CookInformation)
         {
             base.AddObject("WH_CookInformation", wH_CookInformation);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Department EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Department(WH_Department wH_Department)
-        {
-            base.AddObject("WH_Department", wH_Department);
         }
     
         /// <summary>
@@ -1122,6 +1114,14 @@ namespace PBMApp.Model
         public void AddToWH_Sys_FCE(WH_Sys_FCE wH_Sys_FCE)
         {
             base.AddObject("WH_Sys_FCE", wH_Sys_FCE);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Department EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Department(WH_Department wH_Department)
+        {
+            base.AddObject("WH_Department", wH_Department);
         }
 
         #endregion
@@ -2039,7 +2039,7 @@ namespace PBMApp.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int64> isPrice
+        public Nullable<global::System.Decimal> isPrice
         {
             get
             {
@@ -2054,8 +2054,8 @@ namespace PBMApp.Model
                 OnisPriceChanged();
             }
         }
-        private Nullable<global::System.Int64> _isPrice;
-        partial void OnisPriceChanging(Nullable<global::System.Int64> value);
+        private Nullable<global::System.Decimal> _isPrice;
+        partial void OnisPriceChanging(Nullable<global::System.Decimal> value);
         partial void OnisPriceChanged();
     
         /// <summary>

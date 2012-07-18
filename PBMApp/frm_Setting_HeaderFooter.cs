@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using PBMApp.HeaderFooterPreview;
 using PBMApp.Model;
+using PBMApp.Tools;
 
 namespace PBMApp
 {
@@ -20,7 +21,12 @@ namespace PBMApp
 
         public int pageLoad = 0;
         private void frm_Setting_HeaderFooter_Load(object sender, EventArgs e)
-        { 
+        {
+            Frm_Load();
+
+        }
+        private void Frm_Load()
+        {
             using (var m = new Entities())
             {
                 #region header footer init
@@ -85,13 +91,13 @@ namespace PBMApp
                             break;
                     }
                 }
-            #endregion
+                #endregion
 
                 pageLoad++;
 
                 #region BundelSaving ReceiptNum
                 var br = from c in m.WH_Sys_BundleSaving_ReceiptNumber
-                         orderby c.ID ascending 
+                         orderby c.ID ascending
                          select c;
                 var b = br.First();
                 textBox11.Text = b.title;
@@ -100,9 +106,7 @@ namespace PBMApp
                 textBox12.Text = _r.title;
                 #endregion
             }
-            
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
           
@@ -251,5 +255,199 @@ namespace PBMApp
 
             }
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            SendHeader();
+            MessageBox.Show("Header has been Sent", "Alert");
+            SendFooter();
+            MessageBox.Show("Footer has been Sent", "Alert");
+            SendBundle();
+            MessageBox.Show("Bundle Saving Text has been sent.", "Alert");
+        }
+        private void btnRev_Click(object sender, EventArgs e)
+        {
+            RevHeader();
+            MessageBox.Show("Header has been Recieved", "Alert");
+            RevFooter();
+            MessageBox.Show("Footer has been Recieved", "Alert");
+            RevBundle();
+            MessageBox.Show("Bundle Saving Text has been Recieved", "Alert");
+            Frm_Load();
+        }
+
+        private void RevHeader()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i < 6; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 6, 106);
+            using (var m = new Entities())
+            {
+                int i = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    i++;
+                    var q = m.WH_Sys_Header_Footer.FirstOrDefault(x => x.ID == i);
+                    q.title = str[2];
+                    if (str[1]!=""&&str[1]!=null)
+                    {
+                        q.DoubleWidth = int.Parse(str[1]);
+                    }
+                    else
+                    {
+                        q.DoubleWidth = 0;
+                    }
+                    
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();  
+        }
+        private void RevFooter()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i < 6; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 7, 107);
+            using (var m = new Entities())
+            {
+                int i = 5;
+                foreach (List<string> str in rm.List)
+                {
+                    i++;
+                    var q = m.WH_Sys_Header_Footer.FirstOrDefault(x => x.ID == i);
+                    q.title = str[2];
+                    if (str[1] != "" && str[1] != null)
+                    {
+                        q.DoubleWidth = int.Parse(str[1]);
+                    }
+                    else
+                    {
+                        q.DoubleWidth = 0;
+                    }
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+        }
+        private void RevBundle()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            strs.Add("1");
+            rm.GetUpArrayString(pIo, strs, 22, 122);
+            using (var m = new Entities())
+            {
+                int i = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    i++;
+                    var q = m.WH_Sys_BundleSaving_ReceiptNumber.FirstOrDefault(x => x.ID == i);
+                    q.title = str[1]; 
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+            
+        }
+      
+        private void SendHeader()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_Header_Footer
+                        where c.isHeader==1
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Sys_Header_Footer w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.DoubleWidth.ToString());
+                    s.Add(w.title.ToString()); 
+                    strs.Add(s);
+                }
+                rm.GetDownArrayString(pIo, strs, 6, 106);
+
+            } 
+            pIo.Close();
+        }
+        private void SendFooter()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_Header_Footer
+                        where c.isHeader == 0
+                        orderby c.ID ascending
+                        select c;
+                int i = 1;
+                foreach (WH_Sys_Header_Footer w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(i.ToString());
+                    s.Add(w.DoubleWidth.ToString());
+                    s.Add(w.title.ToString());
+                    strs.Add(s);
+                    i++;
+                }
+                rm.GetDownArrayString(pIo, strs, 7, 107);
+
+            }
+            pIo.Close();
+        }
+        private void SendBundle()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_BundleSaving_ReceiptNumber 
+                        orderby c.ID ascending
+                        select c;
+                int i = 1;
+                WH_Sys_BundleSaving_ReceiptNumber w = q.FirstOrDefault();
+                List<string> s = new List<string>();
+                s.Add(i.ToString());
+                s.Add(w.title.ToString()); 
+                strs.Add(s);
+                rm.GetDownArrayString(pIo, strs, 22, 122); 
+            }
+            pIo.Close();
+        }
+        private void SendRNT()
+        {
+            
+        }
+
+       
     }
 }

@@ -49,14 +49,16 @@
             this.cbRP = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnRev = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -352,15 +354,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "KP Information";
             // 
-            // button1
+            // label14
             // 
-            this.button1.Location = new System.Drawing.Point(643, 603);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(358, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 12);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Cut Paper";
             // 
             // label13
             // 
@@ -416,20 +417,43 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "KP";
             // 
-            // label14
+            // button1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(358, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 12);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Cut Paper";
+            this.button1.Location = new System.Drawing.Point(643, 603);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(562, 603);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 15;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnRev
+            // 
+            this.btnRev.Location = new System.Drawing.Point(487, 603);
+            this.btnRev.Name = "btnRev";
+            this.btnRev.Size = new System.Drawing.Size(75, 23);
+            this.btnRev.TabIndex = 16;
+            this.btnRev.Text = "Recieve";
+            this.btnRev.UseVisualStyleBackColor = true;
+            this.btnRev.Click += new System.EventHandler(this.btnRev_Click);
             // 
             // frm_Setting_Port_KP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 638);
+            this.Controls.Add(this.btnRev);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -478,5 +502,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnRev;
     }
 }

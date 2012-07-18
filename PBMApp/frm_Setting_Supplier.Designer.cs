@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRev = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRev);
+            this.groupBox1.Controls.Add(this.btnSend);
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -45,15 +49,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Supplier";
             // 
-            // button1
+            // btnRev
             // 
-            this.button1.Location = new System.Drawing.Point(423, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRev.Location = new System.Drawing.Point(180, 332);
+            this.btnRev.Name = "btnRev";
+            this.btnRev.Size = new System.Drawing.Size(75, 23);
+            this.btnRev.TabIndex = 3;
+            this.btnRev.Text = "Recieve";
+            this.btnRev.UseVisualStyleBackColor = true;
+            this.btnRev.Click += new System.EventHandler(this.btnRev_Click);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(261, 332);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnReset
             // 
@@ -64,6 +78,16 @@
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(423, 332);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_Setting_Supplier
             // 
@@ -84,6 +108,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnRev;
+        private System.Windows.Forms.Button btnSend;
 
     }
 }
