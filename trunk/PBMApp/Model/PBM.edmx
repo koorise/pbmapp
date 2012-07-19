@@ -409,6 +409,7 @@
           <Property Name="PrintItemsWhenCloseTable" Type="nvarchar" />
           <Property Name="ItemDesc_RP_index" Type="integer" />
           <Property Name="ItemDesc_RP" Type="nvarchar" />
+          <Property Name="CurrencySymbolChoice" Type="integer" />
         </EntityType>
         <EntityType Name="WH_Sys_Payment">
           <Key>
@@ -585,7 +586,6 @@
           <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.WH_Sys_mailer" />
           <EntitySet Name="WH_Sys_TableBarcode" EntityType="pbmModel.WH_Sys_TableBarcode" />
           <EntitySet Name="WH_Sys_PageOne" EntityType="pbmModel.WH_Sys_PageOne" />
-          <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
           <EntitySet Name="WH_Sys_PageTree" EntityType="pbmModel.WH_Sys_PageTree" />
           <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.WH_Sys_PageFour" />
           <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
@@ -593,6 +593,7 @@
           <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
           <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
           <EntitySet Name="WH_Department" EntityType="pbmModel.WH_Department" />
+          <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -959,21 +960,6 @@
           <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="WH_Sys_PageTwo">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="PositionOfReceipt_index" />
-          <Property Type="String" Name="PositionOfReceipt" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="PositionOfLogo_index" />
-          <Property Type="String" Name="PositionOfLogo" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="PrintItemsWhenCloseTable_index" />
-          <Property Type="String" Name="PrintItemsWhenCloseTable" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Type="Int64" Name="ItemDesc_RP_index" />
-          <Property Type="String" Name="ItemDesc_RP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="WH_Sys_PageTree">
           <Key>
             <PropertyRef Name="ID" />
@@ -1086,6 +1072,22 @@
           <Property Type="Int64" Name="isVat_Tax_GST" />
           <Property Type="String" Name="str_Vat_Tax_GST" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Type="Int64" Name="FS_Tenderable" />
+        </EntityType>
+        <EntityType Name="WH_Sys_PageTwo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PositionOfReceipt_index" />
+          <Property Type="String" Name="PositionOfReceipt" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PositionOfLogo_index" />
+          <Property Type="String" Name="PositionOfLogo" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="PrintItemsWhenCloseTable_index" />
+          <Property Type="String" Name="PrintItemsWhenCloseTable" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ItemDesc_RP_index" />
+          <Property Type="String" Name="ItemDesc_RP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CurrencySymbolChoice" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1402,22 +1404,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WH_Sys_PageTwo">
-            <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTwo">
-              <MappingFragment StoreEntitySet="WH_Sys_PageTwo">
-                <ScalarProperty Name="ItemDesc_RP" ColumnName="ItemDesc_RP" />
-                <ScalarProperty Name="ItemDesc_RP_index" ColumnName="ItemDesc_RP_index" />
-                <ScalarProperty Name="PrintItemsWhenCloseTable" ColumnName="PrintItemsWhenCloseTable" />
-                <ScalarProperty Name="PrintItemsWhenCloseTable_index" ColumnName="PrintItemsWhenCloseTable_index" />
-                <ScalarProperty Name="PositionOfLogo" ColumnName="PositionOfLogo" />
-                <ScalarProperty Name="PositionOfLogo_index" ColumnName="PositionOfLogo_index" />
-                <ScalarProperty Name="PositionOfReceipt" ColumnName="PositionOfReceipt" />
-                <ScalarProperty Name="PositionOfReceipt_index" ColumnName="PositionOfReceipt_index" />
-                <ScalarProperty Name="Authority" ColumnName="Authority" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="WH_Sys_PageTree">
             <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTree">
               <MappingFragment StoreEntitySet="WH_Sys_PageTree">
@@ -1538,6 +1524,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Sys_PageTwo">
+            <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTwo">
+              <MappingFragment StoreEntitySet="WH_Sys_PageTwo">
+                <ScalarProperty Name="CurrencySymbolChoice" ColumnName="CurrencySymbolChoice" />
+                <ScalarProperty Name="ItemDesc_RP" ColumnName="ItemDesc_RP" />
+                <ScalarProperty Name="ItemDesc_RP_index" ColumnName="ItemDesc_RP_index" />
+                <ScalarProperty Name="PrintItemsWhenCloseTable" ColumnName="PrintItemsWhenCloseTable" />
+                <ScalarProperty Name="PrintItemsWhenCloseTable_index" ColumnName="PrintItemsWhenCloseTable_index" />
+                <ScalarProperty Name="PositionOfLogo" ColumnName="PositionOfLogo" />
+                <ScalarProperty Name="PositionOfLogo_index" ColumnName="PositionOfLogo_index" />
+                <ScalarProperty Name="PositionOfReceipt" ColumnName="PositionOfReceipt" />
+                <ScalarProperty Name="PositionOfReceipt_index" ColumnName="PositionOfReceipt_index" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1595,7 +1598,6 @@
         <EntityTypeShape EntityType="pbmModel.WH_Sys_mailer" Width="1.5" PointX="15.375" PointY="12.75" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_TableBarcode" Width="1.5" PointX="13.375" PointY="15.75" Height="3.3084114583333246" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageOne" Width="1.5" PointX="15.375" PointY="15.75" Height="1.2849739583333246" />
-        <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTwo" Width="1.5" PointX="7.375" PointY="16.75" Height="2.6339322916666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTree" Width="1.5" PointX="9.375" PointY="16.75" Height="3.9828906250000102" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageFour" Width="1.5" PointX="17.375" PointY="3.75" Height="5.3318489583333246" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_KeyDesc" Width="1.5" PointX="17.375" PointY="10.75" Height="1.6222135416666674" />
@@ -1603,6 +1605,7 @@
         <EntityTypeShape EntityType="pbmModel.WH_Relation_Cook_PLU" Width="1.5" PointX="3.375" PointY="8.75" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_FCE" Width="1.5" PointX="17.375" PointY="16.75" Height="2.2966927083333246" />
         <EntityTypeShape EntityType="pbmModel.WH_Department" Width="1.5" PointX="0.75" PointY="18.75" Height="3.6456510416666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTwo" Width="1.5" PointX="3.375" PointY="18.75" Height="2.8025520833333246" />
       </Diagram>
     </Diagrams>
   </Designer>

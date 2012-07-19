@@ -155,6 +155,7 @@ namespace PBMApp
                     //MessageBox.Show(str[0], "AA");
 
                     var q = m.WH_Sys_Supplier.FirstOrDefault(x => x.ID == count); 
+                    
                     q.Description = str[1];
                 }
                 m.SaveChanges();
