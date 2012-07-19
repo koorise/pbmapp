@@ -644,22 +644,6 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Sys_PageTwo> WH_Sys_PageTwo
-        {
-            get
-            {
-                if ((_WH_Sys_PageTwo == null))
-                {
-                    _WH_Sys_PageTwo = base.CreateObjectSet<WH_Sys_PageTwo>("WH_Sys_PageTwo");
-                }
-                return _WH_Sys_PageTwo;
-            }
-        }
-        private ObjectSet<WH_Sys_PageTwo> _WH_Sys_PageTwo;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<WH_Sys_PageTree> WH_Sys_PageTree
         {
             get
@@ -768,6 +752,22 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Department> _WH_Department;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Sys_PageTwo> WH_Sys_PageTwo
+        {
+            get
+            {
+                if ((_WH_Sys_PageTwo == null))
+                {
+                    _WH_Sys_PageTwo = base.CreateObjectSet<WH_Sys_PageTwo>("WH_Sys_PageTwo");
+                }
+                return _WH_Sys_PageTwo;
+            }
+        }
+        private ObjectSet<WH_Sys_PageTwo> _WH_Sys_PageTwo;
 
         #endregion
         #region AddTo 方法
@@ -1061,14 +1061,6 @@ namespace PBMApp.Model
         }
     
         /// <summary>
-        /// 用于向 WH_Sys_PageTwo EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Sys_PageTwo(WH_Sys_PageTwo wH_Sys_PageTwo)
-        {
-            base.AddObject("WH_Sys_PageTwo", wH_Sys_PageTwo);
-        }
-    
-        /// <summary>
         /// 用于向 WH_Sys_PageTree EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
         public void AddToWH_Sys_PageTree(WH_Sys_PageTree wH_Sys_PageTree)
@@ -1122,6 +1114,14 @@ namespace PBMApp.Model
         public void AddToWH_Department(WH_Department wH_Department)
         {
             base.AddObject("WH_Department", wH_Department);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Sys_PageTwo EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Sys_PageTwo(WH_Sys_PageTwo wH_Sys_PageTwo)
+        {
+            base.AddObject("WH_Sys_PageTwo", wH_Sys_PageTwo);
         }
 
         #endregion
@@ -6984,6 +6984,30 @@ namespace PBMApp.Model
         private global::System.String _ItemDesc_RP;
         partial void OnItemDesc_RPChanging(global::System.String value);
         partial void OnItemDesc_RPChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> CurrencySymbolChoice
+        {
+            get
+            {
+                return _CurrencySymbolChoice;
+            }
+            set
+            {
+                OnCurrencySymbolChoiceChanging(value);
+                ReportPropertyChanging("CurrencySymbolChoice");
+                _CurrencySymbolChoice = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CurrencySymbolChoice");
+                OnCurrencySymbolChoiceChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _CurrencySymbolChoice;
+        partial void OnCurrencySymbolChoiceChanging(Nullable<global::System.Int64> value);
+        partial void OnCurrencySymbolChoiceChanged();
 
         #endregion
     

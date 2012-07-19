@@ -284,8 +284,11 @@
             this.comboBox1d = new System.Windows.Forms.ComboBox();
             this.label85 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnRev = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.cbCSC = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -378,6 +381,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label34);
+            this.tabPage2.Controls.Add(this.cbCSC);
             this.tabPage2.Controls.Add(this.comboBox4a);
             this.tabPage2.Controls.Add(this.comboBox3a);
             this.tabPage2.Controls.Add(this.comboBox2a);
@@ -496,8 +501,7 @@
             "Reset Grand Total after Z Report ",
             "Clerk System active",
             "Clerk Logging in P mode",
-            "IButton Logon Active",
-            "Currency Symbol choice  ",
+            "IButton Logon Active  ",
             "Enable key tone",
             "Compulsory Clerk Declaration",
             "Second Z Sales Report Active",
@@ -815,6 +819,7 @@
             // textBox17c
             // 
             this.textBox17c.Location = new System.Drawing.Point(161, 296);
+            this.textBox17c.MaxLength = 15;
             this.textBox17c.Name = "textBox17c";
             this.textBox17c.Size = new System.Drawing.Size(121, 21);
             this.textBox17c.TabIndex = 84;
@@ -1252,6 +1257,7 @@
             this.c8.Name = "c8";
             this.c8.Size = new System.Drawing.Size(40, 20);
             this.c8.TabIndex = 48;
+            this.c8.Visible = false;
             // 
             // label35
             // 
@@ -1288,6 +1294,7 @@
             this.c7.Name = "c7";
             this.c7.Size = new System.Drawing.Size(40, 20);
             this.c7.TabIndex = 43;
+            this.c7.Visible = false;
             // 
             // label37
             // 
@@ -1324,6 +1331,7 @@
             this.c6.Name = "c6";
             this.c6.Size = new System.Drawing.Size(40, 20);
             this.c6.TabIndex = 38;
+            this.c6.Visible = false;
             // 
             // label39
             // 
@@ -1360,6 +1368,7 @@
             this.c5.Name = "c5";
             this.c5.Size = new System.Drawing.Size(40, 20);
             this.c5.TabIndex = 33;
+            this.c5.Visible = false;
             // 
             // label41
             // 
@@ -1534,6 +1543,7 @@
             this.c4.Name = "c4";
             this.c4.Size = new System.Drawing.Size(40, 20);
             this.c4.TabIndex = 28;
+            this.c4.Visible = false;
             // 
             // label50
             // 
@@ -1570,6 +1580,7 @@
             this.c3.Name = "c3";
             this.c3.Size = new System.Drawing.Size(40, 20);
             this.c3.TabIndex = 23;
+            this.c3.Visible = false;
             // 
             // label52
             // 
@@ -1606,6 +1617,7 @@
             this.c2.Name = "c2";
             this.c2.Size = new System.Drawing.Size(40, 20);
             this.c2.TabIndex = 18;
+            this.c2.Visible = false;
             // 
             // label54
             // 
@@ -1642,6 +1654,7 @@
             this.c1.Name = "c1";
             this.c1.Size = new System.Drawing.Size(40, 20);
             this.c1.TabIndex = 13;
+            this.c1.Visible = false;
             // 
             // label56
             // 
@@ -3067,6 +3080,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnRev);
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -3074,6 +3088,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(739, 36);
             this.panel1.TabIndex = 1;
+            // 
+            // btnRev
+            // 
+            this.btnRev.Location = new System.Drawing.Point(476, 7);
+            this.btnRev.Name = "btnRev";
+            this.btnRev.Size = new System.Drawing.Size(75, 23);
+            this.btnRev.TabIndex = 2;
+            this.btnRev.Text = "Recieve";
+            this.btnRev.UseVisualStyleBackColor = true;
+            this.btnRev.Click += new System.EventHandler(this.btnRev_Click);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(557, 7);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 1;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnSave
             // 
@@ -3085,14 +3119,30 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnSend
+            // cbCSC
             // 
-            this.btnSend.Location = new System.Drawing.Point(557, 7);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 23);
-            this.btnSend.TabIndex = 1;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.cbCSC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCSC.FormattingEnabled = true;
+            this.cbCSC.Items.AddRange(new object[] {
+            "$",
+            "€",
+            "¢",
+            "£",
+            "¥",
+            "None"});
+            this.cbCSC.Location = new System.Drawing.Point(495, 127);
+            this.cbCSC.Name = "cbCSC";
+            this.cbCSC.Size = new System.Drawing.Size(121, 20);
+            this.cbCSC.TabIndex = 17;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(352, 130);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(137, 12);
+            this.label34.TabIndex = 18;
+            this.label34.Text = "Currency Symbol choice";
             // 
             // frm_Setting_SystemFlag
             // 
@@ -3395,5 +3445,8 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.TextBox z1;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnRev;
+        private System.Windows.Forms.ComboBox cbCSC;
+        private System.Windows.Forms.Label label34;
     }
 }

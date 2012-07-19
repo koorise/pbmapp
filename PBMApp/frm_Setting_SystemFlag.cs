@@ -153,22 +153,22 @@ namespace PBMApp
                     Dog d1 = new Dog();
                     d1.head = int.Parse(w.timeA.Split(':')[0]);
                     d1.body = int.Parse(w.timeA.Split(':')[1]);
-                    d1.foot = int.Parse(w.timeA.Split(':')[2]);
+                    //d1.foot = int.Parse(w.timeA.Split(':')[2]);
 
                     Dog d2 = new Dog();
                     d2.head = int.Parse(w.timeB.Split(':')[0]);
                     d2.body = int.Parse(w.timeB.Split(':')[1]);
-                    d2.foot = int.Parse(w.timeB.Split(':')[2]);
+                    //d2.foot = int.Parse(w.timeB.Split(':')[2]);
 
                     Dog d3 = new Dog();
                     d3.head = int.Parse(w.timeC.Split(':')[0]);
                     d3.body = int.Parse(w.timeC.Split(':')[1]);
-                    d3.foot = int.Parse(w.timeC.Split(':')[2]);
+                    //d3.foot = int.Parse(w.timeC.Split(':')[2]);
 
                     Dog d4 = new Dog();
                     d4.head = int.Parse(w.timeD.Split(':')[0]);
                     d4.body = int.Parse(w.timeD.Split(':')[1]);
-                    d4.foot = int.Parse(w.timeD.Split(':')[2]);
+                    //d4.foot = int.Parse(w.timeD.Split(':')[2]);
 
                     dogs.Add(d1);
                     dogs.Add(d2);
@@ -386,6 +386,7 @@ namespace PBMApp
                 pageTwo.PrintItemsWhenCloseTable = comboBox3a.SelectedText;
                 pageTwo.ItemDesc_RP_index = comboBox4a.SelectedIndex;
                 pageTwo.ItemDesc_RP = comboBox4a.SelectedText;
+                pageTwo.CurrencySymbolChoice = cbCSC.SelectedIndex;
                 m.AddToWH_Sys_PageTwo(pageTwo);
                 #endregion
 
@@ -581,6 +582,7 @@ namespace PBMApp
 
             }
         }
+
         private void Bind_Combobox(List<Dog> dog)
         {
             for (int i = 1; i < 5; i++)
@@ -622,7 +624,7 @@ namespace PBMApp
                     cb.Value = j.ToString().PadLeft(2, '0');
                     a.Items.Add(cb);
 
-                }
+                } 
                 for (int j = 0; j < 60; j++)
                 {
                     ComboBoxItem cb = new ComboBoxItem();
@@ -633,7 +635,7 @@ namespace PBMApp
                 }
                 a.SelectedIndex = dog[i - 1].head;
                 b.SelectedIndex = dog[i - 1].body;
-                c.SelectedIndex = dog[i - 1].foot;
+                //c.SelectedIndex = dog[i - 1].foot;
             }
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -746,7 +748,412 @@ namespace PBMApp
             }
         }
 
-         
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            SendWeightPLU();
+            MessageBox.Show("Weighting PLU has been Sent", "Alert");
+            SendServiceTax();
+            MessageBox.Show("Service Tax has been Sent", "Alert");
+        }
+        private void SendWeightPLU()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Sys_WeightingPLU
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Sys_WeightingPLU w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.TypeID.ToString());
+                    s.Add(w.BarCodeLength.ToString());
+                    s.Add(w.WAID.ToString());
+                    if(w.Dots.ToString()=="0")
+                    {
+                        s.Add("0");
+                        s.Add("0");
+                    }
+                    else
+                    {
+                        s.Add("1");
+                        s.Add((int.Parse(w.Dots.ToString())-1).ToString());
+                    }
+                    if(w.ID.ToString()!="11")
+                    {
+                        s.Add("0");
+                    }
+                    else
+                    {
+                        s.Add(w.WAID.ToString());
+                    }
+                    strs.Add(s);
+                }
+            }
+            rm.GetDownArrayString(pIo, strs, 29, 129);
+            pIo.Close();
+        }
+        private void SendServiceTax()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = (from c in m.WH_Sys_happyHour_ServiceTax_Hours
+                        where c.isHappyOrTax==1
+                        select c).FirstOrDefault();
+                var qq = m.WH_Sys_ServiceTax.FirstOrDefault();
+                List<string> s = new List<string>();
+                s.Add("1");
+                s.Add(qq.Name);
+                s.Add(qq.Type.ToString());
+                s.Add(qq.RateAmount.ToString());
+                s.Add(q.timeA.Split(':')[0]);
+                s.Add(q.timeA.Split(':')[1]);
+                s.Add(q.timeB.Split(':')[0]);
+                s.Add(q.timeB.Split(':')[1]);
+                s.Add(q.timeC.Split(':')[0]);
+                s.Add(q.timeC.Split(':')[1]);
+                s.Add(q.timeD.Split(':')[0]);
+                s.Add(q.timeD.Split(':')[1]);
+                s.Add(q.Weeks.Substring(0, 1));
+                s.Add(q.Weeks.Substring(1, 1));
+                s.Add(q.Weeks.Substring(2, 1));
+                s.Add(q.Weeks.Substring(3, 1));
+                s.Add(q.Weeks.Substring(4, 1));
+                s.Add(q.Weeks.Substring(5, 1));
+                s.Add(q.Weeks.Substring(6, 1));
+                strs.Add(s);
+            }
+            rm.GetDownArrayString(pIo, strs, 27, 127);
+            pIo.Close();
+        }
+        private void Send1()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                //index 1
+                var w = (from c in m.WH_Sys_PageOne
+                        orderby c.ID descending 
+                        select c).FirstOrDefault();
+                //index 1
+                s.Add("1");
+                s.Add(w.Authority.Substring(0, 1));
+                s.Add(w.Authority.Substring(1, 1));
+                s.Add(w.Authority.Substring(2, 1));
+                s.Add(w.Authority.Substring(3, 1));
+                s.Add(w.Authority.Substring(4, 1));
+                s.Add(w.Authority.Substring(5, 1));
+                s.Add(w.Authority.Substring(6, 1));
+                s.Add(w.Authority.Substring(7, 1));
+                s.Add(w.Authority.Substring(8, 1));
+                s.Add(w.Authority.Substring(9, 1)); 
+                strs.Add(s);
+                //index 2
+                s.Clear();
+                s.Add("2");
+                s.Add(w.Authority.Substring(10, 1));
+                s.Add(w.Authority.Substring(11, 1));
+                s.Add(w.Authority.Substring(12, 1));
+                s.Add(w.Authority.Substring(13, 1));
+                s.Add(w.Authority.Substring(14, 1));
+                s.Add(w.Authority.Substring(15, 1));
+                s.Add(w.Authority.Substring(16, 1));
+                s.Add(w.Authority.Substring(17, 1));
+                s.Add(w.Authority.Substring(18, 1));
+                s.Add(w.Authority.Substring(19, 1));
+                strs.Add(s);
+                //index 3
+                s.Clear();
+                s.Add("3");
+                s.Add(w.Authority.Substring(20, 1));
+                s.Add(w.Authority.Substring(21, 1));
+                s.Add(w.Authority.Substring(22, 1));
+                s.Add(w.Authority.Substring(23, 1));
+                s.Add(w.Authority.Substring(24, 1));
+                s.Add(w.Authority.Substring(25, 1));
+                s.Add(w.Authority.Substring(26, 1));
+                s.Add(w.Authority.Substring(27, 1));
+                s.Add(w.Authority.Substring(28, 1));
+                s.Add(w.Authority.Substring(29, 1));
+                strs.Add(s);
+                //index 4
+                s.Clear();
+                s.Add("4");
+                s.Add(w.Authority.Substring(30, 1));
+                s.Add(w.Authority.Substring(31, 1));
+                var ww = (from c in m.WH_Sys_PageTwo
+                          orderby c.ID descending
+                          select c).FirstOrDefault();
+                s.Add(ww.Authority.Substring(0, 1));
+                s.Add(ww.Authority.Substring(1, 1));
+                s.Add(ww.Authority.Substring(2, 1));
+                s.Add(ww.Authority.Substring(3, 1));
+                s.Add(ww.Authority.Substring(4, 1));
+                s.Add(ww.Authority.Substring(5, 1));
+                s.Add(ww.Authority.Substring(6, 1));
+                s.Add(ww.Authority.Substring(7, 1));
+                strs.Add(s);
+                //index 5
+                s.Clear();
+                s.Add("5");
+                s.Add(ww.Authority.Substring(8, 1));
+                s.Add(ww.CurrencySymbolChoice.ToString());
+                s.Add(ww.Authority.Substring(9, 1));
+                s.Add(ww.Authority.Substring(10, 1));
+                s.Add(ww.Authority.Substring(11, 1));
+                s.Add(ww.Authority.Substring(12, 1));
+                s.Add(ww.Authority.Substring(13, 1));
+                s.Add(ww.Authority.Substring(14, 1));
+                s.Add(ww.Authority.Substring(15, 1));
+                s.Add(ww.Authority.Substring(16, 1));
+                strs.Add(s);
+
+                //index 6
+                s.Clear();
+                s.Add("6");
+                s.Add(ww.Authority.Substring(17, 1));
+                s.Add(ww.Authority.Substring(18, 1));
+                s.Add(ww.Authority.Substring(19, 1));
+                s.Add(ww.Authority.Substring(20, 1));
+                s.Add(ww.Authority.Substring(21, 1));
+                s.Add(ww.Authority.Substring(22, 1));
+                s.Add(ww.Authority.Substring(23, 1));
+                s.Add(ww.PositionOfReceipt_index.ToString());
+                s.Add(ww.PositionOfLogo_index.ToString());
+                s.Add(ww.PrintItemsWhenCloseTable_index.ToString());
+                strs.Add(s);
+                
+                //index 7
+                s.Clear();
+                s.Add("7");
+                s.Add(ww.ItemDesc_RP_index.ToString());
+                var www = (from c in m.WH_Sys_PageTree orderby c.ID descending select c).FirstOrDefault();
+                s.Add(www.Authority.Substring(0, 1));
+                s.Add(www.Authority.Substring(1, 1));
+                s.Add(www.Authority.Substring(2, 1));
+                s.Add(www.Authority.Substring(3, 1));
+                s.Add(www.Authority.Substring(4, 1));
+                s.Add(www.Authority.Substring(5, 1));
+                s.Add(www.Authority.Substring(6, 1));
+                s.Add(www.Authority.Substring(7, 1));
+                s.Add(www.Authority.Substring(8, 1));
+                strs.Add(s);
+
+                //index 8
+                s.Clear();
+                s.Add("8");
+                s.Add(www.Authority.Substring(9, 1));
+                s.Add(www.Authority.Substring(10, 1));
+                s.Add(www.Authority.Substring(11, 1));
+                s.Add(www.Authority.Substring(12, 1));
+                s.Add(www.Authority.Substring(13, 1));
+                s.Add(www.Authority.Substring(14, 1));
+                s.Add(www.Authority.Substring(15, 1));
+                s.Add(www.Authority.Substring(16, 1));
+                s.Add(www.Authority.Substring(17, 1));
+                s.Add(www.Authority.Substring(18, 1));
+                strs.Add(s);
+
+                //index 9
+                s.Clear();
+                s.Add("9");
+                s.Add(www.Authority.Substring(19, 1));
+                s.Add(www.Authority.Substring(20, 1));
+                s.Add(www.FootStampRule_index.ToString());
+                s.Add(www.GiftVoucherChange_index.ToString());
+                s.Add(www.VATRateForTakeAway_index.ToString());
+                s.Add(www.VATRateForInHouse_index.ToString());
+                s.Add(www.VATRateForOutHouse_index.ToString());
+                s.Add(www.PLUPriceForTakeAway_index.ToString());
+                s.Add(www.KPPrintSetting_index.ToString());
+                s.Add(www.CompReport_index.ToString());
+                strs.Add(s);
+                
+                //index 10
+                s.Clear();
+                s.Add("10");
+                var g = (from c in m.WH_Sys_PageFour orderby c.ID descending select c).FirstOrDefault();
+                s.Add(g.ReportExportDevice_index.ToString());
+                s.Add(g.ClerkPassCodeDigits_index.ToString());
+                s.Add(g.OtherRoundingFactor_index.ToString());
+                s.Add(g.TaxSystem_index.ToString());
+                s.Add(g.AgeOne.ToString());
+                s.Add(g.AgeTwo.ToString());
+                s.Add(g.MachinNumPreset.ToString());
+                s.Add(g.ReceiptNumPreset.ToString());
+                s.Add(g.DailyZCounterPreset.ToString());
+                s.Add(g.PTDZCounterPreset.ToString());
+                strs.Add(s);
+
+                //index 11
+                s.Clear();
+                s.Add("11");
+                s.Add(g.VATNum.ToString());
+                s.Add(g.DuplicateReceiptCounter.ToString());
+                s.Add(g.LineFeedCount.ToString());
+                s.Add(g.PaymentInfoDisplayTime.ToString());
+                s.Add(g.ChangeInfoDisplayTime.ToString());
+                s.Add(g.TableColorChangeTime.ToString());
+                s.Add(g.TakeOutPrintTickets.ToString());
+                s.Add(g.MaxTipsAmount.ToString());
+                s.Add(g.TrainingModePassCode.ToString());
+                s.Add(g.HALO.ToString());
+                s.Add(g.TotalInDrawerLimit.ToString());
+                strs.Add(s);
+
+                //index 12
+                s.Clear();
+                s.Add("12");
+                var gg =
+                    (from c in m.WH_Sys_happyHour_ServiceTax_Hours where c.isHappyOrTax == 0 select c).FirstOrDefault();
+                s.Add(gg.timeA.Split(':')[0]);
+                s.Add(gg.timeA.Split(':')[1]);
+                s.Add(gg.timeB.Split(':')[0]);
+                s.Add(gg.timeB.Split(':')[1]);
+                s.Add(gg.timeC.Split(':')[0]);
+                s.Add(gg.timeC.Split(':')[1]);
+                s.Add(gg.timeD.Split(':')[0]);
+                s.Add(gg.timeD.Split(':')[1]);
+                s.Add(gg.Weeks.Substring(0, 1));
+                s.Add(gg.Weeks.Substring(1, 1));
+                s.Add(gg.Weeks.Substring(2, 1));
+                s.Add(gg.Weeks.Substring(3, 1));
+                s.Add(gg.Weeks.Substring(4, 1));
+                s.Add(gg.Weeks.Substring(5, 1));
+                s.Add(gg.Weeks.Substring(6, 1));
+                strs.Add(s);
+
+                //index 13
+                s.Clear();
+                s.Add("13");
+                var o = from c in m.WH_Sys_ElectronicScale
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Sys_ElectronicScale oo in o)
+                {
+                    s.Add(oo.ScaleDeptID.ToString());
+                }
+                var p = (from c in m.WH_Sys_ElectronicScale_Setting
+                        select c).FirstOrDefault();
+                s.Add((p.Unit+1).ToString());
+                s.Add(p.TareType.ToString());
+                var r = from c in m.WH_Sys_ElectronicScale_Tare
+                        where c.awID ==p.Unit
+                        orderby c.ID ascending 
+                        select c;
+                foreach (WH_Sys_ElectronicScale_Tare rr in r)
+                {
+                    s.Add(rr.tare.ToString());
+                }
+                strs.Add(s);
+
+
+            }
+            rm.GetDownArrayString(pIo, strs, 29, 129);
+            pIo.Close();
+            
+        }
+
+        private void btnRev_Click(object sender, EventArgs e)
+        {
+            RevWeightPLU();
+            MessageBox.Show("Weighting PLU has been Recieved", "Alert");
+            RevServiceTax();
+            MessageBox.Show("Service Tax has been Recieved", "Alert");
+        }
+        private void RevWeightPLU()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            for (int i = 1; i < 12; i++)
+            {
+                strs.Add(i.ToString());
+            }
+            rm.GetUpArrayString(pIo, strs, 29, 129);
+            using (var m = new Entities())
+            {
+                int count = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    count++; 
+                    var q = m.WH_Sys_WeightingPLU.FirstOrDefault(x => x.ID == count);
+                    q.TypeID = int.Parse(str[1]==""?"0":str[1]);
+                    q.BarCodeLength = int.Parse(str[2] == "" ? "0" : str[2]);
+                    q.WAID = int.Parse(str[3] == "" ? "0" : str[3]);
+                    if (int.Parse(str[4] == "" ? "0" : str[4]) == 0)
+                    {
+                        q.Dots = 0;
+                    }
+                    else
+                    {
+                        q.Dots = int.Parse(str[5] == "" ? "0" : str[5]) + 1;
+                    }
+                    if(count==11)
+                    {
+                        q.WID = str[6];
+                    }
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+        }
+        private void RevServiceTax()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            List<string> strs = new List<string>();
+            strs.Add("1");
+            rm.GetUpArrayString(pIo, strs, 27, 127);
+            using (var m = new Entities())
+            {
+                int count = 0;
+                foreach (List<string> str in rm.List)
+                {
+                    count++;
+                    var q = (from c in m.WH_Sys_happyHour_ServiceTax_Hours
+                             where c.isHappyOrTax == 1
+                             select c).FirstOrDefault();
+                    var qq = m.WH_Sys_ServiceTax.FirstOrDefault();
+
+                    qq.Name = str[1] == "" ? "" : str[1];
+                    qq.Type = int.Parse(str[2] == "" ? "0" : str[2]);
+                    qq.RateAmount = decimal.Parse(str[3] == "" ? "0" : str[3]);
+                    q.timeA = str[4].PadLeft(2,'0') + ":" + str[5].PadLeft(2,'0');
+                    q.timeB = str[6].PadLeft(2,'0') + ":" + str[7].PadLeft(2,'0');
+                    q.timeC = str[8].PadLeft(2,'0') + ":" + str[9].PadLeft(2,'0');
+                    q.timeD = str[10].PadLeft(2,'0') + ":" + str[11].PadLeft(2,'0');
+                    q.Weeks = (str[12] == "" ? "0" : "1")
+                              + (str[13] == "" ? "0" : "1")
+                              + (str[14] == "" ? "0" : "1")
+                              + (str[15] == "" ? "0" : "1")
+                              + (str[16] == "" ? "0" : "1")
+                              + (str[17] == "" ? "0" : "1")
+                              + (str[18] == "" ? "0" : "1");
+
+                }
+                m.SaveChanges();
+            }
+            pIo.Close();
+        }
     }
     public class Dog
     {
