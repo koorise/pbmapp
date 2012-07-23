@@ -402,22 +402,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WH_Sys_PageTwo">
-      <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTwo">
-        <MappingFragment StoreEntitySet="WH_Sys_PageTwo">
-          <ScalarProperty Name="ItemDesc_RP" ColumnName="ItemDesc_RP" />
-          <ScalarProperty Name="ItemDesc_RP_index" ColumnName="ItemDesc_RP_index" />
-          <ScalarProperty Name="PrintItemsWhenCloseTable" ColumnName="PrintItemsWhenCloseTable" />
-          <ScalarProperty Name="PrintItemsWhenCloseTable_index" ColumnName="PrintItemsWhenCloseTable_index" />
-          <ScalarProperty Name="PositionOfLogo" ColumnName="PositionOfLogo" />
-          <ScalarProperty Name="PositionOfLogo_index" ColumnName="PositionOfLogo_index" />
-          <ScalarProperty Name="PositionOfReceipt" ColumnName="PositionOfReceipt" />
-          <ScalarProperty Name="PositionOfReceipt_index" ColumnName="PositionOfReceipt_index" />
-          <ScalarProperty Name="Authority" ColumnName="Authority" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="WH_Sys_PageTree">
       <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTree">
         <MappingFragment StoreEntitySet="WH_Sys_PageTree">
@@ -534,6 +518,23 @@
           <ScalarProperty Name="isDirectSale" ColumnName="isDirectSale" />
           <ScalarProperty Name="High_Digit_LockOut" ColumnName="High_Digit_LockOut" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Sys_PageTwo">
+      <EntityTypeMapping TypeName="pbmModel.WH_Sys_PageTwo">
+        <MappingFragment StoreEntitySet="WH_Sys_PageTwo">
+          <ScalarProperty Name="CurrencySymbolChoice" ColumnName="CurrencySymbolChoice" />
+          <ScalarProperty Name="ItemDesc_RP" ColumnName="ItemDesc_RP" />
+          <ScalarProperty Name="ItemDesc_RP_index" ColumnName="ItemDesc_RP_index" />
+          <ScalarProperty Name="PrintItemsWhenCloseTable" ColumnName="PrintItemsWhenCloseTable" />
+          <ScalarProperty Name="PrintItemsWhenCloseTable_index" ColumnName="PrintItemsWhenCloseTable_index" />
+          <ScalarProperty Name="PositionOfLogo" ColumnName="PositionOfLogo" />
+          <ScalarProperty Name="PositionOfLogo_index" ColumnName="PositionOfLogo_index" />
+          <ScalarProperty Name="PositionOfReceipt" ColumnName="PositionOfReceipt" />
+          <ScalarProperty Name="PositionOfReceipt_index" ColumnName="PositionOfReceipt_index" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

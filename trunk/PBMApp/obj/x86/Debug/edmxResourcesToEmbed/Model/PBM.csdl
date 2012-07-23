@@ -37,7 +37,6 @@
     <EntitySet Name="WH_Sys_mailer" EntityType="pbmModel.WH_Sys_mailer" />
     <EntitySet Name="WH_Sys_TableBarcode" EntityType="pbmModel.WH_Sys_TableBarcode" />
     <EntitySet Name="WH_Sys_PageOne" EntityType="pbmModel.WH_Sys_PageOne" />
-    <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
     <EntitySet Name="WH_Sys_PageTree" EntityType="pbmModel.WH_Sys_PageTree" />
     <EntitySet Name="WH_Sys_PageFour" EntityType="pbmModel.WH_Sys_PageFour" />
     <EntitySet Name="WH_Sys_KeyDesc" EntityType="pbmModel.WH_Sys_KeyDesc" />
@@ -45,6 +44,7 @@
     <EntitySet Name="WH_Relation_Cook_PLU" EntityType="pbmModel.WH_Relation_Cook_PLU" />
     <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
     <EntitySet Name="WH_Department" EntityType="pbmModel.WH_Department" />
+    <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -411,21 +411,6 @@
     <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="WH_Sys_PageTwo">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="PositionOfReceipt_index" />
-    <Property Type="String" Name="PositionOfReceipt" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="PositionOfLogo_index" />
-    <Property Type="String" Name="PositionOfLogo" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="PrintItemsWhenCloseTable_index" />
-    <Property Type="String" Name="PrintItemsWhenCloseTable" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Type="Int64" Name="ItemDesc_RP_index" />
-    <Property Type="String" Name="ItemDesc_RP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="WH_Sys_PageTree">
     <Key>
       <PropertyRef Name="ID" />
@@ -538,5 +523,21 @@
     <Property Type="Int64" Name="isVat_Tax_GST" />
     <Property Type="String" Name="str_Vat_Tax_GST" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Type="Int64" Name="FS_Tenderable" />
+  </EntityType>
+  <EntityType Name="WH_Sys_PageTwo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Authority" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="PositionOfReceipt_index" />
+    <Property Type="String" Name="PositionOfReceipt" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="PositionOfLogo_index" />
+    <Property Type="String" Name="PositionOfLogo" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="PrintItemsWhenCloseTable_index" />
+    <Property Type="String" Name="PrintItemsWhenCloseTable" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ItemDesc_RP_index" />
+    <Property Type="String" Name="ItemDesc_RP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="CurrencySymbolChoice" />
   </EntityType>
 </Schema>
