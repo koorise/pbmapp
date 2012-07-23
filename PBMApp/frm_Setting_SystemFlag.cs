@@ -44,7 +44,7 @@ namespace PBMApp
                 #endregion
 
                 #region Page 2
-                
+
                 
                 //page 2
                 var pageTwo = (from c in m.WH_Sys_PageTwo
@@ -62,6 +62,7 @@ namespace PBMApp
                         checkedListBox2.SetItemChecked(i, false);
                     }
                 }
+                MessageBox.Show(pageTwo.PositionOfReceipt_index.ToString(), "A");
                 comboBox1a.SelectedIndex = int.Parse(pageTwo.PositionOfReceipt_index.ToString());
                 comboBox2a.SelectedIndex = int.Parse(pageTwo.PositionOfLogo_index.ToString());
                 comboBox3a.SelectedIndex = int.Parse(pageTwo.PrintItemsWhenCloseTable_index.ToString());
@@ -75,6 +76,7 @@ namespace PBMApp
                 var pageTree = (from c in m.WH_Sys_PageTree
                          orderby c.ID descending
                          select c).FirstOrDefault();
+
                 string authority1 = pageTree.Authority;
                 for (int i = 0; i < authority1.Length; i++)
                 {
@@ -86,6 +88,7 @@ namespace PBMApp
                     {
                         checkedListBox3.SetItemChecked(i, false);
                     }
+                   
                 }
                 comboBox1b.SelectedIndex = int.Parse(pageTree.FootStampRule_index.ToString());
                 comboBox2b.SelectedIndex = int.Parse(pageTree.GiftVoucherChange_index.ToString());
@@ -754,6 +757,8 @@ namespace PBMApp
             MessageBox.Show("Weighting PLU has been Sent", "Alert");
             SendServiceTax();
             MessageBox.Show("Service Tax has been Sent", "Alert");
+            Send1();
+            MessageBox.Show("System Flag has been Sent", "Alert");
         }
         private void SendWeightPLU()
         {
@@ -1059,9 +1064,29 @@ namespace PBMApp
                 }
                 strs.Add(s);
 
-
+                //index 14
+                s.Clear();
+                s.Add("14");
+                var z = m.WH_Sys_TableBarcode.FirstOrDefault();
+                s.Add(z.OperateType_index.ToString());
+                s.Add(z.Position_index.ToString());
+                s.Add(z.widths.ToString());
+                s.Add(z.heights.ToString());
+                s.Add(z.HRI_index.ToString());
+                s.Add(z.Fonts_index.ToString());
+                s.Add(z.PrintList.ToString());
+                s.Add(z.suspendTable.ToString());
+                s.Add(z.TransferTable.ToString());
+                var zz = m.WH_Sys_mailer.FirstOrDefault();
+                s.Add(zz.MailerName.ToString());
+                s.Add(zz.TenantCode.ToString());
+                var zzz = m.WH_Sys_Ftp.FirstOrDefault();
+                s.Add(zzz.IP.ToString());
+                s.Add(zzz.UserName.ToString());
+                s.Add(zzz.PassWord.ToString());
+                strs.Add(s); 
             }
-            rm.GetDownArrayString(pIo, strs, 29, 129);
+            rm.GetDownArrayString(pIo, strs, 9, 109);
             pIo.Close();
             
         }

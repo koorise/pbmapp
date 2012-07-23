@@ -404,6 +404,7 @@
     <Property Name="PrintItemsWhenCloseTable" Type="nvarchar" />
     <Property Name="ItemDesc_RP_index" Type="integer" />
     <Property Name="ItemDesc_RP" Type="nvarchar" />
+    <Property Name="CurrencySymbolChoice" Type="integer" />
   </EntityType>
   <EntityType Name="WH_Sys_Payment">
     <Key>
