@@ -110,6 +110,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnReceive = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -914,11 +915,20 @@
             this.btnReceive.UseVisualStyleBackColor = true;
             this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(0, 614);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(557, 23);
+            this.progressBar1.TabIndex = 4;
+            // 
             // frm_Setting_PCASH_FCE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 607);
+            this.ClientSize = new System.Drawing.Size(557, 637);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnReceive);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox2);
@@ -1018,5 +1028,6 @@
         private System.Windows.Forms.ComboBox cbReturn3;
         private System.Windows.Forms.ComboBox cbReturn2;
         private System.Windows.Forms.ComboBox cbReturn1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

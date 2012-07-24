@@ -152,6 +152,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnReceive = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1544,12 +1545,21 @@
             this.btnReceive.UseVisualStyleBackColor = true;
             this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(0, 705);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(804, 23);
+            this.progressBar1.TabIndex = 7;
+            // 
             // frm_payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(804, 728);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnReceive);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.button2);
@@ -1696,5 +1706,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnReceive;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

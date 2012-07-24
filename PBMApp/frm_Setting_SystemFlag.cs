@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
@@ -44,13 +45,13 @@ namespace PBMApp
                 #endregion
 
                 #region Page 2
-
-                
+                 
                 //page 2
                 var pageTwo = (from c in m.WH_Sys_PageTwo
                          orderby c.ID descending
                          select c).FirstOrDefault();
                 string authority = pageTwo.Authority;
+
                 for (int i = 0; i < authority.Length; i++)
                 {
                     if (authority.Substring(i, 1) == "1")
@@ -62,11 +63,12 @@ namespace PBMApp
                         checkedListBox2.SetItemChecked(i, false);
                     }
                 }
-                MessageBox.Show(pageTwo.PositionOfReceipt_index.ToString(), "A");
+                
                 comboBox1a.SelectedIndex = int.Parse(pageTwo.PositionOfReceipt_index.ToString());
                 comboBox2a.SelectedIndex = int.Parse(pageTwo.PositionOfLogo_index.ToString());
                 comboBox3a.SelectedIndex = int.Parse(pageTwo.PrintItemsWhenCloseTable_index.ToString());
                 comboBox4a.SelectedIndex = int.Parse(pageTwo.ItemDesc_RP_index.ToString());
+                cbCSC.SelectedIndex = int.Parse(pageTwo.CurrencySymbolChoice.ToString());
                 #endregion
 
                 #region Page 3
@@ -582,7 +584,7 @@ namespace PBMApp
                 
 
                 m.SaveChanges();
-
+                MessageBox.Show("success！", "Alert");
             }
         }
 
@@ -750,15 +752,94 @@ namespace PBMApp
                 }
             }
         }
-
-        private void btnSend_Click(object sender, EventArgs e)
+        #region 进度条
+        private delegate void SetPos(int ipos);
+        private void SetTextMessage(int ipos)
+        {
+            if (this.InvokeRequired)
+            {
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+            }
+            else
+            {
+                //this.label1.Text = ipos.ToString() + "/100";
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
+        }
+        private void SleepT()
         {
             SendWeightPLU();
-            MessageBox.Show("Weighting PLU has been Sent", "Alert");
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(5);
+
             SendServiceTax();
-            MessageBox.Show("Service Tax has been Sent", "Alert");
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(10);
             Send1();
-            MessageBox.Show("System Flag has been Sent", "Alert");
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(15);
+            Send2();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(20);
+            Send3();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(22);
+            Send4();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(25);
+            Send5();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(30);
+            Send6();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(38);
+            Send7();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(42);
+            Send8();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(43);
+            Send9();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(45);
+            Send10();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(60);
+            Send11();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(65);
+            Send12();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(70);
+            Send13();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(90);
+            Send14();
+            System.Threading.Thread.Sleep(500);//没什么意思，单纯的执行延时
+            SetTextMessage(100);
+        }
+        private void SleepR()
+        {
+            RevWeightPLU();
+            System.Threading.Thread.Sleep(100);//没什么意思，单纯的执行延时
+            SetTextMessage(10);
+            RevServiceTax();
+            System.Threading.Thread.Sleep(100);//没什么意思，单纯的执行延时
+            SetTextMessage(20);
+            for (int i = 1; i < 15; i++)
+            {
+                Rev(i);
+                System.Threading.Thread.Sleep(100);//没什么意思，单纯的执行延时
+                SetTextMessage(i*5+30);
+            }
+        }
+        #endregion
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程
+            fThread.Start();
+          
         }
         private void SendWeightPLU()
         {
@@ -800,7 +881,7 @@ namespace PBMApp
                 }
             }
             rm.GetDownArrayString(pIo, strs, 29, 129);
-            pIo.Close();
+            pIo.Close(); 
         }
         private void SendServiceTax()
         {
@@ -848,6 +929,7 @@ namespace PBMApp
             using (var m = new Entities())
             {
                 List<string> s = new List<string>();
+                
                 //index 1
                 var w = (from c in m.WH_Sys_PageOne
                         orderby c.ID descending 
@@ -865,8 +947,24 @@ namespace PBMApp
                 s.Add(w.Authority.Substring(8, 1));
                 s.Add(w.Authority.Substring(9, 1)); 
                 strs.Add(s);
-                //index 2
-                s.Clear();
+                
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+            
+        }
+        private void Send2()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                var w = (from c in m.WH_Sys_PageOne
+                         orderby c.ID descending
+                         select c).FirstOrDefault();
                 s.Add("2");
                 s.Add(w.Authority.Substring(10, 1));
                 s.Add(w.Authority.Substring(11, 1));
@@ -879,8 +977,22 @@ namespace PBMApp
                 s.Add(w.Authority.Substring(18, 1));
                 s.Add(w.Authority.Substring(19, 1));
                 strs.Add(s);
-                //index 3
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send3()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                var w = (from c in m.WH_Sys_PageOne
+                         orderby c.ID descending
+                         select c).FirstOrDefault();
                 s.Add("3");
                 s.Add(w.Authority.Substring(20, 1));
                 s.Add(w.Authority.Substring(21, 1));
@@ -893,8 +1005,22 @@ namespace PBMApp
                 s.Add(w.Authority.Substring(28, 1));
                 s.Add(w.Authority.Substring(29, 1));
                 strs.Add(s);
-                //index 4
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send4()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                var w = (from c in m.WH_Sys_PageOne
+                         orderby c.ID descending
+                         select c).FirstOrDefault();
                 s.Add("4");
                 s.Add(w.Authority.Substring(30, 1));
                 s.Add(w.Authority.Substring(31, 1));
@@ -910,8 +1036,22 @@ namespace PBMApp
                 s.Add(ww.Authority.Substring(6, 1));
                 s.Add(ww.Authority.Substring(7, 1));
                 strs.Add(s);
-                //index 5
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send5()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>(); 
+                var ww = (from c in m.WH_Sys_PageTwo
+                          orderby c.ID descending
+                          select c).FirstOrDefault();
                 s.Add("5");
                 s.Add(ww.Authority.Substring(8, 1));
                 s.Add(ww.CurrencySymbolChoice.ToString());
@@ -925,8 +1065,22 @@ namespace PBMApp
                 s.Add(ww.Authority.Substring(16, 1));
                 strs.Add(s);
 
-                //index 6
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send6()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                var ww = (from c in m.WH_Sys_PageTwo
+                          orderby c.ID descending
+                          select c).FirstOrDefault();
                 s.Add("6");
                 s.Add(ww.Authority.Substring(17, 1));
                 s.Add(ww.Authority.Substring(18, 1));
@@ -939,9 +1093,22 @@ namespace PBMApp
                 s.Add(ww.PositionOfLogo_index.ToString());
                 s.Add(ww.PrintItemsWhenCloseTable_index.ToString());
                 strs.Add(s);
-                
-                //index 7
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send7()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                var ww = (from c in m.WH_Sys_PageTwo
+                          orderby c.ID descending
+                          select c).FirstOrDefault();
                 s.Add("7");
                 s.Add(ww.ItemDesc_RP_index.ToString());
                 var www = (from c in m.WH_Sys_PageTree orderby c.ID descending select c).FirstOrDefault();
@@ -956,8 +1123,24 @@ namespace PBMApp
                 s.Add(www.Authority.Substring(8, 1));
                 strs.Add(s);
 
-                //index 8
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send8()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                var ww = (from c in m.WH_Sys_PageTwo
+                          orderby c.ID descending
+                          select c).FirstOrDefault();
+                
+                var www = (from c in m.WH_Sys_PageTree orderby c.ID descending select c).FirstOrDefault();
                 s.Add("8");
                 s.Add(www.Authority.Substring(9, 1));
                 s.Add(www.Authority.Substring(10, 1));
@@ -969,10 +1152,23 @@ namespace PBMApp
                 s.Add(www.Authority.Substring(16, 1));
                 s.Add(www.Authority.Substring(17, 1));
                 s.Add(www.Authority.Substring(18, 1));
-                strs.Add(s);
+                strs.Add(s); 
 
-                //index 9
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send9()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>(); 
+                var www = (from c in m.WH_Sys_PageTree orderby c.ID descending select c).FirstOrDefault();
+
                 s.Add("9");
                 s.Add(www.Authority.Substring(19, 1));
                 s.Add(www.Authority.Substring(20, 1));
@@ -985,9 +1181,20 @@ namespace PBMApp
                 s.Add(www.KPPrintSetting_index.ToString());
                 s.Add(www.CompReport_index.ToString());
                 strs.Add(s);
-                
-                //index 10
-                s.Clear();
+
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send10()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
                 s.Add("10");
                 var g = (from c in m.WH_Sys_PageFour orderby c.ID descending select c).FirstOrDefault();
                 s.Add(g.ReportExportDevice_index.ToString());
@@ -1002,46 +1209,81 @@ namespace PBMApp
                 s.Add(g.PTDZCounterPreset.ToString());
                 strs.Add(s);
 
-                //index 11
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send11()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                 
+                var gg = (from c in m.WH_Sys_PageFour orderby c.ID descending select c).FirstOrDefault();
                 s.Add("11");
-                s.Add(g.VATNum.ToString());
-                s.Add(g.DuplicateReceiptCounter.ToString());
-                s.Add(g.LineFeedCount.ToString());
-                s.Add(g.PaymentInfoDisplayTime.ToString());
-                s.Add(g.ChangeInfoDisplayTime.ToString());
-                s.Add(g.TableColorChangeTime.ToString());
-                s.Add(g.TakeOutPrintTickets.ToString());
-                s.Add(g.MaxTipsAmount.ToString());
-                s.Add(g.TrainingModePassCode.ToString());
-                s.Add(g.HALO.ToString());
-                s.Add(g.TotalInDrawerLimit.ToString());
+                s.Add(gg.VATNum.ToString());
+                s.Add(gg.DuplicateReceiptCounter.ToString());
+                s.Add(gg.LineFeedCount.ToString());
+                s.Add(gg.PaymentInfoDisplayTime.ToString());
+                s.Add(gg.ChangeInfoDisplayTime.ToString());
+                s.Add(gg.TableColorChangeTime.ToString());
+                s.Add(gg.TakeOutPrintTickets.ToString());
+                s.Add(gg.MaxTipsAmount.ToString());
+                s.Add(gg.TrainingModePassCode.ToString());
+                s.Add(gg.HALO.ToString());
+                s.Add(gg.TotalInDrawerLimit.ToString());
                 strs.Add(s);
 
-                //index 12
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send12()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
                 s.Add("12");
-                var gg =
+                var ggg =
                     (from c in m.WH_Sys_happyHour_ServiceTax_Hours where c.isHappyOrTax == 0 select c).FirstOrDefault();
-                s.Add(gg.timeA.Split(':')[0]);
-                s.Add(gg.timeA.Split(':')[1]);
-                s.Add(gg.timeB.Split(':')[0]);
-                s.Add(gg.timeB.Split(':')[1]);
-                s.Add(gg.timeC.Split(':')[0]);
-                s.Add(gg.timeC.Split(':')[1]);
-                s.Add(gg.timeD.Split(':')[0]);
-                s.Add(gg.timeD.Split(':')[1]);
-                s.Add(gg.Weeks.Substring(0, 1));
-                s.Add(gg.Weeks.Substring(1, 1));
-                s.Add(gg.Weeks.Substring(2, 1));
-                s.Add(gg.Weeks.Substring(3, 1));
-                s.Add(gg.Weeks.Substring(4, 1));
-                s.Add(gg.Weeks.Substring(5, 1));
-                s.Add(gg.Weeks.Substring(6, 1));
+                s.Add(ggg.timeA.Split(':')[0]);
+                s.Add(ggg.timeA.Split(':')[1]);
+                s.Add(ggg.timeB.Split(':')[0]);
+                s.Add(ggg.timeB.Split(':')[1]);
+                s.Add(ggg.timeC.Split(':')[0]);
+                s.Add(ggg.timeC.Split(':')[1]);
+                s.Add(ggg.timeD.Split(':')[0]);
+                s.Add(ggg.timeD.Split(':')[1]);
+                s.Add(ggg.Weeks.Substring(0, 1));
+                s.Add(ggg.Weeks.Substring(1, 1));
+                s.Add(ggg.Weeks.Substring(2, 1));
+                s.Add(ggg.Weeks.Substring(3, 1));
+                s.Add(ggg.Weeks.Substring(4, 1));
+                s.Add(ggg.Weeks.Substring(5, 1));
+                s.Add(ggg.Weeks.Substring(6, 1));
                 strs.Add(s);
 
-                //index 13
-                s.Clear();
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Send13()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
                 s.Add("13");
                 var o = from c in m.WH_Sys_ElectronicScale
                         orderby c.ID ascending
@@ -1051,12 +1293,12 @@ namespace PBMApp
                     s.Add(oo.ScaleDeptID.ToString());
                 }
                 var p = (from c in m.WH_Sys_ElectronicScale_Setting
-                        select c).FirstOrDefault();
-                s.Add((p.Unit+1).ToString());
+                         select c).FirstOrDefault();
+                s.Add((p.Unit + 1).ToString());
                 s.Add(p.TareType.ToString());
                 var r = from c in m.WH_Sys_ElectronicScale_Tare
-                        where c.awID ==p.Unit
-                        orderby c.ID ascending 
+                        where c.awID == p.Unit
+                        orderby c.ID ascending
                         select c;
                 foreach (WH_Sys_ElectronicScale_Tare rr in r)
                 {
@@ -1064,39 +1306,293 @@ namespace PBMApp
                 }
                 strs.Add(s);
 
-                //index 14
-                s.Clear();
-                s.Add("14");
-                var z = m.WH_Sys_TableBarcode.FirstOrDefault();
-                s.Add(z.OperateType_index.ToString());
-                s.Add(z.Position_index.ToString());
-                s.Add(z.widths.ToString());
-                s.Add(z.heights.ToString());
-                s.Add(z.HRI_index.ToString());
-                s.Add(z.Fonts_index.ToString());
-                s.Add(z.PrintList.ToString());
-                s.Add(z.suspendTable.ToString());
-                s.Add(z.TransferTable.ToString());
-                var zz = m.WH_Sys_mailer.FirstOrDefault();
-                s.Add(zz.MailerName.ToString());
-                s.Add(zz.TenantCode.ToString());
-                var zzz = m.WH_Sys_Ftp.FirstOrDefault();
-                s.Add(zzz.IP.ToString());
-                s.Add(zzz.UserName.ToString());
-                s.Add(zzz.PassWord.ToString());
-                strs.Add(s); 
+
             }
             rm.GetDownArrayString(pIo, strs, 9, 109);
             pIo.Close();
-            
         }
+        private void Send14()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                List<string> s = new List<string>();
+                s.Add("14");
+                var ga = m.WH_Sys_TableBarcode.FirstOrDefault();
+                s.Add(ga.OperateType_index.ToString());
+                s.Add(ga.Position_index.ToString());
+                s.Add(ga.widths.ToString());
+                s.Add(ga.heights.ToString());
+                s.Add(ga.HRI_index.ToString());
+                s.Add(ga.Fonts_index.ToString());
+                s.Add(ga.PrintList.ToString());
+                s.Add(ga.suspendTable.ToString());
+                s.Add(ga.TransferTable.ToString());
+                var asd = m.WH_Sys_mailer.FirstOrDefault();
+                s.Add(asd.MailerName.ToString());
+                s.Add(asd.MailerCode.ToString());
+                s.Add(asd.TenantCode.ToString());
+                var dsd = m.WH_Sys_Ftp.FirstOrDefault();
+                s.Add(dsd.IP.ToString());
+                s.Add(dsd.UserName.ToString());
+                s.Add(dsd.PassWord.ToString());
+                strs.Add(s); 
 
+
+            }
+            rm.GetDownArrayString(pIo, strs, 9, 109);
+            pIo.Close();
+        }
+        private void Rev(int index)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<string> strs = new List<string>();
+
+            strs.Add(index.ToString());
+
+            rm.GetUpArrayString(pIo, strs, 9, 109);
+             
+            using (var m = new Entities())
+            {
+                foreach (List<string> str in rm.List)
+                {   switch (index)
+                {
+                    #region case  1-4
+                    case 1:
+                            string s1 = "";
+                            for (int i = 1; i < 11; i++)
+                            {
+                                s1 += str[i];
+                            }
+                            
+                            WH_Sys_PageOne w = (from c in m.WH_Sys_PageOne
+                                     orderby c.ID descending
+                                     select c).FirstOrDefault();
+                            string _s1 = w.Authority.Substring(10, w.Authority.Length - 10);
+                            w.Authority = s1 + _s1;
+                            break;
+                    case 2:
+                            string s2 = "";
+                            for (int i = 1; i < 11; i++)
+                            {
+                                s2 += str[i];
+                            }
+                            
+                            WH_Sys_PageOne w2 = (from c in m.WH_Sys_PageOne
+                                     orderby c.ID descending
+                                     select c).FirstOrDefault();
+                            string __s2 = w2.Authority.Substring(0,10);
+                            string _s2 = w2.Authority.Substring(20, w2.Authority.Length - 20);
+                            w2.Authority = __s2 + s2 + _s2;
+
+                            break;
+                    case 3:
+                            string s3 = "";
+                            for (int i = 1; i < 11; i++)
+                            {
+                                s3 += str[i];
+                            } 
+                            WH_Sys_PageOne w3 = (from c in m.WH_Sys_PageOne
+                                     orderby c.ID descending
+                                     select c).FirstOrDefault();
+                            string ___s3 = w3.Authority.Substring(0,20); 
+                            string _s3 = w3.Authority.Substring(30, w3.Authority.Length - 30);
+                            w3.Authority = ___s3+   s3 + _s3;
+                            break;
+                    case 4:  
+                            WH_Sys_PageOne w4 = (from c in m.WH_Sys_PageOne
+                                                 orderby c.ID descending
+                                                 select c).FirstOrDefault();
+                            string s4 = w4.Authority.Substring(0, 30);
+                            w4.Authority = s4 + str[1] + str[2];
+                            WH_Sys_PageTwo w44 =
+                                (from c in m.WH_Sys_PageTwo orderby c.ID descending select c).FirstOrDefault();
+                            string s44 = w44.Authority.Substring(8, w44.Authority.Length - 8);
+                            string _s44 = "";
+                            for (int i = 3; i < 11; i++)
+                            {
+                                _s44 += str[i];
+                            } 
+                            w44.Authority = _s44 + s44;
+                        break;
+                    #endregion 
+                    #region case 5-8
+                    case 5:
+                            WH_Sys_PageTwo ww = (from c in m.WH_Sys_PageTwo
+                                                 orderby c.ID descending
+                                                 select c).FirstOrDefault();
+                            string aS = ww.Authority.Substring(0, 8);
+                            aS = aS + str[1];
+                            ww.CurrencySymbolChoice = int.Parse(str[2]);
+                            for (int i = 3; i < 11; i++)
+                            {
+                                aS += str[i];
+                            }
+                            string aaS = ww.Authority.Substring(17, ww.Authority.Length - 17);
+                            ww.Authority = aS + aaS; 
+                            break;
+                    case 6:
+                            var www = (from c in m.WH_Sys_PageTwo
+                                      orderby c.ID descending
+                                      select c).FirstOrDefault();
+                            string sa = www.Authority.Substring(0, 17);
+                            for (int i = 1; i < 8; i++)
+                            {
+                                sa += str[i];
+                            }
+                            //string saa = www.Authority.Substring(24, www.Authority.Length - 24);
+                            www.Authority = sa ;
+                            www.PositionOfReceipt_index = int.Parse(str[8]);
+                            www.PositionOfLogo_index = int.Parse(str[9]);
+                            www.PrintItemsWhenCloseTable_index = int.Parse(str[10]);
+                             
+                            break;
+                    case 7:
+                            var wwww = (from c in m.WH_Sys_PageTwo orderby c.ID ascending select c).FirstOrDefault();
+                            wwww.Authority = wwww.Authority.Substring(0, 23) + str[1]; 
+                            var z = (from c in m.WH_Sys_PageTree orderby c.ID descending select c).FirstOrDefault();
+                            string saaaa = "";
+                            for (int i = 2; i < 11; i++)
+                            {
+                                saaaa += str[i];
+                            }
+                            z.Authority = saaaa + z.Authority.Substring(9, z.Authority.Length - 9);
+
+                            break; 
+                    case 8:
+                        var zz = (from c in m.WH_Sys_PageTree orderby c.ID descending select c).FirstOrDefault();
+                        string sab = "";
+                            for (int i = 1; i < 11; i++)
+                            {
+                                sab += str[i];
+                            }
+                        zz.Authority = zz.Authority.Substring(0, 9) + sab +
+                                       zz.Authority.Substring(19, zz.Authority.Length - 19);
+                        break;
+
+                    #endregion
+                    #region case  9-11
+                    case 9:
+                        var zzz = (from c in m.WH_Sys_PageTree orderby c.ID descending select c).FirstOrDefault();
+                        zzz.Authority = zzz.Authority.Substring(0, 19)+str[1]+str[2];
+                        zzz.FootStampRule_index = int.Parse(str[3]);
+                        zzz.GiftVoucherChange_index = int.Parse(str[4]);
+                        zzz.VATRateForTakeAway_index = int.Parse(str[5]);
+                        zzz.VATRateForInHouse_index = int.Parse(str[6]);
+                        zzz.VATRateForOutHouse_index = int.Parse(str[7]);
+                        zzz.PLUPriceForTakeAway_index = int.Parse(str[8]);
+                        zzz.KPPrintSetting_index = int.Parse(str[9]);
+                        zzz.CompReport_index = int.Parse(str[10]);
+                        break;
+                    case 10:
+                        var g = (from c in m.WH_Sys_PageFour orderby c.ID descending select c).FirstOrDefault();
+                        g.ReportExportDevice_index = int.Parse(str[1]);
+                        g.ClerkPassCodeDigits_index = int.Parse(str[2]);
+                        g.OtherRoundingFactor_index = int.Parse(str[3]);
+                        g.TaxSystem_index = int.Parse(str[4]);
+                        g.AgeOne = int.Parse(str[5]);
+                        g.AgeTwo = int.Parse(str[6]);
+                        g.MachinNumPreset = str[7];
+                        g.ReceiptNumPreset = str[8];
+                        g.DailyZCounterPreset = int.Parse(str[9]);
+                        g.PTDZCounterPreset = int.Parse(str[10]);
+                        break;
+                    case 11:
+                        var gg = (from c in m.WH_Sys_PageFour orderby c.ID descending select c).FirstOrDefault();
+                        gg.VATNum = int.Parse(str[1]);
+                        gg.DuplicateReceiptCounter = (str[2]);
+                        gg.LineFeedCount = str[3];
+                        gg.PaymentInfoDisplayTime = int.Parse(str[4]);
+                        gg.ChangeInfoDisplayTime = int.Parse(str[5]);
+                        gg.TableColorChangeTime = int.Parse(str[6]);
+                        gg.TakeOutPrintTickets = int.Parse(str[7]);
+                        gg.MaxTipsAmount = int.Parse(str[8]);
+                        gg.TrainingModePassCode = int.Parse(str[9]);
+                        gg.HALO = decimal.Parse(str[10]);
+                        gg.TotalInDrawerLimit = decimal.Parse(str[11]);
+                        break;
+                    #endregion
+                    #region case  12-14
+                    case 12:
+                        var ggg =
+                            (from c in m.WH_Sys_happyHour_ServiceTax_Hours where c.isHappyOrTax == 0 select c).
+                                FirstOrDefault();
+                        ggg.timeA = str[1] + ":" + str[2];
+                        ggg.timeB = str[3] + ":" + str[4];
+                        ggg.timeC = str[5] + ":" + str[6];
+                        ggg.timeD = str[7] + ":" + str[8];
+                        string ttt = "";
+                        for (int i = 9; i < 16; i++)
+                        {
+                            ttt += str[i];
+                        }
+                        ggg.Weeks = ttt;
+                        break;
+                    case 13:
+                        var o = from c in m.WH_Sys_ElectronicScale
+                                orderby c.ID ascending
+                                select c;
+                        int sds = 1;
+                        foreach (WH_Sys_ElectronicScale oo in o)
+                        {
+                            oo.ScaleDeptID = int.Parse(str[sds]);
+                            sds++;
+                        }
+                        var p = (from c in m.WH_Sys_ElectronicScale_Setting
+                                 select c).FirstOrDefault();
+                        p.Unit = int.Parse(str[6]) - 1;
+                        p.TareType = int.Parse(str[7]);
+                        int unit = int.Parse(str[6]) - 1;
+                        var r = from c in m.WH_Sys_ElectronicScale_Tare
+                        where c.awID == unit
+                        orderby c.ID ascending
+                        select c;
+                        int dag = 8;
+                        foreach (WH_Sys_ElectronicScale_Tare rr in r)
+                        {
+                            rr.tare = decimal.Parse(str[dag]);
+                            dag++;
+                        }
+                        break;
+                    case 14:
+                        var ga = m.WH_Sys_TableBarcode.FirstOrDefault();
+                        ga.OperateType_index = int.Parse(str[1]);
+                        ga.Position_index = int.Parse(str[2]);
+                        ga.widths = int.Parse(str[3]);
+                        ga.heights = int.Parse(str[4]);
+                        ga.HRI_index = int.Parse(str[5]);
+                        ga.Fonts_index = int.Parse(str[6]);
+                        ga.PrintList = int.Parse(str[7]);
+                        ga.suspendTable = int.Parse(str[8]);
+                        ga.TransferTable = int.Parse(str[9]);
+                        var asd = m.WH_Sys_mailer.FirstOrDefault();
+                        asd.MailerName = str[10];
+                        asd.MailerCode = str[11];
+                        asd.TenantCode = str[12];
+                        var dsd = m.WH_Sys_Ftp.FirstOrDefault();
+                        dsd.IP = str[13];
+                        dsd.UserName = str[14];
+                        dsd.PassWord = str[15];
+                        break;
+                    #endregion
+                    default:
+                            break;
+                    }
+                }
+                m.SaveChanges();
+            } 
+            pIo.Close();
+        }
         private void btnRev_Click(object sender, EventArgs e)
         {
-            RevWeightPLU();
-            MessageBox.Show("Weighting PLU has been Recieved", "Alert");
-            RevServiceTax();
-            MessageBox.Show("Service Tax has been Recieved", "Alert");
+            Thread fThread = new Thread(new ThreadStart(SleepR));//开辟一个新的线程 
+
+            fThread.Start();
         }
         private void RevWeightPLU()
         {

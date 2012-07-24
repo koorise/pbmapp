@@ -47,7 +47,14 @@ namespace PBMApp.Tools
                     {
                         if (b == ByteHelper.FS)
                         {
-                            Data.Add(str);
+                            if(str=="")
+                            {
+                                Data.Add("0");
+                            }
+                            else
+                            {
+                                Data.Add(str);
+                            }
                             str = "";
                         }
                         else

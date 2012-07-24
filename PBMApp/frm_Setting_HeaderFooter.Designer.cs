@@ -77,6 +77,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnRev = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -598,6 +599,7 @@
             this.label12.Size = new System.Drawing.Size(119, 12);
             this.label12.TabIndex = 22;
             this.label12.Text = "Receipt Number Text";
+            this.label12.Visible = false;
             // 
             // textBox11
             // 
@@ -614,6 +616,7 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(254, 21);
             this.textBox12.TabIndex = 24;
+            this.textBox12.Visible = false;
             // 
             // button1
             // 
@@ -645,12 +648,21 @@
             this.btnRev.UseVisualStyleBackColor = true;
             this.btnRev.Click += new System.EventHandler(this.btnRev_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(0, 691);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(602, 23);
+            this.progressBar1.TabIndex = 28;
+            // 
             // frm_Setting_HeaderFooter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(630, 714);
+            this.ClientSize = new System.Drawing.Size(602, 714);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnRev);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.button1);
@@ -723,5 +735,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnRev;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

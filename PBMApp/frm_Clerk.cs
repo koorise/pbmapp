@@ -44,26 +44,26 @@ namespace PBMApp
             var m = new Entities();
             if(dataGridView1.SelectedRows.Count==0)
             {
-                WH_Clerk wc  = new WH_Clerk();
-                wc.isNum = tbNo.Text;
-                wc.SecretCode = tbSecretCode.Text;
-                wc.Description = tbDesc.Text;
-                wc.InterruptNo = tbInterrupt.Text;
-                string limit = "";
-                for (int i = 0; i < chkLimitList.Items.Count; i++)
-                {
-                    if(chkLimitList.GetItemChecked(i))
-                    {
-                        limit += "1";
-                    }
-                    else
-                    {
-                        limit += "0";
-                    }
-                }
-                wc.Limitaions = limit;
-                m.AddToWH_Clerk(wc);
-                m.SaveChanges();
+                //WH_Clerk wc  = new WH_Clerk();
+                //wc.isNum = tbNo.Text;
+                //wc.SecretCode = tbSecretCode.Text;
+                //wc.Description = tbDesc.Text;
+                //wc.InterruptNo = tbInterrupt.Text;
+                //string limit = "";
+                //for (int i = 0; i < chkLimitList.Items.Count; i++)
+                //{
+                //    if(chkLimitList.GetItemChecked(i))
+                //    {
+                //        limit += "1";
+                //    }
+                //    else
+                //    {
+                //        limit += "0";
+                //    }
+                //}
+                //wc.Limitaions = limit;
+                //m.AddToWH_Clerk(wc);
+                //m.SaveChanges();
             }
             else
             { 
@@ -89,7 +89,7 @@ namespace PBMApp
                 ctx.Limitaions = limit;
                 ctx.Description = tbDesc.Text;
                 ctx.SecretCode = tbSecretCode.Text;
-                ctx.isNum = tbNo.Text;
+                //ctx.isNum = tbNo.Text;
                 m.SaveChanges();
 
             }
@@ -119,7 +119,9 @@ namespace PBMApp
             dt.Columns.Add(dc3);
             DataColumn dc4 = new DataColumn("Interrupt No.", typeof(string));
             dt.Columns.Add(dc4);
+
             DataColumn dc5 = new DataColumn("Limitaions", typeof(string));
+            
             dt.Columns.Add(dc5);
 
 
@@ -140,6 +142,8 @@ namespace PBMApp
             }
             bs.DataSource = dt;
             dataGridView1.DataSource = bs;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
             bindingNavigator1.BindingSource = bs;
             for (int i = 0; i < dt.Columns.Count; i++)
             {
@@ -168,7 +172,7 @@ namespace PBMApp
             var clerk = ctx.WH_Clerk.First(x => x.ID == id);
             tbDesc.Text = clerk.Description;
             tbInterrupt.Text = clerk.InterruptNo;
-            tbNo.Text = clerk.isNum;
+            tbNo.Text = clerk.ID.ToString();
             tbSecretCode.Text = clerk.SecretCode;
             for (int i = 0; i < clerk.Limitaions.Length; i++)
             {
@@ -263,13 +267,71 @@ namespace PBMApp
 
         private void btnReceive_Click(object sender, EventArgs e)
         {
+
+            Thread fThread = new Thread(new ThreadStart(SleepR));//开辟一个新的线程 
+            fThread.Start();
+            BindData(); 
+        }
+        #region 进度条
+        private delegate void SetPos(int ipos);
+        private delegate void bindData();
+        private void SetTextMessage(int ipos)
+        {
+            if (this.InvokeRequired)
+            {
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+                bindData bind = BindData;
+                this.Invoke(bind);
+            }
+            else
+            {
+                //this.label1.Text = ipos.ToString() + "/100";
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
+        }
+        private void SleepT()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> strs = new List<List<string>>();
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_Clerk
+                        orderby c.ID ascending
+                        select c;
+                foreach (WH_Clerk w in q)
+                {
+                    List<string> s = new List<string>();
+                    s.Add(w.ID.ToString());
+                    s.Add(w.SecretCode.ToString());
+                    s.Add(w.InterruptNo.ToString());
+                    s.Add(w.Description.ToString());
+                    s.Add(w.Limitaions.Substring(0, 8));
+                    s.Add(w.Limitaions.Substring(8, 8));
+                    s.Add(w.Limitaions.Substring(16, 4));
+                    strs.Add(s);
+                }
+            }
+            rm.GetDownArrayString(pIo, strs, 5, 105);
+
+            pIo.Close();
+            for (int i = 1; i < 101; i++)
+            {
+                System.Threading.Thread.Sleep(10);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            }
+        }
+        private void SleepR()
+        {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
 
             ReceiveMessage rm = new ReceiveMessage();
 
             List<string> strs = new List<string>();
-            for (int i = 1; i <=50; i++)
+            for (int i = 1; i <= 50; i++)
             {
                 strs.Add(i.ToString());
             }
@@ -294,65 +356,26 @@ namespace PBMApp
 
                     q.InterruptNo = str[2];
                     q.Description = str[3];
-                    q.Limitaions = str[4].PadLeft(8, '0') + str[5].PadLeft(8, '0') + str[6].PadLeft(2, '0');
+                    q.Limitaions = str[4].PadLeft(8, '0') + str[5].PadLeft(8, '0') + str[6].PadLeft(4, '0');
                 }
                 m.SaveChanges();
             }
-            pIo.Close();
-            BindData(); 
+            pIo.Close(); 
+            for (int i = 1; i < 101; i++)
+            {
+                System.Threading.Thread.Sleep(5);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            }
         }
-
+        #endregion 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            JustinIO.CommPort pIo = ReceiveMessage.sp();
-            pIo.Open();
-            ReceiveMessage rm = new ReceiveMessage();
-            List<List<string>> strs = new List<List<string>>();
-            using (var m = new Entities())
-            {
-                var q = from c in m.WH_Clerk
-                        orderby c.ID ascending
-                        select c;
-                foreach (WH_Clerk w in q)
-                {
-                    List<string> s = new List<string>();
-                    s.Add(w.ID.ToString());
-                    s.Add(w.SecretCode.ToString());
-                    s.Add(w.InterruptNo.ToString());
-                    s.Add(w.Description.ToString());
-                    s.Add(w.Limitaions.Substring(0,8));
-                    s.Add(w.Limitaions.Substring(8,8));
-                    s.Add(w.Limitaions.Substring(16,4));
-                    strs.Add(s);
-                }
-            }
-            rm.GetDownArrayString(pIo, strs, 5, 105);
-            
-            pIo.Close();
+
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程 
+
+            fThread.Start();
         }
-
-       
-        
-
-         
-
-        //private void button4_Click(object sender, EventArgs e)
-        //{
-        //    for (int i = 7; i <= 50; i++)
-        //    {
-        //        using (var m=new pbmEntities() )
-        //        {
-        //            WH_Clerk wh= new WH_Clerk();
-        //            wh.isNum = "Clerk" + i.ToString().PadLeft(3, '0');
-        //            wh.SecretCode = "000";
-        //            wh.Description="Clerk" + i.ToString().PadLeft(3, '0');
-        //            wh.Limitaions = "11111111111111111";
-        //            wh.InterruptNo = "12345";
-        //            m.AddToWH_Clerk(wh);
-        //            m.SaveChanges();
-        //        }
-        //    }
-        //}
+ 
 
         
     }
