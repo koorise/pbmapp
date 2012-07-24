@@ -615,7 +615,7 @@ namespace PBMApp
                         select c;
                 foreach (var w in q)
                 {
-                    w.Description = "CCCC" + w.ID.ToString().PadLeft(3, '0');
+                    w.Description = "DEPT" + w.ID.ToString().PadLeft(3, '0');
                     w.High_Digit_LockOut = 7;
                     w.isDirectSale = 0;
                     w.isAge = 1;
@@ -669,14 +669,49 @@ namespace PBMApp
                 frm2.ShowDialog();
             }
         }
-
-        private void btnSend_Click(object sender, EventArgs e)
+        #region 进度条
+        private delegate void SetPos(int ipos);
+        private delegate void bindData();
+        private void SetTextMessage(int ipos)
+        {
+            if (this.InvokeRequired)
+            {
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+                bindData bind = BindData;
+                this.Invoke(bind);
+            }
+            else
+            {
+                //this.label1.Text = ipos.ToString() + "/100";
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
+        }
+        private void SleepT()
         {
             for (int i = 1; i < 201; i++)
             {
                 SendA(i);
+                System.Threading.Thread.Sleep(100);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
             } 
-            MessageBox.Show("Success", "alert");
+        }
+        private void SleepR()
+        { 
+            for (int i = 1; i < 201; i++)
+            {
+                RevA(i);
+                System.Threading.Thread.Sleep(100);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            } 
+        }
+        #endregion 
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程
+            
+            fThread.Start();
+             
         }
         private void SendA(int maxID)
         {
@@ -743,31 +778,10 @@ namespace PBMApp
         }
         private void btnRev_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i < 50; i++)
-            {
-                RevA(i);
-            }
-            MessageBox.Show("A", "A");
-            Application.DoEvents();
-            for (int i = 50; i < 100; i++)
-            {
-                RevA(i);
-            }
-            MessageBox.Show("A", "A");
-            Application.DoEvents();
-            for (int i = 100; i < 150; i++)
-            {
-                RevA(i);
-            }
-            MessageBox.Show("A", "A");
-            Application.DoEvents();
-            for (int i = 150; i < 201; i++)
-            {
-                RevA(i);
-            }
-            BindData(); 
+            Thread fThread = new Thread(new ThreadStart(SleepR));//开辟一个新的线程 
              
-            MessageBox.Show("success", "alert"); 
+            fThread.Start();
+             
         }
         
         private void RevA(int maxID)

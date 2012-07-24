@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using PBMApp.HeaderFooterPreview;
 using PBMApp.Model;
@@ -255,25 +256,62 @@ namespace PBMApp
 
             }
         }
+        #region 进度条
+        private delegate void SetPos(int ipos);
 
-        private void btnSend_Click(object sender, EventArgs e)
+        private delegate void frm_Load();
+        private void SetTextMessage(int ipos)
+        {
+            if (this.InvokeRequired)
+            {
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+                frm_Load frmLoad = Frm_Load;
+                this.Invoke(frmLoad);
+            }
+            else
+            {
+                //this.label1.Text = ipos.ToString() + "/100";
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
+        }
+        private void SleepT()
         {
             SendHeader();
-            MessageBox.Show("Header has been Sent", "Alert");
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(30);
+
             SendFooter();
-            MessageBox.Show("Footer has been Sent", "Alert");
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(60);
             SendBundle();
-            MessageBox.Show("Bundle Saving Text has been sent.", "Alert");
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(100);
+        }
+        private void SleepR()
+        {
+            RevHeader();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(30);
+
+            RevFooter();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(60);
+            RevBundle();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(100);
+            
+        }
+        #endregion
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程
+            fThread.Start();
         }
         private void btnRev_Click(object sender, EventArgs e)
         {
-            RevHeader();
-            MessageBox.Show("Header has been Recieved", "Alert");
-            RevFooter();
-            MessageBox.Show("Footer has been Recieved", "Alert");
-            RevBundle();
-            MessageBox.Show("Bundle Saving Text has been Recieved", "Alert");
-            Frm_Load();
+            Thread fThread = new Thread(new ThreadStart(SleepR));//开辟一个新的线程
+            fThread.Start(); 
         }
 
         private void RevHeader()

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
@@ -178,14 +179,56 @@ namespace PBMApp
             FrmLoad();
         }
 
+        #region 进度条
+        private delegate void SetPos(int ipos);
+        private delegate void bindData();
+        private void SetTextMessage(int ipos)
+        {
+            if (this.InvokeRequired)
+            {
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+                bindData bind = FrmLoad;
+                this.Invoke(bind);
+            }
+            else
+            { 
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
+        }
+        private void SleepT()
+        {
+
+            SendA();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(30);
+            SendB();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(60);
+            SendC();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(100);
+             
+        }
+        private void SleepR()
+        {
+            RevA();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(30);
+            RevB();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(60);
+            RevC();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(100);
+        }
+        #endregion 
+
         private void btnSend_Click(object sender, EventArgs e)
         {
-           SendA();
-           MessageBox.Show("Refund info has been sent", "Alert");
-           SendB();
-           MessageBox.Show("PayMentinfo has been sent", "Alert");
-            SendC();
-            MessageBox.Show("Coupon info has been sent", "Alert");
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程 
+
+            fThread.Start();
         }
         private void SendB()
         {
@@ -269,13 +312,9 @@ namespace PBMApp
         }
         private void btnReceive_Click(object sender, EventArgs e)
         {
-            RevA();
-            MessageBox.Show("Refund has been Recieved.", "Alert");
-            RevB();
-            MessageBox.Show("Payment has been Recieved.", "Alert");
-            RevC();
-            MessageBox.Show("Coupon Info  has been Recieved.", "Alert");
-            FrmLoad();
+            Thread fThread = new Thread(new ThreadStart(SleepR));//开辟一个新的线程 
+
+            fThread.Start(); 
              
         }
         private void RevA()

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
@@ -163,13 +164,51 @@ namespace PBMApp
             }
         }
 
-        private void btnReceive_Click(object sender, EventArgs e)
+
+        #region 进度条
+        private delegate void SetPos(int ipos);
+        private delegate void bindData();
+        private void SetTextMessage(int ipos)
+        {
+            if (this.InvokeRequired)
+            {
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+                bindData bind = frm_load;
+                this.Invoke(bind);
+            }
+            else
+            {
+                //this.label1.Text = ipos.ToString() + "/100";
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
+        }
+        private void SleepT()
+        {
+            SendA();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(50);
+            SendB();
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(100);
+        }
+        private void SleepR()
         {
             RevA(); 
-            MessageBox.Show("FCE has been Recieved", "Alert");
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(50);
             RevB();
-            MessageBox.Show("PCASH has been Recieved", "Alert");
-            frm_load(); 
+            System.Threading.Thread.Sleep(1100);//没什么意思，单纯的执行延时
+            SetTextMessage(100);
+            
+        }
+        #endregion 
+
+        private void btnReceive_Click(object sender, EventArgs e)
+        {
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程 
+
+            fThread.Start();
         }
         private void RevA()
         {
@@ -238,10 +277,9 @@ namespace PBMApp
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            SendA();
-            MessageBox.Show("FCE has been Sent", "alert");
-            SendB();
-            MessageBox.Show("PCASH has been Sent.", "alert");
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程 
+
+            fThread.Start();
         }
         private void SendA()
         {

@@ -32,6 +32,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cbCSC = new System.Windows.Forms.ComboBox();
             this.comboBox4a = new System.Windows.Forms.ComboBox();
             this.comboBox3a = new System.Windows.Forms.ComboBox();
             this.comboBox2a = new System.Windows.Forms.ComboBox();
@@ -284,11 +286,10 @@
             this.comboBox1d = new System.Windows.Forms.ComboBox();
             this.label85 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnRev = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbCSC = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -399,6 +400,31 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Page 2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(352, 130);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(137, 12);
+            this.label34.TabIndex = 18;
+            this.label34.Text = "Currency Symbol choice";
+            // 
+            // cbCSC
+            // 
+            this.cbCSC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCSC.FormattingEnabled = true;
+            this.cbCSC.Items.AddRange(new object[] {
+            "$",
+            "€",
+            "¢",
+            "£",
+            "¥",
+            "None"});
+            this.cbCSC.Location = new System.Drawing.Point(495, 127);
+            this.cbCSC.Name = "cbCSC";
+            this.cbCSC.Size = new System.Drawing.Size(121, 20);
+            this.cbCSC.TabIndex = 17;
             // 
             // comboBox4a
             // 
@@ -3080,6 +3106,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.btnRev);
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.btnSave);
@@ -3088,6 +3115,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(739, 36);
             this.panel1.TabIndex = 1;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(8, 6);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(462, 23);
+            this.progressBar1.TabIndex = 3;
             // 
             // btnRev
             // 
@@ -3118,31 +3152,6 @@
             this.btnSave.Text = "Save(&S)";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cbCSC
-            // 
-            this.cbCSC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCSC.FormattingEnabled = true;
-            this.cbCSC.Items.AddRange(new object[] {
-            "$",
-            "€",
-            "¢",
-            "£",
-            "¥",
-            "None"});
-            this.cbCSC.Location = new System.Drawing.Point(495, 127);
-            this.cbCSC.Name = "cbCSC";
-            this.cbCSC.Size = new System.Drawing.Size(121, 20);
-            this.cbCSC.TabIndex = 17;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(352, 130);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(137, 12);
-            this.label34.TabIndex = 18;
-            this.label34.Text = "Currency Symbol choice";
             // 
             // frm_Setting_SystemFlag
             // 
@@ -3448,5 +3457,6 @@
         private System.Windows.Forms.Button btnRev;
         private System.Windows.Forms.ComboBox cbCSC;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

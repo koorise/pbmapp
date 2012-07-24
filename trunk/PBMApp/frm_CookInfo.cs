@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
@@ -142,24 +143,25 @@ namespace PBMApp
         {
             BindDetail();
         }
-
-        private void btnReset_Click(object sender, EventArgs e)
+        #region 进度条
+        private delegate void SetPos(int ipos);
+        private delegate void bindData();
+        private void SetTextMessage(int ipos)
         {
-            using (var m = new Entities())
+            if (this.InvokeRequired)
             {
-                var q = from c in m.WH_CookInformation
-                        select c;
-                foreach (var w in q)
-                {
-                    w.Description = "CookMsg" + w.ID.ToString().PadLeft(3, '0');
-                    w.price = 0;
-                }
-                m.SaveChanges();
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+                bindData bind = BindData;
+                this.Invoke(bind);
             }
-            BindData();
+            else
+            {
+                //this.label1.Text = ipos.ToString() + "/100";
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
         }
-
-        private void btnSend_Click(object sender, EventArgs e)
+        private void SleepT()
         {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
@@ -174,7 +176,7 @@ namespace PBMApp
                 {
                     List<string> s = new List<string>();
                     s.Add(w.ID.ToString());
-                    s.Add(w.price.ToString().Replace(".",""));
+                    s.Add(w.price.ToString().Replace(".", ""));
                     s.Add(w.Description.ToString());
                     //s.Add(w.Description.ToString());
                     strs.Add(s);
@@ -182,9 +184,13 @@ namespace PBMApp
             }
             rm.GetDownArrayString(pIo, strs, 8, 108);
             pIo.Close();
+            for (int i = 1; i < 101; i++)
+            {
+                System.Threading.Thread.Sleep(10);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            }
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void SleepR()
         {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
@@ -213,12 +219,47 @@ namespace PBMApp
                     else
                     {
                         q.price = 0;
-                    } 
+                    }
                     q.Description = str[2];
                 }
                 m.SaveChanges();
             }
             pIo.Close();
+            for (int i = 1; i < 101; i++)
+            { 
+                System.Threading.Thread.Sleep(5);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            }
+        }
+        #endregion 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                var q = from c in m.WH_CookInformation
+                        select c;
+                foreach (var w in q)
+                {
+                    w.Description = "CookMsg" + w.ID.ToString().PadLeft(3, '0');
+                    w.price = 0;
+                }
+                m.SaveChanges();
+            }
+            BindData();
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Thread fThread = new Thread(new ThreadStart(SleepT));//开辟一个新的线程 
+
+            fThread.Start();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Thread fThread = new Thread(new ThreadStart(SleepR));//开辟一个新的线程 
+
+            fThread.Start();
             BindData();
         }
         

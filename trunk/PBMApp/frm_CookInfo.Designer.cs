@@ -54,6 +54,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -63,6 +64,7 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.btnSend);
@@ -308,6 +310,14 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(3, 660);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(370, 23);
+            this.progressBar1.TabIndex = 12;
+            // 
             // frm_CookInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -356,5 +366,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

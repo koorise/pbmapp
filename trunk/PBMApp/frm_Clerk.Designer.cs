@@ -64,6 +64,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,6 +103,7 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.tbInterrupt);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.panel4);
@@ -114,9 +116,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(1, 0);
+            this.groupBox1.Location = new System.Drawing.Point(-4, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(371, 554);
+            this.groupBox1.Size = new System.Drawing.Size(376, 554);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Clerk Information";
@@ -141,8 +143,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(3, 523);
+            this.panel4.Location = new System.Drawing.Point(5, 498);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(365, 28);
             this.panel4.TabIndex = 8;
@@ -282,6 +283,7 @@
             // 
             this.tbNo.Location = new System.Drawing.Point(73, 39);
             this.tbNo.Name = "tbNo";
+            this.tbNo.ReadOnly = true;
             this.tbNo.Size = new System.Drawing.Size(100, 21);
             this.tbNo.TabIndex = 2;
             // 
@@ -442,6 +444,14 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(3, 528);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(370, 23);
+            this.progressBar1.TabIndex = 11;
+            // 
             // frm_Clerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -506,5 +516,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

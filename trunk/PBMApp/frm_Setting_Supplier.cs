@@ -40,6 +40,7 @@ namespace PBMApp
                 TextBox tb = new TextBox();
                 Size tbSize = new Size(100, 20);
                 tb.Location = pp;
+                tb.MaxLength = 30;
                 tb.Size = tbSize;
                 tb.Visible = true;
                 tb.Name = "tb" + i;
@@ -65,6 +66,7 @@ namespace PBMApp
                 tb.Size = tbSize;
                 tb.Visible = true;
                 tb.Name = "tb" + i;
+                tb.MaxLength = 30;
                 groupBox1.Controls.Add(tb);
                 y += 30;
             }
@@ -91,6 +93,8 @@ namespace PBMApp
                 }
                 m.SaveChanges();
             }
+            
+            //Frm_Load();
             MessageBox.Show("Success", "Alert");
         }
 
@@ -106,7 +110,11 @@ namespace PBMApp
                 }
                 m.SaveChanges();
             }
+            groupBox1.Controls.Clear();
+            Frm_Load();
+
             MessageBox.Show("Success", "Alert");
+            
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -161,6 +169,9 @@ namespace PBMApp
                 m.SaveChanges();
             }
             pIo.Close();
+
+            groupBox1.Controls.Clear();
+            Frm_Load();
             MessageBox.Show("Success", "Alert");
         }
          
