@@ -678,12 +678,12 @@ namespace PBMApp
             {
                 SetPos setpos = new SetPos(SetTextMessage);
                 this.Invoke(setpos, new object[] { ipos });
-                bindData bind = BindData;
-                this.Invoke(bind);
+                //bindData bind = BindData;
+                //this.Invoke(bind);
             }
             else
             {
-                //this.label1.Text = ipos.ToString() + "/100";
+                this.label11.Text = ipos.ToString() + "/200";
                 this.progressBar1.Value = Convert.ToInt32(ipos);
             }
         }
@@ -692,16 +692,38 @@ namespace PBMApp
             for (int i = 1; i < 201; i++)
             {
                 SendA(i);
-                System.Threading.Thread.Sleep(100);//没什么意思，单纯的执行延时
+                System.Threading.Thread.Sleep(5);//没什么意思，单纯的执行延时
                 SetTextMessage(i);
             } 
         }
         private void SleepR()
         { 
-            for (int i = 1; i < 201; i++)
+            
+            for (int i = 1; i < 50; i++)
             {
                 RevA(i);
-                System.Threading.Thread.Sleep(100);//没什么意思，单纯的执行延时
+                System.Threading.Thread.Sleep(5);//没什么意思，单纯的执行延时
+                SetTextMessage(i);   
+            }
+            Thread.Sleep(50);
+            for (int i = 50; i < 100; i++)
+            {
+                RevA(i);
+                System.Threading.Thread.Sleep(5);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            }
+            Thread.Sleep(50);
+            for (int i = 100; i < 150; i++)
+            {
+                RevA(i);
+                System.Threading.Thread.Sleep(5);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            }
+            Thread.Sleep(50);
+            for (int i = 150; i < 201; i++)
+            {
+                RevA(i);
+                System.Threading.Thread.Sleep(5);//没什么意思，单纯的执行延时
                 SetTextMessage(i);
             } 
         }

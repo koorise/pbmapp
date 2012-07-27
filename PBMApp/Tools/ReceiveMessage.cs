@@ -35,40 +35,80 @@ namespace PBMApp.Tools
         }
         public void ReadThree(JustinIO.CommPort pio)
         {
-                byte b = pio.Read(1)[0];
-                
-                if (b != ByteHelper.ETX)
+            byte b = pio.Read(1)[0];
+
+            if (b != ByteHelper.ETX)
+            {
+                if (b == ByteHelper.STX || b == ByteHelper.ACK)
                 {
-                    if (b == ByteHelper.STX || b == ByteHelper.ACK)
+                    ReadThree(pio);
+                }
+                else
+                {
+                    if (b == ByteHelper.FS)
                     {
-                        ReadThree(pio);
-                    }
-                    else
-                    {
-                        if (b == ByteHelper.FS)
+                        if (str == "")
                         {
-                            if(str=="")
-                            {
-                                Data.Add("0");
-                            }
-                            else
-                            {
-                                Data.Add(str);
-                            }
-                            str = "";
+                            Data.Add("0");
                         }
                         else
                         {
-                            byte[] bytes = new byte[1] {b};
-                            str += Encoding.ASCII.GetString(bytes);
+                            Data.Add(str);
                         }
-                        ReadThree(pio);
+                        str = "";
                     }
+                    else
+                    {
+                        byte[] bytes = new byte[1] {b};
+                        str += Encoding.ASCII.GetString(bytes);
+                    }
+                    ReadThree(pio);
                 }
-           
-
+            }
         }
-        
+
+        public void ReadFour(JustinIO.CommPort pio)
+        {
+
+            byte b = pio.Read(1)[0];
+
+            
+                if (b == ByteHelper.STX || b == ByteHelper.ACK)
+                {
+                    ReadThree(pio);
+                }
+                else
+                {
+                    if (b == ByteHelper.FS)
+                    {
+                        if (str == "")
+                        {
+                            Data.Add("0");
+                        }
+                        else
+                        {
+                            Data.Add(str);
+                        }
+                        str = "";
+                    }
+                    else
+                    {
+                        byte[] bytes = new byte[1] { b };
+                        str += Encoding.ASCII.GetString(bytes);
+                    }
+                    ReadThree(pio);
+                }
+             
+             
+        }
+        #region 普通 上下载
+        /// <summary>
+        /// 普通上载
+        /// </summary>
+        /// <param name="pIo"></param>
+        /// <param name="strs"></param>
+        /// <param name="up"></param>
+        /// <param name="down"></param>
         public   void GetUpArrayString(JustinIO.CommPort pIo,List<string> strs,int up,int down)
         {
             ORB orb = new ORB(up, down);  
@@ -105,6 +145,13 @@ namespace PBMApp.Tools
                 GetUpArrayString(pIo, strs, up, down);
             }
         }
+        /// <summary>
+        /// 普通下载
+        /// </summary>
+        /// <param name="pIo"></param>
+        /// <param name="strs"></param>
+        /// <param name="up"></param>
+        /// <param name="down"></param>
         public void GetDownArrayString(JustinIO.CommPort pIo, List<List<string>> strs, int up, int down  )
         {
             ORB orb = new ORB(up, down);
@@ -147,5 +194,46 @@ namespace PBMApp.Tools
                 GetDownArrayString(pIo, strs, up, down);
             }
         }
+        #endregion
+
+        #region PLU 上下载
+        public void GetUpPLU(JustinIO.CommPort pIo, List<List<string>> strs, int up, int down)
+        {
+            ORB orb = new ORB(up, down);
+
+            ReceiveMessage rm = new ReceiveMessage();
+
+            pIo.Write(ByteHelper.oneCmd(ByteHelper.ENQ));//询问
+            if (rm.ReadOne(pIo))
+            {
+                pIo.Write(orb.UpSingleCMD()); //命令
+                if (rm.ReadTwo(pIo))
+                {
+                    int i = 0;
+                    foreach (List<string> s in strs) //循环发送数据包
+                    {
+                        rm.Data = new List<string>();
+                        if (i != 0)
+                        {
+                            pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.ACK));
+                        }
+                        pIo.Write(orb.UpSinglePLU(s));
+                        rm.ReadFour(pIo);
+                        //Data.Add(str);
+                        List.Add(rm.Data);
+                        Application.DoEvents();
+                        i++;
+                    }
+                    pIo.Write(Tools.ByteHelper.oneCmd(ByteHelper.bye));
+
+                }
+            }
+            else
+            {
+                pIo.Read(2);
+                GetUpPLU(pIo, strs, up, down);
+            }
+        }
+        #endregion
     }
 }

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_dept));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnRev = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.chkFS = new System.Windows.Forms.CheckBox();
@@ -90,7 +91,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.progressBar1);
             this.groupBox2.Controls.Add(this.btnRev);
             this.groupBox2.Controls.Add(this.btnSend);
@@ -144,6 +146,15 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Department Information Setting";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(3, 648);
+            this.progressBar1.Maximum = 200;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(379, 23);
+            this.progressBar1.TabIndex = 31;
             // 
             // btnRev
             // 
@@ -787,14 +798,14 @@
             this.toolStripButton1.Text = "RESET";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // progressBar1
+            // label11
             // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(3, 648);
-            this.progressBar1.Maximum = 200;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(379, 23);
-            this.progressBar1.TabIndex = 31;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(329, 633);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 12);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "0/200";
             // 
             // frm_dept
             // 
@@ -892,5 +903,6 @@
         private System.Windows.Forms.Button btnRev;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label11;
     }
 }
