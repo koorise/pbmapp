@@ -196,22 +196,6 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_PLU> WH_PLU
-        {
-            get
-            {
-                if ((_WH_PLU == null))
-                {
-                    _WH_PLU = base.CreateObjectSet<WH_PLU>("WH_PLU");
-                }
-                return _WH_PLU;
-            }
-        }
-        private ObjectSet<WH_PLU> _WH_PLU;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<WH_PLU_Modifier> WH_PLU_Modifier
         {
             get
@@ -768,6 +752,22 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_Sys_PageTwo> _WH_Sys_PageTwo;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_PLU> WH_PLU
+        {
+            get
+            {
+                if ((_WH_PLU == null))
+                {
+                    _WH_PLU = base.CreateObjectSet<WH_PLU>("WH_PLU");
+                }
+                return _WH_PLU;
+            }
+        }
+        private ObjectSet<WH_PLU> _WH_PLU;
 
         #endregion
         #region AddTo 方法
@@ -834,14 +834,6 @@ namespace PBMApp.Model
         public void AddToWH_Menu_List(WH_Menu_List wH_Menu_List)
         {
             base.AddObject("WH_Menu_List", wH_Menu_List);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_PLU(WH_PLU wH_PLU)
-        {
-            base.AddObject("WH_PLU", wH_PLU);
         }
     
         /// <summary>
@@ -1122,6 +1114,14 @@ namespace PBMApp.Model
         public void AddToWH_Sys_PageTwo(WH_Sys_PageTwo wH_Sys_PageTwo)
         {
             base.AddObject("WH_Sys_PageTwo", wH_Sys_PageTwo);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_PLU EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_PLU(WH_PLU wH_PLU)
+        {
+            base.AddObject("WH_PLU", wH_PLU);
         }
 
         #endregion
@@ -2883,6 +2883,30 @@ namespace PBMApp.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String Description2
+        {
+            get
+            {
+                return _Description2;
+            }
+            set
+            {
+                OnDescription2Changing(value);
+                ReportPropertyChanging("Description2");
+                _Description2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description2");
+                OnDescription2Changed();
+            }
+        }
+        private global::System.String _Description2;
+        partial void OnDescription2Changing(global::System.String value);
+        partial void OnDescription2Changed();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int64> Dept_No
         {
             get
@@ -3123,6 +3147,30 @@ namespace PBMApp.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public Nullable<global::System.Int64> isCondimentNums
+        {
+            get
+            {
+                return _isCondimentNums;
+            }
+            set
+            {
+                OnisCondimentNumsChanging(value);
+                ReportPropertyChanging("isCondimentNums");
+                _isCondimentNums = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("isCondimentNums");
+                OnisCondimentNumsChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _isCondimentNums;
+        partial void OnisCondimentNumsChanging(Nullable<global::System.Int64> value);
+        partial void OnisCondimentNumsChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int64> Modifier
         {
             get
@@ -3261,6 +3309,30 @@ namespace PBMApp.Model
         private Nullable<global::System.Int64> _ExemptServTax;
         partial void OnExemptServTaxChanging(Nullable<global::System.Int64> value);
         partial void OnExemptServTaxChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> isStatus
+        {
+            get
+            {
+                return _isStatus;
+            }
+            set
+            {
+                OnisStatusChanging(value);
+                ReportPropertyChanging("isStatus");
+                _isStatus = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("isStatus");
+                OnisStatusChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _isStatus;
+        partial void OnisStatusChanging(Nullable<global::System.Int64> value);
+        partial void OnisStatusChanged();
 
         #endregion
     

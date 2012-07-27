@@ -90,31 +90,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WH_PLU">
-      <EntityTypeMapping TypeName="pbmModel.WH_PLU">
-        <MappingFragment StoreEntitySet="WH_PLU">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Dept_No" ColumnName="Dept_No" />
-          <ScalarProperty Name="Price1" ColumnName="Price1" />
-          <ScalarProperty Name="Price2" ColumnName="Price2" />
-          <ScalarProperty Name="Price3" ColumnName="Price3" />
-          <ScalarProperty Name="PriceMat" ColumnName="PriceMat" />
-          <ScalarProperty Name="isMode" ColumnName="isMode" />
-          <ScalarProperty Name="Inventory" ColumnName="Inventory" />
-          <ScalarProperty Name="Inventory_safty" ColumnName="Inventory_safty" />
-          <ScalarProperty Name="isMenu" ColumnName="isMenu" />
-          <ScalarProperty Name="isCondiment" ColumnName="isCondiment" />
-          <ScalarProperty Name="Modifier" ColumnName="Modifier" />
-          <ScalarProperty Name="Modifier_description" ColumnName="Modifier_description" />
-          <ScalarProperty Name="Modifier_Unity_Quantity" ColumnName="Modifier_Unity_Quantity" />
-          <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
-          <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
-          <ScalarProperty Name="ExemptServTax" ColumnName="ExemptServTax" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="WH_PLU_Modifier">
       <EntityTypeMapping TypeName="pbmModel.WH_PLU_Modifier">
         <MappingFragment StoreEntitySet="WH_PLU_Modifier">
@@ -535,6 +510,34 @@
           <ScalarProperty Name="PositionOfReceipt" ColumnName="PositionOfReceipt" />
           <ScalarProperty Name="PositionOfReceipt_index" ColumnName="PositionOfReceipt_index" />
           <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_PLU">
+      <EntityTypeMapping TypeName="pbmModel.WH_PLU">
+        <MappingFragment StoreEntitySet="WH_PLU">
+          <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+          <ScalarProperty Name="ExemptServTax" ColumnName="ExemptServTax" />
+          <ScalarProperty Name="FS_Tenderable" ColumnName="FS_Tenderable" />
+          <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
+          <ScalarProperty Name="Modifier_Unity_Quantity" ColumnName="Modifier_Unity_Quantity" />
+          <ScalarProperty Name="Modifier_description" ColumnName="Modifier_description" />
+          <ScalarProperty Name="Modifier" ColumnName="Modifier" />
+          <ScalarProperty Name="isCondimentNums" ColumnName="isCondimentNums" />
+          <ScalarProperty Name="isCondiment" ColumnName="isCondiment" />
+          <ScalarProperty Name="isMenu" ColumnName="isMenu" />
+          <ScalarProperty Name="Inventory_safty" ColumnName="Inventory_safty" />
+          <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+          <ScalarProperty Name="isMode" ColumnName="isMode" />
+          <ScalarProperty Name="PriceMat" ColumnName="PriceMat" />
+          <ScalarProperty Name="Price3" ColumnName="Price3" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="Price1" ColumnName="Price1" />
+          <ScalarProperty Name="Dept_No" ColumnName="Dept_No" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -155,6 +155,7 @@
     <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Bar_Code" Type="nvarchar" />
     <Property Name="Description" Type="nvarchar" />
+    <Property Name="Description2" Type="nvarchar" />
     <Property Name="Dept_No" Type="integer" />
     <Property Name="Price1" Type="decimal" Scale="4" />
     <Property Name="Price2" Type="decimal" Scale="4" />
@@ -165,12 +166,14 @@
     <Property Name="Inventory_safty" Type="integer" />
     <Property Name="isMenu" Type="integer" />
     <Property Name="isCondiment" Type="integer" />
+    <Property Name="isCondimentNums" Type="integer" />
     <Property Name="Modifier" Type="integer" />
     <Property Name="Modifier_description" Type="nvarchar" />
     <Property Name="Modifier_Unity_Quantity" Type="nvarchar" />
     <Property Name="Modifier_Price" Type="integer" />
     <Property Name="FS_Tenderable" Type="integer" />
     <Property Name="ExemptServTax" Type="integer" />
+    <Property Name="isStatus" Type="integer" />
   </EntityType>
   <EntityType Name="WH_PLU_Modifier">
     <Key>

@@ -9,7 +9,6 @@
     <EntitySet Name="WH_Menu" EntityType="pbmModel.WH_Menu" />
     <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.WH_Menu_Details" />
     <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
-    <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
     <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.WH_PLU_Modifier" />
     <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
     <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
@@ -45,6 +44,7 @@
     <EntitySet Name="WH_Sys_FCE" EntityType="pbmModel.WH_Sys_FCE" />
     <EntitySet Name="WH_Department" EntityType="pbmModel.WH_Department" />
     <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
+    <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -126,30 +126,6 @@
     <Property Name="MenuID" Type="Int64" />
     <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Name="isFlag" Type="Int64" />
-  </EntityType>
-  <EntityType Name="WH_PLU">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Bar_Code" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="Dept_No" Type="Int64" />
-    <Property Name="Price1" Type="Decimal" Precision="18" Scale="4" />
-    <Property Name="Price2" Type="Decimal" Precision="18" Scale="4" />
-    <Property Name="Price3" Type="Decimal" Precision="18" Scale="4" />
-    <Property Name="PriceMat" Type="Int64" />
-    <Property Name="isMode" Type="Int64" />
-    <Property Name="Inventory" Type="Int64" />
-    <Property Name="Inventory_safty" Type="Int64" />
-    <Property Name="isMenu" Type="Int64" />
-    <Property Name="isCondiment" Type="Int64" />
-    <Property Name="Modifier" Type="Int64" />
-    <Property Name="Modifier_description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="Modifier_Unity_Quantity" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-    <Property Name="Modifier_Price" Type="Int64" />
-    <Property Name="FS_Tenderable" Type="Int64" />
-    <Property Name="ExemptServTax" Type="Int64" />
   </EntityType>
   <EntityType Name="WH_PLU_Modifier">
     <Key>
@@ -539,5 +515,32 @@
     <Property Type="Int64" Name="ItemDesc_RP_index" />
     <Property Type="String" Name="ItemDesc_RP" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Type="Int64" Name="CurrencySymbolChoice" />
+  </EntityType>
+  <EntityType Name="WH_PLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Bar_Code" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description2" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Dept_No" />
+    <Property Type="Decimal" Name="Price1" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="Price2" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="Price3" Precision="18" Scale="4" />
+    <Property Type="Int64" Name="PriceMat" />
+    <Property Type="Int64" Name="isMode" />
+    <Property Type="Int64" Name="Inventory" />
+    <Property Type="Int64" Name="Inventory_safty" />
+    <Property Type="Int64" Name="isMenu" />
+    <Property Type="Int64" Name="isCondiment" />
+    <Property Type="Int64" Name="isCondimentNums" />
+    <Property Type="Int64" Name="Modifier" />
+    <Property Type="String" Name="Modifier_description" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Modifier_Unity_Quantity" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Modifier_Price" />
+    <Property Type="Int64" Name="FS_Tenderable" />
+    <Property Type="Int64" Name="ExemptServTax" />
+    <Property Type="Int64" Name="isStatus" />
   </EntityType>
 </Schema>

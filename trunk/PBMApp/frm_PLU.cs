@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 using PBMApp.Model;
 using PBMApp.Tools;
@@ -219,15 +220,16 @@ namespace PBMApp
             dt.Columns.Add(dc1);
             DataColumn dc2 = new DataColumn("Barcode", typeof(string));
             dt.Columns.Add(dc2);
-            DataColumn dc3 = new DataColumn("Description", typeof(string));
-            dt.Columns.Add(dc3);
-            DataColumn dc4 = new DataColumn("Price 1", typeof(string));
-            dt.Columns.Add(dc4);
-            DataColumn dc5 = new DataColumn("Price 2", typeof(string));
-            dt.Columns.Add(dc5);
-            DataColumn dc6 = new DataColumn("Price 3", typeof(string));
-            dt.Columns.Add(dc6); 
-
+            //DataColumn dc3 = new DataColumn("Description", typeof(string));
+            //dt.Columns.Add(dc3);
+            //DataColumn dc4 = new DataColumn("Price 1", typeof(string));
+            //dt.Columns.Add(dc4);
+            //DataColumn dc5 = new DataColumn("Price 2", typeof(string));
+            //dt.Columns.Add(dc5);
+            //DataColumn dc6 = new DataColumn("Price 3", typeof(string));
+            //dt.Columns.Add(dc6); 
+            DataColumn dc7 = new DataColumn("Status", typeof(string));
+            dt.Columns.Add(dc7);
 
             var m = new Entities();
             var q = from c in m.WH_PLU
@@ -238,10 +240,18 @@ namespace PBMApp
                 DataRow dr = dt.NewRow();
                 dr[0] = c.ID;
                 dr[1] = c.Bar_Code;
-                dr[2] = c.Description;
-                dr[3] = c.Price1;
-                dr[4] = c.Price2;
-                dr[5] = c.Price3;
+                //dr[2] = c.Description;
+                //dr[3] = c.Price1;
+                //dr[4] = c.Price2;
+                //dr[5] = c.Price3;
+                if(c.isStatus==0)
+                {
+                    dr[2] = "ON";
+                }
+                else
+                {
+                    dr[2] = "OFF";
+                }
                 dt.Rows.Add(dr);
             }
 
@@ -298,8 +308,9 @@ namespace PBMApp
                 {
                     ctx.isMode = 1;
                 }
+                ctx.isStatus = 0;
                 ctx.isCondiment = ckCondiment.Checked ? 1 : 0;
-             
+                ctx.isCondimentNums = cbIsCondimentSelectableNum.SelectedIndex;
                 var q = m.WH_Relation_PLU_Condiment.Count(x => x.PLUID == id);
                 for (int i = 0; i < int.Parse(q.ToString()); i++)
                 {
@@ -476,13 +487,12 @@ namespace PBMApp
                 chkFS.Checked = int.Parse(ctx.FS_Tenderable.ToString()) == 1;
                 chkES.Checked = int.Parse(ctx.ExemptServTax.ToString()) == 1;
                 Combox_dept_No(int.Parse(ctx.Dept_No.ToString()));
+                cbIsCondimentSelectableNum.SelectedIndex = int.Parse(ctx.isCondimentNums.ToString());
                 Combox_PLU_Modifier(id);
                 Combox_Condiment_Selected(id);
                 Combox_Condiment_ALL();
                 ListBox_Cooking_ALL();
-                ListBox_Cooking_Selected(id,1);
-
-
+                ListBox_Cooking_Selected(id,1); 
             }
         }
 
@@ -547,7 +557,8 @@ namespace PBMApp
             using (var m = new Entities())
             {
                 var q = m.WH_PLU.FirstOrDefault(x => x.ID == id);
-                m.DeleteObject(q);
+                q.isStatus = 1;
+                //m.DeleteObject(q);
                 m.SaveChanges();
             }
             BindData();
@@ -586,6 +597,140 @@ namespace PBMApp
             }
         }
 
-        
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            using (var m = new Entities())
+            {
+                for (int i = 1; i < 3001; i++)
+                {
+                    WH_PLU w = m.WH_PLU.FirstOrDefault(x=>x.ID==i);
+                    w.isMode = 0;
+                    //w.Bar_Code = i.ToString().PadLeft(13, '0');
+                    //w.Price1 = 0;
+                    //w.Price2 = 0;
+                    //w.Price3 = 0;
+                    //w.Dept_No = 1;
+                    //w.Description = "";
+                    //w.Description2 = "";
+                    //w.PriceMat = 0;
+                    //w.isMenu = 0;
+                    ////w.stock active
+                    //w.isCondiment = 0;
+                    //w.ExemptServTax = 0;
+                    //w.FS_Tenderable = 0;
+                    //w.Modifier = 0;
+                    //w.isCondimentNums = 0;
+                    //w.isStatus = 1;
+                    //m.AddToWH_PLU(w);
+                }
+                m.SaveChanges();
+            }
+        }
+
+        #region 进度条
+        private delegate void SetPos(int ipos);
+        private delegate void bindData();
+        private void SetTextMessage(int ipos)
+        {
+            if (this.InvokeRequired)
+            {
+                SetPos setpos = new SetPos(SetTextMessage);
+                this.Invoke(setpos, new object[] { ipos });
+                bindData bind = BindData;
+                this.Invoke(bind);
+            }
+            else
+            {
+                this.label21.Text = ipos.ToString() + "/30000";
+                this.progressBar1.Value = Convert.ToInt32(ipos);
+            }
+        }
+         
+        private void SleepT()
+        { 
+            for (int i = 1; i < 101; i++)
+            {
+                System.Threading.Thread.Sleep(10);//没什么意思，单纯的执行延时
+                SetTextMessage(i);
+            }
+        }
+        private void SleepR()
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            ReceiveMessage rm = new ReceiveMessage();
+
+
+            List<List<string>> sList = new List<List<string>>();
+            for (int i = 1; i < 30001; i++)
+            {
+                List<string> strs = new List<string>();
+                strs.Add("0");
+                strs.Add(i.ToString());
+                sList.Add(strs);
+                System.Threading.Thread.Sleep(2); 
+                SetTextMessage(i);
+                
+                
+            }
+
+            rm.GetUpPLU(pIo, sList, 2, 102); 
+
+            foreach (List<string> str in rm.List)
+            {
+                foreach (string s in str)
+                {
+                    richTextBox1.Text += s + "+";
+                }
+                richTextBox1.Text += "\n";
+            } 
+            pIo.Close();
+             
+        }
+        #endregion
+
+        private void btnRecieve_Click(object sender, EventArgs e)
+        {
+            JustinIO.CommPort pIo = ReceiveMessage.sp();
+            pIo.Open();
+            
+            pIo.Close(); 
+        }
+        private List<WH_PLU> list=new List<WH_PLU>();
+        private void RevPLU(JustinIO.CommPort pIo,int index)
+        {
+            ReceiveMessage rm = new ReceiveMessage();
+            List<List<string>> sList = new List<List<string>>();
+             
+            List<string> strs = new List<string>();
+            strs.Add("0");
+            strs.Add(index.ToString());
+            sList.Add(strs); 
+            rm.GetUpPLU(pIo, sList, 2, 102); 
+            foreach (List<string> str in rm.List)
+            {
+                if(str.Count<=2)
+                {
+                    if (index < 30000)
+                    {
+                        RevPLU(pIo, index + 1);
+                    }
+                }
+                else
+                {
+                    foreach (string s in str)
+                    {
+                        WH_PLU w = new WH_PLU();
+                        w.ID = index;
+                        w.Bar_Code = str[1];
+                        list.Add(w);
+                    }
+                    if(index<30000)
+                    {
+                        RevPLU(pIo, index + 1);
+                    } 
+                } 
+            }
+        } 
     }
 }

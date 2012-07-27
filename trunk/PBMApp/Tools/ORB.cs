@@ -22,7 +22,8 @@ namespace PBMApp.Tools
         }
 
         public byte[] Result { get; set; }
-        
+
+        #region 普通上下载操作
         /// <summary>
         /// 命令：单条上载
         /// </summary>
@@ -74,7 +75,21 @@ namespace PBMApp.Tools
             return t.SBytes();
 
         }
+        #endregion
 
+        #region PLU上下载操作
+        public byte[] UpSinglePLU(List<string> id)
+        {
+            ByteHelper t = new ByteHelper();
+            t.BufCopyTo(ByteHelper.Buf("Z"));
+            foreach (string s in id)
+            {
+                t.BufCopyTo(ByteHelper.Buf(s));
+            }
+           
+            return t.SBytes();
+        }
+        #endregion
         /// <summary>
         /// ENQ Bytes 05
         /// </summary>
