@@ -206,6 +206,8 @@
           <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PLUID" Type="integer" />
           <Property Name="condimentPLUID" Type="integer" />
+          <Property Name="condimentBarCode" Type="nvarchar" />
+          <Property Name="condimentQuality" Type="integer" />
         </EntityType>
         <EntityType Name="WH_Sys_BundleSaving_ReceiptNumber">
           <Key>
@@ -562,7 +564,6 @@
           <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.WH_Menu_Details" />
           <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
           <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.WH_PLU_Modifier" />
-          <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
           <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
           <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
           <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.WH_Sys_Header_Footer" />
@@ -597,6 +598,7 @@
           <EntitySet Name="WH_Department" EntityType="pbmModel.WH_Department" />
           <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
           <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
+          <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
         </EntityContainer>
         <EntityType Name="WH_Bundle">
           <Key>
@@ -688,14 +690,6 @@
           <Property Name="Modifier_desc" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
           <Property Name="Modifier_Unit_Quantity" Type="Int64" />
           <Property Name="Modifier_Price" Type="Decimal" Precision="18" Scale="4" />
-        </EntityType>
-        <EntityType Name="WH_Relation_PLU_Condiment">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PLUID" Type="Int64" />
-          <Property Name="condimentPLUID" Type="Int64" />
         </EntityType>
         <EntityType Name="WH_Sys_BundleSaving_ReceiptNumber">
           <Key>
@@ -1095,6 +1089,16 @@
           <Property Type="Int64" Name="ExemptServTax" />
           <Property Type="Int64" Name="isStatus" />
         </EntityType>
+        <EntityType Name="WH_Relation_PLU_Condiment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="PLUID" />
+          <Property Type="Int64" Name="condimentPLUID" />
+          <Property Type="String" Name="condimentBarCode" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="condimentQuality" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1164,11 +1168,6 @@
             <ScalarProperty Name="Modifier_desc" ColumnName="Modifier_desc" />
             <ScalarProperty Name="Modifier_Unit_Quantity" ColumnName="Modifier_Unit_Quantity" />
             <ScalarProperty Name="Modifier_Price" ColumnName="Modifier_Price" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="WH_Relation_PLU_Condiment"><EntityTypeMapping TypeName="pbmModel.WH_Relation_PLU_Condiment"><MappingFragment StoreEntitySet="WH_Relation_PLU_Condiment">
-            <ScalarProperty Name="ID" ColumnName="ID" />
-            <ScalarProperty Name="PLUID" ColumnName="PLUID" />
-            <ScalarProperty Name="condimentPLUID" ColumnName="condimentPLUID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="WH_Sys_BundleSaving_ReceiptNumber"><EntityTypeMapping TypeName="pbmModel.WH_Sys_BundleSaving_ReceiptNumber"><MappingFragment StoreEntitySet="WH_Sys_BundleSaving_ReceiptNumber">
             <ScalarProperty Name="ID" ColumnName="ID" />
@@ -1554,6 +1553,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WH_Relation_PLU_Condiment">
+            <EntityTypeMapping TypeName="pbmModel.WH_Relation_PLU_Condiment">
+              <MappingFragment StoreEntitySet="WH_Relation_PLU_Condiment">
+                <ScalarProperty Name="condimentQuality" ColumnName="condimentQuality" />
+                <ScalarProperty Name="condimentBarCode" ColumnName="condimentBarCode" />
+                <ScalarProperty Name="condimentPLUID" ColumnName="condimentPLUID" />
+                <ScalarProperty Name="PLUID" ColumnName="PLUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1584,7 +1594,6 @@
         <EntityTypeShape EntityType="pbmModel.WH_Menu_Details" Width="1.5" PointX="0.75" PointY="6.75" Height="1.9594531249999996" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Menu_List" Width="1.5" PointX="6.75" PointY="3.75" Height="1.6222135416666674" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_PLU_Modifier" Width="1.5" PointX="8.75" PointY="0.75" Height="0.947734375" IsExpanded="true" />
-        <EntityTypeShape EntityType="pbmModel.WH_Relation_PLU_Condiment" Width="1.5" PointX="8.75" PointY="3.75" Height="1.4535937500000031" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" Width="1.5" PointX="8.75" PointY="6.75" Height="1.2849739583333388" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_CouponInformation" Width="1.5" PointX="8.75" PointY="9.75" Height="1.4535937500000031" IsExpanded="true" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_Header_Footer" Width="1.5" PointX="10.75" PointY="3.75" Height="2.1280729166666674" IsExpanded="true" />
@@ -1619,6 +1628,7 @@
         <EntityTypeShape EntityType="pbmModel.WH_Department" Width="1.5" PointX="0.75" PointY="18.75" Height="3.6456510416666674" />
         <EntityTypeShape EntityType="pbmModel.WH_Sys_PageTwo" Width="1.5" PointX="3.375" PointY="18.75" Height="2.8025520833333246" />
         <EntityTypeShape EntityType="pbmModel.WH_PLU" Width="1.5" PointX="5.375" PointY="18.75" Height="4.6573697916666674" />
+        <EntityTypeShape EntityType="pbmModel.WH_Relation_PLU_Condiment" Width="1.5" PointX="5.375" PointY="6.75" Height="1.7908333333333246" />
       </Diagram>
     </Diagrams>
   </Designer>

@@ -10,7 +10,6 @@
     <EntitySet Name="WH_Menu_Details" EntityType="pbmModel.WH_Menu_Details" />
     <EntitySet Name="WH_Menu_List" EntityType="pbmModel.WH_Menu_List" />
     <EntitySet Name="WH_PLU_Modifier" EntityType="pbmModel.WH_PLU_Modifier" />
-    <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
     <EntitySet Name="WH_Sys_BundleSaving_ReceiptNumber" EntityType="pbmModel.WH_Sys_BundleSaving_ReceiptNumber" />
     <EntitySet Name="WH_Sys_CouponInformation" EntityType="pbmModel.WH_Sys_CouponInformation" />
     <EntitySet Name="WH_Sys_Header_Footer" EntityType="pbmModel.WH_Sys_Header_Footer" />
@@ -45,6 +44,7 @@
     <EntitySet Name="WH_Department" EntityType="pbmModel.WH_Department" />
     <EntitySet Name="WH_Sys_PageTwo" EntityType="pbmModel.WH_Sys_PageTwo" />
     <EntitySet Name="WH_PLU" EntityType="pbmModel.WH_PLU" />
+    <EntitySet Name="WH_Relation_PLU_Condiment" EntityType="pbmModel.WH_Relation_PLU_Condiment" />
   </EntityContainer>
   <EntityType Name="WH_Bundle">
     <Key>
@@ -136,14 +136,6 @@
     <Property Name="Modifier_desc" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
     <Property Name="Modifier_Unit_Quantity" Type="Int64" />
     <Property Name="Modifier_Price" Type="Decimal" Precision="18" Scale="4" />
-  </EntityType>
-  <EntityType Name="WH_Relation_PLU_Condiment">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PLUID" Type="Int64" />
-    <Property Name="condimentPLUID" Type="Int64" />
   </EntityType>
   <EntityType Name="WH_Sys_BundleSaving_ReceiptNumber">
     <Key>
@@ -542,5 +534,15 @@
     <Property Type="Int64" Name="FS_Tenderable" />
     <Property Type="Int64" Name="ExemptServTax" />
     <Property Type="Int64" Name="isStatus" />
+  </EntityType>
+  <EntityType Name="WH_Relation_PLU_Condiment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="PLUID" />
+    <Property Type="Int64" Name="condimentPLUID" />
+    <Property Type="String" Name="condimentBarCode" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="condimentQuality" />
   </EntityType>
 </Schema>
