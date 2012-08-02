@@ -658,32 +658,10 @@ namespace PBMApp
         {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
-            ReceiveMessage rm = new ReceiveMessage();
-
-
-            List<List<string>> sList = new List<List<string>>();
-            for (int i = 1; i < 30001; i++)
-            {
-                List<string> strs = new List<string>();
-                strs.Add("0");
-                strs.Add(i.ToString());
-                sList.Add(strs);
-                System.Threading.Thread.Sleep(2); 
-                SetTextMessage(i);
-                
-                
+            for (int i = 1; i < 20; i++)
+            { 
+                i = RevPLU(pIo, i);
             }
-
-            rm.GetUpPLU(pIo, sList, 2, 102); 
-
-            foreach (List<string> str in rm.List)
-            {
-                foreach (string s in str)
-                {
-                    richTextBox1.Text += s + "+";
-                }
-                richTextBox1.Text += "\n";
-            } 
             pIo.Close();
              
         }
@@ -693,11 +671,23 @@ namespace PBMApp
         {
             JustinIO.CommPort pIo = ReceiveMessage.sp();
             pIo.Open();
-            
+
+            for (int i = 1; i < 20; i++)
+            {
+                //MessageBox.Show(i.ToString(), "A");
+                i = RevPLU(pIo, i);
+            }
+            richTextBox1.Text += plus.Count + "\n\r";
+            richTextBox1.Text += pluModifiers.Count + "\n\r";
+            richTextBox1.Text += pluCondiments.Count + "\n\r";
+            richTextBox1.Text += whs.Count + "\n\r"; 
             pIo.Close(); 
         }
-        private List<WH_PLU> list=new List<WH_PLU>();
-        private void RevPLU(JustinIO.CommPort pIo,int index)
+        private List<WH_PLU> plus=new List<WH_PLU>();
+        private List<WH_PLU_Modifier> pluModifiers=new List<WH_PLU_Modifier>();
+        private List<WH_Relation_PLU_Condiment> pluCondiments = new List<WH_Relation_PLU_Condiment>(); 
+        private List<WH_Relation_Cook_PLU> whs=new List<WH_Relation_Cook_PLU>(); 
+        private int RevPLU(JustinIO.CommPort pIo,int index)
         {
             ReceiveMessage rm = new ReceiveMessage();
             List<List<string>> sList = new List<List<string>>();
@@ -706,31 +696,73 @@ namespace PBMApp
             strs.Add("0");
             strs.Add(index.ToString());
             sList.Add(strs); 
-            rm.GetUpPLU(pIo, sList, 2, 102); 
+            rm.GetUpPLU(pIo, sList, 2, 102);
             foreach (List<string> str in rm.List)
-            {
-                if(str.Count<=2)
+            { 
+                if(str.Count>=2)
                 {
-                    if (index < 30000)
+                    index = int.Parse(str[1]);
+                    WH_PLU w = new WH_PLU();
+                    w.ID = index;
+                    w.Bar_Code = str[2].PadLeft(13,'0');
+                    w.Price1 = decimal.Parse(str[3]);
+                    w.Price2 = decimal.Parse(str[4]);
+                    w.Price3 = decimal.Parse(str[5]);
+                    w.Dept_No = int.Parse(str[6]);
+                    w.Description = str[7];
+                    w.Description2 = str[8];
+                    string str1 = str[9].PadLeft(6, '0');
+                    w.PriceMat = int.Parse(str1.Substring(0, 1));
+                    w.isMenu = int.Parse(str1.Substring(1, 1));
+                    //w.isStockActive=int.Parse(str1.Substring(2,1));
+                    w.isCondiment = int.Parse(str1.Substring(3, 1));
+                    w.ExemptServTax = int.Parse(str1.Substring(4, 1));
+                    w.FS_Tenderable = int.Parse(str1.Substring(5, 1));
+                    w.Modifier = int.Parse(str[10]);
+                    //modifiers
+                    for (int i = 0; i < 5; i++)
                     {
-                        RevPLU(pIo, index + 1);
+                        WH_PLU_Modifier wm = new WH_PLU_Modifier();
+                        wm.PLUID = index;
+                        wm.Modifier_Price = decimal.Parse(str[11 + (i*3)]);
+                        wm.Modifier_Unit_Quantity = int.Parse(str[12 + (i * 3)]);
+                        wm.Modifier_desc = str[13 + (i * 3)];
+                        if (i < int.Parse(str[10]))
+                        {
+                            pluModifiers.Add(wm);
+                        }
                     }
+                    //Condiments
+                    w.isCondimentNums = int.Parse(str[27]);
+                    for (int i = 0; i < 12; i++)
+                    {
+                        WH_Relation_PLU_Condiment whRelationPluCondiment = new WH_Relation_PLU_Condiment();
+                        whRelationPluCondiment.PLUID = index;
+                        whRelationPluCondiment.condimentBarCode = str[28 + (2*i)];
+                        whRelationPluCondiment.condimentQuality = int.Parse(str[29 + (2*i)]);
+                        pluCondiments.Add(whRelationPluCondiment);
+                    } 
+                    //51 Cm Num
+
+                    for (int i = 0; i < 30; i++)
+                    {
+                        WH_Relation_Cook_PLU wh = new WH_Relation_Cook_PLU();
+                        wh.CookID = int.Parse(str[52 + i]);
+                        wh.PLUID = index;
+                        wh.isFlag = i + 1;
+                        whs.Add(wh);
+                    }
+
+                    
+                    plus.Add(w);
                 }
                 else
                 {
-                    foreach (string s in str)
-                    {
-                        WH_PLU w = new WH_PLU();
-                        w.ID = index;
-                        w.Bar_Code = str[1];
-                        list.Add(w);
-                    }
-                    if(index<30000)
-                    {
-                        RevPLU(pIo, index + 1);
-                    } 
-                } 
+                    return 3000;
+                }
+                
             }
+            return index;
         } 
     }
 }

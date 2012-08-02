@@ -101,15 +101,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WH_Relation_PLU_Condiment">
-      <EntityTypeMapping TypeName="pbmModel.WH_Relation_PLU_Condiment">
-        <MappingFragment StoreEntitySet="WH_Relation_PLU_Condiment">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
-          <ScalarProperty Name="condimentPLUID" ColumnName="condimentPLUID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="WH_Sys_BundleSaving_ReceiptNumber">
       <EntityTypeMapping TypeName="pbmModel.WH_Sys_BundleSaving_ReceiptNumber">
         <MappingFragment StoreEntitySet="WH_Sys_BundleSaving_ReceiptNumber">
@@ -538,6 +529,17 @@
           <ScalarProperty Name="Description2" ColumnName="Description2" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Bar_Code" ColumnName="Bar_Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WH_Relation_PLU_Condiment">
+      <EntityTypeMapping TypeName="pbmModel.WH_Relation_PLU_Condiment">
+        <MappingFragment StoreEntitySet="WH_Relation_PLU_Condiment">
+          <ScalarProperty Name="condimentQuality" ColumnName="condimentQuality" />
+          <ScalarProperty Name="condimentBarCode" ColumnName="condimentBarCode" />
+          <ScalarProperty Name="condimentPLUID" ColumnName="condimentPLUID" />
+          <ScalarProperty Name="PLUID" ColumnName="PLUID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -212,22 +212,6 @@ namespace PBMApp.Model
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<WH_Relation_PLU_Condiment> WH_Relation_PLU_Condiment
-        {
-            get
-            {
-                if ((_WH_Relation_PLU_Condiment == null))
-                {
-                    _WH_Relation_PLU_Condiment = base.CreateObjectSet<WH_Relation_PLU_Condiment>("WH_Relation_PLU_Condiment");
-                }
-                return _WH_Relation_PLU_Condiment;
-            }
-        }
-        private ObjectSet<WH_Relation_PLU_Condiment> _WH_Relation_PLU_Condiment;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
         public ObjectSet<WH_Sys_BundleSaving_ReceiptNumber> WH_Sys_BundleSaving_ReceiptNumber
         {
             get
@@ -768,6 +752,22 @@ namespace PBMApp.Model
             }
         }
         private ObjectSet<WH_PLU> _WH_PLU;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<WH_Relation_PLU_Condiment> WH_Relation_PLU_Condiment
+        {
+            get
+            {
+                if ((_WH_Relation_PLU_Condiment == null))
+                {
+                    _WH_Relation_PLU_Condiment = base.CreateObjectSet<WH_Relation_PLU_Condiment>("WH_Relation_PLU_Condiment");
+                }
+                return _WH_Relation_PLU_Condiment;
+            }
+        }
+        private ObjectSet<WH_Relation_PLU_Condiment> _WH_Relation_PLU_Condiment;
 
         #endregion
         #region AddTo 方法
@@ -842,14 +842,6 @@ namespace PBMApp.Model
         public void AddToWH_PLU_Modifier(WH_PLU_Modifier wH_PLU_Modifier)
         {
             base.AddObject("WH_PLU_Modifier", wH_PLU_Modifier);
-        }
-    
-        /// <summary>
-        /// 用于向 WH_Relation_PLU_Condiment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddToWH_Relation_PLU_Condiment(WH_Relation_PLU_Condiment wH_Relation_PLU_Condiment)
-        {
-            base.AddObject("WH_Relation_PLU_Condiment", wH_Relation_PLU_Condiment);
         }
     
         /// <summary>
@@ -1122,6 +1114,14 @@ namespace PBMApp.Model
         public void AddToWH_PLU(WH_PLU wH_PLU)
         {
             base.AddObject("WH_PLU", wH_PLU);
+        }
+    
+        /// <summary>
+        /// 用于向 WH_Relation_PLU_Condiment EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddToWH_Relation_PLU_Condiment(WH_Relation_PLU_Condiment wH_Relation_PLU_Condiment)
+        {
+            base.AddObject("WH_Relation_PLU_Condiment", wH_Relation_PLU_Condiment);
         }
 
         #endregion
@@ -3714,6 +3714,54 @@ namespace PBMApp.Model
         private Nullable<global::System.Int64> _condimentPLUID;
         partial void OncondimentPLUIDChanging(Nullable<global::System.Int64> value);
         partial void OncondimentPLUIDChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String condimentBarCode
+        {
+            get
+            {
+                return _condimentBarCode;
+            }
+            set
+            {
+                OncondimentBarCodeChanging(value);
+                ReportPropertyChanging("condimentBarCode");
+                _condimentBarCode = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("condimentBarCode");
+                OncondimentBarCodeChanged();
+            }
+        }
+        private global::System.String _condimentBarCode;
+        partial void OncondimentBarCodeChanging(global::System.String value);
+        partial void OncondimentBarCodeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int64> condimentQuality
+        {
+            get
+            {
+                return _condimentQuality;
+            }
+            set
+            {
+                OncondimentQualityChanging(value);
+                ReportPropertyChanging("condimentQuality");
+                _condimentQuality = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("condimentQuality");
+                OncondimentQualityChanged();
+            }
+        }
+        private Nullable<global::System.Int64> _condimentQuality;
+        partial void OncondimentQualityChanging(Nullable<global::System.Int64> value);
+        partial void OncondimentQualityChanged();
 
         #endregion
     

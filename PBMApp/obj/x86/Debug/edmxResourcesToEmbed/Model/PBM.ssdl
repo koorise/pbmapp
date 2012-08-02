@@ -201,6 +201,8 @@
     <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="PLUID" Type="integer" />
     <Property Name="condimentPLUID" Type="integer" />
+    <Property Name="condimentBarCode" Type="nvarchar" />
+    <Property Name="condimentQuality" Type="integer" />
   </EntityType>
   <EntityType Name="WH_Sys_BundleSaving_ReceiptNumber">
     <Key>
